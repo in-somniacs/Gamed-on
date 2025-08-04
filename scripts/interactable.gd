@@ -9,6 +9,8 @@ func _process(delta: float) -> void:
 		print("interacted")
 
 
+
+
 func _on_body_entered(body: Node2D) -> void:
 	interatable = true
 	hint.visible = true
