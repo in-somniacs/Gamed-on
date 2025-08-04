@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://btkj6y1uo00mr"]
+
+[ext_resource type="Script" uid="uid://bqkeudmik7041" path="res://scripts/interactable.gd" id="1_56v82"]
+[ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="2_ij5l6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3aalw"]
+
+[node name="interactable" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_56v82")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3aalw")
+
+[node name="hint" type="RichTextLabel" parent="."]
+visible = false
+offset_left = -4.0
+offset_top = -23.0
+offset_right = 4.0
+offset_bottom = -5.0
+theme_override_fonts/normal_font = ExtResource("2_ij5l6")
+text = "!"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

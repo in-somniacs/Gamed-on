@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://neksxlr6lbi0"]
+
+[ext_resource type="Script" uid="uid://dr8ywqx86eonh" path="res://scripts/npc_zone.gd" id="1_trlqs"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_trlqs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

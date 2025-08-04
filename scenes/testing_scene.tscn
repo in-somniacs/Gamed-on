@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://day57hx8vscth"]
+
+[ext_resource type="PackedScene" uid="uid://0vk5gwdjy3h3" path="res://scenes/player.tscn" id="1_ifns1"]
+[ext_resource type="PackedScene" uid="uid://neksxlr6lbi0" path="res://scenes/npc-zone.tscn" id="2_2j2p2"]
+[ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="3_dh6dg"]
+[ext_resource type="PackedScene" uid="uid://btkj6y1uo00mr" path="res://scenes/interactable.tscn" id="3_v6rby"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2j2p2"]
+size = Vector2(20, 37)
+
+[node name="testing scene" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_ifns1")]
+position = Vector2(2, -20)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(7, 31)
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+
+[node name="Area2D" parent="." instance=ExtResource("2_2j2p2")]
+position = Vector2(84, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_2j2p2")
+
+[node name="Panel" type="Panel" parent="Area2D"]
+offset_left = -11.0
+offset_top = -19.0
+offset_right = 9.0
+offset_bottom = 19.0
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(2, -20)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D"]
+offset_left = 18.0
+offset_top = -84.0
+offset_right = 141.0
+offset_bottom = -44.0
+theme_override_fonts/normal_font = ExtResource("3_dh6dg")
+text = "interact here"
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 73.0
+offset_top = -64.0
+offset_right = 91.0
+offset_bottom = -47.0
+
+[node name="interactable2" parent="." instance=ExtResource("3_v6rby")]
+position = Vector2(82, -55)
