@@ -989,7 +989,13 @@ zoom = Vector2(2.5, 2.5)
 limit_left = -79
 position_smoothing_enabled = true
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="stairs" type="Node2D" parent="."]
 position = Vector2(-79, 0)
+
+[node name="floor_0" type="Node2D" parent="stairs"]
+position = Vector2(204, 29)
+
+[node name="floor_1" type="Node2D" parent="stairs"]
+position = Vector2(273, -46)
 
 [editable path="Player"]

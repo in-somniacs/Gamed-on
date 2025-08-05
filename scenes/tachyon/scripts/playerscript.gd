@@ -38,9 +38,9 @@ func _physics_process(delta: float) -> void:
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("run"):
-		SPEED = SPEED + 8000
+		SPEED = SPEED + 4000
 	elif Input.is_action_just_released("run"):
-		SPEED = SPEED - 8000
+		SPEED = SPEED - 4000
 
 
 	
