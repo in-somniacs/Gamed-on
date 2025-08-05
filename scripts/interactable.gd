@@ -1,7 +1,13 @@
 extends Area2D
 
+
 @onready var player: CharacterBody2D = $"../player"
-@onready var hint: RichTextLabel = $hint
+
+
+
+
+@onready var hint: RichTextLabel = $RichTextLabel
+
 
 var interatable = false
 func _process(delta: float) -> void:
@@ -10,7 +16,7 @@ func _process(delta: float) -> void:
 
 
 
-
+	
 func _on_body_entered(body: Node2D) -> void:
 	interatable = true
 	hint.visible = true
