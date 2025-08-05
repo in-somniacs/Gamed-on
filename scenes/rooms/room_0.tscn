@@ -964,6 +964,7 @@ layer_4/name = "Layer4"
 layer_4/tile_data = PackedInt32Array(-65541, 393220, 7, -5, 393220, 8, 65531, 393220, 9)
 
 [node name="player" parent="." instance=ExtResource("7_xdi0x")]
+visible = false
 position = Vector2(14, -51)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -983,3 +984,11 @@ scale = Vector2(0.321801, 0.31315)
 theme_override_fonts/normal_font = ExtResource("9_b00dr")
 theme_override_fonts/bold_font = ExtResource("9_b00dr")
 text = "up"
+
+[node name="teleportpoints" type="Node" parent="."]
+
+[node name="floor_0" type="Node2D" parent="teleportpoints"]
+position = Vector2(131, 33)
+
+[node name="floor_1" type="Node2D" parent="teleportpoints"]
+position = Vector2(239, -32)
