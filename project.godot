@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Gamed-on"
-run/main_scene="uid://day57hx8vscth"
+run/main_scene="uid://klsd68mpixi8"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/scale=2.05
 
 [gui]
 
