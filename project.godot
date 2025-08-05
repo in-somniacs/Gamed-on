@@ -15,6 +15,10 @@ run/main_scene="uid://klsd68mpixi8"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/scale=2.05
+
 [gui]
 
 theme/default_font_multichannel_signed_distance_field=true
