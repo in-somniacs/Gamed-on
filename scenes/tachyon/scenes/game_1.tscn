@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1ftp2w7yfwcv"]
+
+[ext_resource type="PackedScene" uid="uid://cpryjj6ky7t31" path="res://scenes/tachyon/scenes/character_body_2d.tscn" id="1_iwl81"]
+
+[node name="Game1" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_iwl81")]
+position = Vector2(118, 154)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(132, 154)
