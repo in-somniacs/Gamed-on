@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://chbejcohalayb"]
+
+[ext_resource type="Texture2D" uid="uid://dyufrofqd1s34" path="res://mini-games/ponGame/assets/Bg.png" id="1_0el5o"]
+[ext_resource type="Texture2D" uid="uid://cjcm7sebcvg7k" path="res://mini-games/ponGame/assets/right_pallete.png" id="2_88qtc"]
+[ext_resource type="Texture2D" uid="uid://du6f25lag71rh" path="res://mini-games/ponGame/assets/left_pallete.png" id="3_jfdqb"]
+[ext_resource type="Texture2D" uid="uid://dlu1uapptbym" path="res://mini-games/ponGame/assets/ball.png" id="4_iikj5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fen5p"]
+size = Vector2(18, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxp4o"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Graphics container" type="Node2D" parent="."]
+
+[node name="Bg" type="Sprite2D" parent="Graphics container"]
+position = Vector2(576, 324)
+texture = ExtResource("1_0el5o")
+
+[node name="Player" type="StaticBody2D" parent="."]
+
+[node name="PlayerPaddle" type="Sprite2D" parent="Player"]
+position = Vector2(1112, 324)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("2_88qtc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(1112, 324)
+shape = SubResource("RectangleShape2D_fen5p")
+
+[node name="CPU" type="StaticBody2D" parent="."]
+
+[node name="CpuPaddle" type="Sprite2D" parent="CPU"]
+position = Vector2(30, 324)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("3_jfdqb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CPU"]
+position = Vector2(30, 324)
+shape = SubResource("RectangleShape2D_fen5p")
+
+[node name="Ball" type="CharacterBody2D" parent="."]
+
+[node name="ball" type="Sprite2D" parent="Ball"]
+position = Vector2(361, 245)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("4_iikj5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+position = Vector2(361, 245)
+shape = SubResource("RectangleShape2D_jxp4o")
