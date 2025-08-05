@@ -963,6 +963,17 @@ layer_3/tile_data = PackedInt32Array(-131077, 720900, 7, -65541, 720900, 8, -5, 
 layer_4/name = "Layer4"
 layer_4/tile_data = PackedInt32Array(-65541, 393220, 7, -5, 393220, 8, 65531, 393220, 9)
 
+<<<<<<< Updated upstream
+=======
+[node name="player" parent="." instance=ExtResource("7_xdi0x")]
+visible = false
+position = Vector2(14, -51)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+>>>>>>> Stashed changes
 [node name="interactable" parent="." instance=ExtResource("8_epks6")]
 position = Vector2(157, 25)
 scale = Vector2(2.30068, 2.13338)
@@ -978,6 +989,7 @@ theme_override_fonts/normal_font = ExtResource("9_b00dr")
 theme_override_fonts/bold_font = ExtResource("9_b00dr")
 text = "up"
 
+<<<<<<< Updated upstream
 [node name="Player" parent="." instance=ExtResource("7_b00dr")]
 position = Vector2(13, -56)
 scale = Vector2(1.4, 1.4)
@@ -999,3 +1011,12 @@ position = Vector2(204, 29)
 position = Vector2(273, -46)
 
 [editable path="Player"]
+=======
+[node name="teleportpoints" type="Node" parent="."]
+
+[node name="floor_0" type="Node2D" parent="teleportpoints"]
+position = Vector2(131, 33)
+
+[node name="floor_1" type="Node2D" parent="teleportpoints"]
+position = Vector2(239, -32)
+>>>>>>> Stashed changes
