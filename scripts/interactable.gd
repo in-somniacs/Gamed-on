@@ -1,15 +1,20 @@
 extends Area2D
-@onready var hint: RichTextLabel = $RichTextLabel
+@export var hint: RichTextLabel 
 
 
-@onready var player: CharacterBody2D = get_node("../Player")
-@onready var floor_0: Node2D = get_node("../stairs/floor_0")
-@onready var floor_1: Node2D = get_node("../stairs/floor_1")
+
+@export var player: CharacterBody2D 
+@export var pos1: NodePath
+@export var pos2: NodePath
+var floor_0: Node2D
+var floor_1: Node2D 
 
 var interactable = false
 
 func _ready():
 	# Debug: Make sure the nodes are found correctly
+	floor_0 = get_node(pos1) as Node2D
+	floor_1 = get_node(pos2) as Node2D
 	print("Player:", player)
 	print("Floor 0:", floor_0)
 	print("Floor 1:", floor_1)

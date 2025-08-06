@@ -974,11 +974,15 @@ zoom = Vector2(2.5, 2.5)
 limit_left = -79
 position_smoothing_enabled = true
 
-[node name="interactable" parent="." instance=ExtResource("8_epks6")]
+[node name="interactable" parent="." node_paths=PackedStringArray("hint", "player") instance=ExtResource("8_epks6")]
 position = Vector2(146, 29)
 scale = Vector2(1.4, 1.4)
 collision_layer = 3
 collision_mask = 3
+hint = NodePath("RichTextLabel")
+player = NodePath("../Player")
+pos1 = NodePath("../stairs/floor_0")
+pos2 = NodePath("../stairs/floor_1")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="interactable"]
 visible = false
