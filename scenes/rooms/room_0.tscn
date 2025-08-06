@@ -980,6 +980,8 @@ limit_top = -77
 limit_right = 556
 limit_bottom = 128
 position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="interactable" parent="." node_paths=PackedStringArray("hint", "player") instance=ExtResource("8_epks6")]
 position = Vector2(146, 29)
