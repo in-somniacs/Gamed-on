@@ -14,7 +14,10 @@ func _ready():
 
 func _process(delta: float) -> void:
 	if interactable and Input.is_action_just_pressed("interact"):
-		get_tree().change_scene_to_file(next_scene)
+		var transition = preload("res://scenes/transition_manager.tscn").instantiate()
+		get_tree().root.add_child(transition)
+		transition.start_transition("res://scenes/rooms/footpath.tscn")
+		#get_tree().change_scene_to_file(next_scene)
 		
 
 func _on_body_entered(body: Node2D) -> void:
