@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://0vk5gwdjy3h3"]
+[gd_scene load_steps=9 format=3 uid="uid://cpndu426765ax"]
 
 [ext_resource type="Texture2D" uid="uid://bo0lrltglpj1g" path="res://assets/knight.png" id="1_3vyb7"]
-[ext_resource type="Script" uid="uid://rixf2ctvpmu" path="res://scenes/tachyon/scripts/playerscript.gd" id="1_g2els"]
+[ext_resource type="Script" path="res://scenes/tachyon/scripts/character_body_2d.gd" id="1_g2els"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3vyb7"]
 radius = 5.0
