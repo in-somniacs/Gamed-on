@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cmcofhrt4k5hv" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState1.png" id="4_b00dr"]
 [ext_resource type="Texture2D" uid="uid://cwpusyeldgfhr" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState2.png" id="5_kf5e4"]
 [ext_resource type="Texture2D" uid="uid://ti8047sqwd7h" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_SmallItems.png" id="6_yg2jv"]
-[ext_resource type="PackedScene" uid="uid://0vk5gwdjy3h3" path="res://scenes/player.tscn" id="7_xdi0x"]
 [ext_resource type="PackedScene" uid="uid://btkj6y1uo00mr" path="res://scenes/interactable.tscn" id="8_epks6"]
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="9_b00dr"]
+[ext_resource type="PackedScene" uid="uid://cpryjj6ky7t31" path="res://scenes/tachyon/scenes/character_body_2d.tscn" id="9_kf5e4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epks6"]
 texture = ExtResource("2_xdi0x")
@@ -963,13 +963,6 @@ layer_3/tile_data = PackedInt32Array(-131077, 720900, 7, -65541, 720900, 8, -5, 
 layer_4/name = "Layer4"
 layer_4/tile_data = PackedInt32Array(-65541, 393220, 7, -5, 393220, 8, 65531, 393220, 9)
 
-[node name="player" parent="." instance=ExtResource("7_xdi0x")]
-position = Vector2(14, -51)
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(4, 4)
-position_smoothing_enabled = true
-
 [node name="interactable" parent="." instance=ExtResource("8_epks6")]
 position = Vector2(157, 25)
 scale = Vector2(2.30068, 2.13338)
@@ -983,3 +976,11 @@ scale = Vector2(0.321801, 0.31315)
 theme_override_fonts/normal_font = ExtResource("9_b00dr")
 theme_override_fonts/bold_font = ExtResource("9_b00dr")
 text = "up"
+
+[node name="Player" parent="." instance=ExtResource("9_kf5e4")]
+position = Vector2(14, -63)
+scale = Vector2(1.4, 1.4)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
