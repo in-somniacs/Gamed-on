@@ -11803,3 +11803,9 @@ scale = Vector2(0.769231, 0.769231)
 zoom = Vector2(1.635, 1.635)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-72, 12)
+polygon = PackedVector2Array(6, 0, 2, -67, 3, -140, 3, -155, 299, -148, 290, -67, 221, -67, 220, -9, 122, -10, 122, 31, 88, 35, 87, -8, 7, 0, 34, 48, 57, 36, 65, 60, 106, 50, 139, 74, 149, 37, 236, 47, 211, 11, 266, 9, 264, -17, 373, -36, 298, -51, 387, -92, 315, -111, 371, -157, 317, -177, 192, -261, 192, -193, 139, -230, 86, -188, 20, -205, -5, -187, -33, -173, -25, -129, -64, -69, -11, -57, -65, -24, -6, -2)
