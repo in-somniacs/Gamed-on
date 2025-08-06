@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://klsd68mpixi8"]
+[gd_scene load_steps=20 format=3 uid="uid://klsd68mpixi8"]
 
 [ext_resource type="Texture2D" uid="uid://btyqpu4nltqsn" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_maoc1"]
 [ext_resource type="Texture2D" uid="uid://qwx05nl3p8w1" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_xdi0x"]
@@ -491,7 +491,9 @@ texture = ExtResource("4_b00dr")
 2:7/0 = 0
 3:7/0 = 0
 4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.79859, -2.1583, 8, -8, 8, 8, 0.539576, 8)
 5:7/0 = 0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 2.87774, -3.41732, 1.07915, 8, -8, 8)
 6:7/0 = 0
 7:7/0 = 0
 8:7/0 = 0
@@ -504,7 +506,9 @@ texture = ExtResource("4_b00dr")
 2:8/0 = 0
 3:8/0 = 0
 4:8/0 = 0
+4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 8, -8, 8, 8, 0.539576, 8)
 5:8/0 = 0
+5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 1.79859, -8, 1.07915, 8, -8, 8)
 6:8/0 = 0
 7:8/0 = 0
 8:8/0 = 0
@@ -517,7 +521,9 @@ texture = ExtResource("4_b00dr")
 2:9/0 = 0
 3:9/0 = 0
 4:9/0 = 0
+4:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 8, -8, 8, 5.57562, 0.539576, 5.93534)
 5:9/0 = 0
+5:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 2.33816, -8, 0.359716, -3.59717, 1.97845, 8, -8, 8)
 6:9/0 = 0
 7:9/0 = 0
 8:9/0 = 0
@@ -951,6 +957,10 @@ sources/5 = SubResource("TileSetAtlasSource_dimrd")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b00dr"]
 size = Vector2(31, 62)
 
+[sub_resource type="Curve" id="Curve_kf5e4"]
+_data = [Vector2(0.0965909, 1), 0.0, 0.0, 0, 0, Vector2(0.0965909, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0.0337079), 0.0, 0.0, 0, 0, Vector2(0.965909, 0.932584), 0.0, 0.0, 0, 0]
+point_count = 4
+
 [node name="room0" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -972,6 +982,10 @@ position = Vector2(13, -56)
 scale = Vector2(1.4, 1.4)
 collision_layer = 3
 collision_mask = 3
+
+[node name="CollisionShape2D" parent="Player" index="1"]
+light_mask = 3
+visibility_layer = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2.5, 2.5)
@@ -1028,12 +1042,40 @@ shape = SubResource("RectangleShape2D_b00dr")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="door"]
 offset_left = 35.0
-offset_top = -73.0
+offset_top = -46.0
 offset_right = 99.0
-offset_bottom = -33.0
+offset_bottom = -6.00001
 scale = Vector2(0.70703, 0.660168)
 theme_override_fonts/normal_font = ExtResource("9_b00dr")
 text = "go out?"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(16, -74)
+amount = 1
+lifetime = 2.0
+explosiveness = 0.01
+emission_shape = 1
+emission_sphere_radius = 0.01
+direction = Vector2(0, 0)
+spread = 90.0
+gravity = Vector2(0, 0)
+damping_min = 100.0
+damping_max = 100.0
+angle_min = 45.0
+angle_max = 45.0
+scale_amount_min = 11.1
+scale_amount_max = 11.11
+scale_amount_curve = SubResource("Curve_kf5e4")
+anim_speed_min = 19.39
+anim_speed_max = 42.66
+anim_offset_min = 0.005
+anim_offset_max = 0.0305
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-78, -110)
+polygon = PackedVector2Array(-2, -1, -2, 44, -2, 238, -2, 241, 170, 242, 286, 241, 285, 238, 457, 238, 638, 238, 638, -67, 286, -66, 285, 51, 0, 50, 1, 0, 31, -28, 66, -71, 128, -21, 148, -86, 199, -54, 169, -114, 257, -126, 270, -129, 363, -178, 403, -120, 462, -177, 518, -137, 589, -179, 677, -141, 746, -79, 698, -44, 780, 19, 703, 42, 801, 90, 690, 137, 763, 222, 705, 234, 728, 327, 598, 304, 504, 338, 477, 270, 380, 326, 296, 277, 236, 331, 149, 305, 130, 295, 31, 327, -19, 276, -71, 240, -75, 196, -125, 128, -94, 67, -102, 6)
 
 [connection signal="body_entered" from="door" to="door" method="_on_body_entered"]
 [connection signal="body_exited" from="door" to="door" method="_on_body_exited"]
