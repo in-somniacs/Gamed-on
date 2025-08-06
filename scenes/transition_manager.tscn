@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://cawx1q5j7t8m4"]
+
+[ext_resource type="Script" uid="uid://bctrubyj1y1p8" path="res://scripts/transition_manager.gd" id="1_nk83w"]
+[ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="2_sb1xu"]
+
+[node name="transition_manager" type="CanvasLayer"]
+script = ExtResource("1_nk83w")
+next_scene_path = "res://scenes/rooms/footpath.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_right = 0.999
+anchor_bottom = 0.997
+offset_right = 0.151855
+offset_bottom = -0.0560303
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="quote" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -11.0
+offset_right = 86.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_sb1xu")
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 2
+
+[node name="loading" type="Label" parent="quote"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 291.0
+offset_top = 211.0
+offset_right = 433.0
+offset_bottom = 261.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_sb1xu")
+theme_override_font_sizes/font_size = 21
+text = "now loading"
+
+[node name="load_delay" type="Timer" parent="."]
+wait_time = 3.5
+one_shot = true
+
+[connection signal="timeout" from="load_delay" to="." method="_on_load_delay_timeout"]

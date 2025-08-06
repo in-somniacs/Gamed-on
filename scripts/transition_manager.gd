@@ -1,0 +1,33 @@
+extends CanvasLayer
+@onready var fade_rect: ColorRect = $ColorRect
+
+@onready var quote_label: Label = $quote
+
+@onready var load_delay: Timer = $load_delay
+
+@export var next_scene_path: String
+var quotes = [
+	"Only those who dare may fly.",
+	"Reality is an illusion, the universe is a hologram.",
+	"The darkest hour has only sixty minutes.",
+	"Every end is a new beginning."
+]
+
+func start_transition(scene_path: String):
+	next_scene_path = scene_path
+
+	# Pick a random quote
+	quote_label.text = quotes[randi() % quotes.size()]
+	quote_label.visible = true
+
+	# Fade to black
+	fade_rect.modulate.a = 0
+	create_tween().tween_property(fade_rect, "modulate:a", 1.0, 1.5)
+	
+	# Wait a bit, then load
+	load_delay.start(3.5)
+
+func _on_load_delay_timeout():
+	get_tree().change_scene_to_file(next_scene_path)
+	fade_rect.queue_free()
+	quote_label.queue_free()
