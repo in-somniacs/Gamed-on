@@ -1035,7 +1035,6 @@ player = NodePath("../Player")
 next_scene = "res://scenes/rooms/footpath.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
-visible = false
 z_index = 1
 position = Vector2(16.5, -64)
 shape = SubResource("RectangleShape2D_b00dr")
