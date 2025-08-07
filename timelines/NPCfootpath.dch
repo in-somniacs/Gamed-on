@@ -8,20 +8,20 @@
 "sound_moods": {},
 "style": "speakertextboxstyle"
 },
-&"default_portrait": "Player",
+&"default_portrait": "NPCfootpath",
 &"description": "",
-&"display_name": "Player",
-&"mirror": true,
-&"nicknames": [""],
+&"display_name": "NPCfootpath",
+&"mirror": false,
+&"nicknames": ["npc"],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"Player": {
+"NPCfootpath": {
 "export_overrides": {
-"image": "\"res://scenes/tachyon/assets/playerportrait.png\""
+"image": "\"res://assets/npc1textpreview.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1.0,
+"scale": 1,
 "scene": ""
 }
 },
