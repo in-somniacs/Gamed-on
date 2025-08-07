@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cawx1q5j7t8m4"]
 
-[ext_resource type="Script" uid="uid://bctrubyj1y1p8" path="res://scripts/transition_manager.gd" id="1_nk83w"]
+[ext_resource type="Script" path="res://scripts/transition_manager.gd" id="1_nk83w"]
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="2_sb1xu"]
 
 [node name="transition_manager" type="CanvasLayer"]

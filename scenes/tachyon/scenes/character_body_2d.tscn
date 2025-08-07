@@ -1,7 +1,7 @@
 [gd_scene load_steps=44 format=3 uid="uid://cpryjj6ky7t31"]
 
 [ext_resource type="Texture2D" uid="uid://2jp28sdhxsgh" path="res://scenes/tachyon/assets/player.png" id="1_t0ufk"]
-[ext_resource type="Script" path="res://scenes/tachyon/scripts/character_body_2d.gd" id="1_yvxj1"]
+[ext_resource type="Script" uid="uid://rixf2ctvpmu" path="res://scenes/tachyon/scripts/playerscript.gd" id="1_yvxj1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_13nwq"]
 atlas = ExtResource("1_t0ufk")

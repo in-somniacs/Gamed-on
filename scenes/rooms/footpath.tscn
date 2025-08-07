@@ -11862,6 +11862,7 @@ tile_set = SubResource("TileSet_wlsod")
 [node name="Player" parent="." instance=ExtResource("7_2jpt3")]
 z_index = 5
 position = Vector2(33, -59)
+script = null
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 y_sort_enabled = true
