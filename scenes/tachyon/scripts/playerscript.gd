@@ -2,10 +2,21 @@ extends CharacterBody2D
 
 var SPEED = 4000.0
 @onready var anim = $AnimatedSprite2D
-var can_move : bool = true
+@onready var timer = $Timer
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
+var can_move : bool = true
+var y = [
+			preload("res://assets/sfx/footstep1.wav"),
+			#preload("res://assets/sfx/footstep2.wav"),
+			#preload("res://assets/sfx/footstep3.wav")
+			]
+var x = y.pick_random()
+var moving = false
 func _ready() -> void:
 	add_to_group("player")
+
+
 
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector('left', 'right', 'up', 'down')
@@ -13,8 +24,12 @@ func _physics_process(delta: float) -> void:
 	if !can_move:
 		anim.play("side_idle")
 		return
+		
 	
 	if direction.length():
+		audio_player.stream = preload("res://assets/sfx/footstep1.wav")
+		audio_player.play()
+		
 		velocity.x = direction.x * delta * SPEED
 		velocity.y = direction.y * delta * SPEED
 		#look_at(position + direction)
@@ -40,15 +55,12 @@ func _physics_process(delta: float) -> void:
 			
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
-
-	move_and_slide()
 	
+	move_and_slide()
+
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("run"):
 		SPEED = SPEED + 4000
 	elif Input.is_action_just_released("run"):
 		SPEED = SPEED - 4000
-	
-
-
-	

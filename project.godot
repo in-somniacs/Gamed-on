@@ -19,6 +19,7 @@ config/icon="res://scripts/icon.svg"
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
+Footstep="*res://scripts/footstep.gd"
 
 [dialogic]
 
