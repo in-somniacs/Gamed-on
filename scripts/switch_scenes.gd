@@ -4,6 +4,7 @@ extends Area2D
 @export var next_scene: String 
 
 
+
 var interactable = false
 
 func _ready():
