@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1uyajyie8jqy"]
+
+[ext_resource type="Script" uid="uid://cmb7ps4l6yfcn" path="res://addons/gaea/generators/2D/walker_generator/walker_generator.gd" id="1_7owwp"]
+[ext_resource type="Script" uid="uid://c4q8elywjwg0n" path="res://addons/gaea/renderers/2D/tilemap_gaea_renderer.gd" id="2_1e1x7"]
+
+[node name="Room1(arcade)" type="Node2D"]
+
+[node name="WalkerGenerator" type="Node" parent="."]
+script = ExtResource("1_7owwp")
+metadata/_custom_type_script = "uid://cmb7ps4l6yfcn"
+
+[node name="TilemapGaeaRenderer" type="Node" parent="."]
+script = ExtResource("2_1e1x7")
+metadata/_custom_type_script = "uid://c4q8elywjwg0n"
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
