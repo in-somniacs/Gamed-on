@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://klsd68mpixi8"]
+[gd_scene load_steps=22 format=3 uid="uid://klsd68mpixi8"]
 
 [ext_resource type="Texture2D" uid="uid://btyqpu4nltqsn" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_maoc1"]
 [ext_resource type="Script" uid="uid://rv6cdk4oqmo1" path="res://scenes/rooms/room_0.gd" id="1_yg2jv"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cpryjj6ky7t31" path="res://scenes/tachyon/scenes/character_body_2d.tscn" id="7_b00dr"]
 [ext_resource type="PackedScene" uid="uid://btkj6y1uo00mr" path="res://scenes/interactable.tscn" id="8_epks6"]
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="9_b00dr"]
+[ext_resource type="Script" uid="uid://rixf2ctvpmu" path="res://scenes/tachyon/scripts/playerscript.gd" id="9_plyvp"]
 [ext_resource type="Script" uid="uid://c4uwlhf8fc0el" path="res://scripts/switch_scenes.gd" id="10_kf5e4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epks6"]
@@ -1013,6 +1014,7 @@ position = Vector2(16, -28)
 scale = Vector2(1.4, 1.4)
 collision_layer = 3
 collision_mask = 3
+script = ExtResource("9_plyvp")
 
 [node name="CollisionShape2D" parent="Player" index="1"]
 light_mask = 3
