@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2gc4yfdcddbc"]
+[gd_scene load_steps=7 format=3 uid="uid://dixkhq4icw3s"]
 
 [ext_resource type="Script" uid="uid://6m040vbm847d" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="1_4jxq7"]
 [ext_resource type="Script" uid="uid://y4d28j3fxoet" path="res://scenes/tachyon/assets/TextboxWithPortrait/speaker_portrait_textbox_layer.gd" id="1_7jt4d"]
