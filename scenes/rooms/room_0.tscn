@@ -988,7 +988,7 @@ sources/5 = SubResource("TileSetAtlasSource_dimrd")
 size = Vector2(31, 62)
 
 [sub_resource type="Curve" id="Curve_kf5e4"]
-_data = [Vector2(0.0965909, 1), 0.0, 0.0, 0, 0, Vector2(0.0965909, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0.0337079), 0.0, 0.0, 0, 0, Vector2(0.965909, 0.932584), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.0965909, 1), 0.0, 0.0, 0, 0, Vector2(0.0965909, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0.0337079), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 4
 
 [node name="room0" type="Node2D"]
@@ -1083,7 +1083,8 @@ text = "go out?"
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(16, -74)
 amount = 1
-lifetime = 2.0
+lifetime = 3.12
+preprocess = 1.26
 explosiveness = 0.01
 emission_shape = 1
 emission_sphere_radius = 0.01
