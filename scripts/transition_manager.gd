@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var quote_label: Label = $quote
 
 @onready var load_delay: Timer = $load_delay
+@onready var loading: Label = $loading
 
 @export var next_scene_path: String
 var quotes = [
@@ -11,6 +12,14 @@ var quotes = [
 	"Reality is an illusion, the universe is a hologram.",
 	"The darkest hour has only sixty minutes.",
 	"Every end is a new beginning."
+]
+
+var load = [
+	"now loading",
+	"now loading.",
+	"now loading..",
+	"now loading..."
+	
 ]
 
 func start_transition(scene_path: String):
@@ -23,6 +32,11 @@ func start_transition(scene_path: String):
 	# Fade to black
 	fade_rect.modulate.a = 0
 	create_tween().tween_property(fade_rect, "modulate:a", 1.0, 1.5)
+	#loading animation
+	for i in range(4):
+		await get_tree().create_timer(0.5).timeout # Delay for 0.5 seconds
+		loading = load[i]
+		
 	
 	# Wait a bit, then load
 	load_delay.start(3.5)
@@ -31,3 +45,4 @@ func _on_load_delay_timeout():
 	get_tree().change_scene_to_file(next_scene_path)
 	fade_rect.queue_free()
 	quote_label.queue_free()
+	loading.queue_free()

@@ -11805,7 +11805,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgxof"]
-size = Vector2(17, 24)
+size = Vector2(17, 37)
 
 [node name="Footpath" type="Node2D"]
 y_sort_enabled = true
@@ -11917,19 +11917,21 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("11_udryc")
 player = NodePath("../../Player")
-dialogue = "hello world"
+dialogue = "good day "
 textholder = NodePath("RichTextLabel")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc1/Area2D"]
-position = Vector2(1.5, -2)
+position = Vector2(1.5, 4.5)
 shape = SubResource("RectangleShape2D_qgxof")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="npc1/Area2D"]
-offset_left = -5.0
-offset_top = -41.0
-offset_right = 35.0
-offset_bottom = -1.0
+offset_left = -39.0
+offset_top = -48.0
+offset_right = 49.0
+offset_bottom = -8.0
 theme_override_fonts/normal_font = ExtResource("10_udryc")
+theme_override_font_sizes/bold_italics_font_size = 4
+theme_override_font_sizes/normal_font_size = 16
 
 [connection signal="body_entered" from="npc1/Area2D" to="npc1/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="npc1/Area2D" to="npc1/Area2D" method="_on_body_exited"]
