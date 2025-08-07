@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://cyk75nj20r3b7"]
+[gd_scene load_steps=48 format=4 uid="uid://cyk75nj20r3b7"]
 
 [ext_resource type="Texture2D" uid="uid://hwwa521btiao" path="res://scenes/tachyon/assets/Lo_bit_city_set.png" id="1_5xkcy"]
 [ext_resource type="Texture2D" uid="uid://qwx05nl3p8w1" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_jvccj"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://btkj6y1uo00mr" path="res://scenes/interactable.tscn" id="9_7d5dh"]
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="10_udryc"]
 [ext_resource type="Texture2D" uid="uid://0yg7pdaljm6x" path="res://assets/npc1.png" id="11_7d5dh"]
+[ext_resource type="Script" uid="uid://cuq3v26blnyc2" path="res://scenes/rooms/interact_npc.gd" id="11_udryc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_647yv"]
 texture = ExtResource("1_5xkcy")
@@ -11908,13 +11909,27 @@ shape = SubResource("RectangleShape2D_5n70b")
 position = Vector2(-31, -129)
 sprite_frames = SubResource("SpriteFrames_by11x")
 autoplay = "default"
-frame_progress = 0.499202
+frame_progress = 0.344597
 
-[node name="Area2D" type="Area2D" parent="npc1"]
+[node name="Area2D" type="Area2D" parent="npc1" node_paths=PackedStringArray("player", "textholder")]
 position = Vector2(-32, -125)
 collision_layer = 3
 collision_mask = 3
+script = ExtResource("11_udryc")
+player = NodePath("../../Player")
+dialogue = "hello world"
+textholder = NodePath("RichTextLabel")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc1/Area2D"]
 position = Vector2(1.5, -2)
 shape = SubResource("RectangleShape2D_qgxof")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="npc1/Area2D"]
+offset_left = -5.0
+offset_top = -41.0
+offset_right = 35.0
+offset_bottom = -1.0
+theme_override_fonts/normal_font = ExtResource("10_udryc")
+
+[connection signal="body_entered" from="npc1/Area2D" to="npc1/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="npc1/Area2D" to="npc1/Area2D" method="_on_body_exited"]
