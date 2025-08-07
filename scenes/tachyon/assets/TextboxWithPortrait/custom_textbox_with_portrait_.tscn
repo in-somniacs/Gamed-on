@@ -1,14 +1,13 @@
-[gd_scene load_steps=7 format=3 ]
+[gd_scene load_steps=7 format=3 uid="uid://d2gc4yfdcddbc"]
 
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="1_4jxq7"]
-[ext_resource type="Script" path="res://scenes/tachyon/assets/TextboxWithPortrait/speaker_portrait_textbox_layer.gd" id="1_7jt4d"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="2_y0h34"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_11puy"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="5_sr2qw"]
+[ext_resource type="Script" uid="uid://6m040vbm847d" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="1_4jxq7"]
+[ext_resource type="Script" uid="uid://y4d28j3fxoet" path="res://scenes/tachyon/assets/TextboxWithPortrait/speaker_portrait_textbox_layer.gd" id="1_7jt4d"]
+[ext_resource type="Script" uid="uid://cgo4ql6ec37qp" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="2_y0h34"]
+[ext_resource type="Script" uid="uid://dufowji8fx46l" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_11puy"]
+[ext_resource type="Script" uid="uid://lcg06aqpnpgm" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="5_sr2qw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmg1w"]
 bg_color = Color(0.254902, 0.254902, 0.254902, 1)
-skew = Vector2(0.073, 0)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
@@ -87,7 +86,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
 offset_top = 4.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -95,6 +96,11 @@ script = ExtResource("1_4jxq7")
 mode = 1
 container_ids = PackedStringArray("1")
 debug_character_portrait = "speaker"
+
+[node name="TextureRect" type="TextureRect" parent="Anchor/Panel/HBox/PortraitPanel/PortraitBackgroundColor"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Anchor/Panel/HBox"]
 layout_mode = 2

@@ -18,6 +18,7 @@ config/icon="res://scripts/icon.svg"
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
 
 [dialogic]
 
@@ -66,7 +67,7 @@ window/stretch/scale=2.05
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/better-terrain/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/gaea/plugin.cfg")
 
 [gui]
 
