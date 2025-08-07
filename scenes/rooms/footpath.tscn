@@ -11908,7 +11908,7 @@ shape = SubResource("RectangleShape2D_5n70b")
 position = Vector2(-31, -129)
 sprite_frames = SubResource("SpriteFrames_by11x")
 autoplay = "default"
-frame_progress = 0.890215
+frame_progress = 0.499202
 
 [node name="Area2D" type="Area2D" parent="npc1"]
 position = Vector2(-32, -125)
