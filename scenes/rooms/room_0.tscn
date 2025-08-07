@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://klsd68mpixi8"]
+[gd_scene load_steps=21 format=3 uid="uid://klsd68mpixi8"]
 
 [ext_resource type="Texture2D" uid="uid://btyqpu4nltqsn" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_maoc1"]
+[ext_resource type="Script" uid="uid://rv6cdk4oqmo1" path="res://scenes/rooms/room_0.gd" id="1_yg2jv"]
 [ext_resource type="Texture2D" uid="uid://qwx05nl3p8w1" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_xdi0x"]
 [ext_resource type="Texture2D" uid="uid://t5pri6yl1dhy" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls_OpenDoors.png" id="3_epks6"]
 [ext_resource type="Texture2D" uid="uid://cmcofhrt4k5hv" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState1.png" id="4_b00dr"]
@@ -991,6 +992,7 @@ _data = [Vector2(0.0965909, 1), 0.0, 0.0, 0, 0, Vector2(0.0965909, 1), 0.0, 0.0,
 point_count = 4
 
 [node name="room0" type="Node2D"]
+script = ExtResource("1_yg2jv")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_nflq0")
