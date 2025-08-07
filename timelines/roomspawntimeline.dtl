@@ -1,2 +1,3 @@
-join Player center [z_index="5"]
-Player: Hello there.....
+Player: hello 
+[text_input text="enter your name nigga" var="player_name"]
+hello {{player_name}} 

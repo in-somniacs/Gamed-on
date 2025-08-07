@@ -27,10 +27,10 @@ directories/dch_directory={
 directories/dtl_directory={
 "roomspawntimeline": "res://timelines/roomspawntimeline.dtl"
 }
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://scenes/tachyon/assets/speakertextboxstyle.tres", "res://scenes/tachyon/assets/floatingbubblestyle.tres"]
+layout/default_style="res://scenes/tachyon/assets/speakertextboxstyle.tres"
 extensions_folder="res://addons/dialogic_additions"
-text/letter_speed=0.01
+text/letter_speed=0.03
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
@@ -49,8 +49,16 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
-variables={}
+variables={
+"player_name": ""
+}
 glossary/default_case_sensitive=true
+translation/enabled=true
+translation/original_locale="en"
+translation/file_mode=1
+translation/translation_folder=""
+translation/save_mode=0
+translation/add_separator=false
 
 [display]
 
