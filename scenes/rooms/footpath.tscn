@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://dx8p3hekcol1c"]
+[gd_scene load_steps=39 format=4 uid="uid://dx8p3hekcol1c"]
 
 [ext_resource type="Texture2D" uid="uid://hwwa521btiao" path="res://scenes/tachyon/assets/Lo_bit_city_set.png" id="1_5xkcy"]
 [ext_resource type="Texture2D" uid="uid://qwx05nl3p8w1" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_jvccj"]
@@ -10,8 +10,7 @@
 [ext_resource type="Script" uid="uid://c4uwlhf8fc0el" path="res://scripts/switch_scenes.gd" id="8_5n70b"]
 [ext_resource type="PackedScene" uid="uid://btkj6y1uo00mr" path="res://scenes/interactable.tscn" id="9_7d5dh"]
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="10_udryc"]
-[ext_resource type="Texture2D" uid="uid://0yg7pdaljm6x" path="res://assets/npc1.png" id="11_7d5dh"]
-[ext_resource type="Script" uid="uid://cuq3v26blnyc2" path="res://scenes/rooms/interact_npc.gd" id="11_udryc"]
+[ext_resource type="PackedScene" uid="uid://kh5vhifdrhtf" path="res://scenes/tachyon/scenes/npc_1.tscn" id="11_7d5dh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_647yv"]
 texture = ExtResource("1_5xkcy")
@@ -11754,59 +11753,6 @@ sources/2 = SubResource("TileSetAtlasSource_6pjqa")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5n70b"]
 size = Vector2(32, 52)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_udryc"]
-atlas = ExtResource("11_7d5dh")
-region = Rect2(0, 0, 48, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1fmc0"]
-atlas = ExtResource("11_7d5dh")
-region = Rect2(48, 0, 48, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b8s8a"]
-atlas = ExtResource("11_7d5dh")
-region = Rect2(96, 0, 48, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ktf6p"]
-atlas = ExtResource("11_7d5dh")
-region = Rect2(144, 0, 48, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ithrf"]
-atlas = ExtResource("11_7d5dh")
-region = Rect2(192, 0, 48, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_si58k"]
-atlas = ExtResource("11_7d5dh")
-region = Rect2(240, 0, 48, 60)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_by11x"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_udryc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1fmc0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b8s8a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ktf6p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ithrf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_si58k")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgxof"]
-size = Vector2(17, 37)
-
 [node name="Footpath" type="Node2D"]
 y_sort_enabled = true
 
@@ -11903,35 +11849,6 @@ z_index = 1
 position = Vector2(-10, 14)
 shape = SubResource("RectangleShape2D_5n70b")
 
-[node name="npc1" type="Node2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="npc1"]
-position = Vector2(-31, -129)
-sprite_frames = SubResource("SpriteFrames_by11x")
-autoplay = "default"
-frame_progress = 0.344597
-
-[node name="Area2D" type="Area2D" parent="npc1" node_paths=PackedStringArray("player", "textholder")]
-position = Vector2(-32, -125)
-collision_layer = 3
-collision_mask = 3
-script = ExtResource("11_udryc")
-player = NodePath("../../Player")
-dialogue = "good day "
-textholder = NodePath("RichTextLabel")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="npc1/Area2D"]
-position = Vector2(1.5, 4.5)
-shape = SubResource("RectangleShape2D_qgxof")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="npc1/Area2D"]
-offset_left = -39.0
-offset_top = -48.0
-offset_right = 49.0
-offset_bottom = -8.0
-theme_override_fonts/normal_font = ExtResource("10_udryc")
-theme_override_font_sizes/bold_italics_font_size = 4
-theme_override_font_sizes/normal_font_size = 16
-
-[connection signal="body_entered" from="npc1/Area2D" to="npc1/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="npc1/Area2D" to="npc1/Area2D" method="_on_body_exited"]
+[node name="npc1" parent="." instance=ExtResource("11_7d5dh")]
+z_index = 1
+position = Vector2(-31, -131)
