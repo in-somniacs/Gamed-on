@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://dx8p3hekcol1c"]
+[gd_scene load_steps=49 format=4 uid="uid://dx8p3hekcol1c"]
 
 [ext_resource type="Texture2D" uid="uid://hwwa521btiao" path="res://scenes/tachyon/assets/Lo_bit_city_set.png" id="1_5xkcy"]
 [ext_resource type="Texture2D" uid="uid://qwx05nl3p8w1" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_jvccj"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b2e7836wsqbw1" path="res://scenes/tachyon/assets/spr_tile_itch.png" id="5_647yv"]
 [ext_resource type="Texture2D" uid="uid://dnvhuqrqvfac4" path="res://scenes/tachyon/assets/fdfgbfsgfdsgfd.png" id="6_2jpt3"]
 [ext_resource type="PackedScene" uid="uid://cpryjj6ky7t31" path="res://scenes/tachyon/scenes/character_body_2d.tscn" id="7_2jpt3"]
+[ext_resource type="Script" uid="uid://rixf2ctvpmu" path="res://scenes/tachyon/scripts/playerscript.gd" id="8_1fmc0"]
 [ext_resource type="Script" uid="uid://c4uwlhf8fc0el" path="res://scripts/switch_scenes.gd" id="8_5n70b"]
 [ext_resource type="PackedScene" uid="uid://btkj6y1uo00mr" path="res://scenes/interactable.tscn" id="9_7d5dh"]
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="10_udryc"]
@@ -11862,11 +11863,12 @@ tile_set = SubResource("TileSet_wlsod")
 [node name="Player" parent="." instance=ExtResource("7_2jpt3")]
 z_index = 5
 position = Vector2(33, -59)
+script = ExtResource("8_1fmc0")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 y_sort_enabled = true
 position = Vector2(0.769231, -25.3846)
-zoom = Vector2(1.2, 1.2)
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true

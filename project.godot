@@ -63,6 +63,8 @@ translation/add_separator=false
 
 [display]
 
+window/size/viewport_width=1710
+window/size/viewport_height=962
 window/stretch/scale=2.05
 
 [editor_plugins]
