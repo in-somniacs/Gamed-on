@@ -15,10 +15,10 @@ var quotes = [
 ]
 
 var load = [
-	"now loading",
-	"now loading.",
-	"now loading..",
-	"now loading..."
+	"loading now",
+	".loading now",
+	"..loading now",
+	"...loading now"
 	
 ]
 
@@ -35,7 +35,7 @@ func start_transition(scene_path: String):
 	#loading animation
 	for i in range(4):
 		await get_tree().create_timer(0.5).timeout # Delay for 0.5 seconds
-		loading = load[i]
+		loading.text = load[i]
 		
 	
 	# Wait a bit, then load
