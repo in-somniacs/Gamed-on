@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://2pcfe8gcwiyy"]
 
-[ext_resource type="Script" uid="uid://bjmmdimdhnjtw" path="res://scenes/tachyon/dialogue_system.gd" id="1_q3k7c"]
-[ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="2_h0kcr"]
+[ext_resource type="Script" uid="uid://bjmmdimdhnjtw" path="res://scenes/tachyon/scripts/dialogue_system.gd" id="1_t4cf3"]
+[ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="2_vkd7i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukwqh"]
 bg_color = Color(3.41704e-05, 0.000891014, 0.00114664, 1)
@@ -13,7 +13,7 @@ expand_margin_left = 2.0
 
 [node name="DialogueSystem" type="Node2D"]
 z_index = 4026
-script = ExtResource("1_q3k7c")
+script = ExtResource("1_t4cf3")
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 1092.0
@@ -38,12 +38,12 @@ size_flags_horizontal = 3
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/normal_font = ExtResource("2_h0kcr")
+theme_override_fonts/normal_font = ExtResource("2_vkd7i")
 bbcode_enabled = true
 scroll_active = false
 visible_characters_behavior = 1
 
-[node name="Button container" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="Button_container" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
 
