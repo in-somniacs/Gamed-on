@@ -1,6 +1,5 @@
-[gd_scene load_steps=14 format=3 uid="uid://bgx0kmq7a53mw"]
+[gd_scene load_steps=13 format=3 uid="uid://dnoih33g2f8qe"]
 
-[ext_resource type="Script" uid="uid://hlw4wqfmq3a1" path="res://scenes/tachyon/scenes/aracde_machine.gd" id="1_spevq"]
 [ext_resource type="Texture2D" uid="uid://jcbc36hkln5r" path="res://assets/ArcadeMachine/arcade-Sheet.png" id="1_uq78o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_spevq"]
@@ -75,7 +74,6 @@ radius = 58.0
 height = 168.0
 
 [node name="Aracde machine" type="CharacterBody2D"]
-script = ExtResource("1_spevq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k10wq")
