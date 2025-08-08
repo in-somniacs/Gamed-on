@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://dnoih33g2f8qe"]
+[gd_scene load_steps=14 format=3 uid="uid://dnoih33g2f8qe"]
 
+[ext_resource type="Script" uid="uid://hlw4wqfmq3a1" path="res://scenes/tachyon/scenes/aracde_machine.gd" id="1_spevq"]
 [ext_resource type="Texture2D" uid="uid://jcbc36hkln5r" path="res://assets/ArcadeMachine/arcade-Sheet.png" id="1_uq78o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_spevq"]
@@ -67,26 +68,29 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf1wy"]
-size = Vector2(98, 163)
+size = Vector2(150, 194)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_suwk3"]
 radius = 58.0
 height = 168.0
 
 [node name="Aracde machine" type="CharacterBody2D"]
+script = ExtResource("1_spevq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k10wq")
 animation = &"arcade"
 autoplay = "arcade"
 
-[node name="Detectingplayer" type="Area2D" parent="."]
+[node name="Chatdetection" type="Area2D" parent="."]
 
-[node name="detection" type="CollisionShape2D" parent="Detectingplayer"]
-visible = false
-position = Vector2(0, 4.5)
+[node name="chatbox" type="CollisionShape2D" parent="Chatdetection"]
+position = Vector2(-1, 5)
 shape = SubResource("RectangleShape2D_yf1wy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_suwk3")
+
+[connection signal="body_entered" from="Chatdetection" to="." method="_on_chatdetection_body_entered"]
+[connection signal="body_exited" from="Chatdetection" to="." method="_on_chatdetection_body_exited"]

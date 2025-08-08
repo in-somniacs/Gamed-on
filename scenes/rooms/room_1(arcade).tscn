@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c1uyajyie8jqy"]
+[gd_scene load_steps=22 format=3 uid="uid://c1uyajyie8jqy"]
 
 [ext_resource type="Texture2D" uid="uid://dyorw4v8lajnw" path="res://pacman1/assets/walls_floor.png" id="1_h0x7s"]
 [ext_resource type="Texture2D" uid="uid://jcbc36hkln5r" path="res://assets/ArcadeMachine/arcade-Sheet.png" id="2_7owwp"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cqyl2ukccfvpb" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist2.png" id="7_vexsr"]
 [ext_resource type="Texture2D" uid="uid://14p2wmxtlpeq" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist3.png" id="8_a4812"]
 [ext_resource type="Texture2D" uid="uid://bixor5qpgkc1n" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist4.png" id="9_tvvvl"]
+[ext_resource type="PackedScene" uid="uid://cpryjj6ky7t31" path="res://scenes/tachyon/scenes/character_body_2d.tscn" id="11_vexsr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7owwp"]
 texture = ExtResource("1_h0x7s")
@@ -14390,10 +14391,19 @@ sources/8 = SubResource("TileSetAtlasSource_3b0a8")
 tile_set = SubResource("TileSet_1e1x7")
 format = 2
 
-[node name="Aracde machine" parent="." instance=ExtResource("3_1e1x7")]
+[node name="Aracde machine" parent="." node_paths=PackedStringArray("player", "popup") instance=ExtResource("3_1e1x7")]
 position = Vector2(150, -18)
+scale = Vector2(0.6, 0.6)
+player = NodePath("../Player")
+popup = NodePath("../Player/popup")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Player" parent="." instance=ExtResource("11_vexsr")]
+position = Vector2(-10, -28)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(7.69231, 21.5385)
+scale = Vector2(0.769231, 0.769231)
+zoom = Vector2(1.8, 1.8)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
