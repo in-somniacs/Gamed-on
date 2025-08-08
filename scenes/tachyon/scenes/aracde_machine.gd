@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export var player: CharacterBody2D 
 @export var popup: NinePatchRect
+@export var timeline: String
 
 @onready var chatbox: CollisionShape2D = $Chatdetection/chatbox
 #@onready var res_chat: CollisionPolygon2D = $respawn_chat/res_chat
@@ -20,7 +21,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if player_in_area:
 		if Input.is_action_pressed("dialogic_default_action"):
-			run_dialogue("res://timelines/consoleget.dtl")
+			run_dialogue(timeline)
 			chatbox.disabled = true
 			
 			
