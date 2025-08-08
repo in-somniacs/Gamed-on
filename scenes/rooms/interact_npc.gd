@@ -5,6 +5,7 @@ extends Node2D
 @export var dialogue: String
 @onready var chatbox: CollisionShape2D = $Chatdetection/chatbox
 @onready var res_chat: CollisionPolygon2D = $respawn_chat/res_chat
+@export var popup: NinePatchRect
 
 
 var player_in_area = false
@@ -26,10 +27,12 @@ func _process(delta: float) -> void:
 func _on_chatdetection_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		player_in_area = true
+		popup.visible = true
 		
 func _on_chatdetection_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):
 		player_in_area = false 
+		popup.visible = false
 		
 		
 		

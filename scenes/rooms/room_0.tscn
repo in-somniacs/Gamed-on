@@ -1057,13 +1057,14 @@ position = Vector2(202, 29)
 [node name="floor_1" type="Node2D" parent="stairs"]
 position = Vector2(134, 128)
 
-[node name="door" type="Area2D" parent="." node_paths=PackedStringArray("hint", "player")]
+[node name="door" type="Area2D" parent="." node_paths=PackedStringArray("hint", "player", "popup")]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("10_kf5e4")
 hint = NodePath("RichTextLabel")
 player = NodePath("../Player")
 next_scene = "res://scenes/rooms/footpath.tscn"
+popup = NodePath("../Player/popup")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
 z_index = 1

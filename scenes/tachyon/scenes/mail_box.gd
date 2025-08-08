@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 @export var player: CharacterBody2D 
+@export var popup: NinePatchRect
 
 @onready var chatbox: CollisionShape2D = $Chatdetection/chatbox
 #@onready var res_chat: CollisionPolygon2D = $respawn_chat/res_chat
@@ -12,7 +13,8 @@ var player_in_area = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	popup.visible = false
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -26,10 +28,13 @@ func _process(_delta: float) -> void:
 func _on_chatdetection_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		player_in_area = true
+		popup.visible = true
+		
 		
 func _on_chatdetection_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):
 		player_in_area = false 
+		popup.visible = false
 		
 		
 		
