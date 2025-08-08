@@ -1,8 +1,60 @@
-[gd_scene load_steps=4 format=3 uid="uid://cawx1q5j7t8m4"]
+[gd_scene load_steps=8 format=3 uid="uid://cawx1q5j7t8m4"]
 
 [ext_resource type="Script" uid="uid://bctrubyj1y1p8" path="res://scripts/transition_manager.gd" id="1_nk83w"]
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="2_sb1xu"]
 [ext_resource type="AudioStream" uid="uid://b31mgvueb37lj" path="res://assets/sfx/loading.wav" id="3_t501d"]
+
+[sub_resource type="Animation" id="Animation_t501d"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b22fh"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xud6u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c6mvt"]
+_data = {
+&"RESET": SubResource("Animation_xud6u"),
+&"fade_in": SubResource("Animation_t501d"),
+&"fade_out": SubResource("Animation_b22fh")
+}
 
 [node name="transition_manager" type="CanvasLayer"]
 script = ExtResource("1_nk83w")
@@ -20,32 +72,34 @@ size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="loading" type="Label" parent="."]
+[node name="loading" type="Label" parent="ColorRect"]
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -155.0
-offset_top = -41.0
-offset_right = -25.0
-offset_bottom = -19.0
+offset_left = -154.983
+offset_top = -41.0088
+offset_right = -24.9829
+offset_bottom = -19.0088
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_sb1xu")
 theme_override_font_sizes/font_size = 21
 text = "loading now"
 
-[node name="quote" type="Label" parent="."]
+[node name="quote" type="Label" parent="ColorRect"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = -11.0
-offset_right = 86.0
-offset_bottom = 26.0
+offset_left = -82.9915
+offset_top = -11.0044
+offset_right = 86.0085
+offset_bottom = 25.9956
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_sb1xu")
@@ -53,7 +107,7 @@ theme_override_font_sizes/font_size = 16
 autowrap_mode = 2
 
 [node name="load_delay" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 4.0
 one_shot = true
 
 [node name="sound" type="AudioStreamPlayer2D" parent="."]
@@ -62,4 +116,10 @@ volume_db = -1.981
 autoplay = true
 bus = &"sfx"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_c6mvt")
+}
+
 [connection signal="timeout" from="load_delay" to="." method="_on_load_delay_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -48,7 +48,7 @@ animations/leave_default_wait=true
 animations/cross_fade_default_length=0.5
 choices/autofocus_first=true
 choices/delay=0.2
-choices/reveal_delay=0
+choices/reveal_delay=0.3
 choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
@@ -63,11 +63,12 @@ translation/file_mode=1
 translation/translation_folder=""
 translation/save_mode=0
 translation/add_separator=false
+audio/type_sound_bus="sfx"
 
 [display]
 
-window/size/viewport_width=1710
-window/size/viewport_height=962
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/scale=2.05
 
 [editor_plugins]

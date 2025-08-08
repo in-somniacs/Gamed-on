@@ -31,8 +31,6 @@ func _on_chatdetection_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):
 		player_in_area = false 
 		
-		chatbox.disabled = false
-		
 		
 		
 
