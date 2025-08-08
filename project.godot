@@ -75,7 +75,7 @@ window/stretch/scale=2.05
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/better-terrain/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/gaea/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/gloot/plugin.cfg")
 
 [gui]
 

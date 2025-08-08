@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlf1qk3gpkus0"]
+
+[ext_resource type="Script" uid="uid://5hfig5q3x8it" path="res://addons/gloot/core/inventory.gd" id="1_d3j7h"]
+[ext_resource type="JSON" path="res://scenes/tachyon/assets/inventory_items.json" id="2_pkkm2"]
+
+[node name="Inventory" type="Node"]
+script = ExtResource("1_d3j7h")
+protoset = ExtResource("2_pkkm2")
+_serialized_format = {
+"node_name": "Inventory",
+"protoset": "null"
+}
+metadata/_custom_type_script = "uid://5hfig5q3x8it"

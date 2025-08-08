@@ -1,0 +1,200 @@
+[gd_scene load_steps=11 format=3 uid="uid://b2owv7hirds6s"]
+
+[ext_resource type="Texture2D" uid="uid://marv3em7xope" path="res://images/item_book_blue.png" id="2_q4mul"]
+[ext_resource type="Texture2D" uid="uid://b87v12g1icu3u" path="res://images/item_scroll_blue.png" id="3_54nof"]
+[ext_resource type="Script" uid="uid://c6foq06vjboim" path="res://examples/inventory_stacked_transfer.gd" id="4"]
+[ext_resource type="Script" uid="uid://bu5mhp7ayfx4j" path="res://addons/gloot/ui/ctrl_inventory.gd" id="4_nim7g"]
+[ext_resource type="Script" uid="uid://bikhe74xfo7u4" path="res://addons/gloot/ui/ctrl_inventory_capacity.gd" id="5_v7bum"]
+[ext_resource type="Script" uid="uid://trghhrgo3fax" path="res://addons/gloot/ui/ctrl_item_slot.gd" id="6_otfc2"]
+[ext_resource type="JSON" path="res://tests/data/protoset_stacks.json" id="6_v6n8v"]
+[ext_resource type="Script" uid="uid://c6wangdtwc4m7" path="res://addons/gloot/core/item_slot.gd" id="8_worre"]
+[ext_resource type="Script" uid="uid://5hfig5q3x8it" path="res://addons/gloot/core/inventory.gd" id="9_1flkn"]
+[ext_resource type="Script" uid="uid://ba5wmjtc5l8i3" path="res://addons/gloot/core/constraints/weight_constraint.gd" id="10_i7fg4"]
+
+[node name="InventoryStackedTransfer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CtrlInventoryLeft" type="ItemList" parent="VBoxContainer/HBoxContainer/VBoxContainer" node_paths=PackedStringArray("inventory")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+item_count = 3
+item_0/text = "minimal_item"
+item_1/text = "big_item"
+item_1/icon = ExtResource("2_q4mul")
+item_2/text = "stackable_item (x10)"
+item_2/icon = ExtResource("3_54nof")
+script = ExtResource("4_nim7g")
+inventory = NodePath("../../../../InventoryLeft")
+
+[node name="CtrlInventoryCapacity" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer" node_paths=PackedStringArray("inventory")]
+custom_minimum_size = Vector2(0, 23)
+layout_mode = 2
+script = ExtResource("5_v7bum")
+inventory = NodePath("../../../../InventoryLeft")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CtrlInventoryRight" type="ItemList" parent="VBoxContainer/HBoxContainer/VBoxContainer2" node_paths=PackedStringArray("inventory")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+item_count = 3
+item_0/text = "minimal_item"
+item_1/text = "big_item"
+item_1/icon = ExtResource("2_q4mul")
+item_2/text = "stackable_item (x10)"
+item_2/icon = ExtResource("3_54nof")
+script = ExtResource("4_nim7g")
+inventory = NodePath("../../../../InventoryRight")
+
+[node name="CtrlInventoryCapacity" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2" node_paths=PackedStringArray("inventory")]
+custom_minimum_size = Vector2(0, 23)
+layout_mode = 2
+script = ExtResource("5_v7bum")
+inventory = NodePath("../../../../InventoryRight")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="CtrlItemSlot" type="Control" parent="VBoxContainer/HBoxContainer3/PanelContainer" node_paths=PackedStringArray("item_slot")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("6_otfc2")
+item_slot = NodePath("../../../../ItemSlot")
+
+[node name="BtnEquip" type="Button" parent="VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Equip"
+
+[node name="BtnUnequip" type="Button" parent="VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Unquip"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Use the buttons above to equip/unequip an item from the left inventory.
+Use the buttons below to transfer items from one inventory to the other."
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="BtnRToL" type="Button" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<<<"
+
+[node name="BtnLToR" type="Button" parent="VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = ">>>"
+
+[node name="ItemSlot" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("8_worre")
+protoset = ExtResource("6_v6n8v")
+
+[node name="InventoryLeft" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("9_1flkn")
+protoset = ExtResource("6_v6n8v")
+_serialized_format = {
+"constraints": {
+"res://addons/gloot/core/constraints/weight_constraint.gd": {
+"data": {
+"capacity": 50.0
+},
+"name": &"WeightConstraint"
+}
+},
+"items": [{
+"protoset": "res://tests/data/protoset_stacks.json",
+"prototype_id": "minimal_item"
+}, {
+"protoset": "res://tests/data/protoset_stacks.json",
+"prototype_id": "big_item"
+}, {
+"properties": {
+"max_stack_size": {
+"type": 3,
+"value": "100.0"
+}
+},
+"protoset": "res://tests/data/protoset_stacks.json",
+"prototype_id": "stackable_item"
+}],
+"node_name": "InventoryLeft",
+"protoset": "res://tests/data/protoset_stacks.json"
+}
+
+[node name="WeightConstraint" type="Node" parent="InventoryLeft"]
+script = ExtResource("10_i7fg4")
+capacity = 50.0
+
+[node name="InventoryRight" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("9_1flkn")
+protoset = ExtResource("6_v6n8v")
+_serialized_format = {
+"constraints": {
+"res://addons/gloot/core/constraints/weight_constraint.gd": {
+"data": {
+"capacity": 50.0
+},
+"name": &"WeightConstraint"
+}
+},
+"items": [{
+"protoset": "res://tests/data/protoset_stacks.json",
+"prototype_id": "minimal_item"
+}, {
+"protoset": "res://tests/data/protoset_stacks.json",
+"prototype_id": "big_item"
+}, {
+"properties": {
+"max_stack_size": {
+"type": 3,
+"value": "100.0"
+}
+},
+"protoset": "res://tests/data/protoset_stacks.json",
+"prototype_id": "stackable_item"
+}],
+"node_name": "InventoryRight",
+"protoset": "res://tests/data/protoset_stacks.json"
+}
+
+[node name="WeightConstraint" type="Node" parent="InventoryRight"]
+script = ExtResource("10_i7fg4")
+capacity = 50.0

@@ -1,0 +1,14 @@
+{
+	"items": [
+		{
+			"id": "001",
+			"name": "Console",
+			"quantity": 1
+		},
+		{
+			"id": "potion_001",
+			"name": "Health Potion",
+			"quantity": 1
+		}
+	]
+}
