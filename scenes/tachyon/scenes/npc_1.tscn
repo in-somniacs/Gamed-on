@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://kh5vhifdrhtf"]
+
+[ext_resource type="Texture2D" uid="uid://0yg7pdaljm6x" path="res://assets/npc1.png" id="1_7k8na"]
+[ext_resource type="Script" uid="uid://cuq3v26blnyc2" path="res://scenes/rooms/interact_npc.gd" id="2_2xpkg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8mjq"]
+atlas = ExtResource("1_7k8na")
+region = Rect2(0, 0, 48, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfy6s"]
+atlas = ExtResource("1_7k8na")
+region = Rect2(48, 0, 48, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7k8na"]
+atlas = ExtResource("1_7k8na")
+region = Rect2(96, 0, 48, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xpkg"]
+atlas = ExtResource("1_7k8na")
+region = Rect2(144, 0, 48, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7chra"]
+atlas = ExtResource("1_7k8na")
+region = Rect2(192, 0, 48, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7geb3"]
+atlas = ExtResource("1_7k8na")
+region = Rect2(240, 0, 48, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5idi2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8mjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfy6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7k8na")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xpkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7chra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7geb3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tq26g"]
+radius = 16.0312
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jfy6s"]
+radius = 14.0357
+
+[node name="npc1" type="CharacterBody2D"]
+script = ExtResource("2_2xpkg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5idi2")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.77242
+
+[node name="Chatdetection" type="Area2D" parent="."]
+disable_mode = 1
+
+[node name="chatbox" type="CollisionShape2D" parent="Chatdetection"]
+shape = SubResource("CircleShape2D_tq26g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_jfy6s")
+
+[node name="respawn_chat" type="Area2D" parent="."]
+
+[node name="res_chat" type="CollisionPolygon2D" parent="respawn_chat"]
+polygon = PackedVector2Array(-12, -11, -15, -7, -16, -3, -16, 2, -14, 9, -10, 13, -3, 16, 4, 16, 11, 12, 15, 8, 16, 4, 16, -1, 15, -7, 12, -11, 8, -14, 4, -16, 0, -16, -4, -16, -8, -14, -12, -12, -13, -14, -15, -16, -9, -20, -2, -21, 5, -21, 9, -20, 14, -15, 16, -12, 19, -8, 21, -4, 20, 3, 18, 9, 14, 14, 8, 16, 3, 20, -8, 19, -15, 15, -18, 11, -21, 5, -21, 0, -21, -5, -19, -10, -16, -15)
+
+[connection signal="body_entered" from="Chatdetection" to="." method="_on_chatdetection_body_entered"]
+[connection signal="body_exited" from="Chatdetection" to="." method="_on_chatdetection_body_exited"]
+[connection signal="body_entered" from="respawn_chat" to="." method="_on_respawn_chat_body_entered"]
+[connection signal="body_exited" from="respawn_chat" to="." method="_on_respawn_chat_body_exited"]

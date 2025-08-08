@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b0jsoj5phie5g"]
+
+[ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="1_xsmvr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kiqgm"]
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 0.0909423, 0.0594644, 1)
+Button/constants/outline_size = 12
+Button/font_sizes/font_size = 17
+Button/fonts/font = ExtResource("1_xsmvr")
+Button/styles/normal = SubResource("StyleBoxEmpty_kiqgm")
+LineEdit/fonts/font = ExtResource("1_xsmvr")
+TextEdit/fonts/font = ExtResource("1_xsmvr")

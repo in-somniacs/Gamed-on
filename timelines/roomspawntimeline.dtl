@@ -1,0 +1,3 @@
+Player: hello 
+[text_input text="enter your name nigga" var="player_name"]
+hello {{player_name}} 

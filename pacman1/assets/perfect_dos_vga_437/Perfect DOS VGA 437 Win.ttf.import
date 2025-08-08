@@ -1,0 +1,35 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://c2gqxnri5l50y"
+path="res://.godot/imported/Perfect DOS VGA 437 Win.ttf-977b8179c23c123e6ac3961fda0d4415.fontdata"
+
+[deps]
+
+source_file="res://pacman1/assets/perfect_dos_vga_437/Perfect DOS VGA 437 Win.ttf"
+dest_files=["res://.godot/imported/Perfect DOS VGA 437 Win.ttf-977b8179c23c123e6ac3961fda0d4415.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}
