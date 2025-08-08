@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://dx8p3hekcol1c"]
+[gd_scene load_steps=52 format=4 uid="uid://dx8p3hekcol1c"]
 
 [ext_resource type="Texture2D" uid="uid://hwwa521btiao" path="res://scenes/tachyon/assets/Lo_bit_city_set.png" id="1_5xkcy"]
 [ext_resource type="Texture2D" uid="uid://qwx05nl3p8w1" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_jvccj"]
@@ -7,10 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://b2e7836wsqbw1" path="res://scenes/tachyon/assets/spr_tile_itch.png" id="5_647yv"]
 [ext_resource type="Texture2D" uid="uid://dnvhuqrqvfac4" path="res://scenes/tachyon/assets/fdfgbfsgfdsgfd.png" id="6_2jpt3"]
 [ext_resource type="PackedScene" uid="uid://cpryjj6ky7t31" path="res://scenes/tachyon/scenes/character_body_2d.tscn" id="7_2jpt3"]
+[ext_resource type="Script" uid="uid://dgrh7e813kbg8" path="res://scenes/tachyon/scenes/mail_box.gd" id="7_udryc"]
 [ext_resource type="Script" uid="uid://c4uwlhf8fc0el" path="res://scripts/switch_scenes.gd" id="8_5n70b"]
 [ext_resource type="PackedScene" uid="uid://btkj6y1uo00mr" path="res://scenes/interactable.tscn" id="9_7d5dh"]
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="10_udryc"]
-[ext_resource type="PackedScene" uid="uid://kh5vhifdrhtf" path="res://scenes/tachyon/scenes/npc_1.tscn" id="11_7d5dh"]
+[ext_resource type="Script" uid="uid://cuq3v26blnyc2" path="res://scenes/rooms/interact_npc.gd" id="12_1fmc0"]
+[ext_resource type="Texture2D" uid="uid://0yg7pdaljm6x" path="res://assets/npc1.png" id="13_b8s8a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_647yv"]
 texture = ExtResource("1_5xkcy")
@@ -11750,8 +11752,69 @@ sources/0 = SubResource("TileSetAtlasSource_bchwo")
 sources/1 = SubResource("TileSetAtlasSource_tj4wy")
 sources/2 = SubResource("TileSetAtlasSource_6pjqa")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yeq7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udryc"]
+size = Vector2(8, 12)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5n70b"]
 size = Vector2(32, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8mjq"]
+atlas = ExtResource("13_b8s8a")
+region = Rect2(0, 0, 48, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfy6s"]
+atlas = ExtResource("13_b8s8a")
+region = Rect2(48, 0, 48, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7k8na"]
+atlas = ExtResource("13_b8s8a")
+region = Rect2(96, 0, 48, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xpkg"]
+atlas = ExtResource("13_b8s8a")
+region = Rect2(144, 0, 48, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7chra"]
+atlas = ExtResource("13_b8s8a")
+region = Rect2(192, 0, 48, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7geb3"]
+atlas = ExtResource("13_b8s8a")
+region = Rect2(240, 0, 48, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5idi2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8mjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfy6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7k8na")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xpkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7chra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7geb3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tq26g"]
+radius = 16.0312
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jfy6s"]
+radius = 14.0357
 
 [node name="Footpath" type="Node2D"]
 y_sort_enabled = true
@@ -11805,9 +11868,21 @@ tile_set = SubResource("TileSet_70igf")
 tile_map_data = PackedByteArray("AAAXAP//AgAQAB4AAAAfAPv/AgABAAsAAAA=")
 tile_set = SubResource("TileSet_wlsod")
 
+[node name="Mail box" type="CharacterBody2D" parent="TileMap/Trees"]
+position = Vector2(56, -56)
+script = ExtResource("7_udryc")
+
+[node name="Chatdetection" type="Area2D" parent="TileMap/Trees/Mail box"]
+
+[node name="chatbox" type="CollisionShape2D" parent="TileMap/Trees/Mail box/Chatdetection"]
+shape = SubResource("RectangleShape2D_7yeq7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Trees/Mail box"]
+shape = SubResource("RectangleShape2D_udryc")
+
 [node name="Player" parent="." instance=ExtResource("7_2jpt3")]
 z_index = 5
-position = Vector2(33, -59)
+position = Vector2(30, -54)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 y_sort_enabled = true
@@ -11849,6 +11924,35 @@ z_index = 1
 position = Vector2(-10, 14)
 shape = SubResource("RectangleShape2D_5n70b")
 
-[node name="npc1" parent="." instance=ExtResource("11_7d5dh")]
+[node name="npc1" type="CharacterBody2D" parent="."]
 z_index = 1
 position = Vector2(-31, -131)
+script = ExtResource("12_1fmc0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="npc1"]
+sprite_frames = SubResource("SpriteFrames_5idi2")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.77242
+
+[node name="Chatdetection" type="Area2D" parent="npc1"]
+disable_mode = 1
+
+[node name="chatbox" type="CollisionShape2D" parent="npc1/Chatdetection"]
+shape = SubResource("CircleShape2D_tq26g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc1"]
+visible = false
+shape = SubResource("CircleShape2D_jfy6s")
+
+[node name="respawn_chat" type="Area2D" parent="npc1"]
+
+[node name="res_chat" type="CollisionPolygon2D" parent="npc1/respawn_chat"]
+polygon = PackedVector2Array(-12, -11, -15, -7, -16, -3, -16, 2, -14, 9, -10, 13, -3, 16, 4, 16, 11, 12, 15, 8, 16, 4, 16, -1, 15, -7, 12, -11, 8, -14, 4, -16, 0, -16, -4, -16, -8, -14, -12, -12, -13, -14, -15, -16, -9, -20, -2, -21, 5, -21, 9, -20, 14, -15, 16, -12, 19, -8, 21, -4, 20, 3, 18, 9, 14, 14, 8, 16, 3, 20, -8, 19, -15, 15, -18, 11, -21, 5, -21, 0, -21, -5, -19, -10, -16, -15)
+
+[connection signal="body_entered" from="TileMap/Trees/Mail box/Chatdetection" to="TileMap/Trees/Mail box" method="_on_chatdetection_body_entered"]
+[connection signal="body_exited" from="TileMap/Trees/Mail box/Chatdetection" to="TileMap/Trees/Mail box" method="_on_chatdetection_body_exited"]
+[connection signal="body_entered" from="npc1/Chatdetection" to="npc1" method="_on_chatdetection_body_entered"]
+[connection signal="body_exited" from="npc1/Chatdetection" to="npc1" method="_on_chatdetection_body_exited"]
+[connection signal="body_entered" from="npc1/respawn_chat" to="npc1" method="_on_respawn_chat_body_entered"]
+[connection signal="body_exited" from="npc1/respawn_chat" to="npc1" method="_on_respawn_chat_body_exited"]

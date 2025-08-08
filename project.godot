@@ -25,14 +25,16 @@ Footstep="*res://scripts/footstep.gd"
 
 directories/dch_directory={
 "NPCfootpath": "res://timelines/NPCfootpath.dch",
-"Player": "res://timelines/Player.dch"
+"Player": "res://timelines/Player.dch",
+"consolechar": "res://timelines/consolechar.dch"
 }
 directories/dtl_directory={
+"consoleget": "res://timelines/consoleget.dtl",
 "footpathtimeline": "res://timelines/footpathtimeline.dtl",
 "roomspawntimeline": "res://timelines/roomspawntimeline.dtl"
 }
 layout/style_list=["res://scenes/tachyon/assets/speakertextboxstyle.tres", "res://scenes/tachyon/assets/floatingbubblestyle.tres", "res://assets/defaulttextbox.tres"]
-layout/default_style="res://scenes/tachyon/assets/speakertextboxstyle.tres"
+layout/default_style="res://assets/defaulttextbox.tres"
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.03
 text/initial_text_reveal_skippable=true

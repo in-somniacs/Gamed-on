@@ -6,11 +6,11 @@
 &"custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
-"style": "speakertextboxstyle"
+"style": "defaulttextbox"
 },
 &"default_portrait": "NPCfootpath",
 &"description": "",
-&"display_name": "NPCfootpath",
+&"display_name": "Timmy",
 &"mirror": false,
 &"nicknames": ["npc"],
 &"offset": Vector2(0, 0),

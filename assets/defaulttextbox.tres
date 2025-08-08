@@ -34,6 +34,13 @@ overrides = {}
 script = ExtResource("1_ne8mg")
 scene = ExtResource("5_lnshf")
 overrides = {
+"box_size": "Vector2(400, 100)",
+"name_label_font": "\"res://assets/font/Perfect DOS VGA 437 Win.ttf\"",
+"name_label_use_global_font": "false",
+"normal_font": "\"res://assets/font/Perfect DOS VGA 437 Win.ttf\"",
+"text_size": "18.0",
+"text_use_global_font": "false",
+"text_use_global_size": "false",
 "typing_sounds_mode": "1",
 "typing_sounds_volume": "1.0"
 }
@@ -75,4 +82,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_ne8mg")]([])
-metadata/_latest_layer = "10"
+metadata/_latest_layer = ""

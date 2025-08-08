@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://duiiwpxjift3k" path="res://scenes/menu/main_menu.gd" id="1_hj162"]
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="1_nl8w3"]
 [ext_resource type="AudioStream" uid="uid://csnngagonusk6" path="res://assets/music/mainmenu_music.mp3" id="2_3rkf3"]
-[ext_resource type="Theme" path="res://assets/main_menu.tres" id="2_kiqgm"]
+[ext_resource type="Theme" uid="uid://b0jsoj5phie5g" path="res://assets/main_menu.tres" id="2_kiqgm"]
 [ext_resource type="Script" path="res://scripts/menu_particles.gd" id="3_247la"]
 
 [sub_resource type="Gradient" id="Gradient_nl8w3"]
