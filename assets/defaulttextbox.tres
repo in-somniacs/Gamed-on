@@ -41,8 +41,9 @@ overrides = {
 "text_size": "18.0",
 "text_use_global_font": "false",
 "text_use_global_size": "false",
-"typing_sounds_mode": "1",
-"typing_sounds_volume": "1.0"
+"typing_sounds_mode": "2",
+"typing_sounds_sounds_folder": "\"res://assets/sfx/typing\"",
+"typing_sounds_volume": "-20.0"
 }
 
 [sub_resource type="Resource" id="Resource_nei51"]
