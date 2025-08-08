@@ -1,7 +1,8 @@
-[gd_scene load_steps=44 format=3 uid="uid://cpryjj6ky7t31"]
+[gd_scene load_steps=45 format=3 uid="uid://cpryjj6ky7t31"]
 
 [ext_resource type="Texture2D" uid="uid://2jp28sdhxsgh" path="res://scenes/tachyon/assets/player.png" id="1_t0ufk"]
 [ext_resource type="Script" uid="uid://rixf2ctvpmu" path="res://scenes/tachyon/scripts/playerscript.gd" id="1_yvxj1"]
+[ext_resource type="Texture2D" uid="uid://crfgkv6qnr0mj" path="res://assets/pop.png" id="3_yvxj1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_13nwq"]
 atlas = ExtResource("1_t0ufk")
@@ -336,5 +337,14 @@ autostart = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 bus = &"sfx"
+
+[node name="popup" type="NinePatchRect" parent="."]
+visible = false
+offset_left = -3.07692
+offset_top = -11.5385
+offset_right = 3.92308
+offset_bottom = -4.53846
+texture = ExtResource("3_yvxj1")
+region_rect = Rect2(0, 0, 32, 32)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

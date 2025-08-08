@@ -4,10 +4,11 @@
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="1_nl8w3"]
 [ext_resource type="AudioStream" uid="uid://csnngagonusk6" path="res://assets/music/mainmenu_music.mp3" id="2_3rkf3"]
 [ext_resource type="Theme" uid="uid://b0jsoj5phie5g" path="res://assets/main_menu.tres" id="2_kiqgm"]
-[ext_resource type="Script" path="res://scripts/menu_particles.gd" id="3_247la"]
+[ext_resource type="Script" uid="uid://btgcjun3id0ip" path="res://scripts/menu_particles.gd" id="3_247la"]
 
 [sub_resource type="Gradient" id="Gradient_nl8w3"]
-colors = PackedColorArray(0, 0, 0, 1, 0.46519, 0.454647, 0.999998, 1)
+offsets = PackedFloat32Array(0, 0.983607)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_3rkf3"]
 gradient = SubResource("Gradient_nl8w3")
@@ -162,14 +163,14 @@ layout_mode = 2
 
 [node name="VSeparator" type="VSeparator" parent="menu/VBoxContainer/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(162.865, 0)
 layout_mode = 2
 
 [node name="tagline" type="Label" parent="menu/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.469494, 0.401435, 1)
 theme_override_fonts/font = ExtResource("1_nl8w3")
-text = "the game plays you...."
+text = "console that plays you.."
 
 [node name="HSeparator" type="HSeparator" parent="menu/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
