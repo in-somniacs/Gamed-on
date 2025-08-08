@@ -127,4 +127,5 @@ script = ExtResource("3_11puy")
 textbox_root = NodePath("../../..")
 
 [node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="Anchor/Panel/HBox/VBoxContainer/DialogicNode_DialogText"]
+bus = &"sfx"
 script = ExtResource("5_sr2qw")

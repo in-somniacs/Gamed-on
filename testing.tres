@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=6 format=3 uid="uid://d121poeovh4b5"]
+
+[ext_resource type="Script" uid="uid://ckntj86xveyb2" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_m5cqh"]
+[ext_resource type="PackedScene" uid="uid://by6waso0mjpjp" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/textbox_with_speaker_portrait.tscn" id="2_ldmi0"]
+[ext_resource type="Script" uid="uid://h2fpvf8bvqp0" path="res://addons/dialogic/Resources/dialogic_style.gd" id="2_vtw56"]
+
+[sub_resource type="Resource" id="Resource_ldmi0"]
+script = ExtResource("1_m5cqh")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_vtw56"]
+script = ExtResource("1_m5cqh")
+scene = ExtResource("2_ldmi0")
+overrides = {}
+
+[resource]
+script = ExtResource("2_vtw56")
+name = "testing"
+layer_list = Array[String](["10"])
+layer_info = {
+"": SubResource("Resource_ldmi0"),
+"10": SubResource("Resource_vtw56")
+}
+base_overrides = {}
+layers = Array[ExtResource("1_m5cqh")]([])
+metadata/_latest_layer = "10"
