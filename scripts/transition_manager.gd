@@ -25,6 +25,7 @@ var load = [
 
 func start_transition(next_scene_path: String):
 	anim.play("fade_in")
+	
 
 	await anim.animation_finished
 	get_tree().change_scene_to_file(next_scene_path)
@@ -60,3 +61,4 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 func _on_load_delay_timeout() -> void:
 	anim.play("fade_out")
+	
