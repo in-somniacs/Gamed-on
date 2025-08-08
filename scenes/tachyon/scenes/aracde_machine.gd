@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export var player: CharacterBody2D 
 @export var popup: NinePatchRect
+@export var timeline: String
 
 @onready var chatbox: CollisionShape2D = $Chatdetection/chatbox
 #@onready var res_chat: CollisionPolygon2D = $respawn_chat/res_chat
