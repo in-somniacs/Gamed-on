@@ -1,5 +1,5 @@
 extends Control
-@onready var inventory: Inventory = preload("res://items/inventory.tres")
+@onready var inventory: In = preload("res://items/inventory.tres")
 @onready var slots: Array = $NinePatchRect/HBoxContainer/GridContainer.get_children()
 var isopen = false
 
