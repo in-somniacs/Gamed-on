@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://dokjgivotv4v4"
+=======
+uid="uid://byvo1rrw2w8l5"
+>>>>>>> parent of bca8038 (Merge branch 'tachyon-branch' into goldship)
 valid=false
 
 [deps]

@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://cuf5bokxree75"
+=======
+uid="uid://b2p0crdy0qa53"
+>>>>>>> parent of bca8038 (Merge branch 'tachyon-branch' into goldship)
 path="res://.godot/imported/bird_jump_animation.png-fb8323f43b043c1a3ddfcd223c4ff2bd.ctex"
 metadata={
 "vram_texture": false

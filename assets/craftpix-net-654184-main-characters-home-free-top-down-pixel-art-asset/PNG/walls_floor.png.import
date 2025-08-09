@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://dupddbwe4mpid"
+=======
+uid="uid://brhfllp3q8i63"
+>>>>>>> parent of bca8038 (Merge branch 'tachyon-branch' into goldship)
 path="res://.godot/imported/walls_floor.png-f06ac1b2b50149e03268e8b6f550eb28.ctex"
 metadata={
 "vram_texture": false
