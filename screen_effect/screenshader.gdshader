@@ -7,6 +7,7 @@
 shader_type canvas_item;
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
+<<<<<<< HEAD
 // 振動の強さ
 uniform float shake_power = 0.03;
 // 振動率
@@ -17,6 +18,10 @@ uniform float shake_speed = 5.0;
 uniform float shake_block_size = 30.5;
 // 色の分離率
 uniform float shake_color_rate : hint_range( 0.0, 1.0 ) = 0.01;
+=======
+const float curvature = 10.0;
+const float vignette_multiplier = 0.6;
+>>>>>>> parent of bd07785 (Merge branch 'tachyon-branch' into goldship)
 
 float random( float seed )
 {
