@@ -7,6 +7,7 @@ extends Node2D
 @onready var res_chat: CollisionPolygon2D = $respawn_chat/res_chat
 @export var popup: NinePatchRect
 @onready var shader_mesh : MeshInstance2D = $"../../../CanvasLayer/crt and glitch"
+@onready var inv = preload("res://items/inventory.tres")
 
 var player_in_area = false
 
@@ -21,7 +22,9 @@ func _process(delta: float) -> void:
 	if player_in_area:
 		if Input.is_action_pressed("dialogic_default_action"):
 			run_dialogue(dialogue)
+			inv.items[1] = load("res://items/ps.tres")
 			chatbox.disabled = true
+			ResourceSaver.save(inv)
 			
 			
 			
