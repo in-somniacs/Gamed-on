@@ -1,7 +1,8 @@
-[gd_scene load_steps=45 format=3 uid="uid://cpryjj6ky7t31"]
+[gd_scene load_steps=46 format=3 uid="uid://cpryjj6ky7t31"]
 
 [ext_resource type="Texture2D" uid="uid://2jp28sdhxsgh" path="res://scenes/tachyon/assets/player.png" id="1_t0ufk"]
 [ext_resource type="Script" uid="uid://rixf2ctvpmu" path="res://scenes/tachyon/scripts/playerscript.gd" id="1_yvxj1"]
+[ext_resource type="Resource" uid="uid://dfs48fumekbte" path="res://items/inventory.tres" id="2_13nwq"]
 [ext_resource type="Texture2D" uid="uid://crfgkv6qnr0mj" path="res://assets/pop.png" id="3_yvxj1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_13nwq"]
@@ -322,6 +323,7 @@ radius = 6.0
 y_sort_enabled = true
 scale = Vector2(1.3, 1.3)
 script = ExtResource("1_yvxj1")
+Inventory = ExtResource("2_13nwq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_smgy3")
