@@ -40,10 +40,3 @@ func _on_chatdetection_body_exited(body: Node2D) -> void:
 func run_dialogue(dialogue_string):
 	Dialogic.start(dialogue_string)
 	
-
-func _on_respawn_chat_body_entered(body: Node2D) -> void:
-	if body.has_method("player"):
-		pass
-		
-func _on_respawn_chat_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.

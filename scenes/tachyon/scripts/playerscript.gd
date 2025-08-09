@@ -49,8 +49,4 @@ func _process(delta: float) -> void:
 	elif Input.is_action_just_released("run"):
 		SPEED = SPEED - 4000
 	
-func player():
-	pass
-
-
 	
