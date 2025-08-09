@@ -13,6 +13,7 @@ config_version=5
 config/name="Gamed-on"
 run/main_scene="uid://c6inow2hlvjoc"
 config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://scripts/icon.svg"
 
 [autoload]
@@ -73,6 +74,9 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
 window/stretch/scale=2.05
+mouse_cursor/name="Gamed-on"
+mouse_cursor/bg_color=Color(0.14, 0.14, 0.14, 1)
+mouse_cursor/main_scene="uid://klsd68mpixi8"
 
 [editor_plugins]
 
