@@ -13,7 +13,10 @@
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="10_udryc"]
 [ext_resource type="Script" uid="uid://cuq3v26blnyc2" path="res://scenes/rooms/interact_npc.gd" id="12_1fmc0"]
 [ext_resource type="Texture2D" uid="uid://0yg7pdaljm6x" path="res://assets/npc1.png" id="13_b8s8a"]
-
+[ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="14_b8s8a"]
+[ext_resource type="Shader" uid="uid://b6aynyr13x4yf" path="res://scenes/rooms/crtshader.gdshader" id="15_ktf6p"]
+[ext_resource type="Shader" uid="uid://doj03rqoseuxc" path="res://scenes/rooms/testingshader.gdshader" id="16_ithrf"]
+[ext_resource type="AudioStream" uid="uid://bt28oh57jc6p2" path="res://scenes/tachyon/assets/digital-glitch-361820.wav" id="17_si58k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_647yv"]
 texture = ExtResource("1_5xkcy")
