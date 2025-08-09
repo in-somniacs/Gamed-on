@@ -2,11 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://b1pb86y7cut86"
-=======
-uid="uid://bcpypk14ljue6"
->>>>>>> parent of bca8038 (Merge branch 'tachyon-branch' into goldship)
+uid="uid://lco4s1phvu0p"
 path="res://.godot/imported/cat_animation.png-26274c15deb60b209afd7e9e87489132.ctex"
 metadata={
 "vram_texture": false
