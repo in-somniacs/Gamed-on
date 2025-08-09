@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="inventoryItem" load_steps=3 format=3 uid="uid://diq4jxfko1xuh"]
 
 [ext_resource type="Script" uid="uid://b8g1iqh1fekjp" path="res://scripts/inventory_items.gd" id="1_3fxhd"]
-[ext_resource type="Texture2D" uid="uid://dko4u4rvyryrx" path="res://assets/player.png" id="2_3fxhd"]
+[ext_resource type="Texture2D" uid="uid://b5drnp6foil3" path="res://assets/arcade_pack/ps_item.png" id="2_3fxhd"]
 
 [resource]
 script = ExtResource("1_3fxhd")
 name = "old_console"
+title = "Vintage PS"
+info = "A console sent to me by my cousin? i thought he treasured it."
 texture = ExtResource("2_3fxhd")
 metadata/_custom_type_script = "uid://b8g1iqh1fekjp"

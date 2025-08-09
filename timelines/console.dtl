@@ -1,0 +1,5 @@
+join Player center [animation="Fade In Up"]
+Player: time to set up my console...
+- place console
+Player: alright all set will play some games after some sleep.
+leave Player

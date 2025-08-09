@@ -11823,6 +11823,11 @@ radius = 14.0357
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ktf6p"]
 shader = ExtResource("14_b8s8a")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
 
 [sub_resource type="QuadMesh" id="QuadMesh_ithrf"]
 size = Vector2(1280, 720)
@@ -11982,6 +11987,7 @@ disable_mode = 1
 shape = SubResource("CircleShape2D_tq26g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc1"]
+visible = false
 shape = SubResource("CircleShape2D_jfy6s")
 
 [node name="respawn_chat" type="Area2D" parent="npc1"]
@@ -11990,7 +11996,6 @@ shape = SubResource("CircleShape2D_jfy6s")
 polygon = PackedVector2Array(-12, -11, -15, -7, -16, -3, -16, 2, -14, 9, -10, 13, -3, 16, 4, 16, 11, 12, 15, 8, 16, 4, 16, -1, 15, -7, 12, -11, 8, -14, 4, -16, 0, -16, -4, -16, -8, -14, -12, -12, -13, -14, -15, -16, -9, -20, -2, -21, 5, -21, 9, -20, 14, -15, 16, -12, 19, -8, 21, -4, 20, 3, 18, 9, 14, 14, 8, 16, 3, 20, -8, 19, -15, 15, -18, 11, -21, 5, -21, 0, -21, -5, -19, -10, -16, -15)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_ktf6p")
@@ -12021,6 +12026,8 @@ offset_bottom = 0.0
 
 [connection signal="body_entered" from="TileMap/Trees/Mail box/Chatdetection" to="TileMap/Trees/Mail box" method="_on_chatdetection_body_entered"]
 [connection signal="body_exited" from="TileMap/Trees/Mail box/Chatdetection" to="TileMap/Trees/Mail box" method="_on_chatdetection_body_exited"]
+[connection signal="body_entered" from="interactable" to="interactable" method="_on_body_entered"]
+[connection signal="body_exited" from="interactable" to="interactable" method="_on_body_exited"]
 [connection signal="body_entered" from="npc1/Chatdetection" to="npc1" method="_on_chatdetection_body_entered"]
 [connection signal="body_exited" from="npc1/Chatdetection" to="npc1" method="_on_chatdetection_body_exited"]
 [connection signal="body_entered" from="npc1/respawn_chat" to="npc1" method="_on_respawn_chat_body_entered"]

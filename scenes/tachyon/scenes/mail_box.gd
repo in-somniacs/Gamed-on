@@ -7,6 +7,7 @@ extends Node2D
 @onready var res_chat: CollisionPolygon2D = $respawn_chat/res_chat
 @export var popup: NinePatchRect
 @onready var shader_mesh : MeshInstance2D = $"../../../CanvasLayer/crt and glitch"
+@onready var inv = preload("res://items/inventory.tres")
 
 var player_in_area = false
 
@@ -21,8 +22,12 @@ func _process(delta: float) -> void:
 	if player_in_area:
 		if Input.is_action_pressed("dialogic_default_action"):
 			run_dialogue(dialogue)
-
-
+			inv.items[0] = load("res://items/ps.tres")
+			chatbox.disabled = true
+	ResourceSaver.save(inv)
+			
+			
+			
 func _on_chatdetection_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		player_in_area = true
@@ -47,3 +52,10 @@ func run_dialogue(dialogue_string):
 func _on_dialogue_end():
 	shader_mesh.material.set_shader_parameter("glitch_enabled", false)
 	Dialogic.timeline_ended.disconnect(_on_dialogue_end)
+
+func _on_respawn_chat_body_entered(body: Node2D) -> void:
+	if body.has_method("player"):
+		pass
+		
+func _on_respawn_chat_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

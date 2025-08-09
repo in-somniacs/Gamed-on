@@ -1,36 +1,58 @@
-extends Area2D
-@export var hint: RichTextLabel 
-
-
-
+extends Node2D
 @export var player: CharacterBody2D 
-@export var pos1: NodePath
-@export var pos2: NodePath
-var floor_0: Node2D
-var floor_1: Node2D 
+@export var dialogue: String
+@export var chatbox: CollisionShape2D
 
-var interactable = false
 
-func _ready():
-	# Debug: Make sure the nodes are found correctly
-	floor_0 = get_node(pos1) as Node2D
-	floor_1 = get_node(pos2) as Node2D
-	print("Player:", player)
-	print("Floor 0:", floor_0)
-	print("Floor 1:", floor_1)
+@export var popup: NinePatchRect
 
+@onready var inv = preload("res://items/inventory.tres")
+
+var player_in_area = false
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if interactable and Input.is_action_just_pressed("interact"):
-		player.global_position = floor_1.global_position
-		print("Teleported to:", floor_1.global_position)
-
-func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Player":  # Only allow Player to trigger
-		interactable = true
-		hint.visible = true 
+	if player_in_area:
+		if Input.is_action_pressed("dialogic_default_action"):
+			run_dialogue(dialogue)
+			chatbox.queue_free()
+			ResourceSaver.save(inv)
+	inv.items[0] = null
+			
+			
+func _on_chatdetection_body_entered(body: Node2D) -> void:
+	if body.has_method("player"):
+		player_in_area = true
+		popup.visible = true
+		
+func _on_chatdetection_body_exited(body: Node2D) -> void:
+	if body.has_method("player"):
+		player_in_area = false 
+		popup.visible = false
+		
+		
 		
 
-func _on_body_exited(body: Node2D) -> void:
-	if body.name == "Player":
-		interactable = false
-		hint.visible = false
+func run_dialogue(dialogue_string):
+	
+	Dialogic.start(dialogue_string)
+	# Listen for end of dialogue
+	Dialogic.timeline_ended.connect(_on_dialogue_end)
+	
+
+func _on_dialogue_end():
+	
+	Dialogic.timeline_ended.disconnect(_on_dialogue_end)
+
+func _on_respawn_chat_body_entered(body: Node2D) -> void:
+	if body.has_method("player"):
+		pass
+		
+func _on_respawn_chat_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

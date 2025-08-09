@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://klsd68mpixi8"]
+[gd_scene load_steps=30 format=3 uid="uid://klsd68mpixi8"]
 
 [ext_resource type="Texture2D" uid="uid://btyqpu4nltqsn" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_maoc1"]
 [ext_resource type="Script" uid="uid://rv6cdk4oqmo1" path="res://scenes/rooms/room_0.gd" id="1_yg2jv"]
@@ -13,7 +13,8 @@
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="9_b00dr"]
 [ext_resource type="Texture2D" uid="uid://fwmjlm673uh2" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Objects/PNG/objects_house_0037_Layer-38.png" id="10_181co"]
 [ext_resource type="Script" uid="uid://c4uwlhf8fc0el" path="res://scripts/switch_scenes.gd" id="10_kf5e4"]
-[ext_resource type="Texture2D" uid="uid://4cvfx1bpdtrv" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/Interior.png" id="10_nflq0"]
+[ext_resource type="Texture2D" uid="uid://7nkymmnf826a" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/Interior.png" id="10_nflq0"]
+[ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="15_lpf3e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epks6"]
 texture = ExtResource("2_xdi0x")
@@ -8445,6 +8446,11 @@ sources/6 = SubResource("TileSetAtlasSource_p6je4")
 sources/8 = SubResource("TileSetAtlasSource_mcqdl")
 sources/9 = SubResource("TileSetAtlasSource_lpf3e")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lpf3e"]
+radius = 26.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_181co"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b00dr"]
 size = Vector2(31, 62)
 
@@ -8489,36 +8495,21 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="interactable" parent="." node_paths=PackedStringArray("hint", "player") instance=ExtResource("8_epks6")]
-visible = false
-position = Vector2(146, 29)
-scale = Vector2(1.4, 1.4)
-collision_layer = 3
-collision_mask = 3
-hint = NodePath("RichTextLabel")
+[node name="interactable2" parent="." node_paths=PackedStringArray("player", "chatbox", "popup") instance=ExtResource("8_epks6")]
+position = Vector2(254, -61)
 player = NodePath("../Player")
-pos1 = NodePath("../stairs/floor_0")
-pos2 = NodePath("../stairs/floor_1")
+dialogue = "res://timelines/console.dtl"
+chatbox = NodePath("Chatdetection/chatbox")
+popup = NodePath("../Player/popup")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="interactable"]
-visible = false
-offset_left = -6.0
-offset_top = -26.0
-offset_right = 26.0
-offset_bottom = 6.0
-scale = Vector2(0.457143, 0.428572)
-theme_override_fonts/normal_font = ExtResource("9_b00dr")
-text = "up"
+[node name="Chatdetection" type="Area2D" parent="interactable2"]
+position = Vector2(-4, 0)
 
-[node name="stairs" type="Node2D" parent="."]
-visible = false
-position = Vector2(-79, 0)
+[node name="chatbox" type="CollisionShape2D" parent="interactable2/Chatdetection"]
+shape = SubResource("CircleShape2D_lpf3e")
 
-[node name="floor_0" type="Node2D" parent="stairs"]
-position = Vector2(202, 29)
-
-[node name="floor_1" type="Node2D" parent="stairs"]
-position = Vector2(134, 128)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="interactable2"]
+shape = SubResource("CircleShape2D_181co")
 
 [node name="door" type="Area2D" parent="." node_paths=PackedStringArray("hint", "player", "popup")]
 collision_layer = 3
@@ -8573,7 +8564,14 @@ anim_offset_max = 0.0305
 position = Vector2(-78, -110)
 polygon = PackedVector2Array(-2, -1, -2, 44, -2, 238, -2, 241, 170, 242, 286, 241, 285, 238, 457, 238, 463, 225, 460, 18, 285, 21, 285, 51, 0, 50, 1, 0, 31, -28, 66, -71, 128, -21, 148, -86, 199, -54, 169, -114, 257, -126, 270, -129, 363, -178, 403, -120, 462, -177, 518, -137, 589, -179, 677, -141, 746, -79, 698, -44, 780, 19, 703, 42, 801, 90, 690, 137, 763, 222, 705, 234, 728, 327, 598, 304, 504, 338, 477, 270, 380, 326, 296, 277, 236, 331, 149, 305, 130, 295, 31, 327, -19, 276, -71, 240, -75, 196, -125, 128, -94, 67, -102, 6)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="invenory" parent="CanvasLayer" instance=ExtResource("15_lpf3e")]
+
+[connection signal="body_entered" from="interactable2/Chatdetection" to="interactable2" method="_on_chatdetection_body_entered"]
+[connection signal="body_exited" from="interactable2/Chatdetection" to="interactable2" method="_on_chatdetection_body_exited"]
 [connection signal="body_entered" from="door" to="door" method="_on_body_entered"]
 [connection signal="body_exited" from="door" to="door" method="_on_body_exited"]
 
 [editable path="Player"]
+[editable path="interactable2"]
