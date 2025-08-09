@@ -6,7 +6,8 @@ extends Node2D
 @onready var chatbox: CollisionShape2D = $Chatdetection/chatbox
 @onready var res_chat: CollisionPolygon2D = $respawn_chat/res_chat
 @export var popup: NinePatchRect
-
+@onready var shader_mesh : MeshInstance2D = $"../CanvasLayer/crt and glitch"
+@onready var glitch_sfx : AudioStreamPlayer2D = $"../CanvasLayer/GlitchSFX"
 
 var player_in_area = false
 
@@ -19,7 +20,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if player_in_area:
 		if Input.is_action_pressed("dialogic_default_action"):
-			run_dialogue("res://timelines/footpathtimeline.dtl")
+			run_dialogue(dialogue)
 			chatbox.disabled = true
 			
 			
@@ -38,8 +39,24 @@ func _on_chatdetection_body_exited(body: Node2D) -> void:
 		
 
 func run_dialogue(dialogue_string):
+	# Enable glitch
+	shader_mesh.material.set_shader_parameter("glitch_enabled", true)
+	
+	# Play glitch sound alongside dialogue
+	glitch_sfx.stop()
+	glitch_sfx.play()
+
+	# Start dialogue immediately
 	Dialogic.start(dialogue_string)
 	
+	# When sound finishes, stop glitch effect
+	await get_tree().create_timer(10.0).timeout
+	shader_mesh.material.set_shader_parameter("glitch_enabled", false)
+	
+
+func _on_dialogue_end():
+	shader_mesh.material.set_shader_parameter("glitch_enabled", false)
+	Dialogic.timeline_ended.disconnect(_on_dialogue_end)
 
 func _on_respawn_chat_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):

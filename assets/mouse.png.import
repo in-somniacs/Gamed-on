@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x2s2wdypyw3e"
-valid=false
+uid="uid://cwpjf55fsp1ex"
+path="res://.godot/imported/mouse.png-86a36c525f5fbb80016971cea1008f71.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/__MACOSX/Tiled_files/._Doors_windows_animation.png"
+source_file="res://assets/mouse.png"
+dest_files=["res://.godot/imported/mouse.png-86a36c525f5fbb80016971cea1008f71.ctex"]
 
 [params]
 

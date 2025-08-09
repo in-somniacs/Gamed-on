@@ -3,12 +3,24 @@
 [ext_resource type="Texture2D" uid="uid://dyorw4v8lajnw" path="res://pacman1/assets/walls_floor.png" id="1_h0x7s"]
 [ext_resource type="Texture2D" uid="uid://jcbc36hkln5r" path="res://assets/ArcadeMachine/arcade-Sheet.png" id="2_7owwp"]
 [ext_resource type="PackedScene" uid="uid://bgx0kmq7a53mw" path="res://scenes/tachyon/scenes/aracde_machine.tscn" id="3_1e1x7"]
+<<<<<<< HEAD
+[ext_resource type="Texture2D" uid="uid://dv2eeqdyp3sj7" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/house_details.png" id="3_tvvvl"]
+[ext_resource type="Texture2D" uid="uid://dt2y0dl21xt4g" path="res://assets/rundown house/rundown house/clock/clock_15x32.png" id="4_03s3m"]
+[ext_resource type="Texture2D" uid="uid://4cvfx1bpdtrv" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/Interior.png" id="4_vwb8x"]
+[ext_resource type="Texture2D" uid="uid://cenloxysxbn31" path="res://assets/rundown house/rundown house/Old house/old house.png" id="5_chqgb"]
+[ext_resource type="Texture2D" uid="uid://bl35ca3x7s8u5" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/exterior.png" id="7_dp8qb"]
+[ext_resource type="Texture2D" uid="uid://caij3mcp4f8x0" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/Smoke_animation.png" id="8_gqn5b"]
+[ext_resource type="Texture2D" uid="uid://dupddbwe4mpid" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/walls_floor.png" id="9_3b0a8"]
+[ext_resource type="Texture2D" uid="uid://cgmq5dgm6vfhh" path="res://assets/rundown house/rundown house/rundown house/A rundown house.png" id="10_jqtq0"]
+[ext_resource type="Script" uid="uid://hlw4wqfmq3a1" path="res://scenes/tachyon/scenes/aracde_machine.gd" id="11_a4812"]
+=======
 [ext_resource type="Texture2D" uid="uid://dt2y0dl21xt4g" path="res://assets/rundown house/rundown house/clock/clock_15x32.png" id="4_03s3m"]
 [ext_resource type="Texture2D" uid="uid://cenloxysxbn31" path="res://assets/rundown house/rundown house/Old house/old house.png" id="5_chqgb"]
 [ext_resource type="Texture2D" uid="uid://ch3w131bmyh6f" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist1.png" id="6_cgjvi"]
 [ext_resource type="Texture2D" uid="uid://ddls7hvjs31rv" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist2.png" id="7_vexsr"]
 [ext_resource type="Texture2D" uid="uid://citkwei8wye48" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist3.png" id="8_a4812"]
 [ext_resource type="Texture2D" uid="uid://bnni06jm5fror" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist4.png" id="9_tvvvl"]
+>>>>>>> parent of bca8038 (Merge branch 'tachyon-branch' into goldship)
 [ext_resource type="PackedScene" uid="uid://cpryjj6ky7t31" path="res://scenes/tachyon/scenes/character_body_2d.tscn" id="11_vexsr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7owwp"]

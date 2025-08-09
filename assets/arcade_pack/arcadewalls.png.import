@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x2s2wdypyw3e"
-valid=false
+uid="uid://cqmm8uf277bbq"
+path="res://.godot/imported/arcadewalls.png-70d0bf4f6c501e1fb5db263cf9fc2a10.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/__MACOSX/Tiled_files/._Doors_windows_animation.png"
+source_file="res://assets/arcade_pack/arcadewalls.png"
+dest_files=["res://.godot/imported/arcadewalls.png-70d0bf4f6c501e1fb5db263cf9fc2a10.ctex"]
 
 [params]
 
