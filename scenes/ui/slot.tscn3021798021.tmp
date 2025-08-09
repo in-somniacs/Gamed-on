@@ -35,6 +35,7 @@ offset_right = 104.0
 offset_bottom = 76.0
 theme_override_fonts/font = ExtResource("3_c886m")
 theme_override_font_sizes/font_size = 21
+text = "dsadasdasdasd"
 autowrap_mode = 1
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

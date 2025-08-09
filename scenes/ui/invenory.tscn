@@ -69,3 +69,7 @@ layout_mode = 2
 
 [node name="slot4" parent="NinePatchRect/HBoxContainer/GridContainer" instance=ExtResource("2_um4lp")]
 layout_mode = 2
+
+[node name="tooltip" type="Label" parent="NinePatchRect/HBoxContainer"]
+layout_mode = 2
+autowrap_mode = 1

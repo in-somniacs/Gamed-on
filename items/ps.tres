@@ -6,5 +6,7 @@
 [resource]
 script = ExtResource("1_3fxhd")
 name = "old_console"
+title = "Vintage PS"
+info = "A console sent to me by my cousin? i thought he treasured it."
 texture = ExtResource("2_3fxhd")
 metadata/_custom_type_script = "uid://b8g1iqh1fekjp"
