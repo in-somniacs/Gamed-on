@@ -1,6 +1,14 @@
 join NPCfootpath leftmost [z_index="1"]
 NPCfootpath: Hey man how are you
 - good
-- ok
-NPCfootpath: damn thats fire....
-NPCfootpath: anyways imma head home now
+- im fine
+NPCfootpath: nice man btw i think u got a mail. I saw the postman drop it.
+leave NPCfootpath
+join Player left
+Player: oh really? I will check it out
+leave Player
+join NPCfootpath leftmost
+NPCfootpath: yeah man. Anyways ill head home now
+leave NPCfootpath
+join Player left
+Player: alright see you around.

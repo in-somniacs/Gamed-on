@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://dx8p3hekcol1c"]
+[gd_scene load_steps=63 format=4 uid="uid://dx8p3hekcol1c"]
 
 [ext_resource type="Texture2D" uid="uid://hwwa521btiao" path="res://scenes/tachyon/assets/Lo_bit_city_set.png" id="1_5xkcy"]
 [ext_resource type="Texture2D" uid="uid://qwx05nl3p8w1" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_jvccj"]
@@ -14,9 +14,10 @@
 [ext_resource type="Script" uid="uid://cuq3v26blnyc2" path="res://scenes/rooms/interact_npc.gd" id="12_1fmc0"]
 [ext_resource type="Texture2D" uid="uid://0yg7pdaljm6x" path="res://assets/npc1.png" id="13_b8s8a"]
 [ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="14_b8s8a"]
-[ext_resource type="Shader" uid="uid://b6aynyr13x4yf" path="res://scenes/rooms/crtshader.gdshader" id="15_ktf6p"]
-[ext_resource type="Shader" uid="uid://doj03rqoseuxc" path="res://scenes/rooms/testingshader.gdshader" id="16_ithrf"]
-[ext_resource type="AudioStream" uid="uid://bt28oh57jc6p2" path="res://scenes/tachyon/assets/digital-glitch-361820.wav" id="17_si58k"]
+[ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="15_ktf6p"]
+[ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="16_ithrf"]
+[ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="17_si58k"]
+[ext_resource type="PackedScene" uid="uid://ces6y2p5bi11o" path="res://scenes/menu/pause_menu.tscn" id="18_by11x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_647yv"]
 texture = ExtResource("1_5xkcy")
@@ -11917,9 +11918,6 @@ shape = SubResource("RectangleShape2D_udryc")
 [node name="Player" parent="." instance=ExtResource("7_2jpt3")]
 z_index = 5
 position = Vector2(30, -54)
-collision_layer = 3
-collision_mask = 3
-collision_priority = 5.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 y_sort_enabled = true
@@ -12008,7 +12006,19 @@ material = SubResource("ShaderMaterial_si58k")
 mesh = SubResource("QuadMesh_by11x")
 
 [node name="GlitchSFX" type="AudioStreamPlayer2D" parent="CanvasLayer"]
-stream = ExtResource("17_si58k")
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("18_by11x")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="invenory" parent="CanvasLayer" instance=ExtResource("17_si58k")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 
 [connection signal="body_entered" from="TileMap/Trees/Mail box/Chatdetection" to="TileMap/Trees/Mail box" method="_on_chatdetection_body_entered"]
 [connection signal="body_exited" from="TileMap/Trees/Mail box/Chatdetection" to="TileMap/Trees/Mail box" method="_on_chatdetection_body_exited"]

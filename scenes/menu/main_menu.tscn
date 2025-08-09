@@ -57,26 +57,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AudioStreamPlayer:pitch_scale")
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.6]
+"values": [0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/path = NodePath("AudioStreamPlayer:pitch_scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [0.71]
 }
 
 [sub_resource type="Animation" id="Animation_hj162"]
@@ -84,26 +84,26 @@ resource_name = "fade_music"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AudioStreamPlayer:pitch_scale")
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.99),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.6, 0.2]
+"values": [0.0, 7.0, -20.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/path = NodePath("AudioStreamPlayer:pitch_scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.47, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 5.012, -30.0]
+"values": [0.71, 0.2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_isoef"]
@@ -129,6 +129,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_247la")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="options" type="MarginContainer" parent="."]
 visible = false
@@ -269,7 +277,7 @@ text = "quit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_3rkf3")
-pitch_scale = 0.6
+pitch_scale = 0.71
 autoplay = true
 bus = &"Music"
 

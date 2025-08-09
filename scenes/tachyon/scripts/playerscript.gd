@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var SPEED = 4000.0
 @onready var anim = $AnimatedSprite2D
+@export var Inventory: Inventory
 var can_move : bool = true
 
 func _ready() -> void:
@@ -49,4 +50,8 @@ func _process(delta: float) -> void:
 	elif Input.is_action_just_released("run"):
 		SPEED = SPEED - 4000
 	
+func player():
+	pass
+
+
 	
