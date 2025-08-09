@@ -11822,11 +11822,6 @@ radius = 14.0357
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ktf6p"]
 shader = ExtResource("14_b8s8a")
-shader_parameter/shake_power = 0.03
-shader_parameter/shake_rate = 0.2
-shader_parameter/shake_speed = 5.0
-shader_parameter/shake_block_size = 30.5
-shader_parameter/shake_color_rate = 0.01
 
 [sub_resource type="QuadMesh" id="QuadMesh_ithrf"]
 size = Vector2(1280, 720)
@@ -11942,7 +11937,7 @@ drag_vertical_enabled = true
 position = Vector2(-80.4174, -59.9914)
 polygon = PackedVector2Array(69.4174, 58.9914, 95.4174, 61.9914, 96.4174, 106.991, 127.417, 107.991, 128.417, 61.9914, 224.417, 56.9914, 227.417, -2.00859, 295.417, -2.00859, 296.417, -82.0086, -4.58262, -82.0086, 0.417381, -3.00859, 1.41738, 53.9914, 68.4174, 58.9914, 62.4174, 98.9914, 29.4174, 64.9914, 4.41738, 78.9914, -22.5826, 56.9914, -75.5826, 26.9914, -55.5826, -7.00859, -87.5826, -44.0086, -37.5826, -47.0086, -46.5826, -83.0086, -8.58262, -154.009, 18.4174, -120.009, 105.417, -166.009, 102.417, -124.009, 232.417, -181.009, 217.417, -117.009, 368.417, -148.009, 319.417, -118.009, 435.417, -75.0086, 311.417, -51.0086, 414.417, -17.0086, 287.417, 6.99141, 327.417, 64.9914, 243.417, 82.9914, 238.417, 195.991, 185.417, 114.991, 172.417, 195.991, 126.417, 141.991, 84.4174, 189.991, 84.4174, 129.991, 87.4174, 88.9914, 63.4174, 99.9914)
 
-[node name="interactable" parent="." node_paths=PackedStringArray("hint", "player") instance=ExtResource("9_7d5dh")]
+[node name="interactable" parent="." node_paths=PackedStringArray("hint", "player", "popup") instance=ExtResource("9_7d5dh")]
 z_index = 1
 position = Vector2(42, -1)
 collision_layer = 3
@@ -11951,6 +11946,7 @@ script = ExtResource("8_5n70b")
 hint = NodePath("RichTextLabel")
 player = NodePath("../Player")
 next_scene = "res://scenes/rooms/room_0.tscn"
+popup = NodePath("../Player/popup")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="interactable"]
 visible = false
@@ -11997,6 +11993,7 @@ shape = SubResource("CircleShape2D_jfy6s")
 polygon = PackedVector2Array(-12, -11, -15, -7, -16, -3, -16, 2, -14, 9, -10, 13, -3, 16, 4, 16, 11, 12, 15, 8, 16, 4, 16, -1, 15, -7, 12, -11, 8, -14, 4, -16, 0, -16, -4, -16, -8, -14, -12, -12, -13, -14, -15, -16, -9, -20, -2, -21, 5, -21, 9, -20, 14, -15, 16, -12, 19, -8, 21, -4, 20, 3, 18, 9, 14, 14, 8, 16, 3, 20, -8, 19, -15, 15, -18, 11, -21, 5, -21, 0, -21, -5, -19, -10, -16, -15)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_ktf6p")

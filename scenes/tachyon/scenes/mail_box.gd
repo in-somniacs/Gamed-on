@@ -21,10 +21,8 @@ func _process(delta: float) -> void:
 	if player_in_area:
 		if Input.is_action_pressed("dialogic_default_action"):
 			run_dialogue(dialogue)
-			chatbox.disabled = true
-			
-			
-			
+
+
 func _on_chatdetection_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		player_in_area = true
@@ -49,10 +47,3 @@ func run_dialogue(dialogue_string):
 func _on_dialogue_end():
 	shader_mesh.material.set_shader_parameter("glitch_enabled", false)
 	Dialogic.timeline_ended.disconnect(_on_dialogue_end)
-
-func _on_respawn_chat_body_entered(body: Node2D) -> void:
-	if body.has_method("player"):
-		pass
-		
-func _on_respawn_chat_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
