@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://dx8p3hekcol1c"]
+[gd_scene load_steps=53 format=4 uid="uid://dx8p3hekcol1c"]
 
 [ext_resource type="Texture2D" uid="uid://hwwa521btiao" path="res://scenes/tachyon/assets/Lo_bit_city_set.png" id="1_5xkcy"]
 [ext_resource type="Texture2D" uid="uid://qwx05nl3p8w1" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_jvccj"]
@@ -14,8 +14,6 @@
 [ext_resource type="Script" uid="uid://cuq3v26blnyc2" path="res://scenes/rooms/interact_npc.gd" id="12_1fmc0"]
 [ext_resource type="Texture2D" uid="uid://0yg7pdaljm6x" path="res://assets/npc1.png" id="13_b8s8a"]
 [ext_resource type="PackedScene" uid="uid://bs2gwydbg6q3x" path="res://scenes/crt_effect.tscn" id="14_b8s8a"]
-[ext_resource type="PackedScene" uid="uid://dvhyl057hw0xj" path="res://scenes/ui/test_ui.tscn" id="15_ktf6p"]
-[ext_resource type="PackedScene" uid="uid://j205s4fqisqc" path="res://scenes/menu/pause_menu.tscn" id="16_ithrf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_647yv"]
 texture = ExtResource("1_5xkcy")
@@ -11888,6 +11886,9 @@ shape = SubResource("RectangleShape2D_udryc")
 [node name="Player" parent="." instance=ExtResource("7_2jpt3")]
 z_index = 5
 position = Vector2(30, -54)
+collision_layer = 3
+collision_mask = 3
+collision_priority = 5.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 y_sort_enabled = true
@@ -11958,19 +11959,6 @@ shape = SubResource("CircleShape2D_jfy6s")
 polygon = PackedVector2Array(-12, -11, -15, -7, -16, -3, -16, 2, -14, 9, -10, 13, -3, 16, 4, 16, 11, 12, 15, 8, 16, 4, 16, -1, 15, -7, 12, -11, 8, -14, 4, -16, 0, -16, -4, -16, -8, -14, -12, -12, -13, -14, -15, -16, -9, -20, -2, -21, 5, -21, 9, -20, 14, -15, 16, -12, 19, -8, 21, -4, 20, 3, 18, 9, 14, 14, 8, 16, 3, 20, -8, 19, -15, 15, -18, 11, -21, 5, -21, 0, -21, -5, -19, -10, -16, -15)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("14_b8s8a")]
-visible = false
-
-[node name="hotbar" parent="CanvasLayer" instance=ExtResource("15_ktf6p")]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.0
-offset_bottom = 0.0
-grow_vertical = 1
-scale = Vector2(5, 5)
-
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("16_ithrf")]
-visible = false
 
 [connection signal="body_entered" from="TileMap/Trees/Mail box/Chatdetection" to="TileMap/Trees/Mail box" method="_on_chatdetection_body_entered"]
 [connection signal="body_exited" from="TileMap/Trees/Mail box/Chatdetection" to="TileMap/Trees/Mail box" method="_on_chatdetection_body_exited"]
