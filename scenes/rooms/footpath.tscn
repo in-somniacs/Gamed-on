@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=55 format=4 uid="uid://dx8p3hekcol1c"]
+=======
+[gd_scene load_steps=53 format=4 uid="uid://dx8p3hekcol1c"]
+>>>>>>> parent of 5fdbe37 (glitch when dialogue or any action and glitch sfx)
 
 [ext_resource type="Texture2D" uid="uid://hwwa521btiao" path="res://scenes/tachyon/assets/Lo_bit_city_set.png" id="1_5xkcy"]
 [ext_resource type="Texture2D" uid="uid://qwx05nl3p8w1" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_jvccj"]
@@ -13,7 +17,11 @@
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="10_udryc"]
 [ext_resource type="Script" uid="uid://cuq3v26blnyc2" path="res://scenes/rooms/interact_npc.gd" id="12_1fmc0"]
 [ext_resource type="Texture2D" uid="uid://0yg7pdaljm6x" path="res://assets/npc1.png" id="13_b8s8a"]
+<<<<<<< HEAD
 [ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="14_b8s8a"]
+=======
+[ext_resource type="PackedScene" path="res://scenes/crt_effect.tscn" id="14_b8s8a"]
+>>>>>>> parent of 5fdbe37 (glitch when dialogue or any action and glitch sfx)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_647yv"]
 texture = ExtResource("1_5xkcy")
@@ -11817,6 +11825,7 @@ radius = 16.0312
 [sub_resource type="CircleShape2D" id="CircleShape2D_jfy6s"]
 radius = 14.0357
 
+<<<<<<< HEAD
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b8s8a"]
 shader = ExtResource("14_b8s8a")
 
@@ -11824,6 +11833,8 @@ shader = ExtResource("14_b8s8a")
 size = Vector2(1280, 720)
 center_offset = Vector3(640, 360, 0)
 
+=======
+>>>>>>> parent of 5fdbe37 (glitch when dialogue or any action and glitch sfx)
 [node name="Footpath" type="Node2D"]
 y_sort_enabled = true
 
@@ -11965,11 +11976,15 @@ shape = SubResource("CircleShape2D_jfy6s")
 [node name="res_chat" type="CollisionPolygon2D" parent="npc1/respawn_chat"]
 polygon = PackedVector2Array(-12, -11, -15, -7, -16, -3, -16, 2, -14, 9, -10, 13, -3, 16, 4, 16, 11, 12, 15, 8, 16, 4, 16, -1, 15, -7, 12, -11, 8, -14, 4, -16, 0, -16, -4, -16, -8, -14, -12, -12, -13, -14, -15, -16, -9, -20, -2, -21, 5, -21, 9, -20, 14, -15, 16, -12, 19, -8, 21, -4, 20, 3, 18, 9, 14, 14, 8, 16, 3, 20, -8, 19, -15, 15, -18, 11, -21, 5, -21, 0, -21, -5, -19, -10, -16, -15)
 
+<<<<<<< HEAD
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_b8s8a")
 mesh = SubResource("QuadMesh_ithrf")
+=======
+[node name="CanvasLayer" parent="." instance=ExtResource("14_b8s8a")]
+>>>>>>> parent of 5fdbe37 (glitch when dialogue or any action and glitch sfx)
 
 [connection signal="body_entered" from="TileMap/Trees/Mail box/Chatdetection" to="TileMap/Trees/Mail box" method="_on_chatdetection_body_entered"]
 [connection signal="body_exited" from="TileMap/Trees/Mail box/Chatdetection" to="TileMap/Trees/Mail box" method="_on_chatdetection_body_exited"]
