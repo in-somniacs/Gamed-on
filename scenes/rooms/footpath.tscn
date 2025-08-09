@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=55 format=4 uid="uid://dx8p3hekcol1c"]
-=======
-[gd_scene load_steps=53 format=4 uid="uid://dx8p3hekcol1c"]
->>>>>>> parent of 5fdbe37 (glitch when dialogue or any action and glitch sfx)
+[gd_scene load_steps=62 format=4 uid="uid://dx8p3hekcol1c"]
 
 [ext_resource type="Texture2D" uid="uid://hwwa521btiao" path="res://scenes/tachyon/assets/Lo_bit_city_set.png" id="1_5xkcy"]
 [ext_resource type="Texture2D" uid="uid://qwx05nl3p8w1" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_jvccj"]
@@ -17,11 +13,10 @@
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="10_udryc"]
 [ext_resource type="Script" uid="uid://cuq3v26blnyc2" path="res://scenes/rooms/interact_npc.gd" id="12_1fmc0"]
 [ext_resource type="Texture2D" uid="uid://0yg7pdaljm6x" path="res://assets/npc1.png" id="13_b8s8a"]
-<<<<<<< HEAD
 [ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="14_b8s8a"]
-=======
-[ext_resource type="PackedScene" path="res://scenes/crt_effect.tscn" id="14_b8s8a"]
->>>>>>> parent of 5fdbe37 (glitch when dialogue or any action and glitch sfx)
+[ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="15_ktf6p"]
+[ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="16_ithrf"]
+[ext_resource type="AudioStream" path="res://scenes/tachyon/assets/digital-glitch-361820.wav" id="17_si58k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_647yv"]
 texture = ExtResource("1_5xkcy")
@@ -11825,16 +11820,38 @@ radius = 16.0312
 [sub_resource type="CircleShape2D" id="CircleShape2D_jfy6s"]
 radius = 14.0357
 
-<<<<<<< HEAD
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b8s8a"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ktf6p"]
 shader = ExtResource("14_b8s8a")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
 
 [sub_resource type="QuadMesh" id="QuadMesh_ithrf"]
 size = Vector2(1280, 720)
 center_offset = Vector3(640, 360, 0)
 
-=======
->>>>>>> parent of 5fdbe37 (glitch when dialogue or any action and glitch sfx)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ithrf"]
+shader = ExtResource("15_ktf6p")
+
+[sub_resource type="QuadMesh" id="QuadMesh_si58k"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_si58k"]
+shader = ExtResource("16_ithrf")
+shader_parameter/glitch_enabled = false
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_by11x"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
 [node name="Footpath" type="Node2D"]
 y_sort_enabled = true
 
@@ -11891,6 +11908,7 @@ tile_set = SubResource("TileSet_wlsod")
 position = Vector2(56, -56)
 script = ExtResource("7_udryc")
 player = NodePath("../../../Player")
+dialogue = "res://timelines/consoleget.dtl"
 popup = NodePath("../../../Player/popup")
 
 [node name="Chatdetection" type="Area2D" parent="TileMap/Trees/Mail box"]
@@ -11904,9 +11922,6 @@ shape = SubResource("RectangleShape2D_udryc")
 [node name="Player" parent="." instance=ExtResource("7_2jpt3")]
 z_index = 5
 position = Vector2(30, -54)
-collision_layer = 3
-collision_mask = 3
-collision_priority = 5.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 y_sort_enabled = true
@@ -11949,10 +11964,12 @@ z_index = 1
 position = Vector2(-10, 14)
 shape = SubResource("RectangleShape2D_5n70b")
 
-[node name="npc1" type="CharacterBody2D" parent="." node_paths=PackedStringArray("popup")]
+[node name="npc1" type="CharacterBody2D" parent="." node_paths=PackedStringArray("player", "popup")]
 z_index = 1
 position = Vector2(-31, -131)
 script = ExtResource("12_1fmc0")
+player = NodePath("../Player")
+dialogue = "res://timelines/footpathtimeline.dtl"
 popup = NodePath("../Player/popup")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="npc1"]
@@ -11976,15 +11993,22 @@ shape = SubResource("CircleShape2D_jfy6s")
 [node name="res_chat" type="CollisionPolygon2D" parent="npc1/respawn_chat"]
 polygon = PackedVector2Array(-12, -11, -15, -7, -16, -3, -16, 2, -14, 9, -10, 13, -3, 16, 4, 16, 11, 12, 15, 8, 16, 4, 16, -1, 15, -7, 12, -11, 8, -14, 4, -16, 0, -16, -4, -16, -8, -14, -12, -12, -13, -14, -15, -16, -9, -20, -2, -21, 5, -21, 9, -20, 14, -15, 16, -12, 19, -8, 21, -4, 20, 3, 18, 9, 14, 14, 8, 16, 3, 20, -8, 19, -15, 15, -18, 11, -21, 5, -21, 0, -21, -5, -19, -10, -16, -15)
 
-<<<<<<< HEAD
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_b8s8a")
+[node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_ktf6p")
 mesh = SubResource("QuadMesh_ithrf")
-=======
-[node name="CanvasLayer" parent="." instance=ExtResource("14_b8s8a")]
->>>>>>> parent of 5fdbe37 (glitch when dialogue or any action and glitch sfx)
+
+[node name="crt shader" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_ithrf")
+mesh = SubResource("QuadMesh_si58k")
+
+[node name="crt and glitch" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_si58k")
+mesh = SubResource("QuadMesh_by11x")
+
+[node name="GlitchSFX" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+stream = ExtResource("17_si58k")
 
 [connection signal="body_entered" from="TileMap/Trees/Mail box/Chatdetection" to="TileMap/Trees/Mail box" method="_on_chatdetection_body_entered"]
 [connection signal="body_exited" from="TileMap/Trees/Mail box/Chatdetection" to="TileMap/Trees/Mail box" method="_on_chatdetection_body_exited"]
