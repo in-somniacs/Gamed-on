@@ -11938,7 +11938,7 @@ shape = SubResource("RectangleShape2D_5n70b")
 
 [node name="npc1" type="CharacterBody2D" parent="." node_paths=PackedStringArray("player", "popup")]
 z_index = 1
-position = Vector2(-31, -131)
+position = Vector2(-38, -23)
 script = ExtResource("12_1fmc0")
 player = NodePath("../Player")
 dialogue = "res://timelines/footpathtimeline.dtl"

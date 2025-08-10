@@ -8,19 +8,19 @@
 "sound_moods": {},
 "style": "defaulttextbox"
 },
-&"default_portrait": "NPCfootpath",
-&"description": "",
+&"default_portrait": "New portrait",
+&"description": "Player's mother",
 &"display_name": "",
 &"mirror": false,
-&"nicknames": ["npc"],
+&"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"NPCfootpath": {
+"New portrait": {
 "export_overrides": {
-"image": "\"res://assets/npc1textpreview.png\""
+"image": "\"res://assets/momdialogue.png\""
 },
 "mirror": false,
-"offset": Vector2(-55, -105),
+"offset": Vector2(-55, -110),
 "scale": 0.3,
 "scene": ""
 }

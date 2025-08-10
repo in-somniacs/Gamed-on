@@ -7,7 +7,12 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	if not global.has_played_room_intro:
+		global.has_played_room_intro = true
+		await get_tree().create_timer(5.0).timeout
+		Dialogic.start("res://timelines/roomentry1.dtl")
+
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

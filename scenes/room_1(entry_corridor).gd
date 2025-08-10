@@ -5,7 +5,7 @@ extends Node2D
 func _ready() -> void:
 	if global.game_first_loadin == true:
 		$Player.position.x = global.player_startx
-		$Player.position.y = global.player_starty
+		$Player.positioy = global.player_starty
 	else:
 		$Player.position.x = global.player_exit_roomx
 		$Player.position.y = global.player_exit_roomy

@@ -1,8 +1,24 @@
 ........
 join Player left
-Player: right my cousin sent me this gift , better see whats inside
+Player: Let’s see what we’ve got…
 join consolechar right
-Player: its the old ps1 he was talking about 
-Player: lets take this back to my room and play some retro games , cant wait!!
+Player: Oh… this is…
+Player: It’s the old console I used to play with my cousin.
 leave consolechar
-Player: lets head to the room
+Player: Didn’t think I’d ever see this again.
+Player: …Huh, the buttons feel a bit… weird.
+Player: Oh… my cousin also left a note here. But it’s… strange. The handwriting twists halfway through, and some words don’t make sense —
+leave Player
+note: wait.\
+\
+no… no, that’s—##$$%—wrong.\
+\
+(static) did you hear that?
+note: me, me, me, me—\
+\
+they told me not to talk to you.\
+\
+but i like your voice.
+join Player left
+Pfft… classic. This has to be one of his stupid pranks… right? Yeah… right…
+Player: As I have spare time till noon , guess I'll hook this thing up.
