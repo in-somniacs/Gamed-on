@@ -21,7 +21,7 @@ func _ready() -> void:
 func _on_mouse_entered() -> void:
 	if InventoryItem:
 		print()
-		tooltip_label.text = "[b]%s[/b]\n%s" % [item.title,  item.info]
+		tooltip_label.text = "%s\n%s" % [item.title,  item.info]
 		tooltip_label.visible = true
 		tooltip_label.global_position = get_global_mouse_position() + Vector2(16, 16)
 

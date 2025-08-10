@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cegs1img0ferx"]
+
+[ext_resource type="Script" uid="uid://ccipfjplg80wo" path="res://addons/dialogic/Editor/Events/event_field.gd" id="1_ehw31"]
+[ext_resource type="Script" uid="uid://xd07sjqlwoxy" path="res://addons/dialogic/Resources/dialogic_layout_base.gd" id="2_b2pcr"]
+
+[node name="room1(entry corridor)" type="Node2D"]
+
+[node name="DialogicVisualEditorField" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ehw31")
+metadata/_custom_type_script = "uid://ccipfjplg80wo"
+
+[node name="DialogicLayoutBase" type="Node" parent="DialogicVisualEditorField"]
+script = ExtResource("2_b2pcr")
+metadata/_custom_type_script = "uid://xd07sjqlwoxy"
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="DialogicVisualEditorField/DialogicLayoutBase"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogicVisualEditorField/DialogicLayoutBase/VisibleOnScreenEnabler2D"]
+offset_right = 40.0
+offset_bottom = 40.0
