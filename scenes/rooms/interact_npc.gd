@@ -40,18 +40,18 @@ func _on_chatdetection_body_exited(body: Node2D) -> void:
 
 func run_dialogue(dialogue_string):
 	# Enable glitch
-	shader_mesh.material.set_shader_parameter("glitch_enabled", true)
+	#shader_mesh.material.set_shader_parameter("glitch_enabled", true)
 	
 	# Play glitch sound alongside dialogue
-	glitch_sfx.stop()
-	glitch_sfx.play()
+	#glitch_sfx.stop()
+	#glitch_sfx.play()
 
 	# Start dialogue immediately
 	Dialogic.start(dialogue_string)
 	
 	# When sound finishes, stop glitch effect
 	await get_tree().create_timer(10.0).timeout
-	shader_mesh.material.set_shader_parameter("glitch_enabled", false)
+	#shader_mesh.material.set_shader_parameter("glitch_enabled", false)
 	
 
 func _on_dialogue_end():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://klsd68mpixi8"]
+[gd_scene load_steps=31 format=3 uid="uid://klsd68mpixi8"]
 
 [ext_resource type="Texture2D" uid="uid://btyqpu4nltqsn" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_maoc1"]
 [ext_resource type="Script" uid="uid://rv6cdk4oqmo1" path="res://scenes/rooms/room_0.gd" id="1_yg2jv"]
@@ -14,11 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://fwmjlm673uh2" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Objects/PNG/objects_house_0037_Layer-38.png" id="10_181co"]
 [ext_resource type="Script" uid="uid://c4uwlhf8fc0el" path="res://scripts/switch_scenes.gd" id="10_kf5e4"]
 [ext_resource type="Texture2D" uid="uid://7nkymmnf826a" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/Interior.png" id="10_nflq0"]
-[ext_resource type="Resource" uid="uid://b628quyrfxk7o" path="res://items/inventory.tres" id="12_f0rq6"]
+[ext_resource type="Resource" uid="uid://b4vmjmafrldlc" path="res://items/inventory.tres" id="12_f0rq6"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="15_lpf3e"]
 [ext_resource type="PackedScene" uid="uid://cmwk0b8uxv7sj" path="res://scenes/ui/achievement.tscn" id="16_181co"]
-[ext_resource type="PackedScene" uid="uid://bs0r4adbpnl2g" path="res://items/key_1.tscn" id="17_p6je4"]
-[ext_resource type="Resource" uid="uid://gmt8btnj0bp4" path="res://items/key1.tres" id="19_mcqdl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epks6"]
 texture = ExtResource("2_xdi0x")
@@ -8458,10 +8456,6 @@ radius = 26.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b00dr"]
 size = Vector2(31, 62)
 
-[sub_resource type="Curve" id="Curve_kf5e4"]
-_data = [Vector2(0.0965909, 1), 0.0, 0.0, 0, 0, Vector2(0.0965909, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0.0337079), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 4
-
 [node name="room0" type="Node2D"]
 script = ExtResource("1_yg2jv")
 
@@ -8545,29 +8539,6 @@ scale = Vector2(0.70703, 0.660168)
 theme_override_fonts/normal_font = ExtResource("9_b00dr")
 text = "go out?"
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(16, -74)
-amount = 1
-lifetime = 3.12
-preprocess = 1.26
-explosiveness = 0.01
-emission_shape = 1
-emission_sphere_radius = 0.01
-direction = Vector2(0, 0)
-spread = 90.0
-gravity = Vector2(0, 0)
-damping_min = 100.0
-damping_max = 100.0
-angle_min = 45.0
-angle_max = 45.0
-scale_amount_min = 11.1
-scale_amount_max = 11.11
-scale_amount_curve = SubResource("Curve_kf5e4")
-anim_speed_min = 19.39
-anim_speed_max = 42.66
-anim_offset_min = 0.005
-anim_offset_max = 0.0305
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
@@ -8579,18 +8550,6 @@ polygon = PackedVector2Array(-2, -1, -2, 44, -2, 238, -2, 241, 170, 242, 286, 24
 [node name="invenory" parent="CanvasLayer" instance=ExtResource("15_lpf3e")]
 
 [node name="achievement" parent="CanvasLayer" instance=ExtResource("16_181co")]
-
-[node name="key1" parent="." instance=ExtResource("17_p6je4")]
-position = Vector2(99, -12)
-itemRes = ExtResource("19_mcqdl")
-
-[node name="key2" parent="." instance=ExtResource("17_p6je4")]
-position = Vector2(167, -12)
-itemRes = ExtResource("19_mcqdl")
-
-[node name="key3" parent="." instance=ExtResource("17_p6je4")]
-position = Vector2(135, -12)
-itemRes = ExtResource("19_mcqdl")
 
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="interactable2/Chatdetection" to="interactable2" method="_on_chatdetection_body_entered"]
