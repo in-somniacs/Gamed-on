@@ -1,5 +1,5 @@
 extends Node
-
+var canmove = true
 var current_scene = "world"
 var transition_scene = false
 var has_played_room_intro = false

@@ -8,10 +8,12 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if not global.has_played_room_intro:
+		global.canmove = false
 		global.has_played_room_intro = true
 		await get_tree().create_timer(5.0).timeout
 		Dialogic.start("res://timelines/roomentry1.dtl")
-
+		global.canmove = true
+		
 
 
 

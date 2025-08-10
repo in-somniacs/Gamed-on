@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 		if Input.is_action_pressed("dialogic_default_action"):
 			run_dialogue(dialogue)
 			chatbox.disabled = true
+			global.canmove = false
 			
 			
 			
@@ -57,6 +58,7 @@ func run_dialogue(dialogue_string):
 func _on_dialogue_end():
 	shader_mesh.material.set_shader_parameter("glitch_enabled", false)
 	Dialogic.timeline_ended.disconnect(_on_dialogue_end)
+	global.canmove = true
 
 func _on_respawn_chat_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
