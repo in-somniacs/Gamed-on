@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://dx8p3hekcol1c"]
+[gd_scene load_steps=65 format=4 uid="uid://dx8p3hekcol1c"]
 
 [ext_resource type="Texture2D" uid="uid://hwwa521btiao" path="res://scenes/tachyon/assets/Lo_bit_city_set.png" id="1_5xkcy"]
 [ext_resource type="Texture2D" uid="uid://qwx05nl3p8w1" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_jvccj"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dnvhuqrqvfac4" path="res://scenes/tachyon/assets/fdfgbfsgfdsgfd.png" id="6_2jpt3"]
 [ext_resource type="PackedScene" uid="uid://cpryjj6ky7t31" path="res://scenes/tachyon/scenes/character_body_2d.tscn" id="7_2jpt3"]
 [ext_resource type="Script" uid="uid://dgrh7e813kbg8" path="res://scenes/tachyon/scenes/mail_box.gd" id="7_udryc"]
+[ext_resource type="PackedScene" uid="uid://cg7jtro2ulkud" path="res://items/ps.tscn" id="7_x6aoe"]
 [ext_resource type="Script" uid="uid://c4uwlhf8fc0el" path="res://scripts/switch_scenes.gd" id="8_5n70b"]
 [ext_resource type="PackedScene" uid="uid://btkj6y1uo00mr" path="res://scenes/interactable.tscn" id="9_7d5dh"]
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="10_udryc"]
@@ -18,6 +19,7 @@
 [ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="16_ithrf"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="17_si58k"]
 [ext_resource type="PackedScene" uid="uid://ces6y2p5bi11o" path="res://scenes/menu/pause_menu.tscn" id="18_by11x"]
+[ext_resource type="PackedScene" uid="uid://cmwk0b8uxv7sj" path="res://scenes/ui/achievement.tscn" id="19_qgxof"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_647yv"]
 texture = ExtResource("1_5xkcy")
@@ -11905,6 +11907,9 @@ tile_set = SubResource("TileSet_70igf")
 tile_map_data = PackedByteArray("AAAXAP//AgAQAB4AAAAfAPv/AgABAAsAAAA=")
 tile_set = SubResource("TileSet_wlsod")
 
+[node name="ps" parent="TileMap/Trees" instance=ExtResource("7_x6aoe")]
+position = Vector2(56, -57)
+
 [node name="Mail box" type="CharacterBody2D" parent="TileMap/Trees" node_paths=PackedStringArray("player", "popup")]
 position = Vector2(56, -56)
 script = ExtResource("7_udryc")
@@ -12024,6 +12029,9 @@ offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
 
+[node name="achievement" parent="CanvasLayer" instance=ExtResource("19_qgxof")]
+visible = false
+
 [connection signal="body_entered" from="TileMap/Trees/Mail box/Chatdetection" to="TileMap/Trees/Mail box" method="_on_chatdetection_body_entered"]
 [connection signal="body_exited" from="TileMap/Trees/Mail box/Chatdetection" to="TileMap/Trees/Mail box" method="_on_chatdetection_body_exited"]
 [connection signal="body_entered" from="interactable" to="interactable" method="_on_body_entered"]
@@ -12034,3 +12042,4 @@ offset_bottom = 0.0
 [connection signal="body_exited" from="npc1/respawn_chat" to="npc1" method="_on_respawn_chat_body_exited"]
 
 [editable path="Player"]
+[editable path="CanvasLayer/achievement"]
