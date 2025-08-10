@@ -7151,6 +7151,9 @@ polygon = PackedVector2Array(-205, -499, -47, -498, 35, -498, 35, -498, 45, -504
 position = Vector2(432, -534.5)
 shape = SubResource("RectangleShape2D_ohkba")
 
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(432, -503)
+
 [connection signal="body_entered" from="room_enter_point" to="." method="_on_room_enter_point_body_entered"]
 [connection signal="body_exited" from="room_enter_point" to="." method="_on_room_enter_point_body_exited"]
 

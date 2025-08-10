@@ -3,11 +3,12 @@ extends Node
 var current_scene = "world"
 var transition_scene = false
 
-var player_exit_roomx = 0
-var player_exit_roomy = 0
-var player_startx = 0
-var player_starty = 0
+var player_exit_roomx = 432
+var player_exit_roomy = -503
+var player_startx = 48
+var player_starty = 52
 
+var game_first_loadin = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,10 +20,8 @@ func _process(delta: float) -> void:
 	pass
 
 func finish_change_scene():
-	if transition_scene == true:
-		transition_scene == false
-		if current_scene == "world":
-			current_scene = "cliff-side"
-		else:
-			current_scene = "world"
-		
+	transition_scene = false
+	if current_scene == "world":
+		current_scene = "cliff-side"
+	elif current_scene == "cliff-side":
+		current_scene = "world"
