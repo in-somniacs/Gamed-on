@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		var transition = preload("res://scenes/transition_manager.tscn").instantiate()
 		get_tree().root.add_child(transition)
 		transition.start_transition(next_scene)
-		global.canmove = false
+		
 		#get_tree().change_scene_to_file(next_scene)
 		
 
