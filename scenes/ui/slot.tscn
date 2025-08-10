@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dxjr3o67g5v8x" path="res://assets/ui/inventorySlot.png" id="1_jkamp"]
 [ext_resource type="Script" uid="uid://btupon6fw1168" path="res://scripts/slot.gd" id="1_sad2q"]
-[ext_resource type="FontFile" uid="uid://c2gqxnri5l50y" path="res://pacman1/assets/perfect_dos_vga_437/Perfect DOS VGA 437 Win.ttf" id="3_c886m"]
+[ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="3_c886m"]
 
 [node name="slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
