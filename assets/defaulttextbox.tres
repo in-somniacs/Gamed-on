@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogicStyle" load_steps=22 format=3 uid="uid://4wsx2r40x0k0"]
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=20 format=3 uid="uid://4wsx2r40x0k0"]
 
 [ext_resource type="Script" uid="uid://ckntj86xveyb2" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_ne8mg"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_eqikv"]
@@ -11,46 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="9_08sh7"]
 [ext_resource type="Script" uid="uid://h2fpvf8bvqp0" path="res://addons/dialogic/Resources/dialogic_style.gd" id="10_snnho"]
 
-[sub_resource type="GDScript" id="GDScript_ne8mg"]
-script/source = "@tool
-extends DialogicLayoutBase
-
-## The default layout base scene.
-
-@export var canvas_layer: int = 1
-@export var follow_viewport: bool = false
-
-@export_subgroup(\"Global\")
-@export var global_bg_color: Color = Color(0, 0, 0, 0.9)
-@export var global_font_color: Color = Color(\"white\")
-@export_file('*.ttf', '*.tres') var global_font: String = \"\"
-@export var global_font_size: int = 18
-
-
-func _apply_export_overrides() -> void:
-	# apply layer
-	set(&'layer', canvas_layer)
-	set(&'follow_viewport_enabled', follow_viewport)
-
-
-"
-
-[sub_resource type="PackedScene" id="PackedScene_eqikv"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"names": PackedStringArray("Custom", "script", "CanvasLayer", "BackgroundLayer", "apply_overrides_on_ready", "VN_PortraitLayer", "FullAdvanceInputLayer", "VN_TextboxLayer", "text_use_global_size", "text_size", "text_use_global_font", "normal_font", "box_size", "name_label_use_global_font", "name_label_font", "typing_sounds_mode", "typing_sounds_sounds_folder", "typing_sounds_volume", "Glossary", "VN_ChoiceLayer", "boxes_stylebox_normal", "sounds_pressed", "sounds_hover", "sounds_focus", "TextInputLayer", "ExampleHistoryScene", "font_use_global_size", "font_custom_size", "font_use_global_fonts", "font_custom_normal", "font_custom_bold", "font_custom_italics", "disabled"),
-"node_count": 9,
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 2, 0, -1, 1, 1, 0, 0, 0, 0, 2147483647, 3, 1, 1, 4, 2, 0, 0, 0, 2147483647, 5, 3, 1, 4, 2, 0, 0, 0, 2147483647, 6, 4, 1, 4, 2, 0, 0, 0, 2147483647, 7, 5, 11, 8, 6, 9, 7, 10, 6, 11, 8, 12, 9, 13, 6, 14, 8, 15, 10, 16, 11, 17, 12, 4, 2, 0, 0, 0, 2147483647, 18, 13, 1, 4, 2, 0, 0, 0, 2147483647, 19, 14, 5, 20, 15, 21, 16, 22, 17, 23, 18, 4, 2, 0, 0, 0, 2147483647, 24, 19, 1, 4, 2, 0, 0, 0, 2147483647, 25, 20, 8, 26, 2, 27, 21, 28, 2, 29, 22, 30, 22, 31, 22, 32, 6, 4, 2, 0),
-"variants": [SubResource("GDScript_ne8mg"), ExtResource("2_eqikv"), true, ExtResource("3_ja2lb"), ExtResource("4_a4ndv"), ExtResource("5_lnshf"), false, 18, "res://assets/font/Perfect DOS VGA 437 Win.ttf", Vector2(400, 100), 2, "res://assets/sfx/typing", -20.0, ExtResource("6_46x2x"), ExtResource("7_4sbuf"), "choice_panel_normal.tres", "res://assets/sfx/footstep2.wav", "res://assets/sfx/click.wav", "res://assets/sfx/footstep1.wav", ExtResource("8_0n6us"), ExtResource("9_08sh7"), 15, ""],
-"version": 3
-}
-
 [sub_resource type="Resource" id="Resource_30alx"]
 script = ExtResource("1_ne8mg")
-scene = SubResource("PackedScene_eqikv")
 overrides = {}
 
 [sub_resource type="Resource" id="Resource_reey6"]
@@ -93,9 +55,8 @@ overrides = {}
 script = ExtResource("1_ne8mg")
 scene = ExtResource("7_4sbuf")
 overrides = {
-"boxes_stylebox_normal": "\"choice_panel_normal.tres\"",
 "sounds_focus": "\"res://assets/sfx/footstep1.wav\"",
-"sounds_hover": "\"res://assets/sfx/click.wav\"",
+"sounds_hover": "\"res://assets/sfx/footstep3.wav\"",
 "sounds_pressed": "\"res://assets/sfx/footstep2.wav\""
 }
 

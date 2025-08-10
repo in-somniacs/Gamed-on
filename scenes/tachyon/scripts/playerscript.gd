@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 		anim.play("side_idle")
 		return
 	
-	if direction.length() && global.canmove == true:
+	if direction.length():
 		velocity.x = direction.x * delta * SPEED
 		velocity.y = direction.y * delta * SPEED
 		#look_at(position + direction)

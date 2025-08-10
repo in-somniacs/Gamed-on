@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ces6y2p5bi11o"]
+[gd_scene load_steps=4 format=3 uid="uid://ces6y2p5bi11o"]
 
 [ext_resource type="Script" uid="uid://jeto28v15y8y" path="res://scenes/menu/pause_menu.gd" id="1_n54lc"]
-[ext_resource type="Script" uid="uid://c1adywyhlqu5t" path="res://scenes/menu/back_to_menu.gd" id="2_msl3b"]
 [ext_resource type="Theme" uid="uid://b0jsoj5phie5g" path="res://assets/main_menu.tres" id="2_ux7g8"]
 [ext_resource type="FontFile" uid="uid://4rdpt2vm5l0l" path="res://assets/font/PixelifySans-VariableFont_wght.ttf" id="2_xtxec"]
 
@@ -16,58 +15,55 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n54lc")
 
-[node name="Panel2" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -85.0
-offset_top = -103.0
-offset_right = 85.0
-offset_bottom = 103.0
+offset_left = -73.0
+offset_top = -82.5
+offset_right = 73.0
+offset_bottom = 82.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_msl3b")
-next_scene = "res://scenes/menu/main_menu.tscn"
+scale = Vector2(1.1, 1.1)
 
-[node name="CenterContainer" type="CenterContainer" parent="Panel2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -84.0
-offset_top = -104.5
-offset_right = 84.0
-offset_bottom = 104.5
+offset_left = -43.5
+offset_top = -63.5
+offset_right = 43.5
+offset_bottom = 63.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.6, 0.6)
-pivot_offset = Vector2(85, 105)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel2/CenterContainer"]
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="Panel2/CenterContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_xtxec")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 31
 text = "Paused"
 horizontal_alignment = 1
 
-[node name="resume" type="Button" parent="Panel2/CenterContainer/VBoxContainer"]
+[node name="resume" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_ux7g8")
 text = "resume"
 
-[node name="Button3" type="Button" parent="Panel2/CenterContainer/VBoxContainer"]
+[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ux7g8")
+text = "options"
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_ux7g8")
 text = "quit?"
 
-[connection signal="pressed" from="Panel2/CenterContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Panel2/CenterContainer/VBoxContainer/Button3" to="Panel2" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/resume" to="." method="_on_resume_pressed"]
