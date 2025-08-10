@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://ces6y2p5bi11o"]
+[gd_scene load_steps=4 format=3 uid="uid://ces6y2p5bi11o"]
 
 [ext_resource type="Script" uid="uid://jeto28v15y8y" path="res://scenes/menu/pause_menu.gd" id="1_n54lc"]
 [ext_resource type="Theme" uid="uid://b0jsoj5phie5g" path="res://assets/main_menu.tres" id="2_ux7g8"]
+[ext_resource type="FontFile" uid="uid://4rdpt2vm5l0l" path="res://assets/font/PixelifySans-VariableFont_wght.ttf" id="2_xtxec"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n54lc")
@@ -25,6 +28,7 @@ offset_right = 73.0
 offset_bottom = 82.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.1, 1.1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -33,15 +37,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -40.5
+offset_left = -43.5
 offset_top = -63.5
-offset_right = 40.5
+offset_right = 43.5
 offset_bottom = 63.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xtxec")
+theme_override_font_sizes/font_size = 31
 text = "Paused"
 horizontal_alignment = 1
 
@@ -52,10 +58,12 @@ text = "resume"
 
 [node name="Button2" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_ux7g8")
 text = "options"
 
 [node name="Button3" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_ux7g8")
 text = "quit?"
 
 [connection signal="pressed" from="Panel/VBoxContainer/resume" to="." method="_on_resume_pressed"]
