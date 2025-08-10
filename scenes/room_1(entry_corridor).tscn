@@ -1,7 +1,7 @@
 [gd_scene load_steps=70 format=4 uid="uid://cegs1img0ferx"]
 
 [ext_resource type="Texture2D" uid="uid://7nkymmnf826a" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/Interior.png" id="1_7k5vf"]
-[ext_resource type="Script" path="res://scenes/room_1(entry_corridor).gd" id="1_qp1n4"]
+[ext_resource type="Script" uid="uid://cl881fg85mw84" path="res://scenes/room_1(entry_corridor).gd" id="1_qp1n4"]
 [ext_resource type="Texture2D" uid="uid://djkw8grcsdrsu" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/walls_floor.png" id="2_vk5ia"]
 [ext_resource type="Texture2D" uid="uid://cdaj0grff1e6e" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/Tiled_files/Doors_windows_animation.png" id="3_mpblr"]
 [ext_resource type="Texture2D" uid="uid://dt2y0dl21xt4g" path="res://assets/rundown house/rundown house/clock/clock_15x32.png" id="4_31ant"]

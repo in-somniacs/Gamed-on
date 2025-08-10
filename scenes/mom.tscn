@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1ooj4l5vcc2n"]
+
+[ext_resource type="Script" uid="uid://cuq3v26blnyc2" path="res://scenes/rooms/interact_npc.gd" id="1_flcde"]
+[ext_resource type="Texture2D" uid="uid://dnun67pkw1my2" path="res://assets/mom.png" id="2_nk83r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7lba"]
+atlas = ExtResource("2_nk83r")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxr1p"]
+atlas = ExtResource("2_nk83r")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxvbv"]
+atlas = ExtResource("2_nk83r")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tc4aa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7lba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxr1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxvbv")
+}],
+"loop": true,
+"name": &"idle ig?",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tq26g"]
+radius = 16.0312
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jfy6s"]
+radius = 14.0357
+
+[node name="Mom" type="CharacterBody2D"]
+script = ExtResource("1_flcde")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tc4aa")
+animation = &"idle ig?"
+autoplay = "idle ig?"
+
+[node name="Chatdetection" type="Area2D" parent="."]
+disable_mode = 1
+
+[node name="chatbox" type="CollisionShape2D" parent="Chatdetection"]
+shape = SubResource("CircleShape2D_tq26g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_jfy6s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="body_entered" from="Chatdetection" to="." method="_on_chatdetection_body_entered"]
+[connection signal="body_exited" from="Chatdetection" to="." method="_on_chatdetection_body_exited"]
