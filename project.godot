@@ -27,6 +27,7 @@ global="*res://global.gd"
 [dialogic]
 
 directories/dch_directory={
+"Mom": "res://timelines/Mom.dch",
 "NPCfootpath": "res://timelines/NPCfootpath.dch",
 "Player": "res://timelines/Player.dch",
 "consolechar": "res://timelines/consolechar.dch"
@@ -35,6 +36,8 @@ directories/dtl_directory={
 "console": "res://timelines/console.dtl",
 "consoleget": "res://timelines/consoleget.dtl",
 "footpathtimeline": "res://timelines/footpathtimeline.dtl",
+"momtimeline": "res://timelines/momtimeline.dtl",
+"roomentry1": "res://timelines/roomentry1.dtl",
 "roomspawntimeline": "res://timelines/roomspawntimeline.dtl"
 }
 layout/style_list=["res://scenes/tachyon/assets/speakertextboxstyle.tres", "res://scenes/tachyon/assets/floatingbubblestyle.tres", "res://assets/defaulttextbox.tres"]
@@ -70,6 +73,9 @@ translation/translation_folder=""
 translation/save_mode=0
 translation/add_separator=false
 audio/type_sound_bus="sfx"
+text/absolute_autopauses=true
+history/simple_history_enabled=true
+history/simple_history_save=true
 
 [display]
 
