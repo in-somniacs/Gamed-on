@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var SPEED = 4000.0
 @onready var anim = $AnimatedSprite2D
-@export var Inventory: Inventory
+@export var Inventory: In
 var can_move : bool = true
 
 func _ready() -> void:
@@ -54,4 +54,6 @@ func player():
 	pass
 
 
-	
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.has_method("collect"):
+		area.collect(Inventory)

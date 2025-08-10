@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cpryjj6ky7t31"]
+[gd_scene load_steps=46 format=3 uid="uid://cpryjj6ky7t31"]
 
 [ext_resource type="Texture2D" uid="uid://2jp28sdhxsgh" path="res://scenes/tachyon/assets/player.png" id="1_t0ufk"]
 [ext_resource type="Script" uid="uid://rixf2ctvpmu" path="res://scenes/tachyon/scripts/playerscript.gd" id="1_yvxj1"]
@@ -315,6 +315,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yvxj1"]
+radius = 6.15385
+height = 18.4615
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_t0ufk"]
 radius = 6.0
 
@@ -327,10 +331,6 @@ script = ExtResource("1_yvxj1")
 sprite_frames = SubResource("SpriteFrames_smgy3")
 animation = &"front_walk"
 autoplay = "side_idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 13)
-shape = SubResource("CircleShape2D_t0ufk")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -346,5 +346,15 @@ offset_right = 3.92308
 offset_bottom = -4.53846
 texture = ExtResource("3_yvxj1")
 region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 6.15385)
+shape = SubResource("CapsuleShape2D_yvxj1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 13)
+shape = SubResource("CircleShape2D_t0ufk")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

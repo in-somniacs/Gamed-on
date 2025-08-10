@@ -8,6 +8,7 @@ func update():
 		slots[i].update(inventory.items[i])
 	
 func _ready() -> void:
+	inventory.updated.connect(update)
 	update()
 	close()
 func open():
@@ -21,7 +22,7 @@ func close():
 	visible = false
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_pressed("inventory") && isopen == true:
+	if Input.is_action_just_pressed("inventory") && isopen == true:
 			close()
-	elif Input.is_action_pressed("inventory") && isopen == false:
+	elif Input.is_action_just_pressed("inventory") && isopen == false:
 			open()

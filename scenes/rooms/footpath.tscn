@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://dx8p3hekcol1c"]
+[gd_scene load_steps=65 format=4 uid="uid://dx8p3hekcol1c"]
 
 [ext_resource type="Texture2D" uid="uid://hwwa521btiao" path="res://scenes/tachyon/assets/Lo_bit_city_set.png" id="1_5xkcy"]
 [ext_resource type="Texture2D" uid="uid://qwx05nl3p8w1" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_jvccj"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dnvhuqrqvfac4" path="res://scenes/tachyon/assets/fdfgbfsgfdsgfd.png" id="6_2jpt3"]
 [ext_resource type="PackedScene" uid="uid://cpryjj6ky7t31" path="res://scenes/tachyon/scenes/character_body_2d.tscn" id="7_2jpt3"]
 [ext_resource type="Script" uid="uid://dgrh7e813kbg8" path="res://scenes/tachyon/scenes/mail_box.gd" id="7_udryc"]
+[ext_resource type="PackedScene" uid="uid://cg7jtro2ulkud" path="res://items/ps.tscn" id="7_x6aoe"]
 [ext_resource type="Script" uid="uid://c4uwlhf8fc0el" path="res://scripts/switch_scenes.gd" id="8_5n70b"]
 [ext_resource type="PackedScene" uid="uid://btkj6y1uo00mr" path="res://scenes/interactable.tscn" id="9_7d5dh"]
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="10_udryc"]
@@ -11905,6 +11906,9 @@ tile_set = SubResource("TileSet_70igf")
 [node name="Trees" type="TileMapLayer" parent="TileMap"]
 tile_map_data = PackedByteArray("AAAXAP//AgAQAB4AAAAfAPv/AgABAAsAAAA=")
 tile_set = SubResource("TileSet_wlsod")
+
+[node name="ps" parent="TileMap/Trees" instance=ExtResource("7_x6aoe")]
+position = Vector2(56, -57)
 
 [node name="Mail box" type="CharacterBody2D" parent="TileMap/Trees" node_paths=PackedStringArray("player", "popup")]
 position = Vector2(56, -56)

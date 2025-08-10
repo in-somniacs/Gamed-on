@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://klsd68mpixi8"]
+[gd_scene load_steps=34 format=3 uid="uid://klsd68mpixi8"]
 
 [ext_resource type="Texture2D" uid="uid://btyqpu4nltqsn" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_maoc1"]
 [ext_resource type="Script" uid="uid://rv6cdk4oqmo1" path="res://scenes/rooms/room_0.gd" id="1_yg2jv"]
@@ -14,8 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://fwmjlm673uh2" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Objects/PNG/objects_house_0037_Layer-38.png" id="10_181co"]
 [ext_resource type="Script" uid="uid://c4uwlhf8fc0el" path="res://scripts/switch_scenes.gd" id="10_kf5e4"]
 [ext_resource type="Texture2D" uid="uid://7nkymmnf826a" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/Interior.png" id="10_nflq0"]
+[ext_resource type="Resource" uid="uid://ykumylw186eq" path="res://items/inventory.tres" id="12_f0rq6"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="15_lpf3e"]
 [ext_resource type="PackedScene" uid="uid://cmwk0b8uxv7sj" path="res://scenes/ui/achievement.tscn" id="16_181co"]
+[ext_resource type="PackedScene" uid="uid://bs0r4adbpnl2g" path="res://items/key_1.tscn" id="17_p6je4"]
+[ext_resource type="Resource" uid="uid://gmt8btnj0bp4" path="res://items/key1.tres" id="19_mcqdl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epks6"]
 texture = ExtResource("2_xdi0x")
@@ -8481,8 +8484,9 @@ position = Vector2(16, -28)
 scale = Vector2(1.4, 1.4)
 collision_layer = 3
 collision_mask = 3
+Inventory = ExtResource("12_f0rq6")
 
-[node name="CollisionShape2D" parent="Player" index="1"]
+[node name="CollisionShape2D" parent="Player" index="5"]
 light_mask = 3
 visibility_layer = 3
 
@@ -8576,6 +8580,19 @@ polygon = PackedVector2Array(-2, -1, -2, 44, -2, 238, -2, 241, 170, 242, 286, 24
 
 [node name="achievement" parent="CanvasLayer" instance=ExtResource("16_181co")]
 
+[node name="key1" parent="." instance=ExtResource("17_p6je4")]
+position = Vector2(99, -12)
+itemRes = ExtResource("19_mcqdl")
+
+[node name="key2" parent="." instance=ExtResource("17_p6je4")]
+position = Vector2(167, -12)
+itemRes = ExtResource("19_mcqdl")
+
+[node name="key3" parent="." instance=ExtResource("17_p6je4")]
+position = Vector2(135, -12)
+itemRes = ExtResource("19_mcqdl")
+
+[connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="interactable2/Chatdetection" to="interactable2" method="_on_chatdetection_body_entered"]
 [connection signal="body_exited" from="interactable2/Chatdetection" to="interactable2" method="_on_chatdetection_body_exited"]
 [connection signal="body_entered" from="door" to="door" method="_on_body_entered"]

@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	if player_in_area:
 		if Input.is_action_pressed("dialogic_default_action"):
 			run_dialogue(dialogue)
-			inv.items[0] = load("res://items/ps.tres")
+
 			chatbox.disabled = true
 	ResourceSaver.save(inv)
 			
