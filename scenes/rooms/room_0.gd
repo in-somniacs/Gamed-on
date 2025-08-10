@@ -16,8 +16,11 @@ func _ready() -> void:
 		var dialog_node = Dialogic.start("res://timelines/roomentry1.dtl")
 		dialog_node.connect("timeline_end", Callable(self, "_on_dialogue_finished"))
 
-func _on_dialogue_finished():
 	global.canmove = true
+
+
+#func _on_dialogue_finished():
+	#global.canmove = true
 
 
 
