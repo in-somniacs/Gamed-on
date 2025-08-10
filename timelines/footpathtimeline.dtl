@@ -1,14 +1,18 @@
-join NPCfootpath leftmost [z_index="1"]
-NPCfootpath: Hey man how are you
-- good
-- im fine
-NPCfootpath: nice man btw i think u got a mail. I saw the postman drop it.
+join NPCfootpath left [z_index="1"]
+NPCfootpath: Yo! Where you headed? , Its Josh from the neighbourhood.
+- Mom said a package arrived today
+	NPCfootpath: That thing looks… kinda old. Does it even work?
+- Just checking out the mail.
+	NPCfootpath: Yeah I was there when the postman dropped it , that is an old relic.
 leave NPCfootpath
 join Player left
-Player: oh really? I will check it out
+Player: We’ll find out if this relic works or not.
 leave Player
-join NPCfootpath leftmost
-NPCfootpath: yeah man. Anyways ill head home now
+join NPCfootpath left
+NPCfootpath: Lucky! I never get anything in the mail.
 leave NPCfootpath
 join Player left
-Player: alright see you around.
+Player: It’s probably nothing exciting… but who knows.
+leave Player
+join NPCfootpath left
+I’m 43% sure it’ll be fine.

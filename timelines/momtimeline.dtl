@@ -1,13 +1,13 @@
 join Player left
 Player: Hey mom, what’s for dinner tonight?
 leave Player
-join Mom center
+join Mom left
 Mom: Just making curry and rice. It’ll be ready soon.
 leave Mom
 join Player left
 Alright, I’ll be in my room for a while.
 leave Player
-join Mom center
+join Mom left
 Mom: Oh, by the way, your cousin sent over a parcel this morning.\
 You better check the mail box.
 Mom: I think it’s that old game console you used to talk about.

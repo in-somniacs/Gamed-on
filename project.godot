@@ -30,7 +30,8 @@ directories/dch_directory={
 "Mom": "res://timelines/Mom.dch",
 "NPCfootpath": "res://timelines/NPCfootpath.dch",
 "Player": "res://timelines/Player.dch",
-"consolechar": "res://timelines/consolechar.dch"
+"consolechar": "res://timelines/consolechar.dch",
+"note": "res://timelines/note.dch"
 }
 directories/dtl_directory={
 "console": "res://timelines/console.dtl",

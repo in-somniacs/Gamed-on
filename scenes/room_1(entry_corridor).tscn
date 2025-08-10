@@ -7128,11 +7128,6 @@ mesh = SubResource("QuadMesh_8irwg")
 [node name="GlitchSFX" type="AudioStreamPlayer2D" parent="CanvasLayer"]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("17_gpi8r")]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 
 [node name="invenory" parent="CanvasLayer" instance=ExtResource("18_llano")]
 offset_left = 0.0

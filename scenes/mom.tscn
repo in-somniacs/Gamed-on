@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b1ooj4l5vcc2n"]
 
 [ext_resource type="Script" uid="uid://cuq3v26blnyc2" path="res://scenes/rooms/interact_npc.gd" id="1_flcde"]
-[ext_resource type="Texture2D" uid="uid://dnun67pkw1my2" path="res://assets/mom.png" id="2_nk83r"]
+[ext_resource type="Texture2D" uid="uid://gt1bbfeknlyv" path="res://assets/mom.png" id="2_nk83r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t7lba"]
 atlas = ExtResource("2_nk83r")
@@ -53,10 +53,7 @@ disable_mode = 1
 shape = SubResource("CircleShape2D_tq26g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_jfy6s")
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="body_entered" from="Chatdetection" to="." method="_on_chatdetection_body_entered"]
 [connection signal="body_exited" from="Chatdetection" to="." method="_on_chatdetection_body_exited"]

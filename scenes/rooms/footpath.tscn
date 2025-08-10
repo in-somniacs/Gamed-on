@@ -11938,7 +11938,7 @@ shape = SubResource("RectangleShape2D_5n70b")
 
 [node name="npc1" type="CharacterBody2D" parent="." node_paths=PackedStringArray("player", "popup")]
 z_index = 1
-position = Vector2(-31, -131)
+position = Vector2(-38, -23)
 script = ExtResource("12_1fmc0")
 player = NodePath("../Player")
 dialogue = "res://timelines/footpathtimeline.dtl"
@@ -11968,11 +11968,6 @@ polygon = PackedVector2Array(-12, -11, -15, -7, -16, -3, -16, 2, -14, 9, -10, 13
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource("18_by11x")]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 
 [node name="invenory" parent="CanvasLayer2" instance=ExtResource("17_si58k")]
 offset_left = 0.0
