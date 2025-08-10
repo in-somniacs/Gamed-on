@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://fwmjlm673uh2" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Objects/PNG/objects_house_0037_Layer-38.png" id="10_181co"]
 [ext_resource type="Script" uid="uid://c4uwlhf8fc0el" path="res://scripts/switch_scenes.gd" id="10_kf5e4"]
 [ext_resource type="Texture2D" uid="uid://7nkymmnf826a" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/Interior.png" id="10_nflq0"]
-[ext_resource type="Resource" uid="uid://dbddjekxp8k0s" path="res://items/inventory.tres" id="12_f0rq6"]
+[ext_resource type="Resource" uid="uid://bpw44pvu1joxa" path="res://items/inventory.tres" id="12_f0rq6"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="15_lpf3e"]
 [ext_resource type="PackedScene" uid="uid://cmwk0b8uxv7sj" path="res://scenes/ui/achievement.tscn" id="16_181co"]
 

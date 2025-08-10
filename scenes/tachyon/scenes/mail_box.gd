@@ -10,6 +10,7 @@ extends Node2D
 
 
 
+
 var player_in_area = false
 
 
@@ -22,6 +23,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if player_in_area:
 		if Input.is_action_pressed("dialogic_default_action"):
+			global.canmove = false
 			run_dialogue(dialogue)
 
 			chatbox.disabled = true
@@ -54,6 +56,7 @@ func run_dialogue(dialogue_string):
 func _on_dialogue_end():
 	#shader_mesh.material.set_shader_parameter("glitch_enabled", false)
 	Dialogic.timeline_ended.disconnect(_on_dialogue_end)
+	global.canmove = true
 
 	
 
