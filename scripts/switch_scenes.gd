@@ -25,10 +25,10 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":  # Only allow Player to trigger
 		interactable = true
-		hint.visible = true 
+		popup.visible = true 
 		
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		interactable = false
-		hint.visible = false
+		popup.visible = false
 		

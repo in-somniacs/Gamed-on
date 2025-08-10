@@ -44,7 +44,7 @@ func _on_chatdetection_body_exited(body: Node2D) -> void:
 
 func run_dialogue(dialogue_string):
 	# Enable glitch
-	shader_mesh.material.set_shader_parameter("glitch_enabled", true)
+#	shader_mesh.material.set_shader_parameter("glitch_enabled", true)
 	Dialogic.start(dialogue_string)
 	# Listen for end of dialogue
 	Dialogic.timeline_ended.connect(_on_dialogue_end)
@@ -52,7 +52,7 @@ func run_dialogue(dialogue_string):
 	
 
 func _on_dialogue_end():
-	shader_mesh.material.set_shader_parameter("glitch_enabled", false)
+	#shader_mesh.material.set_shader_parameter("glitch_enabled", false)
 	Dialogic.timeline_ended.disconnect(_on_dialogue_end)
 
 	

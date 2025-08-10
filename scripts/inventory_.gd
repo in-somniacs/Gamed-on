@@ -22,7 +22,8 @@ func close():
 	visible = false
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("inventory") && isopen == true:
-			close()
-	elif Input.is_action_just_pressed("inventory") && isopen == false:
-			open()
+	#if Input.is_action_just_pressed("inventory") && isopen == true:
+			#close()
+	#elif Input.is_action_just_pressed("inventory") && isopen == false:
+			#open()
+			pass
