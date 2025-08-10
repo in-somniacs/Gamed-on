@@ -9,10 +9,11 @@ extends CanvasLayer
 
 @export var next_scene_path: String
 var quotes = [
-	"Only those who dare may fly.",
-	"Reality is an illusion, the universe is a hologram.",
-	"The darkest hour has only sixty minutes.",
-	"Every end is a new beginning."
+	"Some things load faster than they should.",
+	"Not everything in here was meant to be found.",
+	"It’s not watching you.",
+	"It’s never really paused.",
+	"The exit isn’t always safe."
 ]
 
 var load = [
