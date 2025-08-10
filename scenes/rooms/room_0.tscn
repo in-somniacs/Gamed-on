@@ -17,7 +17,7 @@
 [ext_resource type="Resource" uid="uid://d05kgn88qschl" path="res://items/inventory.tres" id="12_f0rq6"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="15_lpf3e"]
 [ext_resource type="PackedScene" uid="uid://cmwk0b8uxv7sj" path="res://scenes/ui/achievement.tscn" id="16_181co"]
-[ext_resource type="PackedScene" path="res://scenes/mom.tscn" id="18_f0rq6"]
+[ext_resource type="PackedScene" uid="uid://b1ooj4l5vcc2n" path="res://scenes/mom.tscn" id="18_f0rq6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epks6"]
 texture = ExtResource("2_xdi0x")

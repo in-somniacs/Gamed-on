@@ -10,10 +10,15 @@ func _ready() -> void:
 	if not global.has_played_room_intro:
 		global.canmove = false
 		global.has_played_room_intro = true
+
 		await get_tree().create_timer(5.0).timeout
-		Dialogic.start("res://timelines/roomentry1.dtl")
-		global.canmove = true
-		
+
+		var dialog_node = Dialogic.start("res://timelines/roomentry1.dtl")
+		dialog_node.connect("timeline_end", Callable(self, "_on_dialogue_finished"))
+
+func _on_dialogue_finished():
+	global.canmove = true
+
 
 
 
