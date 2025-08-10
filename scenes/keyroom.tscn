@@ -1,6 +1,6 @@
 [gd_scene load_steps=62 format=4 uid="uid://la4hi06ojvwq"]
 
-[ext_resource type="Script" uid="uid://bbkuyrded266l" path="res://scenes/keyroom.gd" id="1_fklcl"]
+[ext_resource type="Script" path="res://scenes/keyroom.gd" id="1_fklcl"]
 [ext_resource type="Texture2D" uid="uid://btyqpu4nltqsn" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="2_y6nmg"]
 [ext_resource type="Texture2D" uid="uid://cquankf81hvkj" path="res://assets/walls.png" id="3_7sqli"]
 [ext_resource type="Texture2D" uid="uid://c5o2gkipl0eyi" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/Tiled_files/walls_test.png" id="3_q8sek"]
@@ -1633,6 +1633,9 @@ region_rect = Rect2(0, 0, 32, 32)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2.5, 2.5)
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="cliff_exitpoint" type="Area2D" parent="."]
 
