@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://8afpxy774j7f"]
+
+[node name="CrashScreen" type="CanvasLayer"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1148.0
+offset_bottom = 648.0
+color = Color(0.00994914, 2.28621e-07, 0.285004, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+modulate = Color(0.804743, 0.804743, 0.804743, 1)
+offset_left = 27.0
+offset_top = 25.0
+offset_right = 442.0
+offset_bottom = 109.0
+text = "CRITICAL ERROR: CANNOT TERMINATE ENTITY.EXE
+SYSTEM STABILITY: 23%
+REBOOTING...
+"

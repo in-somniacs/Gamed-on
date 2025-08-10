@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://c2gqxnri5l50y"
-path="res://.godot/imported/Perfect DOS VGA 437 Win.ttf-a64a8cb6dfb3e6bcfa473dc820655288.fontdata"
+path="res://.godot/imported/Perfect DOS VGA 437 Win.ttf-0fa5a711623cfefb47eb71385c7289dd.fontdata"
 
 [deps]
 
-source_file="res://assets/perfect_dos_vga_437/Perfect DOS VGA 437 Win.ttf"
-dest_files=["res://.godot/imported/Perfect DOS VGA 437 Win.ttf-a64a8cb6dfb3e6bcfa473dc820655288.fontdata"]
+source_file="res://pacman/assets/perfect_dos_vga_437/Perfect DOS VGA 437 Win.ttf"
+dest_files=["res://.godot/imported/Perfect DOS VGA 437 Win.ttf-0fa5a711623cfefb47eb71385c7289dd.fontdata"]
 
 [params]
 

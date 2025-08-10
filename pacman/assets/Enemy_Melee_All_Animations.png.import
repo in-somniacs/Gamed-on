@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyorw4v8lajnw"
-path="res://.godot/imported/walls_floor.png-0e7ddf2ef055c5036a257fe2f5116dee.ctex"
+uid="uid://1kt0tjj0scsv"
+path="res://.godot/imported/Enemy_Melee_All_Animations.png-2da71412101b098248551917b5508357.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pacman1/assets/walls_floor.png"
-dest_files=["res://.godot/imported/walls_floor.png-0e7ddf2ef055c5036a257fe2f5116dee.ctex"]
+source_file="res://pacman/assets/Enemy_Melee_All_Animations.png"
+dest_files=["res://.godot/imported/Enemy_Melee_All_Animations.png-2da71412101b098248551917b5508357.ctex"]
 
 [params]
 

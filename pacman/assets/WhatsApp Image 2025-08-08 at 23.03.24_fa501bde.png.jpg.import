@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyorw4v8lajnw"
-path="res://.godot/imported/walls_floor.png-b7a70d73604f8948cb6250d2374563e5.ctex"
+uid="uid://bkuon8lv745u3"
+path="res://.godot/imported/WhatsApp Image 2025-08-08 at 23.03.24_fa501bde.png.jpg-b6df4738b16862066841a6f17a713b8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pacman/assets/walls_floor.png"
-dest_files=["res://.godot/imported/walls_floor.png-b7a70d73604f8948cb6250d2374563e5.ctex"]
+source_file="res://pacman/assets/WhatsApp Image 2025-08-08 at 23.03.24_fa501bde.png.jpg"
+dest_files=["res://.godot/imported/WhatsApp Image 2025-08-08 at 23.03.24_fa501bde.png.jpg-b6df4738b16862066841a6f17a713b8e.ctex"]
 
 [params]
 

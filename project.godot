@@ -22,6 +22,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
 Footstep="*res://scripts/footstep.gd"
 Invenory="*res://scenes/ui/invenory.tscn"
+global="*res://global.gd"
 
 [dialogic]
 

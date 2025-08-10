@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 100
 const REACH_THRESHOLD = 5.0
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if waypoints.is_empty():
 		return
 	var target = waypoints[current_index()]

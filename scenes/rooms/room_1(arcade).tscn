@@ -1,6 +1,5 @@
-[gd_scene load_steps=21 format=3 uid="uid://c1uyajyie8jqy"]
+[gd_scene load_steps=20 format=3 uid="uid://c1uyajyie8jqy"]
 
-[ext_resource type="Texture2D" uid="uid://dyorw4v8lajnw" path="res://pacman1/assets/walls_floor.png" id="1_h0x7s"]
 [ext_resource type="Texture2D" uid="uid://jcbc36hkln5r" path="res://assets/ArcadeMachine/arcade-Sheet.png" id="2_7owwp"]
 [ext_resource type="PackedScene" uid="uid://bgx0kmq7a53mw" path="res://scenes/tachyon/scenes/aracde_machine.tscn" id="3_1e1x7"]
 [ext_resource type="Texture2D" uid="uid://dt2y0dl21xt4g" path="res://assets/rundown house/rundown house/clock/clock_15x32.png" id="4_03s3m"]
@@ -12,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://cpryjj6ky7t31" path="res://scenes/tachyon/scenes/character_body_2d.tscn" id="11_vexsr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7owwp"]
-texture = ExtResource("1_h0x7s")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0

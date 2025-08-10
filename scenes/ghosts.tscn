@@ -1,0 +1,95 @@
+[gd_scene load_steps=14 format=3 uid="uid://cur5rsemri0nt"]
+
+[ext_resource type="Script" uid="uid://cuq3v26blnyc2" path="res://scenes/rooms/interact_npc.gd" id="1_chlt2"]
+[ext_resource type="Texture2D" uid="uid://2jgub18eag0b" path="res://assets/rundown house/rundown house/ghost/ghost_1_20x40.png" id="2_yo3yf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u2sw"]
+atlas = ExtResource("2_yo3yf")
+region = Rect2(0, 0, 20, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu3dr"]
+atlas = ExtResource("2_yo3yf")
+region = Rect2(20, 0, 20, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtvqm"]
+atlas = ExtResource("2_yo3yf")
+region = Rect2(40, 0, 20, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slwnw"]
+atlas = ExtResource("2_yo3yf")
+region = Rect2(60, 0, 20, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgjqn"]
+atlas = ExtResource("2_yo3yf")
+region = Rect2(80, 0, 20, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xd4s3"]
+atlas = ExtResource("2_yo3yf")
+region = Rect2(100, 0, 20, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtq16"]
+atlas = ExtResource("2_yo3yf")
+region = Rect2(120, 0, 20, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwsgo"]
+atlas = ExtResource("2_yo3yf")
+region = Rect2(140, 0, 20, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uesad"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2u2sw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu3dr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtvqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slwnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgjqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xd4s3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtq16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwsgo")
+}],
+"loop": true,
+"name": &"ghostidle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tq26g"]
+radius = 16.0312
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jfy6s"]
+radius = 14.0357
+
+[node name="ghosts" type="CharacterBody2D"]
+script = ExtResource("1_chlt2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uesad")
+animation = &"ghostidle"
+autoplay = "ghostidle"
+
+[node name="Chatdetection" type="Area2D" parent="."]
+disable_mode = 1
+
+[node name="chatbox" type="CollisionShape2D" parent="Chatdetection"]
+shape = SubResource("CircleShape2D_tq26g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_jfy6s")
+
+[connection signal="body_entered" from="Chatdetection" to="." method="_on_chatdetection_body_entered"]
+[connection signal="body_exited" from="Chatdetection" to="." method="_on_chatdetection_body_exited"]
