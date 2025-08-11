@@ -9,10 +9,11 @@ extends CanvasLayer
 
 @export var next_scene_path: String
 var quotes = [
-	"Only those who dare may fly.",
-	"Reality is an illusion, the universe is a hologram.",
-	"The darkest hour has only sixty minutes.",
-	"Every end is a new beginning."
+	"Some things load faster than they should.",
+	"Not everything in here was meant to be found.",
+	"It’s not watching you.",
+	"It’s never really paused.",
+	"The exit isn’t always safe."
 ]
 
 var load = [
@@ -25,6 +26,7 @@ var load = [
 
 func start_transition(next_scene_path: String):
 	anim.play("fade_in")
+	
 
 	await anim.animation_finished
 	get_tree().change_scene_to_file(next_scene_path)
@@ -56,7 +58,8 @@ func start_transition(next_scene_path: String):
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "fade_in":
 		# Start timer for the delay
-		load_delay.start(2.5)  # 2 seconds delay
+		load_delay.start(1)  # 2 seconds delay
 
 func _on_load_delay_timeout() -> void:
 	anim.play("fade_out")
+	

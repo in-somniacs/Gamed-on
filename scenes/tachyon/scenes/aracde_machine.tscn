@@ -1,0 +1,96 @@
+[gd_scene load_steps=14 format=3 uid="uid://bgx0kmq7a53mw"]
+
+[ext_resource type="Script" uid="uid://hlw4wqfmq3a1" path="res://scenes/tachyon/scenes/aracde_machine.gd" id="1_spevq"]
+[ext_resource type="Texture2D" uid="uid://jcbc36hkln5r" path="res://scenes/rooms/ArcadeMachine/arcade-Sheet.png" id="1_uq78o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spevq"]
+atlas = ExtResource("1_uq78o")
+region = Rect2(0, 0, 96, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agpv2"]
+atlas = ExtResource("1_uq78o")
+region = Rect2(96, 0, 96, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5m37c"]
+atlas = ExtResource("1_uq78o")
+region = Rect2(192, 0, 96, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wr5a6"]
+atlas = ExtResource("1_uq78o")
+region = Rect2(288, 0, 96, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gk1a"]
+atlas = ExtResource("1_uq78o")
+region = Rect2(384, 0, 96, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuivx"]
+atlas = ExtResource("1_uq78o")
+region = Rect2(480, 0, 96, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12a1x"]
+atlas = ExtResource("1_uq78o")
+region = Rect2(576, 0, 96, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5an8"]
+atlas = ExtResource("1_uq78o")
+region = Rect2(672, 0, 96, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k10wq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spevq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agpv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5m37c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wr5a6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gk1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuivx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12a1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5an8")
+}],
+"loop": true,
+"name": &"arcade",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf1wy"]
+size = Vector2(150, 194)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_suwk3"]
+radius = 58.0
+height = 168.0
+
+[node name="Aracde machine" type="CharacterBody2D"]
+script = ExtResource("1_spevq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_k10wq")
+animation = &"arcade"
+autoplay = "arcade"
+
+[node name="Chatdetection" type="Area2D" parent="."]
+
+[node name="chatbox" type="CollisionShape2D" parent="Chatdetection"]
+position = Vector2(-1, 5)
+shape = SubResource("RectangleShape2D_yf1wy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_suwk3")
+
+[connection signal="body_entered" from="Chatdetection" to="." method="_on_chatdetection_body_entered"]
+[connection signal="body_exited" from="Chatdetection" to="." method="_on_chatdetection_body_exited"]

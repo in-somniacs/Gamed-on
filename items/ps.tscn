@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg7jtro2ulkud"]
+
+[ext_resource type="Script" uid="uid://41ny5kqxpnl2" path="res://items/collectable.gd" id="1_4iktk"]
+[ext_resource type="Resource" uid="uid://diq4jxfko1xuh" path="res://items/ps.tres" id="2_ntatp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_46svt"]
+radius = 20.0
+
+[node name="ps" type="Area2D"]
+script = ExtResource("1_4iktk")
+itemRes = ExtResource("2_ntatp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_46svt")

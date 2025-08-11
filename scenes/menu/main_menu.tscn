@@ -1,13 +1,51 @@
-[gd_scene load_steps=14 format=3 uid="uid://c6inow2hlvjoc"]
+[gd_scene load_steps=27 format=3 uid="uid://c6inow2hlvjoc"]
 
 [ext_resource type="Script" uid="uid://duiiwpxjift3k" path="res://scenes/menu/main_menu.gd" id="1_hj162"]
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="1_nl8w3"]
 [ext_resource type="AudioStream" uid="uid://csnngagonusk6" path="res://assets/music/mainmenu_music.mp3" id="2_3rkf3"]
-[ext_resource type="Theme" path="res://assets/main_menu.tres" id="2_kiqgm"]
-[ext_resource type="Script" path="res://scripts/menu_particles.gd" id="3_247la"]
+[ext_resource type="Theme" uid="uid://b0jsoj5phie5g" path="res://assets/main_menu.tres" id="2_kiqgm"]
+[ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="2_vovv2"]
+[ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="3_1k4da"]
+[ext_resource type="Script" uid="uid://btgcjun3id0ip" path="res://scripts/menu_particles.gd" id="3_247la"]
+[ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="4_bbqo6"]
+[ext_resource type="Script" uid="uid://3w7xpq7vpswi" path="res://scenes/menu/audio.gd" id="4_isoef"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ktf6p"]
+shader = ExtResource("2_vovv2")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_ithrf"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ithrf"]
+shader = ExtResource("3_1k4da")
+
+[sub_resource type="QuadMesh" id="QuadMesh_si58k"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_si58k"]
+shader = ExtResource("4_bbqo6")
+shader_parameter/glitch_enabled = false
+shader_parameter/crt_enabled = true
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_by11x"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
 
 [sub_resource type="Gradient" id="Gradient_nl8w3"]
-colors = PackedColorArray(0, 0, 0, 1, 0.46519, 0.454647, 0.999998, 1)
+offsets = PackedFloat32Array(0, 0.983607)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_3rkf3"]
 gradient = SubResource("Gradient_nl8w3")
@@ -16,8 +54,8 @@ gradient = SubResource("Gradient_nl8w3")
 texture = SubResource("GradientTexture2D_3rkf3")
 
 [sub_resource type="Curve" id="Curve_3rkf3"]
-_data = [Vector2(0.0294118, 1), 0.0, -0.195909, 0, 0, Vector2(1, 0.0561798), -0.179775, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0.0436681, 0.629214), 0.0, -0.195909, 0, 0, Vector2(0.489083, 0.955056), -1.42946, -1.42946, 0, 0, Vector2(1, 0.0561798), -0.179775, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_247la"]
 curve = SubResource("Curve_3rkf3")
@@ -51,6 +89,90 @@ scale_max = 4.0
 scale_curve = SubResource("CurveTexture_247la")
 scale_over_velocity_curve = SubResource("CurveTexture_hj162")
 
+[sub_resource type="Animation" id="Animation_xn6kt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:pitch_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.71]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("menu_particles/GPUParticles2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_hj162"]
+resource_name = "fade_music"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 7.0, -20.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:pitch_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.71, 0.2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("menu_particles/GPUParticles2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_isoef"]
+_data = {
+&"RESET": SubResource("Animation_xn6kt"),
+&"fade_music": SubResource("Animation_hj162")
+}
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -59,6 +181,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hj162")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_ktf6p")
+mesh = SubResource("QuadMesh_ithrf")
+
+[node name="crt shader" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_ithrf")
+mesh = SubResource("QuadMesh_si58k")
+
+[node name="crt and glitch" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_si58k")
+mesh = SubResource("QuadMesh_by11x")
+
+[node name="GlitchSFX" type="AudioStreamPlayer2D" parent="CanvasLayer"]
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -77,9 +223,9 @@ anchor_top = 0.488
 anchor_right = 0.5
 anchor_bottom = 0.488
 offset_left = -146.5
-offset_top = -137.36
+offset_top = -165.86
 offset_right = 155.5
-offset_bottom = 137.64
+offset_bottom = 166.14
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 100
@@ -103,25 +249,40 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_nl8w3")
 text = "master"
+horizontal_alignment = 1
 
 [node name="master" type="HSlider" parent="options/VBoxContainer"]
 layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("4_isoef")
+bus_name = "Master"
 
 [node name="Label" type="Label" parent="options/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_nl8w3")
 text = "SFX"
+horizontal_alignment = 1
 
 [node name="sfx" type="HSlider" parent="options/VBoxContainer"]
 layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("4_isoef")
+bus_name = "sfx"
 
 [node name="Label2" type="Label" parent="options/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_nl8w3")
 text = "BG music"
+horizontal_alignment = 1
 
 [node name="music" type="HSlider" parent="options/VBoxContainer"]
 layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("4_isoef")
+bus_name = "Music"
 
 [node name="HSeparator2" type="HSeparator" parent="options/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -133,6 +294,11 @@ layout_mode = 2
 theme = ExtResource("2_kiqgm")
 text = "back"
 
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="menu" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -140,10 +306,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -81.0
-offset_top = -46.0
-offset_right = 90.0
-offset_bottom = 29.0
+offset_left = -186.5
+offset_top = -142.5
+offset_right = 198.435
+offset_bottom = 125.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -162,14 +328,14 @@ layout_mode = 2
 
 [node name="VSeparator" type="VSeparator" parent="menu/VBoxContainer/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(162.865, 0)
 layout_mode = 2
 
 [node name="tagline" type="Label" parent="menu/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.469494, 0.401435, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_nl8w3")
-text = "the game plays you...."
+text = "console that plays you.."
 
 [node name="HSeparator" type="HSeparator" parent="menu/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -206,12 +372,6 @@ layout_mode = 2
 theme = ExtResource("2_kiqgm")
 text = "quit"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_3rkf3")
-pitch_scale = 0.71
-autoplay = true
-bus = &"Music"
-
 [node name="menu_particles" type="CanvasLayer" parent="."]
 layer = 2
 script = ExtResource("3_247la")
@@ -221,9 +381,20 @@ visibility_layer = 3
 position = Vector2(551, 646)
 amount = 400
 lifetime = 10.0
-preprocess = 3.27
+speed_scale = 3.21
+randomness = 0.34
 fixed_fps = 60
+trail_enabled = true
+trail_lifetime = 1.0
+trail_sections = 4
+trail_section_subdivisions = 2
 process_material = SubResource("ParticleProcessMaterial_3rkf3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3rkf3")
+pitch_scale = 0.71
+autoplay = true
+bus = &"Music"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 1
@@ -238,6 +409,11 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_isoef")
+}
 
 [connection signal="pressed" from="options/VBoxContainer/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="menu/VBoxContainer/buttons/play_button" to="." method="_on_play_button_pressed"]

@@ -1,0 +1,10 @@
+join Player left
+do global.disable_player_movement()
+Player: ...Ugh… what happened…?
+Player: Was I… dreaming? Or…
+Player: No… this is my room. Same bed, same walls.\
+…Why does it feel… off? Like the air’s heavier.
+Player: Alright… breathe. Just… get up.
+Player: Once I step outside, I’ll get some fresh air and clear my head.
+Player: …Yeah… nothing’s wrong. I’m fine.
+do global.enable_player_movement()

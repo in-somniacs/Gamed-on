@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs2gwydbg6q3x"]
+
+[ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="1_y0u3h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ktf6p"]
+shader = ExtResource("1_y0u3h")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_ithrf"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_ktf6p")
+mesh = SubResource("QuadMesh_ithrf")

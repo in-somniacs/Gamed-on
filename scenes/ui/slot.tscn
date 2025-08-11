@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxm8gicw8jb64"]
+
+[ext_resource type="Texture2D" uid="uid://dxjr3o67g5v8x" path="res://assets/ui/inventorySlot.png" id="1_jkamp"]
+[ext_resource type="Script" uid="uid://btupon6fw1168" path="res://scripts/slot.gd" id="1_sad2q"]
+[ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="3_c886m"]
+
+[node name="slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+script = ExtResource("1_sad2q")
+
+[node name="backdrop" type="Sprite2D" parent="."]
+self_modulate = Color(0.568973, 0.568973, 0.568973, 1)
+texture = ExtResource("1_jkamp")
+centered = false
+vframes = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="item" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 21.0
+offset_right = 104.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("3_c886m")
+theme_override_font_sizes/font_size = 21
+autowrap_mode = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

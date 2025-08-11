@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cawx1q5j7t8m4"]
+[gd_scene load_steps=9 format=3 uid="uid://cawx1q5j7t8m4"]
 
 [ext_resource type="Script" uid="uid://bctrubyj1y1p8" path="res://scripts/transition_manager.gd" id="1_nk83w"]
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="2_sb1xu"]
-[ext_resource type="AudioStream" uid="uid://b31mgvueb37lj" path="res://assets/sfx/loading.wav" id="3_t501d"]
+[ext_resource type="AudioStream" uid="uid://cpg7bx5wrily7" path="res://assets/temp/random (7).wav" id="3_t501d"]
 
 [sub_resource type="Animation" id="Animation_xud6u"]
 length = 0.001
@@ -17,6 +17,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/loading:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["loading now"]
 }
 
 [sub_resource type="Animation" id="Animation_t501d"]
@@ -49,11 +61,28 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_c6mvt"]
+resource_name = "loading"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/loading:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["loading now", ".loading now", "..loading now", "...loading now"]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c6mvt"]
 _data = {
 &"RESET": SubResource("Animation_xud6u"),
 &"fade_in": SubResource("Animation_t501d"),
-&"fade_out": SubResource("Animation_b22fh")
+&"fade_out": SubResource("Animation_b22fh"),
+&"loading": SubResource("Animation_c6mvt")
 }
 
 [node name="transition_manager" type="CanvasLayer"]
@@ -112,7 +141,6 @@ one_shot = true
 
 [node name="sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_t501d")
-volume_db = -1.981
 autoplay = true
 bus = &"sfx"
 
@@ -120,6 +148,7 @@ bus = &"sfx"
 libraries = {
 &"": SubResource("AnimationLibrary_c6mvt")
 }
+autoplay = "loading"
 
 [connection signal="timeout" from="load_delay" to="." method="_on_load_delay_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,46 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvhyl057hw0xj"]
+[gd_scene load_steps=3 format=3 uid="uid://dvhyl057hw0xj"]
 
-[ext_resource type="Texture2D" uid="uid://k2qwnrbg1gmv" path="res://assets/pixil-frame-0 (7).png" id="1_5uadj"]
+[ext_resource type="PackedScene" uid="uid://djhekv80tugjw" path="res://scenes/menu/hotbar_slot.tscn" id="1_5uadj"]
+[ext_resource type="Script" uid="uid://ctg81nuimg3lo" path="res://scripts/hotbar.gd" id="1_rxn4h"]
 
-[node name="Control" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -2.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="hotbar" type="HBoxContainer"]
+offset_right = 32.0
+offset_bottom = 8.0
+script = ExtResource("1_rxn4h")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="HotbarSlot" parent="." instance=ExtResource("1_5uadj")]
+layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -707.0
-offset_top = -128.0
-offset_right = 405.0
-offset_bottom = 428.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_5uadj")
+[node name="HotbarSlot2" parent="." instance=ExtResource("1_5uadj")]
+layout_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(548, 519)
-scale = Vector2(6.34375, 6.34375)
-texture = ExtResource("1_5uadj")
-region_enabled = true
-region_rect = Rect2(52, 27, 40, 16)
+[node name="HotbarSlot3" parent="." instance=ExtResource("1_5uadj")]
+layout_mode = 2
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(336, 185)
+[node name="HotbarSlot4" parent="." instance=ExtResource("1_5uadj")]
+layout_mode = 2

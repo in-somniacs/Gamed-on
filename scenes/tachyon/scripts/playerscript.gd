@@ -2,19 +2,28 @@ extends CharacterBody2D
 
 var SPEED = 4000.0
 @onready var anim = $AnimatedSprite2D
+@export var Inventory: In
 var can_move : bool = true
-
+@export var ani: AnimationPlayer
 func _ready() -> void:
 	add_to_group("player")
+	
+
+#func _input(event):
+	#if global.input_disabled:
+		#event.accept()
+		#return
 
 func _physics_process(delta: float) -> void:
+	
 	var direction = Input.get_vector('left', 'right', 'up', 'down')
 	
 	if !can_move:
 		anim.play("side_idle")
 		return
 	
-	if direction.length():
+	if direction.length() && global.canmove == true:
+		
 		velocity.x = direction.x * delta * SPEED
 		velocity.y = direction.y * delta * SPEED
 		#look_at(position + direction)
@@ -44,13 +53,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("run"):
-		SPEED = SPEED + 4000
-	elif Input.is_action_just_released("run"):
-		SPEED = SPEED - 4000
+	pass	
 	
 func player():
 	pass
 
 
-	
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.has_method("collect"):
+		area.collect(Inventory)

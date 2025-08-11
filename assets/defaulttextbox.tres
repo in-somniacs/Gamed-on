@@ -33,7 +33,18 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_u8df7"]
 script = ExtResource("1_ne8mg")
 scene = ExtResource("5_lnshf")
-overrides = {}
+overrides = {
+"box_size": "Vector2(400, 100)",
+"name_label_font": "\"res://assets/font/Perfect DOS VGA 437 Win.ttf\"",
+"name_label_use_global_font": "false",
+"normal_font": "\"res://assets/font/Perfect DOS VGA 437 Win.ttf\"",
+"text_size": "18.0",
+"text_use_global_font": "false",
+"text_use_global_size": "false",
+"typing_sounds_mode": "2",
+"typing_sounds_sounds_folder": "\"res://assets/sfx/typing\"",
+"typing_sounds_volume": "-20.0"
+}
 
 [sub_resource type="Resource" id="Resource_nei51"]
 script = ExtResource("1_ne8mg")
@@ -43,7 +54,11 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_lbsxd"]
 script = ExtResource("1_ne8mg")
 scene = ExtResource("7_4sbuf")
-overrides = {}
+overrides = {
+"sounds_focus": "\"res://assets/sfx/footstep2.wav\"",
+"sounds_hover": "\"res://assets/sfx/footstep3.wav\"",
+"sounds_pressed": "\"res://assets/sfx/footstep3.wav\""
+}
 
 [sub_resource type="Resource" id="Resource_dbdv7"]
 script = ExtResource("1_ne8mg")
@@ -72,4 +87,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_ne8mg")]([])
-metadata/_latest_layer = ""
+metadata/_latest_layer = "14"

@@ -6,11 +6,11 @@
 &"custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
-"style": "speakertextboxstyle"
+"style": "defaulttextbox"
 },
 &"default_portrait": "Player",
 &"description": "",
-&"display_name": "Player",
+&"display_name": "",
 &"mirror": true,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
@@ -20,9 +20,9 @@
 "image": "\"res://scenes/tachyon/assets/playerportrait.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1.0,
-"scene": ""
+"offset": Vector2(-55, -105),
+"scale": 0.3,
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
 }
 },
 &"scale": 1.0

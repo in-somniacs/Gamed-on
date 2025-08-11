@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://djhekv80tugjw"]
+
+[ext_resource type="Texture2D" uid="uid://k2qwnrbg1gmv" path="res://assets/pixil-frame-0 (7).png" id="1_bd33c"]
+
+[node name="HotbarSlot" type="Button"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+texture = ExtResource("1_bd33c")
+region_rect = Rect2(52, 27, 14, 15)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

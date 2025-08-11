@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cocji5iuty1ca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yeq7"]
+
+[node name="Mail box" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Chatdetection" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_7yeq7")

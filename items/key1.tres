@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="inventoryItem" load_steps=3 format=3 uid="uid://gmt8btnj0bp4"]
+
+[ext_resource type="Script" uid="uid://b8g1iqh1fekjp" path="res://scripts/inventory_items.gd" id="1_w0krt"]
+[ext_resource type="Texture2D" uid="uid://chpvoubidhg1f" path="res://assets/key_1.png" id="2_8snhe"]
+
+[resource]
+script = ExtResource("1_w0krt")
+name = "key_arcade"
+title = "Red Key?"
+info = ""
+texture = ExtResource("2_8snhe")

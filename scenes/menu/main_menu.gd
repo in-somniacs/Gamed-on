@@ -3,6 +3,9 @@ extends Control
 @onready var options: MarginContainer = $options
 @onready var next_scene: String = "res://scenes/rooms/room_0.tscn"
 @onready var particles: GPUParticles2D = $menu_particles/GPUParticles2D
+@onready var anim: AnimationPlayer = $AnimationPlayer
+
+
 
 var isplaying = false
 # Called when the node enters the scene tree for the first time.
@@ -31,6 +34,7 @@ func _on_play_button_pressed() -> void:
 	transition.start_transition("res://scenes/rooms/room_0.tscn")
 	particles.explosiveness = 19
 	particles.emitting = false
+	anim.play("fade_music")
 	
 
 	

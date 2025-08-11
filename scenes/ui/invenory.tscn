@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3jg88ib2471w"]
+
+[ext_resource type="Script" uid="uid://4t5uoxmrh3uw" path="res://scripts/inventory_.gd" id="1_d6p33"]
+[ext_resource type="Texture2D" uid="uid://db3pwyrl158k8" path="res://assets/ui/InventoryRect.png" id="1_ih3ho"]
+[ext_resource type="PackedScene" uid="uid://dxm8gicw8jb64" path="res://scenes/ui/slot.tscn" id="2_um4lp"]
+
+[node name="invenory" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = -16.0
+offset_right = 53.5
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d6p33")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+self_modulate = Color(0.266575, 0.266575, 0.266575, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -44.5
+offset_right = 71.5
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ih3ho")
+region_rect = Rect2(0, 0, 19, 19)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="HBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -20.0
+offset_right = 46.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect/HBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="slot" parent="NinePatchRect/HBoxContainer/GridContainer" instance=ExtResource("2_um4lp")]
+layout_mode = 2
+
+[node name="slot2" parent="NinePatchRect/HBoxContainer/GridContainer" instance=ExtResource("2_um4lp")]
+layout_mode = 2
+
+[node name="slot3" parent="NinePatchRect/HBoxContainer/GridContainer" instance=ExtResource("2_um4lp")]
+layout_mode = 2
+
+[node name="slot4" parent="NinePatchRect/HBoxContainer/GridContainer" instance=ExtResource("2_um4lp")]
+layout_mode = 2
+
+[node name="tooltip" type="Label" parent="NinePatchRect/HBoxContainer"]
+layout_mode = 2
+autowrap_mode = 1
