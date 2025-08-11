@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=4 uid="uid://cegs1img0ferx"]
+[gd_scene load_steps=80 format=4 uid="uid://cegs1img0ferx"]
 
 [ext_resource type="Texture2D" uid="uid://7nkymmnf826a" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/Interior.png" id="1_7k5vf"]
 [ext_resource type="Script" uid="uid://cl881fg85mw84" path="res://scenes/room_1(entry_corridor).gd" id="1_qp1n4"]
@@ -7060,6 +7060,39 @@ center_offset = Vector3(640, 360, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ohkba"]
 size = Vector2(22, 45)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pv3ll"]
+shader = ExtResource("14_71kqf")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_mokco"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ghis1"]
+shader = ExtResource("15_uyl5j")
+
+[sub_resource type="QuadMesh" id="QuadMesh_epsgl"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8g4ti"]
+shader = ExtResource("16_akjvc")
+shader_parameter/glitch_enabled = false
+shader_parameter/crt_enabled = true
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_wk7pc"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
 [node name="room1(entry corridor)" type="Node2D" node_paths=PackedStringArray("shader_mesh", "glitch_sfx")]
 script = ExtResource("1_qp1n4")
 dialogue = "res://timelines/arcadeentry.dtl"
@@ -7182,6 +7215,20 @@ volume_db = -9.642
 autoplay = true
 max_distance = 159.0
 bus = &"Music"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_pv3ll")
+mesh = SubResource("QuadMesh_mokco")
+
+[node name="crt shader" type="MeshInstance2D" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_ghis1")
+mesh = SubResource("QuadMesh_epsgl")
+
+[node name="crt and glitch" type="MeshInstance2D" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_8g4ti")
+mesh = SubResource("QuadMesh_wk7pc")
 
 [connection signal="body_entered" from="room_enter_point" to="." method="_on_room_enter_point_body_entered"]
 [connection signal="body_exited" from="room_enter_point" to="." method="_on_room_enter_point_body_exited"]
