@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 	if interactable and Input.is_action_just_pressed("interact"):
 		var transition = preload("res://scenes/transition_manager.tscn").instantiate()
 		get_tree().root.add_child(transition)
-		transition.start_transition(next_scene)
+		transition.start_transition(global.new_scene_placement)
 		global.input_disabled = true
 		#get_tree().change_scene_to_file(next_scene)
 		

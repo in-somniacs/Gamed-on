@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://klsd68mpixi8"]
+[gd_scene load_steps=41 format=3 uid="uid://klsd68mpixi8"]
 
 [ext_resource type="Texture2D" uid="uid://btyqpu4nltqsn" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_maoc1"]
 [ext_resource type="Script" uid="uid://rv6cdk4oqmo1" path="res://scenes/rooms/room_0.gd" id="1_yg2jv"]
@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://c4uwlhf8fc0el" path="res://scripts/switch_scenes.gd" id="10_kf5e4"]
 [ext_resource type="Texture2D" uid="uid://7nkymmnf826a" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/Interior.png" id="10_nflq0"]
 [ext_resource type="Texture2D" uid="uid://d3eo08ac5wahs" path="res://assets/console.png" id="11_mcqdl"]
-[ext_resource type="Resource" uid="uid://c0uvu7gt8qi0b" path="res://items/inventory.tres" id="12_f0rq6"]
+[ext_resource type="Resource" uid="uid://cwx84r5rv1m36" path="res://items/inventory.tres" id="12_f0rq6"]
 [ext_resource type="Script" uid="uid://cdxetjhgwk3a8" path="res://scenes/rooms/consoleset.gd" id="12_ykikb"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="15_lpf3e"]
 [ext_resource type="PackedScene" uid="uid://cmwk0b8uxv7sj" path="res://scenes/ui/achievement.tscn" id="16_181co"]
@@ -8474,6 +8474,97 @@ radius = 26.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b00dr"]
 size = Vector2(31, 62)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jotf"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_ptg8b"]
+resource_name = "hours_fadein"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2eptv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sievs"]
+resource_name = "hours_faddeout"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lofvh"]
+_data = {
+&"RESET": SubResource("Animation_2eptv"),
+&"hours_faddeout": SubResource("Animation_sievs"),
+&"hours_fadein": SubResource("Animation_ptg8b")
+}
+
 [node name="room0" type="Node2D"]
 script = ExtResource("1_yg2jv")
 
@@ -8498,12 +8589,13 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("11_mcqdl")
 script = ExtResource("12_ykikb")
 
-[node name="Player" parent="." instance=ExtResource("7_b00dr")]
+[node name="Player" parent="." node_paths=PackedStringArray("ani") instance=ExtResource("7_b00dr")]
 position = Vector2(16, -28)
 scale = Vector2(1.4, 1.4)
 collision_layer = 3
 collision_mask = 3
 Inventory = ExtResource("12_f0rq6")
+ani = NodePath("../CanvasLayer/Panel/AnimationPlayer")
 
 [node name="CollisionShape2D" parent="Player" index="5"]
 light_mask = 3
@@ -8519,7 +8611,7 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="interactable2" parent="." node_paths=PackedStringArray("player", "chatbox", "achieve", "anim", "panel", "audio", "popup") instance=ExtResource("8_epks6")]
+[node name="interactable2" parent="." node_paths=PackedStringArray("player", "chatbox", "achieve", "anim", "panel", "audio", "ani", "popup") instance=ExtResource("8_epks6")]
 position = Vector2(254, -61)
 player = NodePath("../Player")
 dialogue = "res://timelines/console.dtl"
@@ -8529,6 +8621,7 @@ anim = NodePath("../CanvasLayer/achievement/AnimationPlayer")
 panel = NodePath("../CanvasLayer/achievement/Panel")
 audio = NodePath("../CanvasLayer/achievement/achievement_sound")
 name_ach = "A Handheld Invitation"
+ani = NodePath("../CanvasLayer/Panel/AnimationPlayer")
 popup = NodePath("../Player/popup")
 
 [node name="Chatdetection" type="Area2D" parent="interactable2"]
@@ -8575,6 +8668,37 @@ polygon = PackedVector2Array(-2, -1, -2, 44, -2, 238, -2, 241, 170, 242, 286, 24
 [node name="invenory" parent="CanvasLayer" instance=ExtResource("15_lpf3e")]
 
 [node name="achievement" parent="CanvasLayer" instance=ExtResource("16_181co")]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7jotf")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.1667
+offset_right = 20.0
+offset_bottom = 11.1667
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_b00dr")
+text = "Few Hours go by"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Panel"]
+libraries = {
+&"": SubResource("AnimationLibrary_lofvh")
+}
 
 [node name="a_new_start" parent="CanvasLayer" node_paths=PackedStringArray("achieve", "anim", "panel", "audio") instance=ExtResource("16_181co")]
 script = ExtResource("20_1dyya")

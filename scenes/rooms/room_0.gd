@@ -7,7 +7,6 @@ var start_dia = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
 	if not global.has_played_room_intro:
 		global.canmove = false
 		global.has_played_room_intro = true			
@@ -17,9 +16,6 @@ func _ready() -> void:
 		var dialog_node = Dialogic.start("res://timelines/roomentry1.dtl")
 		dialog_node.connect("timeline_end", Callable(self, "_on_dialogue_finished"))
 		
-
-
-
 
 func _on_dialogue_finished():
 	global.canmove = true

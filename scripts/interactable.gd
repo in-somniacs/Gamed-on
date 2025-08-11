@@ -7,8 +7,7 @@ extends Node2D
 @export var panel: Panel
 @export var audio: AudioStreamPlayer2D
 @export var name_ach: String
-
-
+@export var ani: AnimationPlayer
 @export var popup: NinePatchRect
 
 @onready var inv = preload("res://items/inventory.tres")
@@ -18,12 +17,14 @@ var player_in_area = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	global.new_scene_placement = "res://scenes/rooms/footpath.tscn"
 	preload_achievement()
 	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	if  global.set_console == true:
 		if player_in_area:
 			chatbox.disabled = false
@@ -31,8 +32,11 @@ func _process(delta: float) -> void:
 				run_dialogue(dialogue)
 				global.canmove =false
 				chatbox.disabled = true
+				global.new_scene_placement = "res://scenes/room_1(entry_corridor).tscn"
 				ResourceSaver.save(inv)
 				#global.console_set = true
+				
+
 	else:
 		chatbox.disabled = true
 				
@@ -62,11 +66,15 @@ func run_dialogue(dialogue_string):
 	#dlg.choice_selected.connect(_on_choice_selected)
 	Dialogic.timeline_ended.connect(_on_dialogue_end)
 
+
 func _on_dialogue_end():
 	
 	Dialogic.timeline_ended.disconnect(_on_dialogue_end)
 	global.canmove = true
 	achiement_sound()
+	ani.play("hours_fadein")
+	await get_tree().create_timer(5.0).timeout
+	ani.play("hours_faddeout")
 
 func achiement_sound():
 	achieve.visible = true

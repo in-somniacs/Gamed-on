@@ -15,7 +15,7 @@ var player_in_area = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+		global.new_scene_placement = "res://scenes/rooms/room_0.tscn"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,6 +25,7 @@ func _process(delta: float) -> void:
 			run_dialogue(dialogue)
 			global.canmove = false
 			chatbox.disabled = true
+
 
 			
 			

@@ -4,7 +4,7 @@ var SPEED = 4000.0
 @onready var anim = $AnimatedSprite2D
 @export var Inventory: In
 var can_move : bool = true
-
+@export var ani: AnimationPlayer
 func _ready() -> void:
 	add_to_group("player")
 	can_move = true
@@ -15,6 +15,7 @@ func _ready() -> void:
 		#return
 
 func _physics_process(delta: float) -> void:
+	
 	var direction = Input.get_vector('left', 'right', 'up', 'down')
 	
 	if !can_move:
@@ -22,6 +23,7 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	if direction.length() && global.canmove == true:
+		
 		velocity.x = direction.x * delta * SPEED
 		velocity.y = direction.y * delta * SPEED
 		#look_at(position + direction)

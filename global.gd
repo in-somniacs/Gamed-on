@@ -11,7 +11,7 @@ var player_starty = 52
 var console_set = false
 var has_played_room_intro_achievement = false
 var set_console = false
-
+var new_scene_placement: String
 var game_first_loadin = true
 
 # Called when the node enters the scene tree for the first time.
