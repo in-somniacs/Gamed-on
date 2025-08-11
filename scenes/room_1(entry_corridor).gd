@@ -55,7 +55,7 @@ func run_dialogue(dialogue_string):
 	# Play glitch sound alongside dialogue
 	glitch_sfx.stop()
 	glitch_sfx.play()
-
+	await get_tree().create_timer(1.5).timeout
 	# Start dialogue immediately
 	Dialogic.start(dialogue_string)
 	

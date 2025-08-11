@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bxb7glxfuwabr" path="res://assets/fnaf.png" id="24_1idya"]
 [ext_resource type="AudioStream" uid="uid://bwrmcrdcg3ggr" path="res://assets/music/fnaf.mp3" id="25_ow3tb"]
 [ext_resource type="AudioStream" uid="uid://diuhprb56yiin" path="res://assets/music/arcade_ambience.mp3" id="26_ow3tb"]
-[ext_resource type="Script" uid="uid://kf5kdmdjsvs2" path="res://scenes/arcadedoor_sceneswitch.gd" id="27_5uxbn"]
+[ext_resource type="Script" path="res://scenes/arcadedoor_sceneswitch.gd" id="27_5uxbn"]
 
 [sub_resource type="TileSet" id="TileSet_71kqf"]
 
@@ -7096,8 +7096,11 @@ center_offset = Vector3(640, 360, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ow3tb"]
 size = Vector2(31, 66)
 
-[node name="room1(entry corridor)" type="Node2D"]
+[node name="room1(entry corridor)" type="Node2D" node_paths=PackedStringArray("shader_mesh", "glitch_sfx")]
 script = ExtResource("1_qp1n4")
+dialogue = "res://timelines/arcadeentry.dtl"
+shader_mesh = NodePath("CanvasLayer/crt and glitch")
+glitch_sfx = NodePath("CanvasLayer/GlitchSFX")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_71kqf")
