@@ -27,6 +27,7 @@ func _process(delta: float) -> void:
 	if player_in_area:
 		if Input.is_action_pressed("dialogic_default_action"):
 			run_dialogue(dialogue)
+			global.canmove =false
 			chatbox.disabled = true
 			ResourceSaver.save(inv)
 			#global.console_set = true
@@ -59,6 +60,7 @@ func run_dialogue(dialogue_string):
 func _on_dialogue_end():
 	
 	Dialogic.timeline_ended.disconnect(_on_dialogue_end)
+	global.canmove = true
 	achiement_sound()
 
 func achiement_sound():

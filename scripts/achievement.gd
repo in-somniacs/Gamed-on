@@ -9,12 +9,16 @@ var loaded = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	preload_achievement()
-	await get_tree().create_timer(2.0).timeout
-	achiement_sound()
+	if not global.has_played_room_intro_achievement:
+		await get_tree().create_timer(2.0).timeout
+		achiement_sound()
+		global.has_played_room_intro_achievement = true	
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+
 
 	if loaded == false:
 		pass
