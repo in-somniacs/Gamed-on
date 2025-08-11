@@ -1,4 +1,5 @@
 join Player left
+do global.disable_player_movement()
 Player: Another boring afternoon…
 Player: Guess I’ll just play for a bit before dinner.
 Player: Better ask mom first.
