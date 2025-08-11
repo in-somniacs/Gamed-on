@@ -10,7 +10,8 @@ func _ready() -> void:
 	if not global.has_played_room_intro:
 		global.canmove = false
 		global.has_played_room_intro = true
-
+		await get_tree().create_timer(2.0).timeout
+		print("dsadsad")
 		await get_tree().create_timer(4.0).timeout
 
 		var dialog_node = Dialogic.start("res://timelines/roomentry1.dtl")
