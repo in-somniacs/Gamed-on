@@ -25,6 +25,7 @@ func _process(delta: float) -> void:
 			run_dialogue(dialogue)
 			global.canmove = false
 			chatbox.disabled = true
+
 			
 			
 			
@@ -54,6 +55,7 @@ func _on_dialogue_end():
 	#shader_mesh.material.set_shader_parameter("glitch_enabled", false)
 	Dialogic.timeline_ended.disconnect(_on_dialogue_end)
 	global.canmove = true
+	global.set_console = true
 
 	
 

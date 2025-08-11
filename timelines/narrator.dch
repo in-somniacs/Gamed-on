@@ -4,8 +4,19 @@
 &"_translation_id": "",
 &"color": Color(1, 1, 1, 1),
 &"custom_info": {
-"sound_mood_default": "",
-"sound_moods": {},
+"sound_mood_default": "Mood 1",
+"sound_moods": {
+"Mood 1": {
+"mode": 2,
+"name": "Mood 1",
+"pitch_base": 1.0,
+"pitch_variance": 0.0,
+"skip_characters": 0.0,
+"sound_path": "res://assets/sfx/entity",
+"volume_base": -20.0,
+"volume_variance": -20.0
+}
+},
 "style": "defaulttextbox"
 },
 &"default_portrait": "",

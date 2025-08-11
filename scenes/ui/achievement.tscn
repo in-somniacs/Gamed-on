@@ -149,4 +149,5 @@ libraries = {
 
 [node name="achievement_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_5jp8t")
+volume_db = -5.51
 bus = &"sfx"
