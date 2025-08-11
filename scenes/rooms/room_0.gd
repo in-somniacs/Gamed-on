@@ -20,8 +20,8 @@ func _ready() -> void:
 	global.canmove = true
 
 
-#func _on_dialogue_finished():
-	#global.canmove = true
+func _on_dialogue_finished():
+	global.canmove = true
 
 
 

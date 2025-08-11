@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 	if player_in_area:
 		if Input.is_action_pressed("dialogic_default_action"):
 			run_dialogue(dialogue)
-			chatbox.diasbled = true
+			chatbox.disabled = true
 			ResourceSaver.save(inv)
 			#global.console_set = true
 	inv.items[0] = null

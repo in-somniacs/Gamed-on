@@ -1,6 +1,8 @@
-join Player center [animation="Fade In Up"]
-Player: time to set up my console...
-- place console
+join Player left [animation="Fade In Up"]
+Player: Alright, finally back in my room.
+Player: Let’s set up the console I got earlier.
+- Place console
 	set {console_set} = true
-Player: alright all set will play some games after some sleep.
-leave Player
+Player: Perfect spot… right on the table.
+Player: There we go… all plugged in.
+Player: Time to test it out!
