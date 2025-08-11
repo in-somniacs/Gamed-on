@@ -16,17 +16,17 @@ func _ready() -> void:
 		var dialog_node = Dialogic.start("res://timelines/roomentry1.dtl")
 		dialog_node.connect("timeline_end", Callable(self, "_on_dialogue_finished"))
 		
-
-func _on_dialogue_finished():
-	global.canmove = true
-
+#
+#func _on_dialogue_finished():
+	#global.canmove = true
+#
 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Dialogic.current_timeline == null && not global.canmove:
-		_on_dialogue_finished()
+#func _process(delta: float) -> void:
+	#if Dialogic.current_timeline == null && not global.canmove:
+		#_on_dialogue_finished()
 
 
 func _input(event: InputEvent) -> void:

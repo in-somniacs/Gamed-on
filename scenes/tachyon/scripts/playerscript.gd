@@ -7,7 +7,7 @@ var can_move : bool = true
 @export var ani: AnimationPlayer
 func _ready() -> void:
 	add_to_group("player")
-	can_move = true
+	
 
 #func _input(event):
 	#if global.input_disabled:

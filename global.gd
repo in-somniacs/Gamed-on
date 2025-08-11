@@ -36,3 +36,4 @@ func enable_player_movement():
 
 func disable_player_movement():
 	canmove = false
+	print("dadsada")
