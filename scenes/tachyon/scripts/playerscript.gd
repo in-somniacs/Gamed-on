@@ -9,6 +9,11 @@ func _ready() -> void:
 	add_to_group("player")
 	can_move = true
 
+#func _input(event):
+	#if global.input_disabled:
+		#event.accept()
+		#return
+
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector('left', 'right', 'up', 'down')
 	

@@ -35,7 +35,7 @@ func _on_chatdetection_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):
 		player_in_area = false 
 		popup.visible = false
-		
+	
 		
 		
 
@@ -49,6 +49,7 @@ func run_dialogue(dialogue_string):
 
 	# Start dialogue immediately
 	Dialogic.start(dialogue_string)
+	Dialogic.timeline_ended.connect(_on_dialogue_end)
 	
 	# When sound finishes, stop glitch effect
 	await get_tree().create_timer(10.0).timeout
@@ -56,9 +57,10 @@ func run_dialogue(dialogue_string):
 	
 
 func _on_dialogue_end():
-	shader_mesh.material.set_shader_parameter("glitch_enabled", false)
+	#shader_mesh.material.set_shader_parameter("glitch_enabled", false)
 	Dialogic.timeline_ended.disconnect(_on_dialogue_end)
 	global.canmove = true
+
 
 func _on_respawn_chat_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):

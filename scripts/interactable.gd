@@ -29,6 +29,7 @@ func _process(delta: float) -> void:
 			run_dialogue(dialogue)
 			chatbox.queue_free()
 			ResourceSaver.save(inv)
+			global.console_set = true
 	inv.items[0] = null
 			
 			

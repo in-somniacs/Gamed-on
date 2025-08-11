@@ -3,11 +3,12 @@ var canmove = true
 var current_scene = "world"
 var transition_scene = false
 var has_played_room_intro = false
-
+var input_disabled = false
 var player_exit_roomx = 432
 var player_exit_roomy = -503
 var player_startx = 48
 var player_starty = 52
+var console_set = false
 
 var game_first_loadin = true
 
