@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bgx0kmq7a53mw"]
 
 [ext_resource type="Script" uid="uid://hlw4wqfmq3a1" path="res://scenes/tachyon/scenes/aracde_machine.gd" id="1_spevq"]
-[ext_resource type="Texture2D" uid="uid://jcbc36hkln5r" path="res://assets/ArcadeMachine/arcade-Sheet.png" id="1_uq78o"]
+[ext_resource type="Texture2D" uid="uid://jcbc36hkln5r" path="res://scenes/rooms/ArcadeMachine/arcade-Sheet.png" id="1_uq78o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_spevq"]
 atlas = ExtResource("1_uq78o")

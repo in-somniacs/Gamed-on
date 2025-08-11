@@ -4,6 +4,7 @@ extends Node2D
 @export var glitch_sfx: AudioStreamPlayer2D
 
 func _enter_tree() -> void:
+
 	if global.game_first_loadin:
 		$Player.position = Vector2(global.player_startx, global.player_starty)
 	else:
@@ -12,6 +13,7 @@ func _enter_tree() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	global.is_switching = false
 	if global.game_first_loadin == true:
 		$Player.position.x = global.player_startx
 		$Player.position.y = global.player_starty

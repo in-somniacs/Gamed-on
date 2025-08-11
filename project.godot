@@ -40,6 +40,7 @@ directories/dtl_directory={
 "console": "res://timelines/console.dtl",
 "consoleget": "res://timelines/consoleget.dtl",
 "footpathtimeline": "res://timelines/footpathtimeline.dtl",
+"locked_door": "res://timelines/locked_door.dtl",
 "momtimeline": "res://timelines/momtimeline.dtl",
 "roomentry1": "res://timelines/roomentry1.dtl",
 "roomspawntimeline": "res://timelines/roomspawntimeline.dtl"

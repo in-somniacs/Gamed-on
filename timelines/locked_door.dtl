@@ -1,0 +1,4 @@
+join Player left
+Player: The door seems to be locked and it requires a key....
+It must be somewhere around here.
+leave Player

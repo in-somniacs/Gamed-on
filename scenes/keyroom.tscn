@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://chpvoubidhg1f" path="res://assets/key_1.png" id="7_cfo1t"]
 [ext_resource type="Texture2D" uid="uid://2jp28sdhxsgh" path="res://scenes/tachyon/assets/player.png" id="7_fklcl"]
 [ext_resource type="Texture2D" uid="uid://crfgkv6qnr0mj" path="res://assets/pop.png" id="8_bxck6"]
-[ext_resource type="Script" uid="uid://cuq3v26blnyc2" path="res://scenes/rooms/interact_npc.gd" id="10_6lppo"]
+[ext_resource type="Script" uid="uid://c7tmypy84ki4t" path="res://items/key_1.gd" id="10_6lppo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7sqli"]
 texture = ExtResource("3_q8sek")
@@ -1643,10 +1643,11 @@ drag_vertical_enabled = true
 position = Vector2(81, 207)
 shape = SubResource("RectangleShape2D_6lppo")
 
-[node name="key1" type="Area2D" parent="." node_paths=PackedStringArray("player", "popup")]
+[node name="key1" type="Area2D" parent="." node_paths=PackedStringArray("chatbox", "sprite", "popup")]
 position = Vector2(144, 127)
 script = ExtResource("10_6lppo")
-player = NodePath("../Player")
+chatbox = NodePath("Chatdetection/chatbox")
+sprite = NodePath("Sprite2D")
 popup = NodePath("../Player/popup")
 
 [node name="Sprite2D" type="Sprite2D" parent="key1"]
