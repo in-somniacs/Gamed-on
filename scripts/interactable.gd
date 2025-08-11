@@ -18,7 +18,7 @@ var player_in_area = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	preload_achievement()	
+	preload_achievement()
 	pass
 
 
@@ -27,10 +27,14 @@ func _process(delta: float) -> void:
 	if player_in_area:
 		if Input.is_action_pressed("dialogic_default_action"):
 			run_dialogue(dialogue)
-			chatbox.queue_free()
+			chatbox.visible = false
 			ResourceSaver.save(inv)
-			global.console_set = true
+			#global.console_set = true
 	inv.items[0] = null
+	
+	if Dialogic.VAR.console_set:
+		global.console_set = true
+
 			
 			
 func _on_chatdetection_body_entered(body: Node2D) -> void:
@@ -47,11 +51,10 @@ func _on_chatdetection_body_exited(body: Node2D) -> void:
 		
 
 func run_dialogue(dialogue_string):
-	
 	Dialogic.start(dialogue_string)
-	# Listen for end of dialogue
+	#add_child(dlg)
+	#dlg.choice_selected.connect(_on_choice_selected)
 	Dialogic.timeline_ended.connect(_on_dialogue_end)
-	
 
 func _on_dialogue_end():
 	
@@ -70,3 +73,7 @@ func preload_achievement():
 	achieve.visible = false
 	panel.visible = false
 	achieve.text = name_ach
+
+#func _on_choice_selected(index: int, text: String):
+	#if text.to_lower() == "place console":
+		#global.console_set = true
