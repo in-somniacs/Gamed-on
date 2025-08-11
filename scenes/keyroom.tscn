@@ -1,6 +1,6 @@
-[gd_scene load_steps=66 format=4 uid="uid://la4hi06ojvwq"]
+[gd_scene load_steps=84 format=4 uid="uid://la4hi06ojvwq"]
 
-[ext_resource type="Script" path="res://scenes/keyroom.gd" id="1_fklcl"]
+[ext_resource type="Script" uid="uid://bbkuyrded266l" path="res://scenes/keyroom.gd" id="1_fklcl"]
 [ext_resource type="Texture2D" uid="uid://btyqpu4nltqsn" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="2_y6nmg"]
 [ext_resource type="Texture2D" uid="uid://cquankf81hvkj" path="res://assets/walls.png" id="3_7sqli"]
 [ext_resource type="Texture2D" uid="uid://c5o2gkipl0eyi" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/Tiled_files/walls_test.png" id="3_q8sek"]
@@ -10,7 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://chpvoubidhg1f" path="res://assets/key_1.png" id="7_cfo1t"]
 [ext_resource type="Texture2D" uid="uid://2jp28sdhxsgh" path="res://scenes/tachyon/assets/player.png" id="7_fklcl"]
 [ext_resource type="Texture2D" uid="uid://crfgkv6qnr0mj" path="res://assets/pop.png" id="8_bxck6"]
-[ext_resource type="Script" uid="uid://c7tmypy84ki4t" path="res://items/key_1.gd" id="10_6lppo"]
+[ext_resource type="Script" path="res://items/key_1.gd" id="10_6lppo"]
+[ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="12_0m1ia"]
+[ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="13_hb80a"]
+[ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="14_kjm7t"]
+[ext_resource type="AudioStream" uid="uid://dngcwy5wpieu5" path="res://assets/sfx/digital-glitch-361820 (1).mp3" id="15_ohsuj"]
+[ext_resource type="PackedScene" uid="uid://ces6y2p5bi11o" path="res://scenes/menu/pause_menu.tscn" id="16_c83ex"]
+[ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="17_xnyro"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7sqli"]
 texture = ExtResource("3_q8sek")
@@ -1575,8 +1581,76 @@ radius = 27.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_fgjmm"]
 radius = 20.0
 
-[node name="keyroom" type="Node2D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c8tae"]
+shader = ExtResource("12_0m1ia")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_bt8vp"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aj0j2"]
+shader = ExtResource("13_hb80a")
+
+[sub_resource type="QuadMesh" id="QuadMesh_tor2m"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lfdfp"]
+shader = ExtResource("14_kjm7t")
+shader_parameter/glitch_enabled = false
+shader_parameter/crt_enabled = true
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_1edry"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k0vk2"]
+shader = ExtResource("12_0m1ia")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_lmbp4"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f0ne5"]
+shader = ExtResource("13_hb80a")
+
+[sub_resource type="QuadMesh" id="QuadMesh_orspi"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f8hqn"]
+shader = ExtResource("14_kjm7t")
+shader_parameter/glitch_enabled = false
+shader_parameter/crt_enabled = true
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_tfqun"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[node name="keyroom" type="Node2D" node_paths=PackedStringArray("shader_mesh", "glitch_sfx")]
 script = ExtResource("1_fklcl")
+shader_mesh = NodePath("CanvasLayer/crt and glitch")
+glitch_sfx = NodePath("CanvasLayer/GlitchSFX")
 
 [node name="TileMap" type="TileMap" parent="."]
 format = 2
@@ -1661,6 +1735,47 @@ shape = SubResource("CircleShape2D_jpj8u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key1"]
 shape = SubResource("CircleShape2D_fgjmm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_c8tae")
+mesh = SubResource("QuadMesh_bt8vp")
+
+[node name="crt shader" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_aj0j2")
+mesh = SubResource("QuadMesh_tor2m")
+
+[node name="crt and glitch" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_lfdfp")
+mesh = SubResource("QuadMesh_1edry")
+
+[node name="GlitchSFX" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+stream = ExtResource("15_ohsuj")
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("16_c83ex")]
+
+[node name="invenory" parent="CanvasLayer" instance=ExtResource("17_xnyro")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_k0vk2")
+mesh = SubResource("QuadMesh_lmbp4")
+
+[node name="crt shader" type="MeshInstance2D" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_f0ne5")
+mesh = SubResource("QuadMesh_orspi")
+
+[node name="crt and glitch" type="MeshInstance2D" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_f8hqn")
+mesh = SubResource("QuadMesh_tfqun")
+
+[node name="GlitchSFX" type="AudioStreamPlayer2D" parent="CanvasLayer2"]
 
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
 [connection signal="body_entered" from="cliff_exitpoint" to="." method="_on_cliff_exitpoint_body_entered"]

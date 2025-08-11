@@ -21,7 +21,9 @@ func _ready() -> void:
 		$Player.position.x = global.player_exit_roomx
 		$Player.position.y = global.player_exit_roomy
 		
-	run_dialogue(dialogue)
+	if not global.first_time_arcade:
+		global.first_time_arcade = true   # mark it immediately to prevent duplicate
+		run_dialogue(dialogue)
 
 
 
