@@ -7194,7 +7194,6 @@ shape = SubResource("RectangleShape2D_ohkba")
 position = Vector2(432, -503)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer2"]
 material = SubResource("ShaderMaterial_ohkba")
@@ -7233,12 +7232,13 @@ max_distance = 4096.0
 
 [node name="PauseMenu" parent="." instance=ExtResource("17_gpi8r")]
 
-[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("player", "popup")]
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("player", "popup", "box")]
 position = Vector2(676, -534)
 script = ExtResource("27_5uxbn")
 player = NodePath("../Player")
 next_scene = "res://scenes/rooms/room_1(arcade).tscn"
 popup = NodePath("../Player/popup")
+box = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-3.5, 9)
