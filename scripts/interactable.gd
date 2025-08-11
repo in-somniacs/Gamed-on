@@ -75,6 +75,7 @@ func _on_dialogue_end():
 	ani.play("hours_fadein")
 	
 	await get_tree().create_timer(5.0).timeout
+	global.crt_enabled = true
 	ani.play("hours_faddeout")
 	achiement_sound()
 

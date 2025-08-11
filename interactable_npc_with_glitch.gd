@@ -6,9 +6,8 @@ extends Node2D
 @onready var chatbox: CollisionShape2D = $Chatdetection/chatbox
 @onready var res_chat: CollisionPolygon2D = $respawn_chat/res_chat
 @export var popup: NinePatchRect
-@onready var shader_mesh : MeshInstance2D = $"../CanvasLayer/crt and glitch"
-@onready var glitch_sfx : AudioStreamPlayer2D = $"../CanvasLayer/GlitchSFX"
-
+@export var shader_mesh : MeshInstance2D 
+@export var glitch_sfx : AudioStreamPlayer2D 
 var player_in_area = false
 
 
@@ -41,6 +40,7 @@ func _on_chatdetection_body_exited(body: Node2D) -> void:
 
 func run_dialogue(dialogue_string):
 	# Enable glitch
+	
 	shader_mesh.material.set_shader_parameter("glitch_enabled", true)
 	
 	# Play glitch sound alongside dialogue

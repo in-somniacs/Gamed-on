@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://bsr1fd633iqgb"]
+
+[ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="1_dfbpx"]
+[ext_resource type="Script" uid="uid://bhr1ikairgg5" path="res://screen_effect/glitchandcrtscene.gd" id="1_gvhs7"]
+[ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="2_gvhs7"]
+[ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="3_nou11"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pv3ll"]
+shader = ExtResource("1_dfbpx")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_mokco"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ghis1"]
+shader = ExtResource("2_gvhs7")
+
+[sub_resource type="QuadMesh" id="QuadMesh_epsgl"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8g4ti"]
+shader = ExtResource("3_nou11")
+shader_parameter/glitch_enabled = false
+shader_parameter/crt_enabled = true
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_wk7pc"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_gvhs7")
+
+[node name="gltiche shader" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_pv3ll")
+mesh = SubResource("QuadMesh_mokco")
+
+[node name="crt shader" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_ghis1")
+mesh = SubResource("QuadMesh_epsgl")
+
+[node name="crt and glitch" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_8g4ti")
+mesh = SubResource("QuadMesh_wk7pc")
+
+[node name="GlitchSFX" type="AudioStreamPlayer2D" parent="."]
