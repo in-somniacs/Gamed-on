@@ -13,7 +13,7 @@ var player_in_area = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	shader_mesh.material.set_shader_parameter("crt_enabled", false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -40,7 +40,7 @@ func _on_chatdetection_body_exited(body: Node2D) -> void:
 
 func run_dialogue(dialogue_string):
 	# Enable glitch
-	
+	await get_tree().create_timer(2.0).timeout
 	shader_mesh.material.set_shader_parameter("glitch_enabled", true)
 	
 	# Play glitch sound alongside dialogue
@@ -53,6 +53,7 @@ func run_dialogue(dialogue_string):
 	# When sound finishes, stop glitch effect
 	await get_tree().create_timer(10.0).timeout
 	shader_mesh.material.set_shader_parameter("glitch_enabled", false)
+	shader_mesh.material.set_shader_parameter("crt_enabled", true)
 	
 
 func _on_dialogue_end():

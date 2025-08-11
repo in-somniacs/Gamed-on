@@ -24,18 +24,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if  global.set_console == true:
-		if player_in_area:
-			chatbox.disabled = false
-			if Input.is_action_pressed("dialogic_default_action"):
-				run_dialogue(dialogue)
-				global.canmove =false
-				chatbox.disabled = true
-				ResourceSaver.save(inv)
-				#global.console_set = true
-	else:
-		chatbox.disabled = true
-				
+	if player_in_area:
+		if Input.is_action_pressed("dialogic_default_action"):
+			run_dialogue(dialogue)
+			global.canmove =false
+			chatbox.disabled = true
+			ResourceSaver.save(inv)
+			#global.console_set = true
 	inv.items[0] = null
 	
 	if Dialogic.VAR.console_set:

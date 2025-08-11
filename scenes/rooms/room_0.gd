@@ -1,5 +1,5 @@
 extends Node2D
-
+@export var shader_mesh: MeshInstance2D 
 @onready var player: CharacterBody2D = $Player
 
 var start_dia = true
@@ -7,12 +7,11 @@ var start_dia = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
 	if not global.has_played_room_intro:
 		global.canmove = false
 		global.has_played_room_intro = true			
 			
-		await get_tree().create_timer(4.0).timeout
+		await get_tree().create_timer(5.0).timeout
 
 		var dialog_node = Dialogic.start("res://timelines/roomentry1.dtl")
 		dialog_node.connect("timeline_end", Callable(self, "_on_dialogue_finished"))
@@ -21,16 +20,17 @@ func _ready() -> void:
 
 
 
-func _on_dialogue_finished():
-	global.canmove = true
+#func _on_dialogue_finished():
+	#global.canmove = true
 
 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Dialogic.current_timeline == null && not global.canmove:
-		_on_dialogue_finished()
+	#if Dialogic.current_timeline == null && not global.canmove:
+		#_on_dialogue_finished()
+		pass
 
 
 func _input(event: InputEvent) -> void:
