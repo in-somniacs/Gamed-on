@@ -64,6 +64,7 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
+"console_set": false,
 "player_name": ""
 }
 glossary/default_case_sensitive=true

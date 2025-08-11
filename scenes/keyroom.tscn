@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://la4hi06ojvwq"]
+[gd_scene load_steps=66 format=4 uid="uid://la4hi06ojvwq"]
 
 [ext_resource type="Script" uid="uid://bbkuyrded266l" path="res://scenes/keyroom.gd" id="1_fklcl"]
 [ext_resource type="Texture2D" uid="uid://btyqpu4nltqsn" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="2_y6nmg"]
@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://7nkymmnf826a" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/Interior.png" id="4_7sqli"]
 [ext_resource type="PackedScene" uid="uid://dio73o1w6ca3s" path="res://scenes/clock.tscn" id="4_y6nmg"]
 [ext_resource type="Script" uid="uid://rixf2ctvpmu" path="res://scenes/tachyon/scripts/playerscript.gd" id="6_hoyqo"]
+[ext_resource type="Texture2D" uid="uid://chpvoubidhg1f" path="res://assets/key_1.png" id="7_cfo1t"]
 [ext_resource type="Texture2D" uid="uid://2jp28sdhxsgh" path="res://scenes/tachyon/assets/player.png" id="7_fklcl"]
 [ext_resource type="Texture2D" uid="uid://crfgkv6qnr0mj" path="res://assets/pop.png" id="8_bxck6"]
+[ext_resource type="Script" uid="uid://cuq3v26blnyc2" path="res://scenes/rooms/interact_npc.gd" id="10_6lppo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7sqli"]
 texture = ExtResource("3_q8sek")
@@ -983,32 +985,18 @@ texture = ExtResource("4_7sqli")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
 9:0/0 = 0
 10:0/0 = 0
 11:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
 9:1/0 = 0
 10:1/0 = 0
 11:1/0 = 0
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
 5:2/0 = 0
 6:2/0 = 0
 7:2/0 = 0
@@ -1099,9 +1087,6 @@ texture = ExtResource("4_7sqli")
 4:10/0 = 0
 5:10/0 = 0
 6:10/0 = 0
-7:10/0 = 0
-8:10/0 = 0
-9:10/0 = 0
 10:10/0 = 0
 0:11/0 = 0
 1:11/0 = 0
@@ -1110,18 +1095,12 @@ texture = ExtResource("4_7sqli")
 4:11/0 = 0
 5:11/0 = 0
 6:11/0 = 0
-7:11/0 = 0
-8:11/0 = 0
-9:11/0 = 0
 11:11/0 = 0
 1:12/0 = 0
 2:12/0 = 0
 3:12/0 = 0
 5:12/0 = 0
 6:12/0 = 0
-7:12/0 = 0
-8:12/0 = 0
-9:12/0 = 0
 10:12/0 = 0
 11:12/0 = 0
 0:13/0 = 0
@@ -1130,8 +1109,6 @@ texture = ExtResource("4_7sqli")
 3:13/0 = 0
 5:13/0 = 0
 6:13/0 = 0
-7:13/0 = 0
-9:13/0 = 0
 10:13/0 = 0
 11:13/0 = 0
 0:14/0 = 0
@@ -1254,8 +1231,25 @@ texture = ExtResource("4_7sqli")
 8:24/0 = 0
 9:24/0 = 0
 10:24/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+7:11/size_in_atlas = Vector2i(3, 3)
+7:11/0 = 0
+7:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.4786, -21.3752, -9.33629, -23.4636, 4.42245, -24.3235, 14.9872, -22.6036, 18.0583, -18.1812, 20.1467, -12.776, 19.6553, -3.31684, 16.3385, 10.5647, 7.43218, 9.2159, -15.97, 9.70483, -16.9527, -1.71984, -21.0067, -11.179)
+3:0/size_in_atlas = Vector2i(2, 3)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.4318, -17.9859, -10.6602, -23.5539, 8.09364, -22.8421, 8.48753, -15.8869, 8, -4.13495, 8, 0.652887, 8.05227, 12.1872, -9.79331, 12.1872, -11.5343, -0.652887)
+5:0/0 = 0
+5:1/0 = 0
+6:0/0 = 0
+6:1/0 = 0
+7:0/size_in_atlas = Vector2i(2, 2)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.56745, -8, 6.24303, -8, 7.43218, 9.2159, -4.16202, 8, -3.86473, -1.33779)
 
 [sub_resource type="TileSet" id="TileSet_bxck6"]
+physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_fklcl")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_13nwq"]
@@ -1575,6 +1569,12 @@ radius = 6.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6lppo"]
 size = Vector2(65, 35)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpj8u"]
+radius = 27.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fgjmm"]
+radius = 20.0
+
 [node name="keyroom" type="Node2D"]
 script = ExtResource("1_fklcl")
 
@@ -1590,7 +1590,7 @@ tile_map_data = PackedByteArray("AAACAAIAAwABAAcAAAACAAMAAgAOAAYAAAADAAMAAgAOAAY
 tile_set = SubResource("TileSet_fklcl")
 
 [node name="table" type="TileMapLayer" parent="TileMap"]
-tile_map_data = PackedByteArray("AAAIAAEAAQAEAAUAAAAIAAIAAQAEAAYAAAAIAAMAAQAEAAcAAAAIAAQAAQAEAAgAAAAJAAEAAQAFAAUAAAAJAAIAAQAFAAYAAAAJAAMAAQAFAAcAAAAJAAQAAQAFAAgAAAAKAAEAAQAGAAUAAAAKAAIAAQAGAAYAAAAKAAMAAQAGAAcAAAAKAAQAAQAGAAgAAAAIAAYAAQAHAAsAAAAIAAcAAQAHAAwAAAAIAAgAAQAHAA0AAAAJAAYAAQAIAAsAAAAJAAcAAQAIAAwAAAAKAAYAAQAJAAsAAAAKAAcAAQAJAAwAAAAKAAgAAQAJAA0AAAACAAMAAQADAAAAAAACAAQAAQADAAEAAAACAAUAAQADAAIAAAADAAMAAQAEAAAAAAADAAQAAQAEAAEAAAADAAUAAQAEAAIAAAAEAAMAAQAHAAAAAAAEAAQAAQAHAAEAAAAFAAMAAQAIAAAAAAAFAAQAAQAIAAEAAAA=")
+tile_map_data = PackedByteArray("AAAIAAEAAQAEAAUAAAAIAAIAAQAEAAYAAAAIAAMAAQAEAAcAAAAIAAQAAQAEAAgAAAAJAAEAAQAFAAUAAAAJAAIAAQAFAAYAAAAJAAMAAQAFAAcAAAAJAAQAAQAFAAgAAAAKAAEAAQAGAAUAAAAKAAIAAQAGAAYAAAAKAAMAAQAGAAcAAAAKAAQAAQAGAAgAAAAJAAgAAQAHAAsAAAADAAQAAQADAAAAAAAFAAMAAQAHAAAAAAA=")
 tile_set = SubResource("TileSet_bxck6")
 
 [node name="clock" parent="." instance=ExtResource("4_y6nmg")]
@@ -1643,6 +1643,26 @@ drag_vertical_enabled = true
 position = Vector2(81, 207)
 shape = SubResource("RectangleShape2D_6lppo")
 
+[node name="key1" type="Area2D" parent="." node_paths=PackedStringArray("player", "popup")]
+position = Vector2(144, 127)
+script = ExtResource("10_6lppo")
+player = NodePath("../Player")
+popup = NodePath("../Player/popup")
+
+[node name="Sprite2D" type="Sprite2D" parent="key1"]
+texture = ExtResource("7_cfo1t")
+
+[node name="Chatdetection" type="Area2D" parent="key1"]
+disable_mode = 1
+
+[node name="chatbox" type="CollisionShape2D" parent="key1/Chatdetection"]
+shape = SubResource("CircleShape2D_jpj8u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="key1"]
+shape = SubResource("CircleShape2D_fgjmm")
+
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
 [connection signal="body_entered" from="cliff_exitpoint" to="." method="_on_cliff_exitpoint_body_entered"]
 [connection signal="body_exited" from="cliff_exitpoint" to="." method="_on_cliff_exitpoint_body_exited"]
+[connection signal="body_entered" from="key1/Chatdetection" to="key1" method="_on_chatdetection_body_entered"]
+[connection signal="body_exited" from="key1/Chatdetection" to="key1" method="_on_chatdetection_body_exited"]
