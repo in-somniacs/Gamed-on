@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bxb7glxfuwabr" path="res://assets/fnaf.png" id="24_1idya"]
 [ext_resource type="AudioStream" uid="uid://bwrmcrdcg3ggr" path="res://assets/music/fnaf.mp3" id="25_ow3tb"]
 [ext_resource type="AudioStream" uid="uid://diuhprb56yiin" path="res://assets/music/arcade_ambience.mp3" id="26_ow3tb"]
-[ext_resource type="Script" uid="uid://c4uwlhf8fc0el" path="res://scripts/switch_scenes.gd" id="27_5uxbn"]
+[ext_resource type="Script" uid="uid://kf5kdmdjsvs2" path="res://scenes/arcadedoor_sceneswitch.gd" id="27_5uxbn"]
 
 [sub_resource type="TileSet" id="TileSet_71kqf"]
 
@@ -7194,6 +7194,7 @@ shape = SubResource("RectangleShape2D_ohkba")
 position = Vector2(432, -503)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer2"]
 material = SubResource("ShaderMaterial_ohkba")
