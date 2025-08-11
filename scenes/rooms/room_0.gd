@@ -7,6 +7,7 @@ var start_dia = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	global.is_switching = false
 	if not global.has_played_room_intro:
 		global.canmove = false
 		global.has_played_room_intro = true			

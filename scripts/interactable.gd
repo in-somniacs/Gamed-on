@@ -73,6 +73,7 @@ func _on_dialogue_end():
 	global.canmove = true
 
 	ani.play("hours_fadein")
+	
 	await get_tree().create_timer(5.0).timeout
 	ani.play("hours_faddeout")
 	achiement_sound()
