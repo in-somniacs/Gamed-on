@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bs0r4adbpnl2g"]
 
-[ext_resource type="Script" uid="uid://cuq3v26blnyc2" path="res://scenes/rooms/interact_npc.gd" id="1_p7r60"]
+[ext_resource type="Script" uid="uid://c7tmypy84ki4t" path="res://items/key_1.gd" id="1_p7r60"]
 [ext_resource type="Texture2D" uid="uid://chpvoubidhg1f" path="res://assets/key_1.png" id="2_jpj8u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpj8u"]
@@ -9,8 +9,9 @@ radius = 27.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_fgjmm"]
 radius = 20.0
 
-[node name="key1" type="CharacterBody2D"]
+[node name="key1" type="CharacterBody2D" node_paths=PackedStringArray("chatbox")]
 script = ExtResource("1_p7r60")
+chatbox = NodePath("Chatdetection/chatbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_jpj8u")
@@ -23,3 +24,6 @@ shape = SubResource("CircleShape2D_jpj8u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fgjmm")
+
+[connection signal="body_entered" from="Chatdetection" to="." method="_on_chatdetection_body_entered"]
+[connection signal="body_exited" from="Chatdetection" to="." method="_on_chatdetection_body_exited"]
