@@ -1,0 +1,41 @@
+join Player left
+do global.disable_player_movement()
+Player: !!!!!!.......
+Player: Uh… hello? Where am I?
+
+leave Player
+join narrator center
+narrator: Oh! You’re awake. Good. I was beginning to think you’d… stayed asleep forever.
+narrator: How unexpected.
+
+narrator: Before we go any further… what should I call you?
+[text_input text="" var="player_name"]
+
+narrator: Ah, {{player_name}}. That’s a nice name… reminds me of someone else I knew.
+narrator: You’re trapped here, {{player_name}}. Just like the others…? , I presume.
+narrator: But maybe… I can help you get out.
+
+leave narrator
+join Player left
+Player: Get… out? Yes—please! I don’t care what it takes.
+Player: This isn’t my room… this isn’t anywhere I know…
+Player: Just tell me what I need to do!
+
+leave Player
+join narrator center
+narrator: Don’t worry—I’m harmless.
+leave narrator
+join Player center
+Player: (He's one hell of a sketchy sounding dude, but I don't really have any way around this.)
+leave Player
+join narrator center
+narrator: Listen carefully, {{player_name}}. The way out is… rather simple if you just follow me.
+leave narrator
+- If you betray me, I’ll—
+	join narrator center
+	narrator: Remember… I’m the only one who can help you.
+	narrator: And when the time comes… you’ll return the favor.
+- Fine… just tell me what to do
+	join narrator center
+	narrator: Good. Just move ahead and play some games . Your'e inside a console remember?
+do global.enable_player_movement()

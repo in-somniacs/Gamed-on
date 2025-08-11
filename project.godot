@@ -36,6 +36,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "aftersleep": "res://timelines/aftersleep.dtl",
+"arcadeentry": "res://timelines/arcadeentry.dtl",
 "console": "res://timelines/console.dtl",
 "consoleget": "res://timelines/consoleget.dtl",
 "footpathtimeline": "res://timelines/footpathtimeline.dtl",

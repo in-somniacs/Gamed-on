@@ -1,7 +1,7 @@
-[gd_scene load_steps=78 format=4 uid="uid://cegs1img0ferx"]
+[gd_scene load_steps=74 format=4 uid="uid://cegs1img0ferx"]
 
 [ext_resource type="Texture2D" uid="uid://7nkymmnf826a" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/Interior.png" id="1_7k5vf"]
-[ext_resource type="Script" path="res://scenes/room_1(entry_corridor).gd" id="1_qp1n4"]
+[ext_resource type="Script" uid="uid://cl881fg85mw84" path="res://scenes/room_1(entry_corridor).gd" id="1_qp1n4"]
 [ext_resource type="Texture2D" uid="uid://djkw8grcsdrsu" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/walls_floor.png" id="2_vk5ia"]
 [ext_resource type="Texture2D" uid="uid://cdaj0grff1e6e" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/Tiled_files/Doors_windows_animation.png" id="3_mpblr"]
 [ext_resource type="Texture2D" uid="uid://dt2y0dl21xt4g" path="res://assets/rundown house/rundown house/clock/clock_15x32.png" id="4_31ant"]
@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://cur5rsemri0nt" path="res://scenes/ghosts.tscn" id="16_llano"]
 [ext_resource type="PackedScene" uid="uid://ces6y2p5bi11o" path="res://scenes/menu/pause_menu.tscn" id="17_gpi8r"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="18_llano"]
+[ext_resource type="Script" uid="uid://buxmo5jmv7m2j" path="res://interactable_npc_with_glitch.gd" id="18_ow3tb"]
+[ext_resource type="AudioStream" uid="uid://dngcwy5wpieu5" path="res://assets/sfx/digital-glitch-361820 (1).mp3" id="23_5uxbn"]
 [ext_resource type="Texture2D" uid="uid://bxb7glxfuwabr" path="res://assets/fnaf.png" id="24_1idya"]
 [ext_resource type="AudioStream" uid="uid://bwrmcrdcg3ggr" path="res://assets/music/fnaf.mp3" id="25_ow3tb"]
 
@@ -7058,41 +7060,11 @@ center_offset = Vector3(640, 360, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ohkba"]
 size = Vector2(22, 45)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ohkba"]
-shader = ExtResource("14_71kqf")
-shader_parameter/shake_power = 0.03
-shader_parameter/shake_rate = 0.2
-shader_parameter/shake_speed = 5.0
-shader_parameter/shake_block_size = 30.5
-shader_parameter/shake_color_rate = 0.01
-
-[sub_resource type="QuadMesh" id="QuadMesh_1idya"]
-size = Vector2(1280, 720)
-center_offset = Vector3(640, 360, 0)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ow3tb"]
-shader = ExtResource("15_uyl5j")
-
-[sub_resource type="QuadMesh" id="QuadMesh_5uxbn"]
-size = Vector2(1280, 720)
-center_offset = Vector3(640, 360, 0)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8irwg"]
-shader = ExtResource("16_akjvc")
-shader_parameter/glitch_enabled = false
-shader_parameter/crt_enabled = true
-shader_parameter/shake_power = 0.03
-shader_parameter/shake_rate = 0.2
-shader_parameter/shake_speed = 5.0
-shader_parameter/shake_block_size = 30.5
-shader_parameter/shake_color_rate = 0.01
-
-[sub_resource type="QuadMesh" id="QuadMesh_cb21c"]
-size = Vector2(1280, 720)
-center_offset = Vector3(640, 360, 0)
-
-[node name="room1(entry corridor)" type="Node2D"]
+[node name="room1(entry corridor)" type="Node2D" node_paths=PackedStringArray("shader_mesh", "glitch_sfx")]
 script = ExtResource("1_qp1n4")
+dialogue = "res://timelines/arcadeentry.dtl"
+shader_mesh = NodePath("CanvasLayer/crt and glitch")
+glitch_sfx = NodePath("CanvasLayer/GlitchSFX")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_71kqf")
@@ -7127,15 +7099,21 @@ tile_set = SubResource("TileSet_4pc7g")
 [node name="ghostsaves" type="TileMapLayer" parent="TileMap"]
 tile_set = SubResource("TileSet_gpi8r")
 
-[node name="ghosts" parent="TileMap" node_paths=PackedStringArray("player", "popup") instance=ExtResource("16_llano")]
+[node name="ghosts" parent="TileMap" node_paths=PackedStringArray("player", "popup", "shader_mesh", "glitch_sfx") instance=ExtResource("16_llano")]
 position = Vector2(-134, -408)
+script = ExtResource("18_ow3tb")
 player = NodePath("../../Player")
 popup = NodePath("../../Player/popup")
+shader_mesh = NodePath("../../CanvasLayer/crt and glitch")
+glitch_sfx = NodePath("../../CanvasLayer/GlitchSFX")
 
-[node name="ghosts2" parent="TileMap" node_paths=PackedStringArray("player", "popup") instance=ExtResource("16_llano")]
+[node name="ghosts2" parent="TileMap" node_paths=PackedStringArray("player", "popup", "shader_mesh", "glitch_sfx") instance=ExtResource("16_llano")]
 position = Vector2(55, -483)
+script = ExtResource("18_ow3tb")
 player = NodePath("../../Player")
 popup = NodePath("../../Player/popup")
+shader_mesh = NodePath("../../CanvasLayer/crt and glitch")
+glitch_sfx = NodePath("../../CanvasLayer/GlitchSFX")
 
 [node name="Player" parent="." instance=ExtResource("9_4pc7g")]
 position = Vector2(48, 52)
@@ -7165,6 +7143,7 @@ material = SubResource("ShaderMaterial_5uxbn")
 mesh = SubResource("QuadMesh_8irwg")
 
 [node name="GlitchSFX" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+stream = ExtResource("23_5uxbn")
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("17_gpi8r")]
 
@@ -7187,22 +7166,6 @@ shape = SubResource("RectangleShape2D_ohkba")
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(432, -503)
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-
-[node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer2"]
-material = SubResource("ShaderMaterial_ohkba")
-mesh = SubResource("QuadMesh_1idya")
-
-[node name="crt shader" type="MeshInstance2D" parent="CanvasLayer2"]
-material = SubResource("ShaderMaterial_ow3tb")
-mesh = SubResource("QuadMesh_5uxbn")
-
-[node name="crt and glitch" type="MeshInstance2D" parent="CanvasLayer2"]
-material = SubResource("ShaderMaterial_8irwg")
-mesh = SubResource("QuadMesh_cb21c")
-
-[node name="GlitchSFX" type="AudioStreamPlayer2D" parent="CanvasLayer2"]
 
 [node name="fnaf" type="NinePatchRect" parent="."]
 offset_left = -607.0

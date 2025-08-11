@@ -2,8 +2,8 @@ shader_type canvas_item;
 render_mode unshaded, skip_vertex_transform;
 
 // ===== CRT Effect =====
-const float curvature = 7.0;
-const float vignette_multiplier = 1.2;
+const float curvature = 250.0; // Slightly more bend than 300, but still fullscreen-safe
+const float vignette_multiplier = 1.5;
 
 // ===== Toggles =====
 uniform bool glitch_enabled = false; // Toggle from code
@@ -33,7 +33,7 @@ void fragment() {
     vec3 vignette = vec3(0.0);
     if (crt_enabled) {
         vec2 centered_uv = uv * 2.0 - 1.0;
-        vec2 uv_offset = centered_uv.yx / curvature;
+        vec2 uv_offset = centered_uv.yx / curvature; // Division means higher curvature = flatter
         vec2 warped_uv = centered_uv + centered_uv * uv_offset * uv_offset;
         cutoff = vec3(step(abs(warped_uv.x), 1.0) * step(abs(warped_uv.y), 1.0));
         scanlines = vec3(sin(2.0 * warped_uv.y * 180.0) * 0.1 + 0.9);

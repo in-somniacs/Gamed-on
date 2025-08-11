@@ -1,5 +1,7 @@
 extends Node2D
-
+@export var dialogue: String 
+@export var shader_mesh: MeshInstance2D
+@export var glitch_sfx: AudioStreamPlayer2D
 
 func _enter_tree() -> void:
 	if global.game_first_loadin:
@@ -17,7 +19,7 @@ func _ready() -> void:
 		$Player.position.x = global.player_exit_roomx
 		$Player.position.y = global.player_exit_roomy
 		
-
+	run_dialogue(dialogue)
 
 
 
@@ -42,3 +44,19 @@ func change_scene():
 			global.game_first_loadin = false
 			global.finish_change_scene()
 		
+
+func run_dialogue(dialogue_string):
+	# Enable glitch
+	
+	shader_mesh.material.set_shader_parameter("glitch_enabled", true)
+	
+	# Play glitch sound alongside dialogue
+	glitch_sfx.stop()
+	glitch_sfx.play()
+
+	# Start dialogue immediately
+	Dialogic.start(dialogue_string)
+	
+	# When sound finishes, stop glitch effect
+	await get_tree().create_timer(30.0).timeout
+	shader_mesh.material.set_shader_parameter("glitch_enabled", false)
