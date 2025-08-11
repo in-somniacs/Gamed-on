@@ -1,15 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://bs0r4adbpnl2g"]
+[gd_scene load_steps=5 format=3 uid="uid://bs0r4adbpnl2g"]
 
-[ext_resource type="Script" uid="uid://41ny5kqxpnl2" path="res://items/collectable.gd" id="1_p7r60"]
+[ext_resource type="Script" uid="uid://cuq3v26blnyc2" path="res://scenes/rooms/interact_npc.gd" id="1_p7r60"]
 [ext_resource type="Texture2D" uid="uid://chpvoubidhg1f" path="res://assets/key_1.png" id="2_jpj8u"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpj8u"]
+radius = 27.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_fgjmm"]
+radius = 20.0
 
-[node name="key1" type="Area2D"]
+[node name="key1" type="CharacterBody2D"]
 script = ExtResource("1_p7r60")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_fgjmm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_jpj8u")
+
+[node name="Chatdetection" type="Area2D" parent="."]
+disable_mode = 1
+
+[node name="chatbox" type="CollisionShape2D" parent="Chatdetection"]
+shape = SubResource("CircleShape2D_jpj8u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fgjmm")

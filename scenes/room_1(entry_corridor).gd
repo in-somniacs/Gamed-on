@@ -1,15 +1,23 @@
 extends Node2D
 
 
+func _enter_tree() -> void:
+	if global.game_first_loadin:
+		$Player.position = Vector2(global.player_startx, global.player_starty)
+	else:
+		$Player.position = Vector2(global.player_exit_roomx, global.player_exit_roomy)
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if global.game_first_loadin == true:
 		$Player.position.x = global.player_startx
-		$Player.positioy = global.player_starty
+		$Player.position.y = global.player_starty
 	else:
 		$Player.position.x = global.player_exit_roomx
 		$Player.position.y = global.player_exit_roomy
 		
+
 
 
 
