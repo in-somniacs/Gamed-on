@@ -31,9 +31,11 @@ directories/dch_directory={
 "NPCfootpath": "res://timelines/NPCfootpath.dch",
 "Player": "res://timelines/Player.dch",
 "consolechar": "res://timelines/consolechar.dch",
+"narrator": "res://timelines/narrator.dch",
 "note": "res://timelines/note.dch"
 }
 directories/dtl_directory={
+"aftersleep": "res://timelines/aftersleep.dtl",
 "console": "res://timelines/console.dtl",
 "consoleget": "res://timelines/consoleget.dtl",
 "footpathtimeline": "res://timelines/footpathtimeline.dtl",

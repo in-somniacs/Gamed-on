@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c1uyajyie8jqy"]
+[gd_scene load_steps=23 format=4 uid="uid://c1uyajyie8jqy"]
 
 [ext_resource type="Texture2D" uid="uid://jcbc36hkln5r" path="res://assets/ArcadeMachine/arcade-Sheet.png" id="2_7owwp"]
 [ext_resource type="PackedScene" uid="uid://bgx0kmq7a53mw" path="res://scenes/tachyon/scenes/aracde_machine.tscn" id="3_1e1x7"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ch3w131bmyh6f" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist1.png" id="6_cgjvi"]
 [ext_resource type="Texture2D" uid="uid://ddls7hvjs31rv" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist2.png" id="7_vexsr"]
 [ext_resource type="Texture2D" uid="uid://citkwei8wye48" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist3.png" id="8_a4812"]
+[ext_resource type="Texture2D" uid="uid://bfq7tofd4sxcw" path="res://assets/PurpleWorldByAndroxFree/ground&water.png" id="8_cgjvi"]
 [ext_resource type="Texture2D" uid="uid://bnni06jm5fror" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist4.png" id="9_tvvvl"]
 [ext_resource type="PackedScene" uid="uid://cpryjj6ky7t31" path="res://scenes/tachyon/scenes/character_body_2d.tscn" id="11_vexsr"]
 
@@ -14381,11 +14382,35 @@ sources/6 = SubResource("TileSetAtlasSource_dp8qb")
 sources/7 = SubResource("TileSetAtlasSource_gqn5b")
 sources/8 = SubResource("TileSetAtlasSource_3b0a8")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a4812"]
+texture = ExtResource("8_cgjvi")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tvvvl"]
+sources/0 = SubResource("TileSetAtlasSource_a4812")
+
 [node name="Room1(arcade)" type="Node2D"]
 
 [node name="Room1" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_1e1x7")
 format = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Room1"]
+tile_map_data = PackedByteArray("AAD7/w8AAAAEAAAAAAD7/xAAAAAEAAEAAAD8/w8AAAAFAAAAAAD8/xAAAAAFAAEAAAD9/w8AAAAEAAAAAAD9/xAAAAAEAAEAAAD+/w8AAAAFAAAAAAD+/xAAAAAFAAEAAAD//w8AAAAEAAAAAAD//xAAAAAEAAEAAAAAAA8AAAAFAAAAAAAAABAAAAAFAAEAAAABAA8AAAAEAAAAAAABABAAAAAEAAEAAAACAA8AAAAFAAAAAAACABAAAAAFAAEAAAABAA0AAAAEAAAAAAABAA4AAAAEAAEAAAACAA0AAAAFAAAAAAACAA4AAAAFAAEAAAD//w0AAAAEAAAAAAD//w4AAAAEAAEAAAAAAA0AAAAFAAAAAAAAAA4AAAAFAAEAAAD9/w0AAAAEAAAAAAD9/w4AAAAEAAEAAAD+/w0AAAAFAAAAAAD+/w4AAAAFAAEAAAD9/wsAAAAEAAAAAAD9/wwAAAAEAAEAAAD+/wsAAAAFAAAAAAD+/wwAAAAFAAEAAAD7/wsAAAAEAAAAAAD7/wwAAAAEAAEAAAD8/wsAAAAFAAAAAAD8/wwAAAAFAAEAAAD7/w0AAAAEAAAAAAD7/w4AAAAEAAEAAAD8/w0AAAAFAAAAAAD8/w4AAAAFAAEAAAA=")
+tile_set = SubResource("TileSet_tvvvl")
 
 [node name="Aracde machine" parent="." node_paths=PackedStringArray("player", "popup") instance=ExtResource("3_1e1x7")]
 position = Vector2(150, -18)
