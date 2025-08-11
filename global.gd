@@ -32,3 +32,6 @@ func finish_change_scene():
 
 func enable_player_movement():
 	canmove = true
+
+func disable_player_movement():
+	canmove = false
