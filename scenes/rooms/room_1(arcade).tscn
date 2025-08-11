@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=4 uid="uid://c1uyajyie8jqy"]
 
-[ext_resource type="Texture2D" uid="uid://jcbc36hkln5r" path="res://assets/ArcadeMachine/arcade-Sheet.png" id="2_7owwp"]
+[ext_resource type="Texture2D" uid="uid://jcbc36hkln5r" path="res://scenes/rooms/ArcadeMachine/arcade-Sheet.png" id="2_7owwp"]
 [ext_resource type="PackedScene" uid="uid://bgx0kmq7a53mw" path="res://scenes/tachyon/scenes/aracde_machine.tscn" id="3_1e1x7"]
 [ext_resource type="Texture2D" uid="uid://dt2y0dl21xt4g" path="res://assets/rundown house/rundown house/clock/clock_15x32.png" id="4_03s3m"]
 [ext_resource type="Texture2D" uid="uid://cenloxysxbn31" path="res://assets/rundown house/rundown house/Old house/old house.png" id="5_chqgb"]

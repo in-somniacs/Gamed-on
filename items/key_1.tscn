@@ -9,9 +9,10 @@ radius = 27.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_fgjmm"]
 radius = 20.0
 
-[node name="key1" type="CharacterBody2D" node_paths=PackedStringArray("chatbox")]
+[node name="key1" type="CharacterBody2D" node_paths=PackedStringArray("chatbox", "sprite")]
 script = ExtResource("1_p7r60")
 chatbox = NodePath("Chatdetection/chatbox")
+sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_jpj8u")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jcbc36hkln5r"
-path="res://.godot/imported/arcade-Sheet.png-99fff34bd39d92d9c281ca5ac07507e1.ctex"
+uid="uid://b6bqcupacka7x"
+path="res://.godot/imported/arcade5.png-5992ddc9c722e2a1f11b2a841da86a69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ArcadeMachine/arcade-Sheet.png"
-dest_files=["res://.godot/imported/arcade-Sheet.png-99fff34bd39d92d9c281ca5ac07507e1.ctex"]
+source_file="res://scenes/rooms/ArcadeMachine/arcade5.png"
+dest_files=["res://.godot/imported/arcade5.png-5992ddc9c722e2a1f11b2a841da86a69.ctex"]
 
 [params]
 

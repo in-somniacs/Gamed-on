@@ -15,6 +15,7 @@ var new_scene_placement: String
 var game_first_loadin = true
 var is_switching = false
 var crt_enabled = false
+var arcade_door = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
