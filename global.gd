@@ -27,3 +27,7 @@ func finish_change_scene():
 		current_scene = "cliff-side"
 	elif current_scene == "cliff-side":
 		current_scene = "world"
+
+
+func enable_player_movement():
+	canmove = true
