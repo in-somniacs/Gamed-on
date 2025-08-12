@@ -25,10 +25,10 @@
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="18_llano"]
 [ext_resource type="Texture2D" uid="uid://bxb7glxfuwabr" path="res://assets/fnaf.png" id="24_1idya"]
 [ext_resource type="PackedScene" uid="uid://cmwk0b8uxv7sj" path="res://scenes/ui/achievement.tscn" id="24_cb21c"]
-[ext_resource type="Script" path="res://scenes/ui/achievement_fnafn.gd" id="25_cb21c"]
+[ext_resource type="Script" uid="uid://b47dbuysrctx0" path="res://scenes/ui/achievement_fnafn.gd" id="25_cb21c"]
 [ext_resource type="AudioStream" uid="uid://bwrmcrdcg3ggr" path="res://assets/music/fnaf.mp3" id="25_ow3tb"]
 [ext_resource type="AudioStream" uid="uid://diuhprb56yiin" path="res://assets/music/arcade_ambience.mp3" id="26_ow3tb"]
-[ext_resource type="Script" path="res://scenes/arcadedoor_sceneswitch.gd" id="27_5uxbn"]
+[ext_resource type="Script" uid="uid://kf5kdmdjsvs2" path="res://scenes/arcadedoor_sceneswitch.gd" id="27_5uxbn"]
 
 [sub_resource type="TileSet" id="TileSet_71kqf"]
 

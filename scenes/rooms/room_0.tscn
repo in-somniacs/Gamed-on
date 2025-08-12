@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://klsd68mpixi8"]
+[gd_scene load_steps=42 format=3 uid="uid://klsd68mpixi8"]
 
 [ext_resource type="Texture2D" uid="uid://btyqpu4nltqsn" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_maoc1"]
 [ext_resource type="Script" uid="uid://rv6cdk4oqmo1" path="res://scenes/rooms/room_0.gd" id="1_yg2jv"]
@@ -23,7 +23,6 @@
 [ext_resource type="Script" uid="uid://dks1f0kbyplea" path="res://scripts/achievement.gd" id="20_1dyya"]
 [ext_resource type="AudioStream" uid="uid://dkoxs4cax1ypq" path="res://assets/music/track (1).mp3" id="22_7jotf"]
 [ext_resource type="PackedScene" uid="uid://bsr1fd633iqgb" path="res://screen_effect/glitchandcrtscene.tscn" id="23_2eptv"]
-[ext_resource type="AudioStream" uid="uid://dngcwy5wpieu5" path="res://assets/sfx/digital-glitch-361820 (1).mp3" id="25_sievs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epks6"]
 texture = ExtResource("2_xdi0x")
@@ -8729,9 +8728,6 @@ mom = NodePath("../Mom")
 shader_mesh = NodePath("crt and glitch")
 glitch_sfx = NodePath("GlitchSFX")
 dialogue = "res://timelines/aftersleep.dtl"
-
-[node name="GlitchSFX" parent="CanvasLayer2" index="3"]
-stream = ExtResource("25_sievs")
 
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="interactable2/Chatdetection" to="interactable2" method="_on_chatdetection_body_entered"]
