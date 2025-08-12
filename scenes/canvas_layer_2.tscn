@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://dpnar7ttvqt7w"]
+
+[ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="1_287mk"]
+[ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="2_3alc1"]
+[ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="3_twlla"]
+[ext_resource type="AudioStream" uid="uid://bc1mc1boo7pbg" path="res://assets/sfx/glitch-sound-333220fnaf.mp3" id="4_3alc1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5lo8o"]
+shader = ExtResource("1_287mk")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_d2xhu"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hw4n7"]
+shader = ExtResource("2_3alc1")
+
+[sub_resource type="QuadMesh" id="QuadMesh_lvybr"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pgwk0"]
+shader = ExtResource("3_twlla")
+shader_parameter/glitch_enabled = false
+shader_parameter/crt_enabled = true
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_krmxt"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[node name="CanvasLayer2" type="CanvasLayer"]
+
+[node name="gltiche shader" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_5lo8o")
+mesh = SubResource("QuadMesh_d2xhu")
+
+[node name="crt shader" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_hw4n7")
+mesh = SubResource("QuadMesh_lvybr")
+
+[node name="crt and glitch" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_pgwk0")
+mesh = SubResource("QuadMesh_krmxt")
+
+[node name="GlitchSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_3alc1")

@@ -31,6 +31,7 @@ directories/dch_directory={
 "NPCfootpath": "res://timelines/NPCfootpath.dch",
 "Player": "res://timelines/Player.dch",
 "consolechar": "res://timelines/consolechar.dch",
+"ghost1": "res://assets/rundown house/rundown house/ghost/ghost1.dch",
 "narrator": "res://timelines/narrator.dch",
 "note": "res://timelines/note.dch"
 }
@@ -39,7 +40,11 @@ directories/dtl_directory={
 "arcadeentry": "res://timelines/arcadeentry.dtl",
 "console": "res://timelines/console.dtl",
 "consoleget": "res://timelines/consoleget.dtl",
+"fnaf": "res://timelines/fnaf.dtl",
 "footpathtimeline": "res://timelines/footpathtimeline.dtl",
+"ghost1": "res://timelines/ghost1.dtl",
+"ghost2": "res://timelines/ghost2.dtl",
+"keyroomclock": "res://timelines/keyroomclock.dtl",
 "locked_door": "res://timelines/locked_door.dtl",
 "momtimeline": "res://timelines/momtimeline.dtl",
 "roomentry1": "res://timelines/roomentry1.dtl",

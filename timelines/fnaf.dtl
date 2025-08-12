@@ -1,0 +1,2 @@
+do global.disable_player_movement()
+do global.enable_player_movement()
