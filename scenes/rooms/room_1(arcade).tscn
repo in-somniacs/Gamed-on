@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://ti8047sqwd7h" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_SmallItems.png" id="20_2gsnm"]
 [ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="20_277s2"]
 [ext_resource type="AudioStream" uid="uid://dngcwy5wpieu5" path="res://assets/sfx/digital-glitch-361820 (1).mp3" id="21_bweva"]
-[ext_resource type="PackedScene" uid="uid://bfhbcgyn3140r" path="res://scenes/firecandlesingle.tscn" id="22_30j3m"]
+[ext_resource type="PackedScene" path="res://scenes/firecandlesingle.tscn" id="22_30j3m"]
 [ext_resource type="PackedScene" uid="uid://ces6y2p5bi11o" path="res://scenes/menu/pause_menu.tscn" id="22_biriq"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="23_abee3"]
 [ext_resource type="AudioStream" uid="uid://bc1mc1boo7pbg" path="res://assets/sfx/glitch-sound-333220fnaf.mp3" id="24_7irex"]

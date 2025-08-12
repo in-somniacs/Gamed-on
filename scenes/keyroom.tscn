@@ -1584,7 +1584,7 @@ radius = 9.0
 height = 26.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ohsuj"]
-radius = 23.0
+radius = 45.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_13nwq"]
 atlas = ExtResource("7_fklcl")
@@ -2085,6 +2085,82 @@ shape = SubResource("CircleShape2D_jpj8u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key1"]
 shape = SubResource("CircleShape2D_fgjmm")
 
+[node name="key1" type="Area2D" parent="key1" node_paths=PackedStringArray("chatbox", "sprite", "popup")]
+position = Vector2(-70, 5)
+script = ExtResource("10_6lppo")
+chatbox = NodePath("Chatdetection/chatbox")
+sprite = NodePath("Sprite2D")
+popup = NodePath("../../Player/popup")
+
+[node name="Sprite2D" type="Sprite2D" parent="key1/key1"]
+texture = ExtResource("7_cfo1t")
+
+[node name="Chatdetection" type="Area2D" parent="key1/key1"]
+disable_mode = 1
+
+[node name="chatbox" type="CollisionShape2D" parent="key1/key1/Chatdetection"]
+shape = SubResource("CircleShape2D_jpj8u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="key1/key1"]
+shape = SubResource("CircleShape2D_fgjmm")
+
+[node name="key1" type="Area2D" parent="key1/key1" node_paths=PackedStringArray("chatbox", "sprite", "popup")]
+position = Vector2(62, 48)
+script = ExtResource("10_6lppo")
+chatbox = NodePath("Chatdetection/chatbox")
+sprite = NodePath("Sprite2D")
+popup = NodePath("../../../Player/popup")
+
+[node name="Sprite2D" type="Sprite2D" parent="key1/key1/key1"]
+texture = ExtResource("7_cfo1t")
+
+[node name="Chatdetection" type="Area2D" parent="key1/key1/key1"]
+disable_mode = 1
+
+[node name="chatbox" type="CollisionShape2D" parent="key1/key1/key1/Chatdetection"]
+shape = SubResource("CircleShape2D_jpj8u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="key1/key1/key1"]
+shape = SubResource("CircleShape2D_fgjmm")
+
+[node name="key1" type="Area2D" parent="key1/key1/key1" node_paths=PackedStringArray("chatbox", "sprite", "popup")]
+position = Vector2(-108, -81)
+script = ExtResource("10_6lppo")
+chatbox = NodePath("Chatdetection/chatbox")
+sprite = NodePath("Sprite2D")
+popup = NodePath("../../../../Player/popup")
+
+[node name="Sprite2D" type="Sprite2D" parent="key1/key1/key1/key1"]
+texture = ExtResource("7_cfo1t")
+
+[node name="Chatdetection" type="Area2D" parent="key1/key1/key1/key1"]
+disable_mode = 1
+
+[node name="chatbox" type="CollisionShape2D" parent="key1/key1/key1/key1/Chatdetection"]
+shape = SubResource("CircleShape2D_jpj8u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="key1/key1/key1/key1"]
+shape = SubResource("CircleShape2D_fgjmm")
+
+[node name="key1" type="Area2D" parent="key1/key1/key1/key1" node_paths=PackedStringArray("chatbox", "sprite", "popup")]
+position = Vector2(148, -21)
+script = ExtResource("10_6lppo")
+chatbox = NodePath("Chatdetection/chatbox")
+sprite = NodePath("Sprite2D")
+popup = NodePath("../../../../../Player/popup")
+
+[node name="Sprite2D" type="Sprite2D" parent="key1/key1/key1/key1/key1"]
+texture = ExtResource("7_cfo1t")
+
+[node name="Chatdetection" type="Area2D" parent="key1/key1/key1/key1/key1"]
+disable_mode = 1
+
+[node name="chatbox" type="CollisionShape2D" parent="key1/key1/key1/key1/key1/Chatdetection"]
+shape = SubResource("CircleShape2D_jpj8u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="key1/key1/key1/key1/key1"]
+shape = SubResource("CircleShape2D_fgjmm")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer"]
@@ -2139,3 +2215,11 @@ max_distance = 4096.0
 [connection signal="body_exited" from="cliff_exitpoint" to="." method="_on_cliff_exitpoint_body_exited"]
 [connection signal="body_entered" from="key1/Chatdetection" to="key1" method="_on_chatdetection_body_entered"]
 [connection signal="body_exited" from="key1/Chatdetection" to="key1" method="_on_chatdetection_body_exited"]
+[connection signal="body_entered" from="key1/key1/Chatdetection" to="key1/key1" method="_on_chatdetection_body_entered"]
+[connection signal="body_exited" from="key1/key1/Chatdetection" to="key1/key1" method="_on_chatdetection_body_exited"]
+[connection signal="body_entered" from="key1/key1/key1/Chatdetection" to="key1/key1/key1" method="_on_chatdetection_body_entered"]
+[connection signal="body_exited" from="key1/key1/key1/Chatdetection" to="key1/key1/key1" method="_on_chatdetection_body_exited"]
+[connection signal="body_entered" from="key1/key1/key1/key1/Chatdetection" to="key1/key1/key1/key1" method="_on_chatdetection_body_entered"]
+[connection signal="body_exited" from="key1/key1/key1/key1/Chatdetection" to="key1/key1/key1/key1" method="_on_chatdetection_body_exited"]
+[connection signal="body_entered" from="key1/key1/key1/key1/key1/Chatdetection" to="key1/key1/key1/key1/key1" method="_on_chatdetection_body_entered"]
+[connection signal="body_exited" from="key1/key1/key1/key1/key1/Chatdetection" to="key1/key1/key1/key1/key1" method="_on_chatdetection_body_exited"]

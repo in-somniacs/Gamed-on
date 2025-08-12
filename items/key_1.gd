@@ -10,10 +10,13 @@ var player_in_area = false
 
 
 func _physics_process(delta: float) -> void:
+		if global.coin_total == 5:
+			print("nigger")
 		if player_in_area == true && Input.is_action_pressed("dialogic_default_action"):
 				chatbox.disabled = true
 				sprite.visible = false
 				global.arcade_door = false
+				global.coin_total += 1
 			
 func _on_chatdetection_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
