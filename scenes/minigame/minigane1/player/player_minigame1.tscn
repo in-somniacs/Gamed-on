@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://ca2bt84hkois5"]
+[gd_scene load_steps=18 format=3 uid="uid://ca2bt84hkois5"]
 
 [ext_resource type="Texture2D" uid="uid://2jp28sdhxsgh" path="res://scenes/tachyon/assets/player.png" id="1_gt4xq"]
+[ext_resource type="Script" uid="uid://vbd3yrsjkxy3" path="res://scenes/minigame/minigane1/scripts/player_minigame_1.gd" id="2_cyyio"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cyyio"]
 atlas = ExtResource("1_gt4xq")
@@ -111,17 +112,17 @@ animations = [{
 "speed": 7.5
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cnkvk"]
-radius = 5.09902
+[sub_resource type="CircleShape2D" id="CircleShape2D_cyyio"]
+radius = 7.5
 
 [node name="PlayerMinigame1" type="CharacterBody2D"]
+script = ExtResource("2_cyyio")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pbiy7")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.291866
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
-shape = SubResource("CircleShape2D_cnkvk")
+position = Vector2(0.5, 3)
+shape = SubResource("CircleShape2D_cyyio")
