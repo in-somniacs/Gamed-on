@@ -15,7 +15,7 @@ func _ready():
 
 
 func _process(delta: float) -> void:
-		if global.is_switching == false:
+		if global.is_switching == false and interactable == true:
 			
 			var transition = preload("res://scenes/transition_manager.tscn").instantiate()
 			get_tree().root.add_child(transition)
@@ -27,11 +27,11 @@ func _process(delta: float) -> void:
 		
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Player":  # Only allow Player to trigger
+	if body.has_method("player"):
 		interactable = true
-		popup.visible = true 
+
+
 		
 func _on_body_exited(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.has_method("player"):
 		interactable = false
-		popup.visible = false

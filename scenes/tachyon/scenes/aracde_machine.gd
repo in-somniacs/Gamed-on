@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+@export var next_scene: String
 @export var player: CharacterBody2D 
 @export var popup: NinePatchRect
 @export var timeline: String
@@ -12,17 +12,30 @@ extends CharacterBody2D
 var player_in_area = false
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	popup.visible = false
+	global.new_scene_placement = next_scene 
+	global.is_switching =false
+
+	print("Player:", player)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if player_in_area:
-		if Input.is_action_pressed("dialogic_default_action"):
-			run_dialogue(timeline)
+		if Input.is_action_pressed("dialogic_default_action") && global.is_switching == false && global.arcade_game == true:
+			var transition = preload("res://scenes/transition_manager.tscn").instantiate()
+			get_tree().root.add_child(transition)
+			
+			#run_dialogue(timeline) add dialogue layer peeju
 			chatbox.disabled = true
+			transition.start_transition(global.new_scene_placement)
+			global.input_disabled = true
+			global.is_switching = true
+		else:
+			pass
 			
 			
 			
