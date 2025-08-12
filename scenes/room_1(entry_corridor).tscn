@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cur5rsemri0nt" path="res://scenes/ghosts.tscn" id="16_llano"]
 [ext_resource type="PackedScene" uid="uid://ces6y2p5bi11o" path="res://scenes/menu/pause_menu.tscn" id="17_gpi8r"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="18_llano"]
+[ext_resource type="AudioStream" uid="uid://dngcwy5wpieu5" path="res://assets/sfx/digital-glitch-361820 (1).mp3" id="23_5uxbn"]
 [ext_resource type="Texture2D" uid="uid://bxb7glxfuwabr" path="res://assets/fnaf.png" id="24_1idya"]
 [ext_resource type="PackedScene" uid="uid://cmwk0b8uxv7sj" path="res://scenes/ui/achievement.tscn" id="24_cb21c"]
 [ext_resource type="Script" uid="uid://b47dbuysrctx0" path="res://scenes/ui/achievement_fnafn.gd" id="25_cb21c"]
@@ -7324,6 +7325,7 @@ material = SubResource("ShaderMaterial_5uxbn")
 mesh = SubResource("QuadMesh_8irwg")
 
 [node name="GlitchSFX" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+stream = ExtResource("23_5uxbn")
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("17_gpi8r")]
 
