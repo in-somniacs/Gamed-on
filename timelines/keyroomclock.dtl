@@ -1,0 +1,13 @@
+do global.disable_player_movement()
+join Player left
+Player: …That clock’s… wrong.
+Player: The second and hour hand’s moving too fast. Way too fast.
+leave Player
+join narrator center
+narrator: Is it?  
+narrator: Maybe time’s just… running out for you.  
+narrator: Or maybe you’ve been here longer than you think.
+leave narrator
+join Player left
+Player: …It’s been minutes, right? Not… hours?  
+Player: …Right?

@@ -1,0 +1,40 @@
+do global.disable_player_movement()
+join Player left
+Player: Huh…? What’s this?
+Player: It’s… flickering text, like a save file..?
+Player: (Should I… read it?)
+leave Player
+join narrator center
+narrator: Ah… you’ve found one of *them*.
+narrator: Fragments of the people who came before you.
+narrator: What’s left of them is trapped… stored like data.
+narrator: Go on, {{player_name}}. Read it. It won’t bite.
+Recovered from the Console Core — file integrity at 62%
+Elara Whitcombe
+LAST SESSION\: 184 days ago (REAL TIME)
+03\:42\:17
+████████ Arcade Room
+PLAYER ENTITY - ACTIVE? [CONFLICT]
+[1/3]
+
+"If you’re reading this… then maybe you’re not like the rest of them. I came here thinking it was just a game.
+The screen went black after the a glitched pop up.
+I woke up inside. I… I can’t remember my own voice anymore.
+There’s something here — says it wants to help me get out. It smiles too much. .
+Sometimes I see other people. But when I blink, they’re gone.
+If I’m gone when you find this… don’t let it save over my file."
+FILE END - Fragmented sectors found (12)
+Corruption detected in 41% of memory blocks
+join Player left
+Player: That… was someone’s memory?
+Player: How can a game store… a person?
+leave Player
+join narrator center
+narrator: The *console* is not a game, {{player_name}}.
+narrator: It’s a vault and the unlucky ones become part of it.
+narrator: But don’t fret. You’re still whole.
+narrator: And unlike Elara… you have me.
+leave narrator
+join Player left
+Player: (…Somehow, that doesn’t make me feel better.)
+do global.enable_player_movement()
