@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://duiln7fcyt3sq"]
+
+[node name="Pacman" type="Node2D"]

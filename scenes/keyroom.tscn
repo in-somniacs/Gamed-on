@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://2jp28sdhxsgh" path="res://scenes/tachyon/assets/player.png" id="7_fklcl"]
 [ext_resource type="Texture2D" uid="uid://dt2y0dl21xt4g" path="res://assets/rundown house/rundown house/clock/clock_15x32.png" id="7_kjm7t"]
 [ext_resource type="Texture2D" uid="uid://crfgkv6qnr0mj" path="res://assets/pop.png" id="8_bxck6"]
-[ext_resource type="Script" path="res://items/key_1.gd" id="10_6lppo"]
+[ext_resource type="Script" uid="uid://c7tmypy84ki4t" path="res://items/key_1.gd" id="10_6lppo"]
 [ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="12_0m1ia"]
 [ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="13_hb80a"]
 [ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="14_kjm7t"]
