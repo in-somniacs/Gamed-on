@@ -12,6 +12,7 @@ var has_jumped = false  # Prevents jump sound from retriggering mid-air
 
 func _ready() -> void:
 	global.minigame = false
+	add_to_group("player")
 func _process(delta: float) -> void:
 	pass
 		
@@ -55,3 +56,5 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+func player():
+	pass
