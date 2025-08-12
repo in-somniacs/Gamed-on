@@ -1,5 +1,5 @@
-join Player left
 do global.disable_player_movement()
+join Player left
 Player: !!!!!!.......
 Player: Uh… hello? Where am I?
 
