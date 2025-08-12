@@ -17,7 +17,7 @@ var is_switching = false
 var crt_enabled = false
 var arcade_door = true
 var first_time_arcade = false
-
+var minigame = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass

@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://4yqnhw2c57hl"]
+
+[ext_resource type="Texture2D" uid="uid://bxu0ff21ycuhy" path="res://scenes/minigame/minigane1/enemy.png" id="1_1pu1e"]
+[ext_resource type="Script" uid="uid://b5bcyqip7eg4t" path="res://scenes/minigame/minigane1/scripts/enemy.gd" id="1_ln1g0"]
+[ext_resource type="Script" uid="uid://db6aa1i3ona0f" path="res://scenes/minigame/minigane1/scripts/killzone.gd" id="2_ln1g0"]
+[ext_resource type="Script" uid="uid://thlx6nullvs3" path="res://scenes/minigame/minigane1/scenes/static_body_2d.gd" id="4_s7cb0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7cb0"]
+size = Vector2(18, 17)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ln1g0"]
+radius = 26.0
+
+[node name="enemy" type="Node2D"]
+script = ExtResource("1_ln1g0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1pu1e")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_ln1g0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_s7cb0")
+
+[node name="RayCastRight" type="RayCast2D" parent="Area2D"]
+light_mask = 2
+target_position = Vector2(11, 0)
+collision_mask = 2
+
+[node name="RayCastleft" type="RayCast2D" parent="Area2D"]
+target_position = Vector2(-11, 0)
+collision_mask = 2
+
+[node name="StaticBody2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("4_s7cb0")
+
+[node name="edect" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_ln1g0")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="StaticBody2D" to="." method="_on_static_body_2d_body_entered"]
+[connection signal="body_entered" from="StaticBody2D" to="StaticBody2D" method="_on_body_entered"]
+[connection signal="body_exited" from="StaticBody2D" to="." method="_on_static_body_2d_body_exited"]
