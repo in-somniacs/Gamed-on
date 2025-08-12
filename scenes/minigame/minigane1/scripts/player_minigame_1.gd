@@ -1,46 +1,54 @@
 extends CharacterBody2D
 
-
 const SPEED = 130.0
 const JUMP_VELOCITY = -250.0
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
+
 @export var animated_sprite: AnimatedSprite2D
 @onready var audioplayer: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
+var has_jumped = false  # Prevents jump sound from retriggering mid-air
 
-
+func _ready() -> void:
+	global.minigame = false
+func _process(delta: float) -> void:
+	pass
+		
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# Gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	# Handle jump.
+	# Jump
 	if Input.is_action_just_pressed("up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		animated_sprite.play("jump")
+		audioplayer.stream = preload("res://scenes/minigame/minigane1/jump.mp3")
+		audioplayer.play()
+		has_jumped = true
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	# Reset when landed
+	if is_on_floor():
+		has_jumped = false
+
+	# Movement
 	var direction := Input.get_axis("left", "right")
-	
+
+	# Flip sprite
 	if direction > 0:
 		animated_sprite.flip_h = false
 	elif direction < 0:
 		animated_sprite.flip_h = true
-		
+
+	# Choose animation
 	if is_on_floor():
 		if direction == 0:
 			animated_sprite.play("idle")
 		else:
 			animated_sprite.play("run")
-	else:
-		audioplayer.stream = preload("res://scenes/minigame/minigane1/jump.mp3")
-		animated_sprite.play("jump")
-		audioplayer.stream.loop = false
-		audioplayer.play()
 
-	
+	# Apply horizontal movement
 	if direction:
 		velocity.x = direction * SPEED
 	else:
