@@ -76,7 +76,7 @@ height = 26.0
 sprite_frames = SubResource("SpriteFrames_skh5d")
 animation = &"fireidle"
 autoplay = "fireidle"
-frame_progress = 0.800833
+frame_progress = 0.393958
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)

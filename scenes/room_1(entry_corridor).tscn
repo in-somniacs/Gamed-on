@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=4 uid="uid://cegs1img0ferx"]
+[gd_scene load_steps=93 format=4 uid="uid://cegs1img0ferx"]
 
 [ext_resource type="Texture2D" uid="uid://7nkymmnf826a" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/Interior.png" id="1_7k5vf"]
 [ext_resource type="Script" uid="uid://cl881fg85mw84" path="res://scenes/room_1(entry_corridor).gd" id="1_qp1n4"]
@@ -32,6 +32,7 @@
 [ext_resource type="AudioStream" uid="uid://bwrmcrdcg3ggr" path="res://assets/music/fnaf.mp3" id="25_ow3tb"]
 [ext_resource type="AudioStream" uid="uid://diuhprb56yiin" path="res://assets/music/arcade_ambience.mp3" id="26_ow3tb"]
 [ext_resource type="Script" uid="uid://kf5kdmdjsvs2" path="res://scenes/arcadedoor_sceneswitch.gd" id="27_5uxbn"]
+[ext_resource type="AudioStream" uid="uid://bc1mc1boo7pbg" path="res://assets/sfx/glitch-sound-333220fnaf.mp3" id="29_pgnm0"]
 [ext_resource type="PackedScene" uid="uid://bfhbcgyn3140r" path="res://scenes/firecandlesingle.tscn" id="32_qs2od"]
 [ext_resource type="PackedScene" uid="uid://dnu52el33ayfk" path="res://scenes/firecandlelarge.tscn" id="33_ife0l"]
 
@@ -7385,6 +7386,7 @@ material = SubResource("ShaderMaterial_8irwg")
 mesh = SubResource("QuadMesh_cb21c")
 
 [node name="GlitchSFX" type="AudioStreamPlayer2D" parent="CanvasLayer2"]
+stream = ExtResource("29_pgnm0")
 
 [node name="fnaf" type="CharacterBody2D" parent="."]
 position = Vector2(-607, -322)
