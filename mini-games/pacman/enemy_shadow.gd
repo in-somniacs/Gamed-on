@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 	# Check if close enough to attack
 	if distance_to_player <= attack_range:
 		start_attack()
-		return
+
 
 	# Pathfinding movement
 	agent.target_position = player.global_position
@@ -63,6 +63,7 @@ func start_attack():
 	attacking = true
 	velocity = Vector2.ZERO
 	move_and_slide()
+	print("adasd")
 
 	# Choose attack animation based on last movement direction
 	if abs(last_dir.x) > abs(last_dir.y):

@@ -431,7 +431,7 @@ position = Vector2(3.5, -10.5)
 shape = SubResource("RectangleShape2D_2h2sw")
 
 [node name="PlayerMinigame1" parent="." instance=ExtResource("1_7dm80")]
-position = Vector2(-231, -23)
+position = Vector2(3315, 13)
 
 [node name="AnimatedSprite2D" parent="PlayerMinigame1" index="0"]
 position = Vector2(-2, -2)
