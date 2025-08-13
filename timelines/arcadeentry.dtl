@@ -25,7 +25,7 @@ leave Player
 join narrator center
 narrator: Don’t be afraid—I mean you no harm.
 leave narrator
-join Player center
+join Player left
 Player: (He’s unsettling… but I don’t see any other choice.)
 leave Player
 join narrator center
@@ -39,4 +39,3 @@ leave narrator
     join narrator center
     narrator: Good. Then move ahead and play the games. You’re inside a console now—don’t forget that.
 do global.enable_player_movement()
-

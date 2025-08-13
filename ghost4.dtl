@@ -1,0 +1,24 @@
+do global.disable_player_movement()
+Recovered from the Console Core — file integrity at 41%
+Name partially recovered: Ka████n Dr███
+LAST SESSION: 92 days ago (REAL TIME)
+00:56:42
+████████ Arcade Hub (Locked State)
+PLAYER ENTITY - ACTIVE? [PARTIAL]
+[1/2]
+
+"Coin counters don’t mean what you think they do.
+I’ve paid three times already and the machine still wants more.
+It told me it’s not a game, but it’s wearing the skin of one.
+If you get the high score… it will know your name."
+
+FILE END — Sectors fragmented (9)
+Corruption detected in 66% of memory blocks
+
+
+join narrator center
+Narrator: "Three coins is never enough, {{player_name}}. The machine is always hungry."
+leave narrator
+join Player left
+Player: "…Then why give me a number at all?"
+do global.enable_player_movement()
