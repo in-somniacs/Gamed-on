@@ -12,16 +12,29 @@ var player_area = false
 func _ready() -> void:
 			global.teleportdoor = false
 func _physics_process(delta: float) -> void:
-		if player_in_area == true && Input.is_action_pressed("dialogic_default_action") && global.teleportdoor == true:
-			ani.play("fade_in")
-			player.global_position = destination.global_position
-			ani.play("fade_out")
-			
-		if player_in_area:
-			if Input.is_action_pressed("dialogic_default_action") :
+		#if player_in_area == true && global.teleportdoor == true:
+			#ani.play("fade_in")
+			#player.global_position = destination.global_position
+			#ani.play("fade_out")
+			#
+		#if player_in_area:
+			#if Input.is_action_pressed("dialogic_default_action"):
+				#run_dialogue(dialogue)
+				#chatbox.disabled = true
+				#global.canmove = false
+		if player_in_area and  Input.is_action_just_pressed("dialogic_default_action"):
+			if global.teleportdoor:
+				teleport_player()
+			else:
 				run_dialogue(dialogue)
 				chatbox.disabled = true
 				global.canmove = false
+
+func teleport_player():
+	ani.play("fade_in")
+	await ani.animation_finished
+	player.global_position = destination.global_position
+	ani.play("fade_out")
 
 
 func _on_body_entered(body: Node2D) -> void:
