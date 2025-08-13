@@ -3,12 +3,12 @@ extends CharacterBody2D
 @export var speed: float = 80.0
 @export var player: Node2D
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	# Small thresholds so the agent considers the point reached and advances
 	agent.path_desired_distance = 4.0
-	agent.target_desired_distance = 6.0
+	agent.target_desired_distance = 10.0
 	agent.max_speed = speed
 
 func _physics_process(delta: float) -> void:
