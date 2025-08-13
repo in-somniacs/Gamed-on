@@ -1,5 +1,6 @@
-[gd_scene load_steps=106 format=4 uid="uid://c1uyajyie8jqy"]
+[gd_scene load_steps=107 format=4 uid="uid://c1uyajyie8jqy"]
 
+[ext_resource type="Script" uid="uid://b16gkoc1mnq3g" path="res://scenes/rooms/room_1(arcade).gd" id="1_nmc1r"]
 [ext_resource type="Texture2D" uid="uid://jcbc36hkln5r" path="res://scenes/rooms/ArcadeMachine/arcade-Sheet.png" id="2_7owwp"]
 [ext_resource type="PackedScene" uid="uid://bgx0kmq7a53mw" path="res://scenes/tachyon/scenes/aracde_machine.tscn" id="3_1e1x7"]
 [ext_resource type="Texture2D" uid="uid://dt2y0dl21xt4g" path="res://assets/rundown house/rundown house/clock/clock_15x32.png" id="4_03s3m"]
@@ -31,7 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://ti8047sqwd7h" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_SmallItems.png" id="20_2gsnm"]
 [ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="20_277s2"]
 [ext_resource type="AudioStream" uid="uid://dngcwy5wpieu5" path="res://assets/sfx/digital-glitch-361820 (1).mp3" id="21_bweva"]
-[ext_resource type="PackedScene" path="res://scenes/firecandlesingle.tscn" id="22_30j3m"]
+[ext_resource type="PackedScene" uid="uid://bfhbcgyn3140r" path="res://scenes/firecandlesingle.tscn" id="22_30j3m"]
 [ext_resource type="PackedScene" uid="uid://ces6y2p5bi11o" path="res://scenes/menu/pause_menu.tscn" id="22_biriq"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="23_abee3"]
 [ext_resource type="AudioStream" uid="uid://bc1mc1boo7pbg" path="res://assets/sfx/glitch-sound-333220fnaf.mp3" id="24_7irex"]
@@ -39,7 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://bdcguucli7f84" path="res://assets/sbs_-_mini_texture_pack_1_-_floor_tiles_128x128/128x128/Checker Tiles/BW_Marble_Tile_02-128x128.png" id="28_brpcr"]
 [ext_resource type="Script" uid="uid://c7tmypy84ki4t" path="res://items/key_1.gd" id="38_sv16y"]
 [ext_resource type="Texture2D" uid="uid://chpvoubidhg1f" path="res://assets/key_1.png" id="39_076c7"]
-[ext_resource type="PackedScene" uid="uid://dnb6olr75l2ak" path="res://scenes/coin.tscn" id="39_sv16y"]
+[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="39_sv16y"]
 [ext_resource type="Script" uid="uid://b647oldawiwvl" path="res://scenes/rooms/door_arcade_main.gd" id="41_076c7"]
 [ext_resource type="PackedScene" uid="uid://cur5rsemri0nt" path="res://scenes/ghosts.tscn" id="42_nsrae"]
 
@@ -18432,7 +18433,11 @@ _data = {
 &"fade_out": SubResource("Animation_nmc1r")
 }
 
-[node name="Room1(arcade)" type="Node2D"]
+[node name="Room1(arcade)" type="Node2D" node_paths=PackedStringArray("shader_mesh", "glitch_sfx")]
+script = ExtResource("1_nmc1r")
+dialogue = "res://arcademainentry.dtl"
+shader_mesh = NodePath("CanvasLayer/crt and glitch")
+glitch_sfx = NodePath("CanvasLayer/GlitchSFX")
 
 [node name="Room1" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_1e1x7")
@@ -18485,9 +18490,10 @@ next_scene = "res://scenes/minigame/minigane1/minigame_1.tscn"
 player = NodePath("../Player")
 popup = NodePath("../Player/popup")
 timeline = "res://timelines/consoleget.dtl"
+dialogue = "res://arcademainentry.dtl"
 
 [node name="Player" parent="." instance=ExtResource("11_vexsr")]
-position = Vector2(12, 1903)
+position = Vector2(288, 1427)
 SPEED = 7000.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
