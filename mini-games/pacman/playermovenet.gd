@@ -51,16 +51,14 @@ func _physics_process(delta: float) -> void:
 			
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
-	if Input.is_action_pressed("run"):
-		SPEED = SPEED + 400
-	if Input.is_action_just_released("run"):
-		SPEED = SPEED - 400
 
 	move_and_slide()
 	
 func _process(delta: float) -> void:
-	pass	
-	
+	if Input.is_action_just_pressed("run"):
+		SPEED = SPEED + 4000
+	elif Input.is_action_just_released("run"):
+		SPEED = SPEED - 4000
 func player():
 	pass
 
