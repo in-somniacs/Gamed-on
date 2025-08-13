@@ -21,6 +21,7 @@ var minigame = false
 var coin_total = 0
 var arcade_game = false
 var teleportdoor = false
+var first_time_main_arcade = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass

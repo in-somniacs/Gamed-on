@@ -5,37 +5,38 @@ Player: Uh… hello? Where am I?
 
 leave Player
 join narrator center
-narrator: Oh! You’re awake. Good. I was beginning to think you’d… stayed asleep forever.
+narrator: Ah… you’re awake. Good. I was beginning to think you’d… never wake at all.
 narrator: How unexpected.
 
 narrator: Before we go any further… what should I call you?
 [text_input text="" var="player_name"]
 
-narrator: Ah, {{player_name}}. That’s a nice name… reminds me of someone else I knew.
-narrator: You’re trapped here, {{player_name}}. Just like the others…? , I presume.
-narrator: But maybe… I can help you get out.
+narrator: Ah, {{player_name}}. That’s a strange name… it reminds me of someone I once knew.
+narrator: You’re trapped here, {{player_name}}. Just like the others… I presume.
+narrator: But perhaps… I can show you the way out.
 
 leave narrator
 join Player left
-Player: Get… out? Yes—please! I don’t care what it takes.
+Player: The way… out? Yes—please! I don’t care what it takes.
 Player: This isn’t my room… this isn’t anywhere I know…
-Player: Just tell me what I need to do!
+Player: Just tell me what I need to do.
 
 leave Player
 join narrator center
-narrator: Don’t worry—I’m harmless.
+narrator: Don’t be afraid—I mean you no harm.
 leave narrator
 join Player center
-Player: (He's one hell of a sketchy sounding dude, but I don't really have any way around this.)
+Player: (He’s unsettling… but I don’t see any other choice.)
 leave Player
 join narrator center
-narrator: Listen carefully, {{player_name}}. The way out is… rather simple if you just follow me.
+narrator: Listen carefully, {{player_name}}. The way out is… simple enough, if you follow my lead.
 leave narrator
 - If you betray me, I’ll—
-	join narrator center
-	narrator: Remember… I’m the only one who can help you.
-	narrator: And when the time comes… you’ll return the favor.
+    join narrator center
+    narrator: Remember… I am the only one who can help you.
+    narrator: And when the time comes… you will return the favor.
 - Fine… just tell me what to do
-	join narrator center
-	narrator: Good. Just move ahead and play some games . Your'e inside a console remember?
+    join narrator center
+    narrator: Good. Then move ahead and play the games. You’re inside a console now—don’t forget that.
 do global.enable_player_movement()
+

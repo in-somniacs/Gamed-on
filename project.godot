@@ -38,6 +38,8 @@ directories/dch_directory={
 directories/dtl_directory={
 "aftersleep": "res://timelines/aftersleep.dtl",
 "arcadeentry": "res://timelines/arcadeentry.dtl",
+"arcademachineuclose": "res://arcademachineuclose.dtl",
+"arcademainentry": "res://arcademainentry.dtl",
 "console": "res://timelines/console.dtl",
 "consoleget": "res://timelines/consoleget.dtl",
 "fnaf": "res://timelines/fnaf.dtl",

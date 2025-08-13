@@ -4,10 +4,10 @@ extends CharacterBody2D
 @export var player: CharacterBody2D 
 @export var popup: NinePatchRect
 @export var timeline: String
-
+@export var dialogue: String
 @onready var chatbox: CollisionShape2D = $Chatdetection/chatbox
 #@onready var res_chat: CollisionPolygon2D = $respawn_chat/res_chat
-
+var first_interaction_done = false
 
 var player_in_area = false
 
@@ -29,13 +29,15 @@ func _process(_delta: float) -> void:
 			var transition = preload("res://scenes/transition_manager.tscn").instantiate()
 			get_tree().root.add_child(transition)
 			
-			#run_dialogue(timeline) add dialogue layer peeju
+			run_dialogue(dialogue)
 			chatbox.disabled = true
 			transition.start_transition(global.new_scene_placement)
 			global.input_disabled = true
 			global.is_switching = true
 		else:
-			pass
+			if not first_interaction_done:
+				run_dialogue(dialogue)
+				first_interaction_done = true
 			
 			
 			
