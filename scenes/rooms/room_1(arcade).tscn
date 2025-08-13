@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=4 uid="uid://c1uyajyie8jqy"]
+[gd_scene load_steps=105 format=4 uid="uid://c1uyajyie8jqy"]
 
 [ext_resource type="Texture2D" uid="uid://jcbc36hkln5r" path="res://scenes/rooms/ArcadeMachine/arcade-Sheet.png" id="2_7owwp"]
 [ext_resource type="PackedScene" uid="uid://bgx0kmq7a53mw" path="res://scenes/tachyon/scenes/aracde_machine.tscn" id="3_1e1x7"]
@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://ti8047sqwd7h" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_SmallItems.png" id="20_2gsnm"]
 [ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="20_277s2"]
 [ext_resource type="AudioStream" uid="uid://dngcwy5wpieu5" path="res://assets/sfx/digital-glitch-361820 (1).mp3" id="21_bweva"]
-[ext_resource type="PackedScene" path="res://scenes/firecandlesingle.tscn" id="22_30j3m"]
+[ext_resource type="PackedScene" uid="uid://bfhbcgyn3140r" path="res://scenes/firecandlesingle.tscn" id="22_30j3m"]
 [ext_resource type="PackedScene" uid="uid://ces6y2p5bi11o" path="res://scenes/menu/pause_menu.tscn" id="22_biriq"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="23_abee3"]
 [ext_resource type="AudioStream" uid="uid://bc1mc1boo7pbg" path="res://assets/sfx/glitch-sound-333220fnaf.mp3" id="24_7irex"]
@@ -39,7 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://bdcguucli7f84" path="res://assets/sbs_-_mini_texture_pack_1_-_floor_tiles_128x128/128x128/Checker Tiles/BW_Marble_Tile_02-128x128.png" id="28_brpcr"]
 [ext_resource type="Script" uid="uid://c7tmypy84ki4t" path="res://items/key_1.gd" id="38_sv16y"]
 [ext_resource type="Texture2D" uid="uid://chpvoubidhg1f" path="res://assets/key_1.png" id="39_076c7"]
-[ext_resource type="PackedScene" uid="uid://dnb6olr75l2ak" path="res://scenes/coin.tscn" id="39_sv16y"]
+[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="39_sv16y"]
 [ext_resource type="Script" uid="uid://b647oldawiwvl" path="res://scenes/rooms/door_arcade_main.gd" id="41_076c7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7owwp"]
@@ -18282,6 +18282,9 @@ radius = 20.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsrae"]
 size = Vector2(55, 44)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_076c7"]
+radius = 16.0312
+
 [sub_resource type="Animation" id="Animation_nsrae"]
 length = 0.001
 tracks/0/type = "value"
@@ -18508,13 +18511,15 @@ position = Vector2(422, 354)
 player = NodePath("../Player")
 popup = NodePath("../Player/popup")
 
-[node name="door_teleport" type="Area2D" parent="." node_paths=PackedStringArray("player", "popup", "destination", "ani")]
+[node name="door_teleport" type="Area2D" parent="." node_paths=PackedStringArray("player", "popup", "destination", "ani", "chatbox")]
 position = Vector2(288, 1410)
 script = ExtResource("41_076c7")
+dialogue = "res://timelines/locked_door.dtl"
 player = NodePath("../Player")
 popup = NodePath("../Player/popup")
 destination = NodePath("Node2D")
 ani = NodePath("../AnimationPlayer")
+chatbox = NodePath("Chatdetection/chatbox")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_teleport"]
 position = Vector2(-0.5, -6)
@@ -18522,6 +18527,12 @@ shape = SubResource("RectangleShape2D_nsrae")
 
 [node name="Node2D" type="Node2D" parent="door_teleport"]
 position = Vector2(2, -106)
+
+[node name="Chatdetection" type="Area2D" parent="door_teleport"]
+disable_mode = 1
+
+[node name="chatbox" type="CollisionShape2D" parent="door_teleport/Chatdetection"]
+shape = SubResource("CircleShape2D_076c7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -18532,6 +18543,8 @@ libraries = {
 [connection signal="body_exited" from="key1/Chatdetection" to="key1" method="_on_chatdetection_body_exited"]
 [connection signal="body_entered" from="door_teleport" to="door_teleport" method="_on_body_entered"]
 [connection signal="body_exited" from="door_teleport" to="door_teleport" method="_on_body_exited"]
+[connection signal="body_entered" from="door_teleport/Chatdetection" to="door_teleport" method="_on_chatdetection_body_entered"]
+[connection signal="body_exited" from="door_teleport/Chatdetection" to="door_teleport" method="_on_chatdetection_body_exited"]
 
 [editable path="Player"]
 [editable path="coin"]
