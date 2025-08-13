@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://ti8047sqwd7h" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_SmallItems.png" id="20_2gsnm"]
 [ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="20_277s2"]
 [ext_resource type="AudioStream" uid="uid://dngcwy5wpieu5" path="res://assets/sfx/digital-glitch-361820 (1).mp3" id="21_bweva"]
-[ext_resource type="PackedScene" uid="uid://bfhbcgyn3140r" path="res://scenes/firecandlesingle.tscn" id="22_30j3m"]
+[ext_resource type="PackedScene" path="res://scenes/firecandlesingle.tscn" id="22_30j3m"]
 [ext_resource type="PackedScene" uid="uid://ces6y2p5bi11o" path="res://scenes/menu/pause_menu.tscn" id="22_biriq"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="23_abee3"]
 [ext_resource type="AudioStream" uid="uid://bc1mc1boo7pbg" path="res://assets/sfx/glitch-sound-333220fnaf.mp3" id="24_7irex"]
@@ -39,7 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://bdcguucli7f84" path="res://assets/sbs_-_mini_texture_pack_1_-_floor_tiles_128x128/128x128/Checker Tiles/BW_Marble_Tile_02-128x128.png" id="28_brpcr"]
 [ext_resource type="Script" uid="uid://c7tmypy84ki4t" path="res://items/key_1.gd" id="38_sv16y"]
 [ext_resource type="Texture2D" uid="uid://chpvoubidhg1f" path="res://assets/key_1.png" id="39_076c7"]
-[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="39_sv16y"]
+[ext_resource type="PackedScene" uid="uid://dnb6olr75l2ak" path="res://scenes/coin.tscn" id="39_sv16y"]
 [ext_resource type="Script" uid="uid://b647oldawiwvl" path="res://scenes/rooms/door_arcade_main.gd" id="41_076c7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7owwp"]
@@ -16041,8 +16041,11 @@ texture = ExtResource("13_jqtq0")
 5:11/0 = 0
 6:11/0 = 0
 7:11/0 = 0
+7:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.719435, -3.77703, 8, -8, 8, 8, -3.59717, 8, -2.87774, 5.93534)
 8:11/0 = 0
+8:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:11/0 = 0
+9:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.83463, -1.79859, -5.39576, 3.41732, 1.97845, 3.0576, 8, -8, 8)
 11:11/0 = 0
 1:12/0 = 0
 2:12/0 = 0
@@ -16050,8 +16053,11 @@ texture = ExtResource("13_jqtq0")
 5:12/0 = 0
 6:12/0 = 0
 7:12/0 = 0
+7:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.51802, -8, 8, -8, 8, 5.03605, 2.33816, 8, -1.07915, -0.179857)
 8:12/0 = 0
+8:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:12/0 = 0
+9:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.83463, 4.13675, -8, 2.33816, 0.179859, -0.719435, 8, -8, 3.0576)
 10:12/0 = 0
 11:12/0 = 0
 0:13/0 = 0
@@ -18353,7 +18359,7 @@ tile_map_data = PackedByteArray("AAARAFQAAAAMAAUAAAARAFUAAAAMAAYAAAARAFYAAAAMAAc
 tile_set = SubResource("TileSet_tqjt8")
 
 [node name="door" type="TileMapLayer" parent="Room1"]
-tile_map_data = PackedByteArray("AAARAFQAAAAOAAUAAAARAFUAAAAOAAYAAAARAFYAAAAOAAcAAAASAFQAAAAPAAUAAAASAFUAAAAPAAYAAAASAFYAAAAPAAcAAAATAFUAAAAGAAgAAAATAFYAAAAGAAkAAAAUAFUAAAAHAAgAAAAUAFYAAAAHAAkAAAA=")
+tile_map_data = PackedByteArray("AAARAFQAAAAOAAUAAAARAFUAAAAOAAYAAAARAFYAAAAOAAcAAAASAFQAAAAPAAUAAAASAFUAAAAPAAYAAAASAFYAAAAPAAcAAAATAFUAAAAGAAgAAAATAFYAAAAGAAkAAAAUAFUAAAAHAAgAAAAUAFYAAAAHAAkAAADw/04AAQAHAAsAAADw/08AAQAHAAwAAADx/04AAQAIAAsAAADx/08AAQAIAAwAAADy/04AAQAIAAsAAADy/08AAQAIAAwAAADz/04AAQAJAAsAAADz/08AAQAJAAwAAAA=")
 tile_set = SubResource("TileSet_7irex")
 
 [node name="arcademachine" type="TileMapLayer" parent="Room1"]

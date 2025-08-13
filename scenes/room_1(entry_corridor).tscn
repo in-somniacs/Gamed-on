@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=4 uid="uid://cegs1img0ferx"]
+[gd_scene load_steps=97 format=4 uid="uid://cegs1img0ferx"]
 
 [ext_resource type="Texture2D" uid="uid://7nkymmnf826a" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/Interior.png" id="1_7k5vf"]
 [ext_resource type="Script" uid="uid://cl881fg85mw84" path="res://scenes/room_1(entry_corridor).gd" id="1_qp1n4"]
@@ -34,6 +34,7 @@
 [ext_resource type="AudioStream" uid="uid://diuhprb56yiin" path="res://assets/music/arcade_ambience.mp3" id="26_ow3tb"]
 [ext_resource type="Script" uid="uid://kf5kdmdjsvs2" path="res://scenes/arcadedoor_sceneswitch.gd" id="27_5uxbn"]
 [ext_resource type="AudioStream" uid="uid://bc1mc1boo7pbg" path="res://assets/sfx/glitch-sound-333220fnaf.mp3" id="29_pgnm0"]
+[ext_resource type="VideoStream" uid="uid://b2bo872mmprhk" path="res://assets/fnaf.ogv" id="30_pgnm0"]
 [ext_resource type="PackedScene" path="res://scenes/firecandlesingle.tscn" id="32_qs2od"]
 [ext_resource type="PackedScene" path="res://scenes/firecandlelarge.tscn" id="33_ife0l"]
 
@@ -7520,7 +7521,7 @@ offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
 
-[node name="fnaf" parent="CanvasLayer" node_paths=PackedStringArray("achieve", "anim", "panel", "audio", "popup", "chatbox") instance=ExtResource("24_cb21c")]
+[node name="fnaf" parent="CanvasLayer" node_paths=PackedStringArray("achieve", "anim", "panel", "audio", "popup", "chatbox", "jump") instance=ExtResource("24_cb21c")]
 script = ExtResource("25_cb21c")
 achieve = NodePath("Panel/RichTextLabel")
 anim = NodePath("AnimationPlayer")
@@ -7529,6 +7530,23 @@ audio = NodePath("achievement_sound")
 name_ach = "Five Nights Were Not Enough"
 popup = NodePath("../../Player/popup")
 chatbox = NodePath("../../fnaf/Area2D/CollisionShape2D")
+jump = NodePath("../VideoStreamPlayer")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -240.0
+offset_right = 320.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stream = ExtResource("30_pgnm0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
