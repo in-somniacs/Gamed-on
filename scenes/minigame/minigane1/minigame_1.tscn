@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=4 uid="uid://ls6tnajdbhr1"]
 
 [ext_resource type="PackedScene" uid="uid://ca2bt84hkois5" path="res://scenes/minigame/minigane1/scenes/player_minigame1.tscn" id="1_7dm80"]
-[ext_resource type="Script" uid="uid://cljwtjg6tx5uc" path="res://scenes/minigame/minigane1/minigame_1.gd" id="1_ymo8x"]
+[ext_resource type="Script" path="res://scenes/minigame/minigane1/minigame_1.gd" id="1_ymo8x"]
 [ext_resource type="Texture2D" uid="uid://qwx05nl3p8w1" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_p6lyb"]
 [ext_resource type="Texture2D" uid="uid://dpej8a371fym8" path="res://assets/Top-Down_Retro_Interior/walls.png" id="2_roxow"]
 [ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="3_fsknh"]
@@ -424,7 +424,7 @@ tile_set = SubResource("TileSet_ymo8x")
 position = Vector2(3405, 19)
 script = ExtResource("5_2h2sw")
 player = NodePath("../PlayerMinigame1")
-next_scene = "res://scenes/Credits.tscn"
+next_scene = "res://mini-games/pacman/pacman.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
 position = Vector2(3.5, -10.5)
