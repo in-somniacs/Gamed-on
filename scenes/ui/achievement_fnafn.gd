@@ -10,7 +10,7 @@ extends Control
 @export var glitch_sfx : AudioStreamPlayer2D 
 @export var jumpscare_image : TextureRect
 @export var dialogue: String
-
+@export var jump: VideoStreamPlayer
 var loaded = false
 var player_in_area = false
 
@@ -24,8 +24,11 @@ func _process(delta: float) -> void:
 	if player_in_area:
 		chatbox.disabled = false
 		if Input.is_action_pressed("dialogic_default_action"):
-			achiement_sound()
+			jump.play()
 			chatbox.disabled = true
+			await get_tree().create_timer(2).timeout
+			achiement_sound()
+
 
 
 #func run_dialogue(dialogue_string):
