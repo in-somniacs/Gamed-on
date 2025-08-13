@@ -63,3 +63,7 @@ func _on_respawn_chat_body_entered(body: Node2D) -> void:
 		
 func _on_respawn_chat_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.
+
+
+func _on_door_teleport_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

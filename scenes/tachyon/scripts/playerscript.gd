@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var SPEED = 4000.0
+@export var SPEED = 4000.0
 @onready var anim = $AnimatedSprite2D
 @export var Inventory: In
 var can_move : bool = true

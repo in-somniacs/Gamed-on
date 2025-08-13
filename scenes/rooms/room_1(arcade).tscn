@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=4 uid="uid://c1uyajyie8jqy"]
+[gd_scene load_steps=104 format=4 uid="uid://c1uyajyie8jqy"]
 
 [ext_resource type="Texture2D" uid="uid://jcbc36hkln5r" path="res://scenes/rooms/ArcadeMachine/arcade-Sheet.png" id="2_7owwp"]
 [ext_resource type="PackedScene" uid="uid://bgx0kmq7a53mw" path="res://scenes/tachyon/scenes/aracde_machine.tscn" id="3_1e1x7"]
@@ -40,6 +40,7 @@
 [ext_resource type="Script" uid="uid://c7tmypy84ki4t" path="res://items/key_1.gd" id="38_sv16y"]
 [ext_resource type="Texture2D" uid="uid://chpvoubidhg1f" path="res://assets/key_1.png" id="39_076c7"]
 [ext_resource type="PackedScene" uid="uid://dnb6olr75l2ak" path="res://scenes/coin.tscn" id="39_sv16y"]
+[ext_resource type="Script" uid="uid://b647oldawiwvl" path="res://scenes/rooms/door_arcade_main.gd" id="41_076c7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7owwp"]
 0:0/0 = 0
@@ -17823,6 +17824,9 @@ shader_parameter/shake_color_rate = 0.01
 size = Vector2(1280, 720)
 center_offset = Vector3(640, 360, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_076c7"]
+bg_color = Color(0.100662, 0.00215503, 0, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rncf8"]
 shader = ExtResource("18_vap1o")
 shader_parameter/shake_power = 0.03
@@ -17861,6 +17865,61 @@ radius = 27.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fgjmm"]
 radius = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsrae"]
+size = Vector2(55, 44)
+
+[sub_resource type="Animation" id="Animation_076c7"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nsrae"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nmc1r"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.988235), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nsrae"]
+_data = {
+&"RESET": SubResource("Animation_nsrae"),
+&"fade_in": SubResource("Animation_076c7"),
+&"fade_out": SubResource("Animation_nmc1r")
+}
 
 [node name="Room1(arcade)" type="Node2D"]
 
@@ -17918,6 +17977,7 @@ timeline = "res://timelines/consoleget.dtl"
 
 [node name="Player" parent="." instance=ExtResource("11_vexsr")]
 position = Vector2(283, 1482)
+SPEED = 7000.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(7.15256e-06, -5.72205e-05)
@@ -17929,7 +17989,6 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_v0ofo")
@@ -17953,6 +18012,30 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_076c7")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.1667
+offset_right = 20.0
+offset_bottom = 11.1667
+grow_horizontal = 2
+grow_vertical = 2
+text = "u unlock the door"
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 visible = false
@@ -18011,8 +18094,29 @@ position = Vector2(422, 354)
 player = NodePath("../Player")
 popup = NodePath("../Player/popup")
 
+[node name="door_teleport" type="Area2D" parent="." node_paths=PackedStringArray("player", "popup", "destination")]
+position = Vector2(288, 1410)
+script = ExtResource("41_076c7")
+player = NodePath("../Player")
+popup = NodePath("../Player/popup")
+destination = NodePath("Node2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door_teleport"]
+position = Vector2(-0.5, -6)
+shape = SubResource("RectangleShape2D_nsrae")
+
+[node name="Node2D" type="Node2D" parent="door_teleport"]
+position = Vector2(2, -106)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nsrae")
+}
+
 [connection signal="body_entered" from="key1/Chatdetection" to="key1" method="_on_chatdetection_body_entered"]
 [connection signal="body_exited" from="key1/Chatdetection" to="key1" method="_on_chatdetection_body_exited"]
+[connection signal="body_entered" from="door_teleport" to="door_teleport" method="_on_body_entered"]
+[connection signal="body_exited" from="door_teleport" to="door_teleport" method="_on_body_exited"]
 
 [editable path="Player"]
 [editable path="coin"]

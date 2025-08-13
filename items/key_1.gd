@@ -9,6 +9,8 @@ extends Area2D
 var player_in_area = false
 
 
+func _ready() -> void:
+	global.teleportdoor = false
 func _physics_process(delta: float) -> void:
 		if global.coin_total == 4:
 			global.arcade_game = true
@@ -17,6 +19,7 @@ func _physics_process(delta: float) -> void:
 				sprite.visible = false
 				global.arcade_door = false
 				global.coin_total += 1
+				global.teleportdoor = true
 			
 func _on_chatdetection_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
