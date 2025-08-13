@@ -421,14 +421,14 @@ tile_set = SubResource("TileSet_ymo8x")
 position = Vector2(3405, 19)
 script = ExtResource("5_2h2sw")
 player = NodePath("../PlayerMinigame1")
-next_scene = "res://mini-games/pacman/pacman.tscn"
+next_scene = "res://scenes/Credits.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
 position = Vector2(3.5, -10.5)
 shape = SubResource("RectangleShape2D_2h2sw")
 
 [node name="PlayerMinigame1" parent="." instance=ExtResource("1_7dm80")]
-position = Vector2(-230, -25)
+position = Vector2(-231, -23)
 
 [node name="AnimatedSprite2D" parent="PlayerMinigame1" index="0"]
 position = Vector2(-2, -2)
