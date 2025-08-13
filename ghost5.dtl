@@ -1,0 +1,26 @@
+do global.disable_player_movement()
+Recovered from the Console Core — file integrity at 37%
+Sami Ortega
+LAST SESSION: 248 days ago (REAL TIME)
+12:04:58
+████████ East Circuit Passage
+PLAYER ENTITY - TERMINATED [FLAGGED]
+[0/3]
+
+"I tried going backwards.
+The world didn’t like that.
+Sprites peeled away like old paint, and underneath…
+…something was watching, frame by frame.
+It started following me between screens. I stopped running when it began to load me instead of the level."
+
+FILE END — Missing audio logs (4)
+Corruption detected in 72% of memory blocks
+
+
+join narrator center
+Narrator: "Backwards is where the others are. You don’t want to meet them."
+leave narrator
+join Player left
+Player: "…Others?"
+do global.enable_player_movement()
+

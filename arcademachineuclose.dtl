@@ -1,14 +1,13 @@
-do global.enable_player_movement()
+do global.disable_player_movement()
 join Player left
 Player: There it is… the machine.  
 Player: Doesn’t look so scary up close.
 
 leave Player
 join narrator center
-narrator: Don’t be fooled, {{player_name}}.  
-narrator: It’s been waiting far longer than you’ve been alive.  
-narrator: But right now… it’s asleep.
-
+narrator: Easy now, {{player_name}}.  
+narrator: This thing has been here… longer than you can imagine.  
+narrator: But for the moment… it’s asleep.
 leave narrator
 join Player left
 Player: Asleep? It’s just a game.
@@ -18,4 +17,4 @@ join narrator center
 narrator: Then feed it your quarters.  
 narrator: Three. No less.  
 narrator: Until then, it won’t even *see* you.
-do global.disbale_player_movement()
+do global.enable_player_movement()

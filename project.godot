@@ -46,8 +46,13 @@ directories/dtl_directory={
 "footpathtimeline": "res://timelines/footpathtimeline.dtl",
 "ghost1": "res://timelines/ghost1.dtl",
 "ghost2": "res://timelines/ghost2.dtl",
+"ghost3": "res://ghost3.dtl",
+"ghost4": "res://ghost4.dtl",
+"ghost5": "res://ghost5.dtl",
+"ghost6": "res://ghost6.dtl",
 "keyroomclock": "res://timelines/keyroomclock.dtl",
 "locked_door": "res://timelines/locked_door.dtl",
+"marioentry": "res://marioentry.dtl",
 "momtimeline": "res://timelines/momtimeline.dtl",
 "roomentry1": "res://timelines/roomentry1.dtl",
 "roomspawntimeline": "res://timelines/roomspawntimeline.dtl"

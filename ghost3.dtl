@@ -1,0 +1,26 @@
+do global.disable_player_movement()
+
+Recovered from the Console Core — file integrity at 54%
+Marcus “Rook” Havel
+LAST SESSION: 317 days ago (REAL TIME)
+15:11:09
+████████ Maintenance Hall
+PLAYER ENTITY - STATUS: UNKNOWN
+[2/3]
+
+"It talks through the walls here. Sometimes it sounds like my sister.
+Sometimes it sounds like me.
+The floor isn’t where it used to be… corridors turn when I’m not looking.
+I found an exit sign once, but when I opened the door, there was just… sky. No ground.
+If you hear the static start humming — don’t move. Wait until it forgets you."
+
+FILE END — Fragment overlap: 5
+Corruption detected in 57% of memory blocks
+
+
+join narrator center
+narrator: He lasted longer than most. He never understood why the static knew his name.
+leave narrator
+join Player left
+Player: …You knew him?
+do global.enable_player_movement(

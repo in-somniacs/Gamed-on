@@ -1,0 +1,7 @@
+do global.disable_player_movement()
+join narrator center
+narrator: The shape fits… for now.  
+narrator: Move quickly, {{player_name}}—this place doesn’t hold still for long.  
+narrator: And remember… each step is a step further in.
+narrator: Further in for to you getting back to your home.
+do global.enable_player_movement()

@@ -18489,15 +18489,14 @@ scale = Vector2(0.6, 0.6)
 next_scene = "res://scenes/minigame/minigane1/minigame_1.tscn"
 player = NodePath("../Player")
 popup = NodePath("../Player/popup")
-timeline = "res://timelines/consoleget.dtl"
-dialogue = "res://arcademainentry.dtl"
+dialogue = "res://arcademachineuclose.dtl"
 
 [node name="Player" parent="." instance=ExtResource("11_vexsr")]
-position = Vector2(288, 1427)
+position = Vector2(10, 1896)
 SPEED = 7000.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(7.15256e-06, 6.15388)
+position = Vector2(-3.07695, -23.8462)
 scale = Vector2(0.769231, 0.769231)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
@@ -18640,17 +18639,29 @@ libraries = {
 &"": SubResource("AnimationLibrary_nsrae")
 }
 
-[node name="ghosts" parent="." instance=ExtResource("42_nsrae")]
-position = Vector2(198, 1522)
+[node name="ghosts" parent="." node_paths=PackedStringArray("player", "popup") instance=ExtResource("42_nsrae")]
+position = Vector2(-98, 1421)
+player = NodePath("../Player")
+dialogue = "res://ghost3.dtl"
+popup = NodePath("../Player/popup")
 
-[node name="ghosts2" parent="." instance=ExtResource("42_nsrae")]
+[node name="ghosts2" parent="." node_paths=PackedStringArray("player", "popup") instance=ExtResource("42_nsrae")]
 position = Vector2(-203, 753)
+player = NodePath("../Player")
+dialogue = "res://ghost4.dtl"
+popup = NodePath("../Player/popup")
 
-[node name="ghosts3" parent="." instance=ExtResource("42_nsrae")]
-position = Vector2(1263, 65)
+[node name="ghosts3" parent="." node_paths=PackedStringArray("player", "popup") instance=ExtResource("42_nsrae")]
+position = Vector2(1039, 77)
+player = NodePath("../Player")
+dialogue = "res://ghost5.dtl"
+popup = NodePath("../Player/popup")
 
-[node name="ghosts4" parent="." instance=ExtResource("42_nsrae")]
-position = Vector2(-783, 214)
+[node name="ghosts4" parent="." node_paths=PackedStringArray("player", "popup") instance=ExtResource("42_nsrae")]
+position = Vector2(-616, 0)
+player = NodePath("../Player")
+dialogue = "res://ghost6.dtl"
+popup = NodePath("../Player/popup")
 
 [connection signal="body_entered" from="key1/Chatdetection" to="key1" method="_on_chatdetection_body_entered"]
 [connection signal="body_exited" from="key1/Chatdetection" to="key1" method="_on_chatdetection_body_exited"]
