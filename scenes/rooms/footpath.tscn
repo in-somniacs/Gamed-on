@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://dx8p3hekcol1c"]
+[gd_scene load_steps=58 format=4 uid="uid://dx8p3hekcol1c"]
 
 [ext_resource type="Texture2D" uid="uid://hwwa521btiao" path="res://scenes/tachyon/assets/Lo_bit_city_set.png" id="1_5xkcy"]
 [ext_resource type="Script" uid="uid://pcxskg1qh7lg" path="res://scenes/rooms/foothpath.gd" id="1_by11x"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://c4uwlhf8fc0el" path="res://scripts/switch_scenes.gd" id="8_5n70b"]
 [ext_resource type="PackedScene" uid="uid://btkj6y1uo00mr" path="res://scenes/interactable.tscn" id="9_7d5dh"]
 [ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="10_udryc"]
+[ext_resource type="AudioStream" uid="uid://ch3pfmkxeyrcu" path="res://assets/music/footpath.mp3" id="11_qgxof"]
 [ext_resource type="Script" uid="uid://cuq3v26blnyc2" path="res://scenes/rooms/interact_npc.gd" id="12_1fmc0"]
 [ext_resource type="Texture2D" uid="uid://0yg7pdaljm6x" path="res://assets/npc1.png" id="13_b8s8a"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="17_si58k"]
@@ -11895,6 +11896,12 @@ shape = SubResource("RectangleShape2D_udryc")
 [node name="Player" parent="." instance=ExtResource("7_2jpt3")]
 z_index = 5
 position = Vector2(30, -54)
+
+[node name="AudioStreamPlayer2D" parent="Player" index="2"]
+stream = ExtResource("11_qgxof")
+volume_db = -2.108
+autoplay = true
+bus = &"Music"
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 y_sort_enabled = true

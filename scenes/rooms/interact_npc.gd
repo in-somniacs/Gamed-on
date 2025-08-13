@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 			run_dialogue(dialogue)
 			chatbox.disabled = true
 			global.canmove = false
+			global.momtalk = true
 			
 			
 			

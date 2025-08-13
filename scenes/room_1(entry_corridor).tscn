@@ -7608,8 +7608,10 @@ shape = SubResource("CircleShape2D_6i7u2")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("26_ow3tb")
+volume_db = 4.919
 autoplay = true
 max_distance = 4096.0
+bus = &"Music"
 
 [node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("player", "popup", "box", "shader_mesh", "glitch_sfx")]
 position = Vector2(676, -534)

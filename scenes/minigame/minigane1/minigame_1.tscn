@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://ls6tnajdbhr1"]
+[gd_scene load_steps=23 format=4 uid="uid://ls6tnajdbhr1"]
 
 [ext_resource type="PackedScene" uid="uid://ca2bt84hkois5" path="res://scenes/minigame/minigane1/scenes/player_minigame1.tscn" id="1_7dm80"]
 [ext_resource type="Texture2D" uid="uid://qwx05nl3p8w1" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_p6lyb"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://4yqnhw2c57hl" path="res://scenes/minigame/minigane1/scenes/enemy.tscn" id="4_spq0h"]
 [ext_resource type="Script" uid="uid://dsab8hrep14hm" path="res://scenes/minigame/minigane1/finish.gd" id="5_2h2sw"]
 [ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="5_spq0h"]
+[ext_resource type="AudioStream" uid="uid://cjeygrssn6mt3" path="res://assets/music/wario.mp3" id="7_2h2sw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0dxp0"]
 texture = ExtResource("2_roxow")
@@ -450,6 +451,12 @@ offset_right = 5.0
 offset_bottom = -4.0
 texture = ExtResource("4_gctig")
 region_rect = Rect2(0, 0, 32, 32)
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="PlayerMinigame1"]
+stream = ExtResource("7_2h2sw")
+volume_db = -5.622
+autoplay = true
+bus = &"Music"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
