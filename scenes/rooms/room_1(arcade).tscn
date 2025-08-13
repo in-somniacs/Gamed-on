@@ -16041,8 +16041,11 @@ texture = ExtResource("13_jqtq0")
 5:11/0 = 0
 6:11/0 = 0
 7:11/0 = 0
+7:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.719435, -3.77703, 8, -8, 8, 8, -3.59717, 8, -2.87774, 5.93534)
 8:11/0 = 0
+8:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:11/0 = 0
+9:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.83463, -1.79859, -5.39576, 3.41732, 1.97845, 3.0576, 8, -8, 8)
 11:11/0 = 0
 1:12/0 = 0
 2:12/0 = 0
@@ -16050,8 +16053,11 @@ texture = ExtResource("13_jqtq0")
 5:12/0 = 0
 6:12/0 = 0
 7:12/0 = 0
+7:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.51802, -8, 8, -8, 8, 5.03605, 2.33816, 8, -1.07915, -0.179857)
 8:12/0 = 0
+8:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:12/0 = 0
+9:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.83463, 4.13675, -8, 2.33816, 0.179859, -0.719435, 8, -8, 3.0576)
 10:12/0 = 0
 11:12/0 = 0
 0:13/0 = 0
@@ -18350,7 +18356,7 @@ tile_map_data = PackedByteArray("AAARAFQAAAAMAAUAAAARAFUAAAAMAAYAAAARAFYAAAAMAAc
 tile_set = SubResource("TileSet_tqjt8")
 
 [node name="door" type="TileMapLayer" parent="Room1"]
-tile_map_data = PackedByteArray("AAARAFQAAAAOAAUAAAARAFUAAAAOAAYAAAARAFYAAAAOAAcAAAASAFQAAAAPAAUAAAASAFUAAAAPAAYAAAASAFYAAAAPAAcAAAATAFUAAAAGAAgAAAATAFYAAAAGAAkAAAAUAFUAAAAHAAgAAAAUAFYAAAAHAAkAAAA=")
+tile_map_data = PackedByteArray("AAARAFQAAAAOAAUAAAARAFUAAAAOAAYAAAARAFYAAAAOAAcAAAASAFQAAAAPAAUAAAASAFUAAAAPAAYAAAASAFYAAAAPAAcAAAATAFUAAAAGAAgAAAATAFYAAAAGAAkAAAAUAFUAAAAHAAgAAAAUAFYAAAAHAAkAAADw/04AAQAHAAsAAADw/08AAQAHAAwAAADx/04AAQAIAAsAAADx/08AAQAIAAwAAADy/04AAQAIAAsAAADy/08AAQAIAAwAAADz/04AAQAJAAsAAADz/08AAQAJAAwAAAA=")
 tile_set = SubResource("TileSet_7irex")
 
 [node name="arcademachine" type="TileMapLayer" parent="Room1"]
