@@ -17825,7 +17825,7 @@ size = Vector2(1280, 720)
 center_offset = Vector3(640, 360, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_076c7"]
-bg_color = Color(0.100662, 0.00215503, 0, 1)
+bg_color = Color(0.00268158, 4.41728e-05, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rncf8"]
 shader = ExtResource("18_vap1o")
@@ -18023,6 +18023,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_076c7")
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -18094,12 +18095,13 @@ position = Vector2(422, 354)
 player = NodePath("../Player")
 popup = NodePath("../Player/popup")
 
-[node name="door_teleport" type="Area2D" parent="." node_paths=PackedStringArray("player", "popup", "destination")]
+[node name="door_teleport" type="Area2D" parent="." node_paths=PackedStringArray("player", "popup", "destination", "ani")]
 position = Vector2(288, 1410)
 script = ExtResource("41_076c7")
 player = NodePath("../Player")
 popup = NodePath("../Player/popup")
 destination = NodePath("Node2D")
+ani = NodePath("../AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_teleport"]
 position = Vector2(-0.5, -6)
