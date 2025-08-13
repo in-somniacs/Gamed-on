@@ -7,6 +7,8 @@ var can_move : bool = true
 @export var ani: AnimationPlayer
 func _ready() -> void:
 	add_to_group("player")
+	global.arcade_game = false
+	global.coin_total = 0
 	
 
 #func _input(event):
