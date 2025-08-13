@@ -18386,7 +18386,7 @@ popup = NodePath("../Player/popup")
 timeline = "res://timelines/consoleget.dtl"
 
 [node name="Player" parent="." instance=ExtResource("11_vexsr")]
-position = Vector2(283, 1482)
+position = Vector2(-225, 1212)
 SPEED = 7000.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
