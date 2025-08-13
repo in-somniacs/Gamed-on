@@ -1,6 +1,19 @@
-[gd_scene load_steps=17 format=3 uid="uid://ca2bt84hkois5"]
+[gd_scene load_steps=21 format=3 uid="uid://ca2bt84hkois5"]
 
 [ext_resource type="Texture2D" uid="uid://2jp28sdhxsgh" path="res://scenes/tachyon/assets/player.png" id="1_gt4xq"]
+[ext_resource type="Script" uid="uid://vbd3yrsjkxy3" path="res://scenes/minigame/minigane1/scripts/player_minigame_1.gd" id="2_cyyio"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vs8dk"]
+atlas = ExtResource("1_gt4xq")
+region = Rect2(0, 432, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn0uo"]
+atlas = ExtResource("1_gt4xq")
+region = Rect2(48, 432, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1xdp"]
+atlas = ExtResource("1_gt4xq")
+region = Rect2(96, 432, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cyyio"]
 atlas = ExtResource("1_gt4xq")
@@ -58,6 +71,20 @@ region = Rect2(240, 200, 48, 40)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_vs8dk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mn0uo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1xdp")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_cyyio")
 }, {
 "duration": 1.0,
@@ -111,17 +138,18 @@ animations = [{
 "speed": 7.5
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cnkvk"]
-radius = 5.09902
+[sub_resource type="CircleShape2D" id="CircleShape2D_cyyio"]
+radius = 7.5
 
-[node name="PlayerMinigame1" type="CharacterBody2D"]
+[node name="PlayerMinigame1" type="CharacterBody2D" node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("2_cyyio")
+animated_sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pbiy7")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.291866
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
-shape = SubResource("CircleShape2D_cnkvk")
+position = Vector2(0.5, 3)
+shape = SubResource("CircleShape2D_cyyio")

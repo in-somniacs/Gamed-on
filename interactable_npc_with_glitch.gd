@@ -51,7 +51,7 @@ func run_dialogue(dialogue_string):
 	Dialogic.start(dialogue_string)
 	
 	# When sound finishes, stop glitch effect
-	await get_tree().create_timer(10.0).timeout
+	await get_tree().create_timer(90.0).timeout
 	shader_mesh.material.set_shader_parameter("glitch_enabled", false)
 	
 

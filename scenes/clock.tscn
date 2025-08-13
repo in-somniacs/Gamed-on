@@ -228,8 +228,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vlc7k"]
-radius = 7.0
-height = 24.0
+radius = 9.0
+height = 26.0
 
 [node name="clock" type="CharacterBody2D"]
 

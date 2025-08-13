@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpej8a371fym8"
-path="res://.godot/imported/walls.png-7acaf55e5a42037391e3f5658643ce87.ctex"
+uid="uid://dtylwkxtk5bs2"
+path="res://.godot/imported/Orange_Marble_Tile_04-128x128.png-0d09fea478d62d9eacd7ee402ef8aaf3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/arcade_pack/walls.png"
-dest_files=["res://.godot/imported/walls.png-7acaf55e5a42037391e3f5658643ce87.ctex"]
+source_file="res://assets/sbs_-_mini_texture_pack_1_-_floor_tiles_128x128/128x128/Diamond Tiles/Orange_Marble_Tile_04-128x128.png"
+dest_files=["res://.godot/imported/Orange_Marble_Tile_04-128x128.png-0d09fea478d62d9eacd7ee402ef8aaf3.ctex"]
 
 [params]
 

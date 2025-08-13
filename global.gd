@@ -17,6 +17,14 @@ var is_switching = false
 var crt_enabled = false
 var arcade_door = true
 var first_time_arcade = false
+var minigame = false
+var coin_total = 0
+var arcade_game = false
+var teleportdoor = false
+var first_time_main_arcade = false
+var momtalk = false
+var first_time_mario = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -1,0 +1,43 @@
+do global.disable_player_movement()
+Recovered from the Console Core — file integrity at 48%
+M••• H••den
+LAST SESSION\: 38 days ago (REAL TIME)
+07\:26\:51
+████████ Hallway
+PLAYER ENTITY - CORRUPTED LOOP
+[2/4]
+
+"Still hearing them.
+Only now, they don’t whisper — they *scream*.
+They told me to send it to you, said you’d be ‘better at listening’.
+I think they lied. Or maybe I just didn’t understand.
+I’m sorry. I told you to play it, didn’t I?
+Thought it was just another weird retro thing.
+I’ve seen you here, you know. Not up close — like through glass.
+But every time I try to reach you, the world loads wrong. 
+If you can find me before it does that again… maybe we can leave together.
+......
+I’m… so tired. But the game doesn’t pause, and I can’t put the controller down."
+
+FILE END — Audio fragments detected (playback unreliable)
+
+join Player left
+Player: …M… H…den? That’s—no… 
+Player: He… sent me the console.
+Player: I thought he was just… sick.
+
+leave Player
+join narrator center
+narrator: Sick?  ...not exactly.
+narrator: He was invited. Just like you.
+narrator: The voices he heard… they weren’t madness. They were instructions.
+narrator: And now… you’re listening too.
+
+
+leave narrator
+join Player left
+Player: “…Where is he?”
+leave Player
+join narrator center
+narrator: "Closer than you want. Farther than you can go."
+Player: (If that’s really him… then I’m already too far in.)

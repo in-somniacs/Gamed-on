@@ -1,0 +1,28 @@
+do global.disbale_player_movement()
+join narrator center
+narrator: Ah… the heart of this place.
+narrator: Every light… every screen… another story trapped in motion.
+narrator: They never stop playing.
+
+leave narrator
+join Player left
+Player: This is… an arcade?  
+Player: Why does it feel so… wrong?  
+Player: The air’s heavy. Like something’s watching.
+
+leave Player
+join narrator center
+narrator: The machines remember everyone who touched them.  
+narrator: Win, and the path ahead opens.  
+narrator: Lose… and you stay here, with them.
+
+leave narrator
+join Player left
+Player: With *them*? Who’s—  
+leave Player
+
+join narrator center
+narrator: No time for questions, {{player_name}}.  
+narrator: That cabinet will play for you…  
+narrator: Three quarters. Find them. Feed it. Only then will it wake.
+do global.disbale_player_movement()

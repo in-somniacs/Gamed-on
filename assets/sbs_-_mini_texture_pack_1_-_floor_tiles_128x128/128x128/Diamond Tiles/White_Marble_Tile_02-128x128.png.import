@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bsd4hir5xv1p1"
+path="res://.godot/imported/White_Marble_Tile_02-128x128.png-4143feaf1045885278ba5e6def87151f.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/sbs_-_mini_texture_pack_1_-_floor_tiles_128x128/128x128/Diamond Tiles/White_Marble_Tile_02-128x128.png"
+dest_files=["res://.godot/imported/White_Marble_Tile_02-128x128.png-4143feaf1045885278ba5e6def87151f.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

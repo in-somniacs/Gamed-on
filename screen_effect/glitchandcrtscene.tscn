@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsr1fd633iqgb"]
+[gd_scene load_steps=12 format=3 uid="uid://3idgoa120e20"]
 
 [ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="1_dfbpx"]
-[ext_resource type="Script" uid="uid://bhr1ikairgg5" path="res://screen_effect/glitchandcrtscene.gd" id="1_gvhs7"]
+[ext_resource type="Script" path="res://screen_effect/glitchandcrtscene.gd" id="1_gvhs7"]
 [ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="2_gvhs7"]
 [ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="3_nou11"]
+[ext_resource type="AudioStream" uid="uid://dngcwy5wpieu5" path="res://assets/sfx/digital-glitch-361820 (1).mp3" id="5_nou11"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pv3ll"]
 shader = ExtResource("1_dfbpx")
@@ -54,3 +55,4 @@ material = SubResource("ShaderMaterial_8g4ti")
 mesh = SubResource("QuadMesh_wk7pc")
 
 [node name="GlitchSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_nou11")

@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://dnu52el33ayfk"]
+
+[ext_resource type="Texture2D" uid="uid://4eeqkxf7vu0c" path="res://assets/rundown house/rundown house/Old house/light/light_5_20x28.png" id="1_a1ftb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw55k"]
+atlas = ExtResource("1_a1ftb")
+region = Rect2(0, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_431ra"]
+atlas = ExtResource("1_a1ftb")
+region = Rect2(20, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_teekw"]
+atlas = ExtResource("1_a1ftb")
+region = Rect2(40, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqr28"]
+atlas = ExtResource("1_a1ftb")
+region = Rect2(60, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xook"]
+atlas = ExtResource("1_a1ftb")
+region = Rect2(80, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ht3re"]
+atlas = ExtResource("1_a1ftb")
+region = Rect2(100, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ltup"]
+atlas = ExtResource("1_a1ftb")
+region = Rect2(120, 0, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q656a"]
+atlas = ExtResource("1_a1ftb")
+region = Rect2(140, 0, 20, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xcnnk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw55k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_431ra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_teekw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqr28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xook")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ht3re")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ltup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q656a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vlc7k"]
+radius = 9.0
+height = 26.0
+
+[node name="firecandlelarge" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xcnnk")
+autoplay = "default"
+frame_progress = 0.115799
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_vlc7k")
