@@ -1,7 +1,7 @@
-[gd_scene load_steps=23 format=4 uid="uid://ls6tnajdbhr1"]
+[gd_scene load_steps=33 format=4 uid="uid://ls6tnajdbhr1"]
 
 [ext_resource type="PackedScene" uid="uid://ca2bt84hkois5" path="res://scenes/minigame/minigane1/scenes/player_minigame1.tscn" id="1_7dm80"]
-[ext_resource type="Script" path="res://scenes/minigame/minigane1/minigame_1.gd" id="1_ymo8x"]
+[ext_resource type="Script" uid="uid://cljwtjg6tx5uc" path="res://scenes/minigame/minigane1/minigame_1.gd" id="1_ymo8x"]
 [ext_resource type="Texture2D" uid="uid://qwx05nl3p8w1" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_p6lyb"]
 [ext_resource type="Texture2D" uid="uid://dpej8a371fym8" path="res://assets/Top-Down_Retro_Interior/walls.png" id="2_roxow"]
 [ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="3_fsknh"]
@@ -9,9 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://crfgkv6qnr0mj" path="res://assets/pop.png" id="4_gctig"]
 [ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="4_mdrvl"]
 [ext_resource type="PackedScene" uid="uid://4yqnhw2c57hl" path="res://scenes/minigame/minigane1/scenes/enemy.tscn" id="4_spq0h"]
-[ext_resource type="PackedScene" uid="uid://c5u04da0uywb6" path="res://scenes/finish.tscn" id="4_ymo8x"]
+[ext_resource type="PackedScene" path="res://scenes/finish.tscn" id="4_ymo8x"]
 [ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="5_spq0h"]
 [ext_resource type="AudioStream" uid="uid://cjeygrssn6mt3" path="res://assets/music/wario.mp3" id="7_2h2sw"]
+[ext_resource type="AudioStream" uid="uid://dngcwy5wpieu5" path="res://assets/sfx/digital-glitch-361820 (1).mp3" id="13_ubd1i"]
+[ext_resource type="PackedScene" uid="uid://ces6y2p5bi11o" path="res://scenes/menu/pause_menu.tscn" id="14_grd7j"]
+[ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="15_jgslb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0dxp0"]
 texture = ExtResource("2_roxow")
@@ -400,6 +403,42 @@ shader_parameter/shake_color_rate = 0.01
 size = Vector2(1280, 720)
 center_offset = Vector3(640, 360, 0)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ihumo"]
+shader = ExtResource("3_fsknh")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_indjr"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_03oxw"]
+shader = ExtResource("4_mdrvl")
+
+[sub_resource type="QuadMesh" id="QuadMesh_688fy"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xn3qq"]
+shader = ExtResource("5_spq0h")
+shader_parameter/glitch_enabled = false
+shader_parameter/crt_enabled = true
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_b1wna"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01xke"]
+bg_color = Color(0.00268158, 4.41728e-05, 0, 1)
+
 [node name="Minigame1" type="Node2D"]
 script = ExtResource("1_ymo8x")
 dialogue = "res://marioentry.dtl"
@@ -451,22 +490,6 @@ volume_db = -11.36
 autoplay = true
 bus = &"Music"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_c1ua2")
-mesh = SubResource("QuadMesh_gctig")
-
-[node name="crt shader" type="MeshInstance2D" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_p6lyb")
-mesh = SubResource("QuadMesh_2h2sw")
-
-[node name="crt and glitch" type="MeshInstance2D" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_ymo8x")
-mesh = SubResource("QuadMesh_huw14")
-
-[node name="GlitchSFX" type="AudioStreamPlayer2D" parent="CanvasLayer"]
-
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer2"]
@@ -510,6 +533,56 @@ position = Vector2(2825, 21)
 
 [node name="enemy8" parent="." instance=ExtResource("4_spq0h")]
 position = Vector2(385, 5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_ihumo")
+mesh = SubResource("QuadMesh_indjr")
+
+[node name="crt shader" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_03oxw")
+mesh = SubResource("QuadMesh_688fy")
+
+[node name="crt and glitch" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_xn3qq")
+mesh = SubResource("QuadMesh_b1wna")
+
+[node name="GlitchSFX" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+stream = ExtResource("13_ubd1i")
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("14_grd7j")]
+
+[node name="invenory" parent="CanvasLayer" instance=ExtResource("15_jgslb")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_01xke")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.1667
+offset_right = 20.0
+offset_bottom = 11.1667
+grow_horizontal = 2
+grow_vertical = 2
+text = "u unlock the door"
 
 [editable path="PlayerMinigame1"]
 [editable path="enemy"]

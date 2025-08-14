@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://chdk87s4o36rb"]
+[gd_scene load_steps=33 format=3 uid="uid://clt7hf45ibl1l"]
 
 [ext_resource type="Script" uid="uid://b67gdoxm4r0yv" path="res://scenes/tachyon/scenes/finale.gd" id="1_qt3kr"]
 [ext_resource type="Texture2D" uid="uid://cquankf81hvkj" path="res://assets/walls.png" id="1_u22fx"]
@@ -9,6 +9,9 @@
 [ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="7_tlhy0"]
 [ext_resource type="Texture2D" uid="uid://c1suse7d3k3x1" path="res://assets/EyeBoss-Sheet.png" id="8_6p173"]
 [ext_resource type="Texture2D" uid="uid://c3h02v0g8ocyf" path="res://assets/BelokGlaza.png" id="9_c0lfi"]
+[ext_resource type="AudioStream" uid="uid://dngcwy5wpieu5" path="res://assets/sfx/digital-glitch-361820 (1).mp3" id="10_mllja"]
+[ext_resource type="PackedScene" uid="uid://ces6y2p5bi11o" path="res://scenes/menu/pause_menu.tscn" id="11_wd7ju"]
+[ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="12_cxniv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kebfw"]
 texture = ExtResource("1_u22fx")
@@ -243,6 +246,42 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_egbwf"]
+shader = ExtResource("5_6p173")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_w1usl"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eu6fb"]
+shader = ExtResource("6_c0lfi")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8om5u"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ssbn2"]
+shader = ExtResource("7_tlhy0")
+shader_parameter/glitch_enabled = false
+shader_parameter/crt_enabled = true
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_ihw3f"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ud4oe"]
+bg_color = Color(0.00268158, 4.41728e-05, 0, 1)
+
 [node name="Finale" type="Node2D" node_paths=PackedStringArray("glitch_material")]
 script = ExtResource("1_qt3kr")
 glitch_material = NodePath("CanvasLayer2/crt and glitch")
@@ -294,6 +333,56 @@ frame_progress = 0.864146
 [node name="BelokGlaza" type="Sprite2D" parent="AnimatedSprite2D"]
 position = Vector2(0, -9)
 texture = ExtResource("9_c0lfi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_egbwf")
+mesh = SubResource("QuadMesh_w1usl")
+
+[node name="crt shader" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_eu6fb")
+mesh = SubResource("QuadMesh_8om5u")
+
+[node name="crt and glitch" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_ssbn2")
+mesh = SubResource("QuadMesh_ihw3f")
+
+[node name="GlitchSFX" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+stream = ExtResource("10_mllja")
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("11_wd7ju")]
+
+[node name="invenory" parent="CanvasLayer" instance=ExtResource("12_cxniv")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ud4oe")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.1667
+offset_right = 20.0
+offset_bottom = 11.1667
+grow_horizontal = 2
+grow_vertical = 2
+text = "u unlock the door"
 
 [connection signal="body_entered" from="StaticBody2D" to="." method="_on_static_body_2d_body_entered"]
 [connection signal="body_exited" from="StaticBody2D" to="." method="_on_static_body_2d_body_exited"]
