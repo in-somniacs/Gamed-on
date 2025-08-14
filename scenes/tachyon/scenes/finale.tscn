@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://calb87xhmdek8"]
+[gd_scene load_steps=43 format=4 uid="uid://calb87xhmdek8"]
 
 [ext_resource type="Script" uid="uid://b67gdoxm4r0yv" path="res://scenes/tachyon/scenes/finale.gd" id="1_qt3kr"]
 [ext_resource type="Texture2D" uid="uid://cquankf81hvkj" path="res://assets/walls.png" id="1_u22fx"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dvq6vn6yi3eok" path="res://assets/temp/jump_medaddy.tscn" id="12_egbwf"]
 [ext_resource type="Script" uid="uid://dks1f0kbyplea" path="res://scripts/achievement.gd" id="15_eu6fb"]
 [ext_resource type="PackedScene" uid="uid://cmwk0b8uxv7sj" path="res://scenes/ui/achievement.tscn" id="16_w1usl"]
+[ext_resource type="AudioStream" uid="uid://diuhprb56yiin" path="res://assets/music/arcade_ambience.mp3" id="17_eu6fb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w1usl"]
 texture = ExtResource("2_cxniv")
@@ -836,6 +837,10 @@ shape = SubResource("CircleShape2D_b81uh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="entitty"]
 position = Vector2(35.4167, -61.25)
 shape = SubResource("CapsuleShape2D_cxniv")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_eu6fb")
+autoplay = true
 
 [connection signal="body_entered" from="entitty/AnimatedSprite2D/StaticBody2D" to="." method="_on_static_body_2d_body_entered"]
 [connection signal="body_exited" from="entitty/AnimatedSprite2D/StaticBody2D" to="." method="_on_static_body_2d_body_exited"]
