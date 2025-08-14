@@ -14,6 +14,7 @@ func _ready() -> void:
 	# Make sure glitch is off at start (optional — remove if Dialogic handles it fully)
 	global.glitch_enabled = false
 
+#ok
 func _process(delta: float) -> void:
 	if glitch_material and glitch_material.material:
 		var mat = glitch_material.material

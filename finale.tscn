@@ -654,7 +654,6 @@ glitch_material = NodePath("CanvasLayer2/crt and glitch")
 dialogue = "res://finale.dtl"
 jump = NodePath("CanvasLayer/Panel")
 aldi = NodePath("CanvasLayer/Panel2/AudioStreamPlayer2D")
-ani = NodePath("Player/AnimatedSprite2D")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_juftw")
