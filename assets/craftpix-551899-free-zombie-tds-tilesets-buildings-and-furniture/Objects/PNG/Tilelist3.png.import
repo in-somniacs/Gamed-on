@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfsqyunhtsb7r"
-path="res://.godot/imported/Tilelist2.png-53ac60350ebb440970cee8fc0f5708c1.ctex"
+uid="uid://cmpndhnbokcav"
+path="res://.godot/imported/Tilelist3.png-45895f0ac0f5f30bdc98f826068fd351.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist2.png"
-dest_files=["res://.godot/imported/Tilelist2.png-53ac60350ebb440970cee8fc0f5708c1.ctex"]
+source_file="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Objects/PNG/Tilelist3.png"
+dest_files=["res://.godot/imported/Tilelist3.png-45895f0ac0f5f30bdc98f826068fd351.ctex"]
 
 [params]
 

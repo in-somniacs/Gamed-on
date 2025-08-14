@@ -289,7 +289,7 @@ shape = SubResource("CircleShape2D_b81uh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(32, -34)
 sprite_frames = SubResource("SpriteFrames_cxniv")
-frame_progress = 0.557841
+frame_progress = 0.864146
 
 [node name="BelokGlaza" type="Sprite2D" parent="AnimatedSprite2D"]
 position = Vector2(0, -9)
