@@ -1,0 +1,7 @@
+do global.disable_player_movement()
+join Player left
+Player: what do i have to do here now?
+leave Player
+join narrator center
+narrator: just run.......
+do global.enable_player_movement()

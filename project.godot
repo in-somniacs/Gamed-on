@@ -40,6 +40,7 @@ directories/dtl_directory={
 "arcadeentry": "res://timelines/arcadeentry.dtl",
 "arcademachineuclose": "res://arcademachineuclose.dtl",
 "arcademainentry": "res://arcademainentry.dtl",
+"chasetimeline": "res://timelines/chasetimeline.dtl",
 "console": "res://timelines/console.dtl",
 "consoleget": "res://timelines/consoleget.dtl",
 "fnaf": "res://timelines/fnaf.dtl",
