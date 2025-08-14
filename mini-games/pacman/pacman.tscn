@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bvdflf1k6ksa8" path="res://mini-games/pacman/pacman.gd" id="1_1h78w"]
 [ext_resource type="Texture2D" uid="uid://dpej8a371fym8" path="res://assets/Top-Down_Retro_Interior/walls.png" id="2_cswdi"]
-[ext_resource type="Script" uid="uid://du7nbes6ffrpb" path="res://mini-games/pacman/playermovenet.gd" id="2_iicqb"]
+[ext_resource type="Script" path="res://mini-games/pacman/playermovenet.gd" id="2_iicqb"]
 [ext_resource type="Texture2D" uid="uid://b8kfgf8qrtt62" path="res://assets/sbs_-_mini_texture_pack_1_-_floor_tiles_128x128/128x128/Checker Tiles/WO_Marble_Tile_01-128x128.png" id="2_l62v5"]
 [ext_resource type="Texture2D" uid="uid://bq3yoyk27qcig" path="res://assets/10 by 10 orthogonal maze/10 by 10 orthogonal maze-1.png" id="3_iicqb"]
 [ext_resource type="Texture2D" uid="uid://c5o2gkipl0eyi" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/Tiled_files/walls_test.png" id="4_pir8r"]
@@ -2418,6 +2418,21 @@ center_offset = Vector3(640, 360, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6821"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_pupfv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_0a7it"]
 resource_name = "fade_out"
 length = 1.5
@@ -2432,21 +2447,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_pupfv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_algi8"]
