@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=4 uid="uid://dielswp5cxjhy"]
+[gd_scene load_steps=15 format=4 uid="uid://87e4ojv8b1m7"]
 
-[ext_resource type="Script" uid="uid://gpfyexdb6toj" path="res://scripts/credits.gd" id="1_hi4w3"]
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_hi4w3"]
 [ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="3_al82v"]
 [ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="4_tlwrt"]
 [ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="5_g618n"]
@@ -42,6 +42,21 @@ shader_parameter/shake_color_rate = 0.01
 size = Vector2(1280, 720)
 center_offset = Vector3(640, 360, 0)
 
+[sub_resource type="Animation" id="Animation_tlwrt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.805]
+}
+
 [sub_resource type="Animation" id="Animation_al82v"]
 resource_name = "fade_out"
 length = 2.0
@@ -56,21 +71,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-10.805, -80.0]
-}
-
-[sub_resource type="Animation" id="Animation_tlwrt"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AudioStreamPlayer2:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-10.805]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g618n"]
