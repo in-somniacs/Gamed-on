@@ -37,5 +37,5 @@ narrator: Then you stay. Until you fade.
 narrator: This maze has many doors, {{player_name}}… but they all lead back to me.
 narrator: So shall we go home?
 do global.enable_glitch()
-
-do global.enable_player_movement()
+do global.play_glitch_sfx()
+do global.disable_glitch()
