@@ -15,14 +15,14 @@
 [ext_resource type="Script" uid="uid://c4uwlhf8fc0el" path="res://scripts/switch_scenes.gd" id="10_kf5e4"]
 [ext_resource type="Texture2D" uid="uid://7nkymmnf826a" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/Interior.png" id="10_nflq0"]
 [ext_resource type="Texture2D" uid="uid://d3eo08ac5wahs" path="res://assets/console.png" id="11_mcqdl"]
-[ext_resource type="Resource" uid="uid://u032pxmwtnrr" path="res://items/inventory.tres" id="12_f0rq6"]
-[ext_resource type="Script" uid="uid://cdxetjhgwk3a8" path="res://scenes/rooms/consoleset.gd" id="12_ykikb"]
+[ext_resource type="Resource" uid="uid://5fxrjt3wwq0s" path="res://items/inventory.tres" id="12_f0rq6"]
+[ext_resource type="Script" path="res://scenes/rooms/consoleset.gd" id="12_ykikb"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="15_lpf3e"]
 [ext_resource type="PackedScene" uid="uid://cmwk0b8uxv7sj" path="res://scenes/ui/achievement.tscn" id="16_181co"]
 [ext_resource type="PackedScene" uid="uid://b1ooj4l5vcc2n" path="res://scenes/mom.tscn" id="18_f0rq6"]
 [ext_resource type="Script" uid="uid://dks1f0kbyplea" path="res://scripts/achievement.gd" id="20_1dyya"]
 [ext_resource type="AudioStream" uid="uid://dkoxs4cax1ypq" path="res://assets/music/track (1).mp3" id="22_7jotf"]
-[ext_resource type="PackedScene" uid="uid://3idgoa120e20" path="res://screen_effect/glitchandcrtscene.tscn" id="23_2eptv"]
+[ext_resource type="PackedScene" uid="uid://bsr1fd633iqgb" path="res://screen_effect/glitchandcrtscene.tscn" id="23_2eptv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epks6"]
 texture = ExtResource("2_xdi0x")
@@ -8468,7 +8468,7 @@ sources/8 = SubResource("TileSetAtlasSource_mcqdl")
 sources/9 = SubResource("TileSetAtlasSource_lpf3e")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lpf3e"]
-radius = 26.0
+radius = 50.4876
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_181co"]
 

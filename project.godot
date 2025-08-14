@@ -43,6 +43,7 @@ directories/dtl_directory={
 "chasetimeline": "res://timelines/chasetimeline.dtl",
 "console": "res://timelines/console.dtl",
 "consoleget": "res://timelines/consoleget.dtl",
+"finale": "res://finale.dtl",
 "fnaf": "res://timelines/fnaf.dtl",
 "footpathtimeline": "res://timelines/footpathtimeline.dtl",
 "ghost1": "res://timelines/ghost1.dtl",

@@ -49,3 +49,10 @@ func enable_player_movement():
 func disable_player_movement():
 	canmove = false
 	print("dadsada")
+	
+
+var glitch_enabled := false
+
+func enable_glitch():
+	glitch_enabled = true
+	print("[GLITCH] Enabled from dialogue")

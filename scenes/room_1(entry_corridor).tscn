@@ -34,9 +34,9 @@
 [ext_resource type="AudioStream" uid="uid://diuhprb56yiin" path="res://assets/music/arcade_ambience.mp3" id="26_ow3tb"]
 [ext_resource type="Script" uid="uid://kf5kdmdjsvs2" path="res://scenes/arcadedoor_sceneswitch.gd" id="27_5uxbn"]
 [ext_resource type="AudioStream" uid="uid://bc1mc1boo7pbg" path="res://assets/sfx/glitch-sound-333220fnaf.mp3" id="29_pgnm0"]
-[ext_resource type="VideoStream" uid="uid://b2bo872mmprhk" path="res://assets/fnaf.ogv" id="30_pgnm0"]
-[ext_resource type="PackedScene" path="res://scenes/firecandlesingle.tscn" id="32_qs2od"]
-[ext_resource type="PackedScene" path="res://scenes/firecandlelarge.tscn" id="33_ife0l"]
+[ext_resource type="VideoStream" path="res://assets/fnaf.ogv" id="30_pgnm0"]
+[ext_resource type="PackedScene" uid="uid://bfhbcgyn3140r" path="res://scenes/firecandlesingle.tscn" id="32_qs2od"]
+[ext_resource type="PackedScene" uid="uid://dnu52el33ayfk" path="res://scenes/firecandlelarge.tscn" id="33_ife0l"]
 
 [sub_resource type="TileSet" id="TileSet_71kqf"]
 
@@ -7484,10 +7484,10 @@ shader_mesh = NodePath("../../CanvasLayer/crt and glitch")
 glitch_sfx = NodePath("../../CanvasLayer/GlitchSFX")
 
 [node name="Player" parent="." instance=ExtResource("9_4pc7g")]
-position = Vector2(48, 52)
+position = Vector2(53, -7)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(8.80314e-07, -3.8147e-06)
+position = Vector2(-2.05407e-06, -1.46722e-07)
 zoom = Vector2(2.2, 2.2)
 limit_bottom = 96
 limit_smoothed = true

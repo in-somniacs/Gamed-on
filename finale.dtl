@@ -1,0 +1,8 @@
+do global.disable_player_movement()
+join Player left
+Player: teri ma ki chut 
+leave Player
+join narrator center
+narrator: ok
+do global.enable_glitch()
+narrator: yes
