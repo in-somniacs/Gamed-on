@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://crfgkv6qnr0mj" path="res://assets/pop.png" id="4_gctig"]
 [ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="4_mdrvl"]
 [ext_resource type="PackedScene" uid="uid://4yqnhw2c57hl" path="res://scenes/minigame/minigane1/scenes/enemy.tscn" id="4_spq0h"]
-[ext_resource type="PackedScene" path="res://scenes/finish.tscn" id="4_ymo8x"]
+[ext_resource type="PackedScene" uid="uid://c5u04da0uywb6" path="res://scenes/finish.tscn" id="4_ymo8x"]
 [ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="5_spq0h"]
 [ext_resource type="AudioStream" uid="uid://cjeygrssn6mt3" path="res://assets/music/wario.mp3" id="7_2h2sw"]
 [ext_resource type="AudioStream" uid="uid://dngcwy5wpieu5" path="res://assets/sfx/digital-glitch-361820 (1).mp3" id="13_ubd1i"]

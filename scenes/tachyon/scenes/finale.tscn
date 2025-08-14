@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://clt7hf45ibl1l"]
+[gd_scene load_steps=34 format=3 uid="uid://clt7hf45ibl1l"]
 
 [ext_resource type="Script" uid="uid://b67gdoxm4r0yv" path="res://scenes/tachyon/scenes/finale.gd" id="1_qt3kr"]
 [ext_resource type="Texture2D" uid="uid://cquankf81hvkj" path="res://assets/walls.png" id="1_u22fx"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://dngcwy5wpieu5" path="res://assets/sfx/digital-glitch-361820 (1).mp3" id="10_mllja"]
 [ext_resource type="PackedScene" uid="uid://ces6y2p5bi11o" path="res://scenes/menu/pause_menu.tscn" id="11_wd7ju"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="12_cxniv"]
+[ext_resource type="PackedScene" uid="uid://dvq6vn6yi3eok" path="res://assets/temp/jump_medaddy.tscn" id="13_wd7ju"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kebfw"]
 texture = ExtResource("1_u22fx")
@@ -282,10 +283,13 @@ center_offset = Vector3(640, 360, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ud4oe"]
 bg_color = Color(0.00268158, 4.41728e-05, 0, 1)
 
-[node name="Finale" type="Node2D" node_paths=PackedStringArray("glitch_material")]
+[node name="Finale" type="Node2D" node_paths=PackedStringArray("glitch_material", "jump", "aldi", "ani")]
 script = ExtResource("1_qt3kr")
 glitch_material = NodePath("CanvasLayer2/crt and glitch")
 dialogue = "res://finale.dtl"
+jump = NodePath("")
+aldi = NodePath("")
+ani = NodePath("Player/AnimatedSprite2D")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_juftw")
@@ -383,6 +387,8 @@ offset_bottom = 11.1667
 grow_horizontal = 2
 grow_vertical = 2
 text = "u unlock the door"
+
+[node name="Panel2" parent="CanvasLayer" instance=ExtResource("13_wd7ju")]
 
 [connection signal="body_entered" from="StaticBody2D" to="." method="_on_static_body_2d_body_entered"]
 [connection signal="body_exited" from="StaticBody2D" to="." method="_on_static_body_2d_body_exited"]
