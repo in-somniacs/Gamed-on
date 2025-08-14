@@ -34,9 +34,9 @@
 [ext_resource type="AudioStream" uid="uid://diuhprb56yiin" path="res://assets/music/arcade_ambience.mp3" id="26_ow3tb"]
 [ext_resource type="Script" uid="uid://kf5kdmdjsvs2" path="res://scenes/arcadedoor_sceneswitch.gd" id="27_5uxbn"]
 [ext_resource type="AudioStream" uid="uid://bc1mc1boo7pbg" path="res://assets/sfx/glitch-sound-333220fnaf.mp3" id="29_pgnm0"]
-[ext_resource type="VideoStream" uid="uid://b2bo872mmprhk" path="res://assets/fnaf.ogv" id="30_pgnm0"]
-[ext_resource type="PackedScene" path="res://scenes/firecandlesingle.tscn" id="32_qs2od"]
-[ext_resource type="PackedScene" path="res://scenes/firecandlelarge.tscn" id="33_ife0l"]
+[ext_resource type="VideoStream" path="res://assets/fnaf.ogv" id="30_pgnm0"]
+[ext_resource type="PackedScene" uid="uid://bfhbcgyn3140r" path="res://scenes/firecandlesingle.tscn" id="32_qs2od"]
+[ext_resource type="PackedScene" uid="uid://dnu52el33ayfk" path="res://scenes/firecandlelarge.tscn" id="33_ife0l"]
 
 [sub_resource type="TileSet" id="TileSet_71kqf"]
 
@@ -7466,7 +7466,7 @@ tile_set = SubResource("TileSet_4pc7g")
 tile_set = SubResource("TileSet_gpi8r")
 
 [node name="ghosts" parent="TileMap" node_paths=PackedStringArray("player", "popup", "shader_mesh", "glitch_sfx") instance=ExtResource("16_llano")]
-position = Vector2(66, -322)
+position = Vector2(-11, -164)
 script = ExtResource("19_45th7")
 player = NodePath("../../Player")
 dialogue = "res://timelines/ghost1.dtl"

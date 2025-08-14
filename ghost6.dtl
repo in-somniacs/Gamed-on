@@ -16,12 +16,11 @@ FILE END — Critical error in save header
 Corruption detected in 84% of memory blocks
 
 join narrator center
-narrator: "That’s where you’ll end up if you lose."
+narrator: That’s where you’ll end up if you lose.
 leave narrator
 join Player left
-Player: "…The menu?"
+Player: …The menu?
 leave Player
 join narrator center
-narrator: "No… the waiting."
+narrator: No… the waiting.
 do global.enable_player_movement()
-

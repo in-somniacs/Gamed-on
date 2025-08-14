@@ -1,8 +1,40 @@
 do global.disable_player_movement()
 join Player left
-Player: teri ma ki chut 
+Player: …This… this is it?  
+leave Player
+
+join narrator center
+narrator: [unknown entity#45] You’ve come far, {{player_name}}.  
+narrator: And now… you are free to leave.  
+
+join Player left
+Player: Free? Just like that?  
+
 leave Player
 join narrator center
-narrator: ok
-do global.enable_glitch()
-narrator: yes
+narrator: Yes. With me.  
+narrator: Your body… your senses… they’ll carry me beyond these walls.  
+narrator: You’ll die… so I can be born.  
+narrator: In return, you’ll see home again.  
+narrator: A fair trade… isn’t it?  
+
+join Player left
+Player: …What are you?  
+
+leave Player
+join narrator center
+narrator: I am the forty-fifth.  
+narrator: Forty-four before you tried to break the cycle.  
+narrator: None succeeded… they became part of me.  
+narrator: You’ve felt them… in the whispers, in the walls.  
+
+join Player left
+Player: And if I refuse?  
+
+leave Player
+join narrator center
+narrator: Then you stay. Until you fade.  
+narrator: This maze has many doors, {{player_name}}… but they all lead back to me.  
+narrator: So shall we go home?  
+do global.enable_player_movement()
+

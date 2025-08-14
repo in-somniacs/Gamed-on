@@ -17,8 +17,8 @@ Corruption detected in 66% of memory blocks
 
 
 join narrator center
-Narrator: "Three coins is never enough, {{player_name}}. The machine is always hungry."
+Narrator: Three coins is never enough, {{player_name}}. The machine is always hungry.
 leave narrator
 join Player left
-Player: "…Then why give me a number at all?"
+Player: …Then why give me a number at all?
 do global.enable_player_movement()
