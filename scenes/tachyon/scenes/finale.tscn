@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://clt7hf45ibl1l"]
+[gd_scene load_steps=23 format=3 uid="uid://chdk87s4o36rb"]
 
 [ext_resource type="Script" uid="uid://b67gdoxm4r0yv" path="res://scenes/tachyon/scenes/finale.gd" id="1_qt3kr"]
 [ext_resource type="Texture2D" uid="uid://cquankf81hvkj" path="res://assets/walls.png" id="1_u22fx"]
@@ -7,6 +7,8 @@
 [ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="6_c0lfi"]
 [ext_resource type="AudioStream" uid="uid://bc1mc1boo7pbg" path="res://assets/sfx/glitch-sound-333220fnaf.mp3" id="7_b81uh"]
 [ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="7_tlhy0"]
+[ext_resource type="Texture2D" uid="uid://c1suse7d3k3x1" path="res://assets/EyeBoss-Sheet.png" id="8_6p173"]
+[ext_resource type="Texture2D" uid="uid://c3h02v0g8ocyf" path="res://assets/BelokGlaza.png" id="9_c0lfi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kebfw"]
 texture = ExtResource("1_u22fx")
@@ -212,6 +214,35 @@ center_offset = Vector3(640, 360, 0)
 [sub_resource type="CircleShape2D" id="CircleShape2D_b81uh"]
 radius = 74.027
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlhy0"]
+atlas = ExtResource("8_6p173")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mllja"]
+atlas = ExtResource("8_6p173")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd7ju"]
+atlas = ExtResource("8_6p173")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxniv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlhy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mllja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wd7ju")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Finale" type="Node2D" node_paths=PackedStringArray("glitch_material")]
 script = ExtResource("1_qt3kr")
 glitch_material = NodePath("CanvasLayer2/crt and glitch")
@@ -254,6 +285,15 @@ stream = ExtResource("7_b81uh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(30, -32)
 shape = SubResource("CircleShape2D_b81uh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, -34)
+sprite_frames = SubResource("SpriteFrames_cxniv")
+frame_progress = 0.864146
+
+[node name="BelokGlaza" type="Sprite2D" parent="AnimatedSprite2D"]
+position = Vector2(0, -9)
+texture = ExtResource("9_c0lfi")
 
 [connection signal="body_entered" from="StaticBody2D" to="." method="_on_static_body_2d_body_entered"]
 [connection signal="body_exited" from="StaticBody2D" to="." method="_on_static_body_2d_body_exited"]

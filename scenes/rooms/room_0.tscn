@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://klsd68mpixi8"]
+[gd_scene load_steps=43 format=3 uid="uid://klsd68mpixi8"]
 
 [ext_resource type="Texture2D" uid="uid://btyqpu4nltqsn" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_maoc1"]
 [ext_resource type="Script" uid="uid://rv6cdk4oqmo1" path="res://scenes/rooms/room_0.gd" id="1_yg2jv"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cmwk0b8uxv7sj" path="res://scenes/ui/achievement.tscn" id="16_181co"]
 [ext_resource type="PackedScene" uid="uid://b1ooj4l5vcc2n" path="res://scenes/mom.tscn" id="18_f0rq6"]
 [ext_resource type="Script" uid="uid://dks1f0kbyplea" path="res://scripts/achievement.gd" id="20_1dyya"]
+[ext_resource type="PackedScene" uid="uid://ces6y2p5bi11o" path="res://scenes/menu/pause_menu.tscn" id="21_2eptv"]
 [ext_resource type="AudioStream" uid="uid://dkoxs4cax1ypq" path="res://assets/music/track (1).mp3" id="22_7jotf"]
 [ext_resource type="PackedScene" uid="uid://bsr1fd633iqgb" path="res://screen_effect/glitchandcrtscene.tscn" id="23_2eptv"]
 
@@ -8709,6 +8710,8 @@ panel = NodePath("Panel")
 audio = NodePath("achievement_sound")
 name_ach = "New Player +"
 
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("21_2eptv")]
+
 [node name="Mom" parent="." node_paths=PackedStringArray("player", "popup") instance=ExtResource("18_f0rq6")]
 position = Vector2(98, 81)
 scale = Vector2(1.4, 1.4)
@@ -8721,6 +8724,7 @@ stream = ExtResource("22_7jotf")
 volume_db = -5.357
 pitch_scale = 0.71
 autoplay = true
+bus = &"Music"
 
 [node name="CanvasLayer2" parent="." node_paths=PackedStringArray("crt_and_glitch", "mom", "shader_mesh", "glitch_sfx") instance=ExtResource("23_2eptv")]
 crt_and_glitch = NodePath(".")
