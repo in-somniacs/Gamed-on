@@ -1,0 +1,781 @@
+[gd_scene load_steps=40 format=4 uid="uid://calb87xhmdek8"]
+
+[ext_resource type="Script" uid="uid://b67gdoxm4r0yv" path="res://scenes/tachyon/scenes/finale.gd" id="1_qt3kr"]
+[ext_resource type="Texture2D" uid="uid://cquankf81hvkj" path="res://assets/walls.png" id="1_u22fx"]
+[ext_resource type="Texture2D" uid="uid://c5o2gkipl0eyi" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/Tiled_files/walls_test.png" id="2_cxniv"]
+[ext_resource type="PackedScene" uid="uid://cpryjj6ky7t31" path="res://scenes/tachyon/scenes/character_body_2d.tscn" id="2_qt3kr"]
+[ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="5_6p173"]
+[ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="6_c0lfi"]
+[ext_resource type="AudioStream" uid="uid://bc1mc1boo7pbg" path="res://assets/sfx/glitch-sound-333220fnaf.mp3" id="7_b81uh"]
+[ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="7_tlhy0"]
+[ext_resource type="Texture2D" uid="uid://c1suse7d3k3x1" path="res://assets/EyeBoss-Sheet.png" id="8_6p173"]
+[ext_resource type="Texture2D" uid="uid://c3h02v0g8ocyf" path="res://assets/BelokGlaza.png" id="9_c0lfi"]
+[ext_resource type="AudioStream" uid="uid://dngcwy5wpieu5" path="res://assets/sfx/digital-glitch-361820 (1).mp3" id="10_mllja"]
+[ext_resource type="PackedScene" uid="uid://ces6y2p5bi11o" path="res://scenes/menu/pause_menu.tscn" id="11_wd7ju"]
+[ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="12_cxniv"]
+[ext_resource type="PackedScene" uid="uid://dvq6vn6yi3eok" path="res://assets/temp/jump_medaddy.tscn" id="12_egbwf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w1usl"]
+texture = ExtResource("2_cxniv")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+1:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kebfw"]
+texture = ExtResource("1_u22fx")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+10:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:6/0 = 0
+11:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_juftw"]
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_kebfw")
+sources/0 = SubResource("TileSetAtlasSource_w1usl")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eu6fb"]
+texture = ExtResource("1_u22fx")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8om5u"]
+texture = ExtResource("2_cxniv")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+1:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ssbn2"]
+sources/0 = SubResource("TileSetAtlasSource_eu6fb")
+sources/3 = SubResource("TileSetAtlasSource_8om5u")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i5siw"]
+shader = ExtResource("5_6p173")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_6p173"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c0lfi"]
+shader = ExtResource("6_c0lfi")
+
+[sub_resource type="QuadMesh" id="QuadMesh_tlhy0"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mllja"]
+shader = ExtResource("7_tlhy0")
+shader_parameter/glitch_enabled = false
+shader_parameter/crt_enabled = true
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_wd7ju"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_egbwf"]
+shader = ExtResource("5_6p173")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_w1usl"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eu6fb"]
+shader = ExtResource("6_c0lfi")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8om5u"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ssbn2"]
+shader = ExtResource("7_tlhy0")
+shader_parameter/glitch_enabled = false
+shader_parameter/crt_enabled = true
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_ihw3f"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ud4oe"]
+bg_color = Color(0.00268158, 4.41728e-05, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlhy0"]
+atlas = ExtResource("8_6p173")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mllja"]
+atlas = ExtResource("8_6p173")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd7ju"]
+atlas = ExtResource("8_6p173")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxniv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlhy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mllja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wd7ju")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b81uh"]
+radius = 26.2521
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxniv"]
+radius = 23.0
+height = 62.0
+
+[node name="Finale" type="Node2D" node_paths=PackedStringArray("glitch_material", "jump", "aldi")]
+script = ExtResource("1_qt3kr")
+glitch_material = NodePath("CanvasLayer2/crt and glitch")
+dialogue = "res://finale.dtl"
+jump = NodePath("CanvasLayer/Panel")
+aldi = NodePath("CanvasLayer/Panel2/AudioStreamPlayer2D")
+ani = NodePath("Player/AnimatedSprite2D")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_juftw")
+format = 2
+
+[node name="walls" type="TileMapLayer" parent="TileMap"]
+tile_map_data = PackedByteArray("AAD5//n/AAAKAAYAAAD6//n/AAALAAYAAAD7//n/AAAKAAYAAAD8//n/AAALAAYAAAD9//n/AAAKAAYAAAD+//n/AAALAAYAAAD///n/AAAKAAYAAAAAAPn/AAALAAYAAAD///j/AAAKAAYAAAAAAPj/AAALAAYAAAABAPj/AAAKAAYAAAACAPj/AAALAAYAAAABAPn/AAAKAAYAAAACAPn/AAALAAYAAAADAPn/AAAKAAYAAAAEAPn/AAALAAYAAAAFAPn/AAAKAAYAAAAGAPn/AAALAAYAAAAHAPn/AAAKAAYAAAAIAPn/AAALAAYAAAAJAPn/AAAKAAYAAAAKAPn/AAALAAYAAAAJAPj/AAAKAAYAAAAKAPj/AAALAAYAAAAHAPj/AAAKAAYAAAAIAPj/AAALAAYAAAAFAPj/AAAKAAYAAAAGAPj/AAALAAYAAAADAPj/AAAKAAYAAAAEAPj/AAALAAYAAAD9//j/AAAKAAYAAAD+//j/AAALAAYAAAD7//j/AAAKAAYAAAD8//j/AAALAAYAAAD5//j/AAAKAAYAAAD6//j/AAALAAYAAAD5//f/AAAKAAYAAAD6//f/AAALAAYAAAD7//f/AAAKAAYAAAD8//f/AAALAAYAAAD9//f/AAAKAAYAAAD+//f/AAALAAYAAAD///f/AAAKAAYAAAAAAPf/AAALAAYAAAABAPf/AAAKAAYAAAACAPf/AAALAAYAAAADAPf/AAAKAAYAAAAEAPf/AAALAAYAAAAFAPf/AAAKAAYAAAAGAPf/AAALAAYAAAAHAPf/AAAKAAYAAAAIAPf/AAALAAYAAAAJAPf/AAAKAAYAAAAKAPf/AAALAAYAAAAJAPb/AAAKAAYAAAAKAPb/AAALAAYAAAAHAPb/AAAKAAYAAAAIAPb/AAALAAYAAAAFAPb/AAAKAAYAAAAGAPb/AAALAAYAAAADAPb/AAAKAAYAAAAEAPb/AAALAAYAAAABAPb/AAAKAAYAAAACAPb/AAALAAYAAAD///b/AAAKAAYAAAAAAPb/AAALAAYAAAD9//b/AAAKAAYAAAD+//b/AAALAAYAAAD7//b/AAAKAAYAAAD8//b/AAALAAYAAAD5//b/AAAKAAYAAAD6//b/AAALAAYAAAD5//X/AAAKAAYAAAD6//X/AAALAAYAAAD7//X/AAAKAAYAAAD8//X/AAALAAYAAAD9//X/AAAKAAYAAAD+//X/AAALAAYAAAD///X/AAAKAAYAAAAAAPX/AAALAAYAAAABAPX/AAAKAAYAAAACAPX/AAALAAYAAAADAPX/AAAKAAYAAAAEAPX/AAALAAYAAAAFAPX/AAAKAAYAAAAGAPX/AAALAAYAAAAHAPX/AAAKAAYAAAAIAPX/AAALAAYAAAAJAPX/AAAKAAYAAAAKAPX/AAALAAYAAAA=")
+tile_set = SubResource("TileSet_ssbn2")
+
+[node name="Layer1" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD8/wYAAgAKAAYAAAD9/wYAAgAKAAYAAAD+/wYAAgAKAAYAAAD//wYAAgAKAAYAAAAFAAYAAgAKAAYAAAAGAAYAAgAKAAYAAAAHAAYAAgAKAAYAAAAIAAYAAgAKAAYAAAAJAAYAAgAKAAYAAAAKAAYAAgAKAAYAAAAKAAUAAgAKAAYAAAAKAAQAAgAKAAYAAAAKAAMAAgAKAAYAAAAKAAIAAgAKAAYAAAAKAAEAAgAKAAYAAAAKAAAAAgAKAAYAAAAKAP//AgAKAAYAAAAKAP7/AgAKAAYAAAAKAP3/AgAKAAYAAAAKAPz/AgAKAAYAAAAKAPv/AgAKAAYAAAAKAPr/AgAKAAYAAAAJAPr/AgAKAAYAAAAIAPr/AgAKAAYAAAAHAPr/AgAKAAYAAAAGAPr/AgAKAAYAAAAFAPr/AgAKAAYAAAAEAPr/AgAKAAYAAAADAPr/AgAKAAYAAAACAPr/AgAKAAYAAAABAPr/AgAKAAYAAAAAAPr/AgAKAAYAAAD///r/AgAKAAYAAAD+//r/AgAKAAYAAAD9//r/AgAKAAYAAAD8//r/AgAKAAYAAAD7//r/AgAKAAYAAAD6//r/AgAKAAYAAAD5//r/AgAKAAYAAAD5//v/AgAKAAYAAAD7/wYAAgAKAAYAAAD6/wYAAgAKAAYAAAD5/wYAAgAKAAYAAAD5/wUAAgAKAAYAAAD5/wQAAgAKAAYAAAD5/wMAAgAKAAYAAAD5/wIAAgAKAAYAAAD5//z/AgAKAAYAAAD5//3/AgAKAAYAAAD5//7/AgAKAAYAAAD5////AgAKAAYAAAD5/wAAAgAKAAYAAAD5/wEAAgAKAAYAAAD//wcAAgAKAAYAAAD//wgAAgAKAAYAAAD//wkAAgAKAAYAAAD//woAAgAKAAYAAAAFAAcAAgAKAAYAAAAFAAgAAgAKAAYAAAAFAAkAAgAKAAYAAAAFAAoAAgAKAAYAAAA=")
+tile_set = SubResource("TileSet_juftw")
+
+[node name="Player" parent="." instance=ExtResource("2_qt3kr")]
+position = Vector2(30, 108)
+
+[node name="AnimatedSprite2D" parent="Player" index="0"]
+frame = 4
+frame_progress = 1.0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -50)
+zoom = Vector2(1.5, 1.5)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_i5siw")
+mesh = SubResource("QuadMesh_6p173")
+
+[node name="crt shader" type="MeshInstance2D" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_c0lfi")
+mesh = SubResource("QuadMesh_tlhy0")
+
+[node name="crt and glitch" type="MeshInstance2D" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_mllja")
+mesh = SubResource("QuadMesh_wd7ju")
+
+[node name="GlitchSFX" type="AudioStreamPlayer2D" parent="CanvasLayer2"]
+stream = ExtResource("7_b81uh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_egbwf")
+mesh = SubResource("QuadMesh_w1usl")
+
+[node name="crt shader" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_eu6fb")
+mesh = SubResource("QuadMesh_8om5u")
+
+[node name="crt and glitch" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_ssbn2")
+mesh = SubResource("QuadMesh_ihw3f")
+
+[node name="GlitchSFX" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+stream = ExtResource("10_mllja")
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("11_wd7ju")]
+
+[node name="invenory" parent="CanvasLayer" instance=ExtResource("12_cxniv")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ud4oe")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.1667
+offset_right = 20.0
+offset_bottom = 11.1667
+grow_horizontal = 2
+grow_vertical = 2
+text = "u unlock the door"
+
+[node name="Panel2" parent="CanvasLayer" instance=ExtResource("12_egbwf")]
+visible = false
+
+[node name="entitty" type="CharacterBody2D" parent="."]
+position = Vector2(-55, 53)
+scale = Vector2(2.4, 2.4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="entitty"]
+position = Vector2(35, -62)
+sprite_frames = SubResource("SpriteFrames_cxniv")
+autoplay = "default"
+frame_progress = 0.290796
+
+[node name="BelokGlaza" type="Sprite2D" parent="entitty/AnimatedSprite2D"]
+position = Vector2(0, -9)
+texture = ExtResource("9_c0lfi")
+
+[node name="StaticBody2D" type="Area2D" parent="entitty/AnimatedSprite2D"]
+position = Vector2(-32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="entitty/AnimatedSprite2D/StaticBody2D"]
+position = Vector2(33.6667, -16.25)
+shape = SubResource("CircleShape2D_b81uh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="entitty"]
+position = Vector2(35.4167, -61.25)
+shape = SubResource("CapsuleShape2D_cxniv")
+
+[connection signal="body_entered" from="entitty/AnimatedSprite2D/StaticBody2D" to="." method="_on_static_body_2d_body_entered"]
+[connection signal="body_exited" from="entitty/AnimatedSprite2D/StaticBody2D" to="." method="_on_static_body_2d_body_exited"]
+
+[editable path="Player"]
+[editable path="CanvasLayer/Panel2"]
