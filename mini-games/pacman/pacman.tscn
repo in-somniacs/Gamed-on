@@ -1,4 +1,4 @@
-[gd_scene load_steps=278 format=4 uid="uid://duiln7fcyt3sq"]
+[gd_scene load_steps=283 format=4 uid="uid://duiln7fcyt3sq"]
 
 [ext_resource type="Script" uid="uid://bvdflf1k6ksa8" path="res://mini-games/pacman/pacman.gd" id="1_1h78w"]
 [ext_resource type="Texture2D" uid="uid://dpej8a371fym8" path="res://assets/Top-Down_Retro_Interior/walls.png" id="2_cswdi"]
@@ -14,6 +14,7 @@
 [ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="12_h6821"]
 [ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="13_0a7it"]
 [ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="14_pupfv"]
+[ext_resource type="AudioStream" uid="uid://dysiurbgor5s7" path="res://assets/sfx/jumpscare_audio.mp3" id="15_0a7it"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3rfqw"]
 texture = ExtResource("2_l62v5")
@@ -907,7 +908,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(-15, 486, -16, 455, -64, 471, -94, 467, -79, 378, -96, 325, -10, 309, -13, 222, 10, 189, 113, 193, 143, 203, 155, 261, 155, 341, 167, 392, 226, 400, 308, 408, 416, 399, 427, 381, 380, 334, 315, 344, 264, 348, 227, 343, 220, 279, 222, 228, 233, 212, 289, 197, 320, 173, 313, 140, 243, 141, 138, 155, 20, 151, -83, 138, -108, 65, -111, 15, -147, 45, -143, 103, -146, 136, -231, 143, -265, 162, -243, 189, -157, 190, -71, 193, -63, 193, -69, 223, -150, 239, -231, 252, -274, 245, -299, 234, -299, 154, -288, 91, -302, 45, -338, 34, -369, 84, -364, 137, -363, 196, -354, 287, -340, 310, -242, 304, -210, 301, -167, 305, -155, 336, -158, 415, -158, 450, -240, 460, -294, 460, -348, 454, -446, 466, -511, 460, -532, 441, -533, -52, -532, -385, -533, -564, -257, -565, -248, -224, -249, -134, -93, -132, -112, -285, -145, -277, -151, -182, -223, -171, -211, -570, -39, -563, -37, -394, -105, -388, -107, -496, -153, -488, -140, -330, -36, -336, -39, -245, -27, -126, 5, -146, 3, -452, 179, -449, 171, -231, 262, -228, 273, -26, 312, -26, 309, -131, 430, -138, 420, -390, 390, -388, 379, -172, 306, -171, 304, -272, 221, -280, 212, -494, 12, -492, 4, -552, 268, -564, 277, -334, 308, -347, 311, -449, 420, -462, 419, -489, 305, -494, 309, -561, 474, -563, 499, -64, 380, -54, 380, -18, 484, -12, 490, 97, 432, 133, 416, 33, 217, 36, 210, -169, 96, -171, 94, -378, 61, -375, 65, -139, 177, -133, 176, 33, -2, 37, -1, -23, 103, -27, 107, -67, -311, -62, -313, -386, -359, -378, -353, -305, -359, -266, -445, -276, -464, -251, -461, -202, -469, -150, -452, -121, -427, -137, -425, -175, -427, -205, -417, -225, -377, -225, -354, -224, -358, -190, -365, -139, -370, -105, -370, -82, -436, -71, -490, -68, -486, -55, -484, -57, -482, -57, -468, 32, -468, 205, -467, 287, -465, 365, -445, 400, -366, 396, -309, 395, -240, 398, -209, 368, -227, 339, -291, 348, -357, 353, -414, 351, -424, 310, -427, 228, -425, 149, -421, 63, -427, -10, -410, -25, -335, -16, -272, -20, -212, -23, -153, -27, -80, -28, -53, -23, -47, 20, -46, 68, -21, 85, 56, 79, 223, 75, 287, 72, 375, 79, 386, 255, 273, 265, 273, 292, 486, 302, 492, 464, 101, 464, 105, 259, 65, 261, 62, 347, -26, 355, -31, 392, 62, 400, 61, 487)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jfcjf"]
-size = Vector2(21, 76)
+size = Vector2(10, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r530p"]
 atlas = ExtResource("6_jfcjf")
@@ -2414,6 +2415,46 @@ shader_parameter/shake_color_rate = 0.01
 size = Vector2(1280, 720)
 center_offset = Vector3(640, 360, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6821"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_0a7it"]
+resource_name = "fade_out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pupfv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_algi8"]
+_data = {
+&"RESET": SubResource("Animation_pupfv"),
+&"fade_out": SubResource("Animation_0a7it")
+}
+
 [node name="Pacman" type="Node2D" node_paths=PackedStringArray("enemy", "chatbox")]
 script = ExtResource("1_1h78w")
 enemy = NodePath("enemy_shadow")
@@ -2482,13 +2523,16 @@ zoom = Vector2(2, 2)
 position = Vector2(5, 2)
 navigation_polygon = SubResource("NavigationPolygon_jfcjf")
 
-[node name="enemy_shadow" type="CharacterBody2D" parent="." node_paths=PackedStringArray("player")]
+[node name="enemy_shadow" type="CharacterBody2D" parent="." node_paths=PackedStringArray("player", "jumpscare_audio", "jumpscare", "ani")]
 position = Vector2(5, 663)
 script = ExtResource("9_pir8r")
 player = NodePath("../Player")
+jumpscare_audio = NodePath("../CanvasLayer/AudioStreamPlayer")
+jumpscare = NodePath("../CanvasLayer/jumpscare")
+ani = NodePath("../CanvasLayer/jumpscare/AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_shadow"]
-position = Vector2(0.5, 10)
+position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_jfcjf")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="enemy_shadow"]
@@ -2509,28 +2553,56 @@ autoplay = "idle"
 position = Vector2(26.5, -170)
 shape = SubResource("RectangleShape2D_1h78w")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_algi8")
+mesh = SubResource("QuadMesh_djv77")
+
+[node name="crt shader" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_l5ncd")
+mesh = SubResource("QuadMesh_biybf")
+
+[node name="crt and glitch" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_adn6c")
+mesh = SubResource("QuadMesh_woy33")
+
+[node name="GlitchSFX" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+
+[node name="jumpscare" type="Panel" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h6821")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Panel"]
+[node name="Label" type="Label" parent="CanvasLayer/jumpscare"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.1667
+offset_right = 20.0
+offset_bottom = 11.1667
+grow_horizontal = 2
+grow_vertical = 2
+text = "█▓▒░☠░▒▓█
+"
 
-[node name="gltiche shader" type="MeshInstance2D" parent="Panel/CanvasLayer"]
-material = SubResource("ShaderMaterial_algi8")
-mesh = SubResource("QuadMesh_djv77")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/jumpscare"]
+libraries = {
+&"": SubResource("AnimationLibrary_algi8")
+}
 
-[node name="crt shader" type="MeshInstance2D" parent="Panel/CanvasLayer"]
-material = SubResource("ShaderMaterial_l5ncd")
-mesh = SubResource("QuadMesh_biybf")
-
-[node name="crt and glitch" type="MeshInstance2D" parent="Panel/CanvasLayer"]
-material = SubResource("ShaderMaterial_adn6c")
-mesh = SubResource("QuadMesh_woy33")
-
-[node name="GlitchSFX" type="AudioStreamPlayer2D" parent="Panel/CanvasLayer"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("15_0a7it")
+volume_db = 5.0
+pitch_scale = 1.2
+bus = &"sfx"
 
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
 [connection signal="body_entered" from="enemy_shadow/Area2D" to="." method="_on_area_2d_body_entered"]
