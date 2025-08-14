@@ -4,7 +4,7 @@ Player: …This… this is it?
 leave Player
 
 join narrator center
-narrator: [unknown entity#45] You’ve come far, {{player_name}}.
+narrator: You’ve come far, {{player_name}}.
 narrator: And now… you are free to leave.
 
 join Player left
