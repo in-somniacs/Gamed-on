@@ -1,4 +1,4 @@
-[gd_scene load_steps=269 format=4 uid="uid://duiln7fcyt3sq"]
+[gd_scene load_steps=278 format=4 uid="uid://duiln7fcyt3sq"]
 
 [ext_resource type="Script" uid="uid://bvdflf1k6ksa8" path="res://mini-games/pacman/pacman.gd" id="1_1h78w"]
 [ext_resource type="Texture2D" uid="uid://dpej8a371fym8" path="res://assets/Top-Down_Retro_Interior/walls.png" id="2_cswdi"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://2jp28sdhxsgh" path="res://scenes/tachyon/assets/player.png" id="7_pir8r"]
 [ext_resource type="Texture2D" uid="uid://crfgkv6qnr0mj" path="res://assets/pop.png" id="8_1h78w"]
 [ext_resource type="Script" uid="uid://b12dfgok8y8cb" path="res://mini-games/pacman/enemy_shadow.gd" id="9_pir8r"]
+[ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="12_h6821"]
+[ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="13_0a7it"]
+[ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="14_pupfv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3rfqw"]
 texture = ExtResource("2_l62v5")
@@ -2378,6 +2381,39 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1h78w"]
 size = Vector2(95, 20)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_algi8"]
+shader = ExtResource("12_h6821")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_djv77"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l5ncd"]
+shader = ExtResource("13_0a7it")
+
+[sub_resource type="QuadMesh" id="QuadMesh_biybf"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_adn6c"]
+shader = ExtResource("14_pupfv")
+shader_parameter/glitch_enabled = false
+shader_parameter/crt_enabled = true
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_woy33"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
 [node name="Pacman" type="Node2D" node_paths=PackedStringArray("enemy", "chatbox")]
 script = ExtResource("1_1h78w")
 enemy = NodePath("enemy_shadow")
@@ -2472,6 +2508,29 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_shadow/Area2D"]
 position = Vector2(26.5, -170)
 shape = SubResource("RectangleShape2D_1h78w")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Panel"]
+
+[node name="gltiche shader" type="MeshInstance2D" parent="Panel/CanvasLayer"]
+material = SubResource("ShaderMaterial_algi8")
+mesh = SubResource("QuadMesh_djv77")
+
+[node name="crt shader" type="MeshInstance2D" parent="Panel/CanvasLayer"]
+material = SubResource("ShaderMaterial_l5ncd")
+mesh = SubResource("QuadMesh_biybf")
+
+[node name="crt and glitch" type="MeshInstance2D" parent="Panel/CanvasLayer"]
+material = SubResource("ShaderMaterial_adn6c")
+mesh = SubResource("QuadMesh_woy33")
+
+[node name="GlitchSFX" type="AudioStreamPlayer2D" parent="Panel/CanvasLayer"]
 
 [connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
 [connection signal="body_entered" from="enemy_shadow/Area2D" to="." method="_on_area_2d_body_entered"]

@@ -15,8 +15,20 @@ func _process(delta: float) -> void:
 	if player_in_area and not dialogue_started:
 		dialogue_started = true  # ✅ Prevents replay
 		chatbox.disabled = true
-		Dialogic.start(dialogue)
+		run_dialogue(dialogue)
+
+
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":  # ✅ More reliable check
 		player_in_area = true
+
+func run_dialogue(dialogue_string):
+	Dialogic.start(dialogue)
+	Dialogic.timeline_ended.connect(_on_dialogue_end)
+
+func _on_dialogue_end():
+	Dialogic.timeline_ended.disconnect(_on_dialogue_end)
+	enemy.set_physics_process(true)
+	enemy.visible = true
+	

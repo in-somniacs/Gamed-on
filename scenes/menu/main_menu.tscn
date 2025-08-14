@@ -318,9 +318,10 @@ layout_mode = 2
 
 [node name="title" type="Label" parent="menu/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.739789, 2.00946e-06, 5.77569e-07, 1)
 theme_override_fonts/font = ExtResource("1_nl8w3")
 theme_override_font_sizes/font_size = 60
-text = "REDACTED"
+text = "[REDACTED]"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="menu/VBoxContainer"]
