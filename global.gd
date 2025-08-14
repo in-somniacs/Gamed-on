@@ -56,9 +56,3 @@ var glitch_enabled := false
 func enable_glitch():
 	glitch_enabled = true
 	print("[GLITCH] Enabled from dialogue")
-
-var glitch_sfx: AudioStreamPlayer
-
-func play_glitch_sfx():
-	if glitch_sfx:
-		glitch_sfx.play()
