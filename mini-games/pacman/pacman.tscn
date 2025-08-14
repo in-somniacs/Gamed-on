@@ -16,9 +16,9 @@
 [ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="13_0a7it"]
 [ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="14_pupfv"]
 [ext_resource type="AudioStream" uid="uid://dysiurbgor5s7" path="res://assets/sfx/jumpscare_audio.mp3" id="15_0a7it"]
-[ext_resource type="PackedScene" uid="uid://c5u04da0uywb6" path="res://scenes/finish.tscn" id="17_algi8"]
+[ext_resource type="PackedScene" path="res://scenes/finish.tscn" id="17_algi8"]
 [ext_resource type="PackedScene" uid="uid://cmwk0b8uxv7sj" path="res://scenes/ui/achievement.tscn" id="17_djv77"]
-[ext_resource type="Shader" uid="uid://134g01dk4r75" path="res://mini-games/pacman/pacman.gdshader" id="17_l5ncd"]
+[ext_resource type="Shader" path="res://mini-games/pacman/pacman.gdshader" id="17_l5ncd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3rfqw"]
 texture = ExtResource("2_l62v5")
