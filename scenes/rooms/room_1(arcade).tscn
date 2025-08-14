@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dt2y0dl21xt4g" path="res://assets/rundown house/rundown house/clock/clock_15x32.png" id="4_03s3m"]
 [ext_resource type="Texture2D" uid="uid://cenloxysxbn31" path="res://assets/rundown house/rundown house/Old house/old house.png" id="5_chqgb"]
 [ext_resource type="Texture2D" uid="uid://ch3w131bmyh6f" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist1.png" id="6_cgjvi"]
-[ext_resource type="Texture2D" uid="uid://ddls7hvjs31rv" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist2.png" id="7_vexsr"]
+[ext_resource type="Texture2D" uid="uid://dfsqyunhtsb7r" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist2.png" id="7_vexsr"]
 [ext_resource type="Texture2D" uid="uid://citkwei8wye48" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist3.png" id="8_a4812"]
 [ext_resource type="Texture2D" uid="uid://bfq7tofd4sxcw" path="res://assets/PurpleWorldByAndroxFree/ground&water.png" id="8_cgjvi"]
 [ext_resource type="Texture2D" uid="uid://dpej8a371fym8" path="res://assets/Top-Down_Retro_Interior/walls.png" id="8_tvvvl"]
