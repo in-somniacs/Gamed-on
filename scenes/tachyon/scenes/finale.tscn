@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ces6y2p5bi11o" path="res://scenes/menu/pause_menu.tscn" id="11_wd7ju"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="12_cxniv"]
 [ext_resource type="PackedScene" uid="uid://dvq6vn6yi3eok" path="res://assets/temp/jump_medaddy.tscn" id="12_egbwf"]
-[ext_resource type="Script" uid="uid://dks1f0kbyplea" path="res://scripts/achievement.gd" id="15_eu6fb"]
+[ext_resource type="Script" uid="uid://cqtdwi7jpulgv" path="res://scenes/ui/ddasdasdasd.gd" id="14_eu6fb"]
 [ext_resource type="PackedScene" uid="uid://cmwk0b8uxv7sj" path="res://scenes/ui/achievement.tscn" id="16_w1usl"]
 [ext_resource type="AudioStream" uid="uid://diuhprb56yiin" path="res://assets/music/arcade_ambience.mp3" id="17_eu6fb"]
 
@@ -566,9 +566,10 @@ center_offset = Vector3(640, 360, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mllja"]
 shader = ExtResource("7_tlhy0")
-shader_parameter/crt_enabled = true
 shader_parameter/glitch_enabled = false
+shader_parameter/crt_enabled = true
 shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
 shader_parameter/shake_speed = 5.0
 shader_parameter/shake_block_size = 30.5
 shader_parameter/shake_color_rate = 0.01
@@ -598,9 +599,10 @@ center_offset = Vector3(640, 360, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ssbn2"]
 shader = ExtResource("7_tlhy0")
-shader_parameter/crt_enabled = true
 shader_parameter/glitch_enabled = false
+shader_parameter/crt_enabled = true
 shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
 shader_parameter/shake_speed = 5.0
 shader_parameter/shake_block_size = 30.5
 shader_parameter/shake_color_rate = 0.01
@@ -806,7 +808,7 @@ grow_vertical = 2
 text = "u unlock the door"
 
 [node name="achievement" parent="CanvasLayer" node_paths=PackedStringArray("achieve", "anim", "panel", "audio") instance=ExtResource("16_w1usl")]
-script = ExtResource("15_eu6fb")
+script = ExtResource("14_eu6fb")
 achieve = NodePath("Panel/RichTextLabel")
 anim = NodePath("AnimationPlayer")
 panel = NodePath("Panel")

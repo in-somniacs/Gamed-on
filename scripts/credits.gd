@@ -166,4 +166,4 @@ func _fade_out():
 	t.tween_callback(_end_credits)
 
 func _end_credits():
-	get_tree().change_scene_to_file(end_scene_path)
+	get_tree().quit()

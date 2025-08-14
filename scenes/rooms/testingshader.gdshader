@@ -2,17 +2,16 @@ shader_type canvas_item;
 render_mode unshaded, skip_vertex_transform;
 
 // ===== CRT Effect =====
-const float curvature = 250.0;
+const float curvature = 250.0; // Slightly more bend than 300, but still fullscreen-safe
 const float vignette_multiplier = 1.5;
 
-// ===== CRT Toggle =====
+// ===== Toggles =====
+uniform bool glitch_enabled = false; // Toggle from code
 uniform bool crt_enabled = true;
-
-// ===== Glitch Toggle =====
-uniform bool glitch_enabled = true;
 
 // ===== Glitch Settings =====
 uniform float shake_power = 0.03;
+uniform float shake_rate : hint_range(0.0, 1.0) = 0.2;
 uniform float shake_speed = 5.0;
 uniform float shake_block_size = 30.5;
 uniform float shake_color_rate : hint_range(0.0, 1.0) = 0.01;
@@ -34,7 +33,7 @@ void fragment() {
     vec3 vignette = vec3(0.0);
     if (crt_enabled) {
         vec2 centered_uv = uv * 2.0 - 1.0;
-        vec2 uv_offset = centered_uv.yx / curvature; 
+        vec2 uv_offset = centered_uv.yx / curvature; // Division means higher curvature = flatter
         vec2 warped_uv = centered_uv + centered_uv * uv_offset * uv_offset;
         cutoff = vec3(step(abs(warped_uv.x), 1.0) * step(abs(warped_uv.y), 1.0));
         scanlines = vec3(sin(2.0 * warped_uv.y * 180.0) * 0.1 + 0.9);
@@ -43,7 +42,7 @@ void fragment() {
     }
 
     // ===== Glitch shifting =====
-    float enable_shift = glitch_enabled ? 1.0 : 0.0;
+    float enable_shift = glitch_enabled ? float(random(trunc(TIME * shake_speed)) < shake_rate) : 0.0;
     uv.x += (
         random((trunc(uv.y * shake_block_size) / shake_block_size) + TIME) - 0.5
     ) * shake_power * enable_shift;
@@ -51,7 +50,7 @@ void fragment() {
     // Sample the screen texture
     vec4 pixel_color = textureLod(screen_texture, uv, 0.2) * vec4(cutoff * scanlines, 1.0);
 
-    // RGB color shift
+    // RGB color shift when glitching
     pixel_color.r = mix(
         pixel_color.r,
         textureLod(screen_texture, uv + vec2(shake_color_rate, 0.0), 0.0).r,
