@@ -340,7 +340,7 @@ text = "console that plays you.."
 
 [node name="HSeparator" type="HSeparator" parent="menu/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(1.68, 100)
+custom_minimum_size = Vector2(1.68, 82.88)
 layout_mode = 2
 
 [node name="buttons" type="VBoxContainer" parent="menu/VBoxContainer"]
@@ -366,6 +366,15 @@ text = "option"
 [node name="HSeparator" type="HSeparator" parent="menu/VBoxContainer/buttons"]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="menu/VBoxContainer/buttons"]
+layout_mode = 2
+theme = ExtResource("2_kiqgm")
+text = "credits"
+
+[node name="HSeparator3" type="HSeparator" parent="menu/VBoxContainer/buttons"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
 [node name="quit_button" type="Button" parent="menu/VBoxContainer/buttons"]
@@ -419,4 +428,5 @@ libraries = {
 [connection signal="pressed" from="options/VBoxContainer/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="menu/VBoxContainer/buttons/play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="menu/VBoxContainer/buttons/options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="menu/VBoxContainer/buttons/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="menu/VBoxContainer/buttons/quit_button" to="." method="_on_quit_button_pressed"]
