@@ -1,11 +1,9 @@
-[gd_scene load_steps=34 format=3 uid="uid://clt7hf45ibl1l"]
-
+[gd_scene load_steps=40 format=4 uid="uid://clt7hf45ibl1l"]
 
 [ext_resource type="Script" uid="uid://b67gdoxm4r0yv" path="res://scenes/tachyon/scenes/finale.gd" id="1_qt3kr"]
 [ext_resource type="Texture2D" uid="uid://cquankf81hvkj" path="res://assets/walls.png" id="1_u22fx"]
 [ext_resource type="Texture2D" uid="uid://c5o2gkipl0eyi" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/Tiled_files/walls_test.png" id="2_cxniv"]
 [ext_resource type="PackedScene" uid="uid://cpryjj6ky7t31" path="res://scenes/tachyon/scenes/character_body_2d.tscn" id="2_qt3kr"]
-[ext_resource type="PackedScene" uid="uid://dio73o1w6ca3s" path="res://clock.tscn" id="4_egbwf"]
 [ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="5_6p173"]
 [ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="6_c0lfi"]
 [ext_resource type="AudioStream" uid="uid://bc1mc1boo7pbg" path="res://assets/sfx/glitch-sound-333220fnaf.mp3" id="7_b81uh"]
@@ -15,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://dngcwy5wpieu5" path="res://assets/sfx/digital-glitch-361820 (1).mp3" id="10_mllja"]
 [ext_resource type="PackedScene" uid="uid://ces6y2p5bi11o" path="res://scenes/menu/pause_menu.tscn" id="11_wd7ju"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="12_cxniv"]
-[ext_resource type="PackedScene" uid="uid://dvq6vn6yi3eok" path="res://assets/temp/jump_medaddy.tscn" id="13_wd7ju"]
+[ext_resource type="PackedScene" uid="uid://dvq6vn6yi3eok" path="res://assets/temp/jump_medaddy.tscn" id="12_egbwf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w1usl"]
 texture = ExtResource("2_cxniv")
@@ -649,12 +647,12 @@ radius = 26.2521
 radius = 23.0
 height = 62.0
 
-[node name="Finale" type="Node2D" node_paths=PackedStringArray("glitch_material")]
+[node name="Finale" type="Node2D" node_paths=PackedStringArray("glitch_material", "jump", "aldi")]
 script = ExtResource("1_qt3kr")
 glitch_material = NodePath("CanvasLayer2/crt and glitch")
 dialogue = "res://finale.dtl"
-jump = NodePath("")
-aldi = NodePath("")
+jump = NodePath("CanvasLayer/Panel")
+aldi = NodePath("CanvasLayer/Panel2/AudioStreamPlayer2D")
 ani = NodePath("Player/AnimatedSprite2D")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -665,16 +663,10 @@ format = 2
 tile_map_data = PackedByteArray("AAD5//n/AAAKAAYAAAD6//n/AAALAAYAAAD7//n/AAAKAAYAAAD8//n/AAALAAYAAAD9//n/AAAKAAYAAAD+//n/AAALAAYAAAD///n/AAAKAAYAAAAAAPn/AAALAAYAAAD///j/AAAKAAYAAAAAAPj/AAALAAYAAAABAPj/AAAKAAYAAAACAPj/AAALAAYAAAABAPn/AAAKAAYAAAACAPn/AAALAAYAAAADAPn/AAAKAAYAAAAEAPn/AAALAAYAAAAFAPn/AAAKAAYAAAAGAPn/AAALAAYAAAAHAPn/AAAKAAYAAAAIAPn/AAALAAYAAAAJAPn/AAAKAAYAAAAKAPn/AAALAAYAAAAJAPj/AAAKAAYAAAAKAPj/AAALAAYAAAAHAPj/AAAKAAYAAAAIAPj/AAALAAYAAAAFAPj/AAAKAAYAAAAGAPj/AAALAAYAAAADAPj/AAAKAAYAAAAEAPj/AAALAAYAAAD9//j/AAAKAAYAAAD+//j/AAALAAYAAAD7//j/AAAKAAYAAAD8//j/AAALAAYAAAD5//j/AAAKAAYAAAD6//j/AAALAAYAAAD5//f/AAAKAAYAAAD6//f/AAALAAYAAAD7//f/AAAKAAYAAAD8//f/AAALAAYAAAD9//f/AAAKAAYAAAD+//f/AAALAAYAAAD///f/AAAKAAYAAAAAAPf/AAALAAYAAAABAPf/AAAKAAYAAAACAPf/AAALAAYAAAADAPf/AAAKAAYAAAAEAPf/AAALAAYAAAAFAPf/AAAKAAYAAAAGAPf/AAALAAYAAAAHAPf/AAAKAAYAAAAIAPf/AAALAAYAAAAJAPf/AAAKAAYAAAAKAPf/AAALAAYAAAAJAPb/AAAKAAYAAAAKAPb/AAALAAYAAAAHAPb/AAAKAAYAAAAIAPb/AAALAAYAAAAFAPb/AAAKAAYAAAAGAPb/AAALAAYAAAADAPb/AAAKAAYAAAAEAPb/AAALAAYAAAABAPb/AAAKAAYAAAACAPb/AAALAAYAAAD///b/AAAKAAYAAAAAAPb/AAALAAYAAAD9//b/AAAKAAYAAAD+//b/AAALAAYAAAD7//b/AAAKAAYAAAD8//b/AAALAAYAAAD5//b/AAAKAAYAAAD6//b/AAALAAYAAAD5//X/AAAKAAYAAAD6//X/AAALAAYAAAD7//X/AAAKAAYAAAD8//X/AAALAAYAAAD9//X/AAAKAAYAAAD+//X/AAALAAYAAAD///X/AAAKAAYAAAAAAPX/AAALAAYAAAABAPX/AAAKAAYAAAACAPX/AAALAAYAAAADAPX/AAAKAAYAAAAEAPX/AAALAAYAAAAFAPX/AAAKAAYAAAAGAPX/AAALAAYAAAAHAPX/AAAKAAYAAAAIAPX/AAALAAYAAAAJAPX/AAAKAAYAAAAKAPX/AAALAAYAAAA=")
 tile_set = SubResource("TileSet_ssbn2")
 
-[node name="Layer0" type="TileMapLayer" parent="TileMap"]
+[node name="Layer1" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD8/wYAAgAKAAYAAAD9/wYAAgAKAAYAAAD+/wYAAgAKAAYAAAD//wYAAgAKAAYAAAAFAAYAAgAKAAYAAAAGAAYAAgAKAAYAAAAHAAYAAgAKAAYAAAAIAAYAAgAKAAYAAAAJAAYAAgAKAAYAAAAKAAYAAgAKAAYAAAAKAAUAAgAKAAYAAAAKAAQAAgAKAAYAAAAKAAMAAgAKAAYAAAAKAAIAAgAKAAYAAAAKAAEAAgAKAAYAAAAKAAAAAgAKAAYAAAAKAP//AgAKAAYAAAAKAP7/AgAKAAYAAAAKAP3/AgAKAAYAAAAKAPz/AgAKAAYAAAAKAPv/AgAKAAYAAAAKAPr/AgAKAAYAAAAJAPr/AgAKAAYAAAAIAPr/AgAKAAYAAAAHAPr/AgAKAAYAAAAGAPr/AgAKAAYAAAAFAPr/AgAKAAYAAAAEAPr/AgAKAAYAAAADAPr/AgAKAAYAAAACAPr/AgAKAAYAAAABAPr/AgAKAAYAAAAAAPr/AgAKAAYAAAD///r/AgAKAAYAAAD+//r/AgAKAAYAAAD9//r/AgAKAAYAAAD8//r/AgAKAAYAAAD7//r/AgAKAAYAAAD6//r/AgAKAAYAAAD5//r/AgAKAAYAAAD5//v/AgAKAAYAAAD7/wYAAgAKAAYAAAD6/wYAAgAKAAYAAAD5/wYAAgAKAAYAAAD5/wUAAgAKAAYAAAD5/wQAAgAKAAYAAAD5/wMAAgAKAAYAAAD5/wIAAgAKAAYAAAD5//z/AgAKAAYAAAD5//3/AgAKAAYAAAD5//7/AgAKAAYAAAD5////AgAKAAYAAAD5/wAAAgAKAAYAAAD5/wEAAgAKAAYAAAD//wcAAgAKAAYAAAD//wgAAgAKAAYAAAD//wkAAgAKAAYAAAD//woAAgAKAAYAAAAFAAcAAgAKAAYAAAAFAAgAAgAKAAYAAAAFAAkAAgAKAAYAAAAFAAoAAgAKAAYAAAA=")
 tile_set = SubResource("TileSet_juftw")
-
-[node name="clock" parent="TileMap" instance=ExtResource("4_egbwf")]
-position = Vector2(-98, -159)
-
-[node name="clock2" parent="TileMap" instance=ExtResource("4_egbwf")]
-position = Vector2(-76, -132)
 
 [node name="Player" parent="." instance=ExtResource("2_qt3kr")]
 position = Vector2(30, 108)
@@ -754,62 +746,8 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "u unlock the door"
 
-[node name="clock" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(-93, -102)
-
-[node name="clock2" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(-49, -158)
-
-[node name="clock3" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(-21, -96)
-
-[node name="clock4" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(-55, -103)
-
-[node name="clock5" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(-30, -130)
-
-[node name="clock6" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(-5, -157)
-
-[node name="clock7" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(1, -125)
-
-[node name="clock8" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(24, -98)
-
-[node name="clock9" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(33, -139)
-
-[node name="clock10" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(59, -155)
-
-[node name="clock11" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(57, -119)
-
-[node name="clock12" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(81, -96)
-
-[node name="clock13" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(87, -130)
-
-[node name="clock14" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(110, -155)
-
-[node name="clock15" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(114, -113)
-
-[node name="clock16" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(143, -94)
-
-[node name="clock17" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(162, -125)
-
-[node name="clock18" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(136, -137)
-
-[node name="clock19" parent="." instance=ExtResource("4_egbwf")]
-position = Vector2(160, -159)
+[node name="Panel2" parent="CanvasLayer" instance=ExtResource("12_egbwf")]
+visible = false
 
 [node name="entitty" type="CharacterBody2D" parent="."]
 position = Vector2(-55, 53)
@@ -840,3 +778,4 @@ shape = SubResource("CapsuleShape2D_cxniv")
 [connection signal="body_exited" from="entitty/AnimatedSprite2D/StaticBody2D" to="." method="_on_static_body_2d_body_exited"]
 
 [editable path="Player"]
+[editable path="CanvasLayer/Panel2"]
