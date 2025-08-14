@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ces6y2p5bi11o"]
+[gd_scene load_steps=6 format=3 uid="uid://ces6y2p5bi11o"]
 
 [ext_resource type="Script" uid="uid://jeto28v15y8y" path="res://scenes/menu/pause_menu.gd" id="1_n54lc"]
 [ext_resource type="Theme" uid="uid://b0jsoj5phie5g" path="res://assets/main_menu.tres" id="2_ux7g8"]
 [ext_resource type="FontFile" uid="uid://4rdpt2vm5l0l" path="res://assets/font/PixelifySans-VariableFont_wght.ttf" id="2_xtxec"]
+[ext_resource type="FontFile" uid="uid://7aadwx1g56cp" path="res://assets/font/Perfect DOS VGA 437 Win.ttf" id="4_2yk66"]
+[ext_resource type="Script" uid="uid://3w7xpq7vpswi" path="res://scenes/menu/audio.gd" id="5_mb26x"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -66,4 +68,87 @@ layout_mode = 2
 theme = ExtResource("2_ux7g8")
 text = "quit?"
 
+[node name="options" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.8
+offset_top = -174.35
+offset_right = 143.2
+offset_bottom = 157.65
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="options"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="options/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_2yk66")
+theme_override_font_sizes/font_size = 30
+text = "Options"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="options/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="options/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_2yk66")
+text = "master"
+horizontal_alignment = 1
+
+[node name="master" type="HSlider" parent="options/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_mb26x")
+bus_name = "Master"
+
+[node name="Label" type="Label" parent="options/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_2yk66")
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="sfx" type="HSlider" parent="options/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_mb26x")
+bus_name = "sfx"
+
+[node name="Label2" type="Label" parent="options/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_2yk66")
+text = "BG music"
+horizontal_alignment = 1
+
+[node name="music" type="HSlider" parent="options/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_mb26x")
+bus_name = "Music"
+
+[node name="HSeparator2" type="HSeparator" parent="options/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="back" type="Button" parent="options/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ux7g8")
+text = "back"
+
 [connection signal="pressed" from="Panel/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="options/VBoxContainer/back" to="." method="_on_back_pressed"]

@@ -419,3 +419,4 @@ libraries = {
 [connection signal="pressed" from="options/VBoxContainer/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="menu/VBoxContainer/buttons/play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="menu/VBoxContainer/buttons/options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="menu/VBoxContainer/buttons/quit_button" to="." method="_on_quit_button_pressed"]
