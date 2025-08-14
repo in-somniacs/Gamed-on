@@ -39,8 +39,10 @@ func _physics_process(delta: float) -> void:
 		jumpscare.visible = true
 		jumpscare_audio.play()
 		await get_tree().create_timer(2).timeout
-		get_tree().reload_current_scene()
 		ani.play("fade_out")
+		await get_tree().create_timer(1).timeout
+		get_tree().reload_current_scene()
+		
 
 
 	# Pathfinding movement
