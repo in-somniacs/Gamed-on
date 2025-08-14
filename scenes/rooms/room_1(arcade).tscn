@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://7nkymmnf826a" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/Interior.png" id="13_jqtq0"]
 [ext_resource type="Texture2D" uid="uid://llvh2o8dp1wc" path="res://assets/sbs_-_mini_texture_pack_1_-_floor_tiles_128x128/128x128/Rectangle Tiles/Rectangle_Marble_Tile_06-128x128.png" id="14_30j3m"]
 [ext_resource type="Texture2D" uid="uid://djkw8grcsdrsu" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/walls_floor.png" id="14_wvnyl"]
-[ext_resource type="PackedScene" uid="uid://dio73o1w6ca3s" path="res://scenes/clock.tscn" id="15_cpij8"]
+[ext_resource type="PackedScene" uid="uid://dio73o1w6ca3s" path="res://clock.tscn" id="15_cpij8"]
 [ext_resource type="Texture2D" uid="uid://c7r143bg53foc" path="res://assets/sbs_-_mini_texture_pack_1_-_floor_tiles_128x128/128x128/Checker Tiles/OB_Marble_Tile_04-128x128.png" id="15_rncf8"]
 [ext_resource type="Texture2D" uid="uid://dxhm7vxrcqs1m" path="res://scenes/tachyon/assets/arcadeCabs2.png" id="16_v0ofo"]
 [ext_resource type="Texture2D" uid="uid://cwdn5cw478bsu" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/house_details.png" id="17_eqwjs"]
