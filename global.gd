@@ -1,4 +1,5 @@
 extends Node
+
 var canmove = true
 var current_scene = "world"
 var transition_scene = false
@@ -24,15 +25,17 @@ var teleportdoor = false
 var first_time_main_arcade = false
 var momtalk = false
 var first_time_mario = false
+var first_time_pacman = true
+
+var glitch_enabled := false
+var glitch_sfx: AudioStreamPlayer
+var glitch_material: ShaderMaterial
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+	# You can also get it via node path if it's in your scene
+	# glitch_material = $"Path/To/Node".material
 	pass
 
 func finish_change_scene():
@@ -42,10 +45,29 @@ func finish_change_scene():
 	elif current_scene == "cliff-side":
 		current_scene = "world"
 
-
 func enable_player_movement():
 	canmove = true
 
 func disable_player_movement():
 	canmove = false
-	print("dadsada")
+	print("[PLAYER] Movement disabled")
+
+func enable_glitch():
+	glitch_enabled = true
+	print("[GLITCH] Enabled from dialogue")
+	if glitch_sfx:
+		glitch_sfx.play()
+	if glitch_material:
+		glitch_material.set_shader_parameter("glitch_enable", true)
+
+
+func disable_glitch():
+	glitch_enabled = false
+	print("[GLITCH] Disabled")
+	if glitch_material:
+		glitch_material.set_shader_parameter("glitch_enable", false)
+
+
+func play_glitch_sfx():
+	if glitch_sfx:
+		glitch_sfx.play()

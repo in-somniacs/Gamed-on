@@ -1,5 +1,6 @@
-do global.disable_player_movement()
+
 join Player left
+do global.disable_player_movement()
 Player: !!!!!!.......
 Player: Uh… hello? Where am I?
 

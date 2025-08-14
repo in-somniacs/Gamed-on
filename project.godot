@@ -10,11 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Gamed-on"
+config/name="REDACTED"
 run/main_scene="uid://c6inow2hlvjoc"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-config/icon="res://scripts/icon.svg"
+config/icon="uid://b2hkcwwq10cut"
 
 [autoload]
 
@@ -43,6 +43,7 @@ directories/dtl_directory={
 "chasetimeline": "res://timelines/chasetimeline.dtl",
 "console": "res://timelines/console.dtl",
 "consoleget": "res://timelines/consoleget.dtl",
+"finale": "res://finale.dtl",
 "fnaf": "res://timelines/fnaf.dtl",
 "footpathtimeline": "res://timelines/footpathtimeline.dtl",
 "ghost1": "res://timelines/ghost1.dtl",

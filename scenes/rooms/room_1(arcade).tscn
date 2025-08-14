@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=4 uid="uid://c1uyajyie8jqy"]
+[gd_scene load_steps=108 format=4 uid="uid://c1uyajyie8jqy"]
 
 [ext_resource type="Script" uid="uid://b16gkoc1mnq3g" path="res://scenes/rooms/room_1(arcade).gd" id="1_nmc1r"]
 [ext_resource type="Texture2D" uid="uid://jcbc36hkln5r" path="res://scenes/rooms/ArcadeMachine/arcade-Sheet.png" id="2_7owwp"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dt2y0dl21xt4g" path="res://assets/rundown house/rundown house/clock/clock_15x32.png" id="4_03s3m"]
 [ext_resource type="Texture2D" uid="uid://cenloxysxbn31" path="res://assets/rundown house/rundown house/Old house/old house.png" id="5_chqgb"]
 [ext_resource type="Texture2D" uid="uid://ch3w131bmyh6f" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist1.png" id="6_cgjvi"]
-[ext_resource type="Texture2D" uid="uid://ddls7hvjs31rv" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist2.png" id="7_vexsr"]
+[ext_resource type="Texture2D" uid="uid://dfsqyunhtsb7r" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist2.png" id="7_vexsr"]
 [ext_resource type="Texture2D" uid="uid://citkwei8wye48" path="res://assets/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tilelists/Tilelist3.png" id="8_a4812"]
 [ext_resource type="Texture2D" uid="uid://bfq7tofd4sxcw" path="res://assets/PurpleWorldByAndroxFree/ground&water.png" id="8_cgjvi"]
 [ext_resource type="Texture2D" uid="uid://dpej8a371fym8" path="res://assets/Top-Down_Retro_Interior/walls.png" id="8_tvvvl"]
@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://7nkymmnf826a" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/Interior.png" id="13_jqtq0"]
 [ext_resource type="Texture2D" uid="uid://llvh2o8dp1wc" path="res://assets/sbs_-_mini_texture_pack_1_-_floor_tiles_128x128/128x128/Rectangle Tiles/Rectangle_Marble_Tile_06-128x128.png" id="14_30j3m"]
 [ext_resource type="Texture2D" uid="uid://djkw8grcsdrsu" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/walls_floor.png" id="14_wvnyl"]
-[ext_resource type="PackedScene" uid="uid://dio73o1w6ca3s" path="res://scenes/clock.tscn" id="15_cpij8"]
+[ext_resource type="PackedScene" uid="uid://dio73o1w6ca3s" path="res://clock.tscn" id="15_cpij8"]
 [ext_resource type="Texture2D" uid="uid://c7r143bg53foc" path="res://assets/sbs_-_mini_texture_pack_1_-_floor_tiles_128x128/128x128/Checker Tiles/OB_Marble_Tile_04-128x128.png" id="15_rncf8"]
 [ext_resource type="Texture2D" uid="uid://dxhm7vxrcqs1m" path="res://scenes/tachyon/assets/arcadeCabs2.png" id="16_v0ofo"]
 [ext_resource type="Texture2D" uid="uid://cwdn5cw478bsu" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/PNG/house_details.png" id="17_eqwjs"]
@@ -43,6 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://dnb6olr75l2ak" path="res://scenes/coin.tscn" id="39_sv16y"]
 [ext_resource type="Script" uid="uid://b647oldawiwvl" path="res://scenes/rooms/door_arcade_main.gd" id="41_076c7"]
 [ext_resource type="PackedScene" uid="uid://cur5rsemri0nt" path="res://scenes/ghosts.tscn" id="42_nsrae"]
+[ext_resource type="AudioStream" uid="uid://diuhprb56yiin" path="res://assets/music/arcade_ambience.mp3" id="44_gsl8n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7owwp"]
 0:0/0 = 0
@@ -18492,11 +18493,11 @@ popup = NodePath("../Player/popup")
 dialogue = "res://arcademachineuclose.dtl"
 
 [node name="Player" parent="." instance=ExtResource("11_vexsr")]
-position = Vector2(10, 1896)
-SPEED = 7000.0
+position = Vector2(6, 1826)
+SPEED = 5000.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-3.07695, -23.8462)
+position = Vector2(-7.15256e-07, -4.3869e-05)
 scale = Vector2(0.769231, 0.769231)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
@@ -18662,6 +18663,13 @@ position = Vector2(-616, 0)
 player = NodePath("../Player")
 dialogue = "res://ghost6.dtl"
 popup = NodePath("../Player/popup")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("44_gsl8n")
+volume_db = 4.919
+autoplay = true
+max_distance = 4096.0
+bus = &"Music"
 
 [connection signal="body_entered" from="key1/Chatdetection" to="key1" method="_on_chatdetection_body_entered"]
 [connection signal="body_exited" from="key1/Chatdetection" to="key1" method="_on_chatdetection_body_exited"]

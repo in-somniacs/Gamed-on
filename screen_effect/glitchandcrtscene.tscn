@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://3idgoa120e20"]
+[gd_scene load_steps=12 format=3 uid="uid://bsr1fd633iqgb"]
 
 [ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="1_dfbpx"]
 [ext_resource type="Script" path="res://screen_effect/glitchandcrtscene.gd" id="1_gvhs7"]

@@ -63,6 +63,10 @@ func _add_credits_text():
 		["A Game by a6h1 & masuwuked", "SUBTITLE"],
 		["Created for Gamedeon — IIT Guwahati", "NORMAL"],
 		["", "NORMAL"],
+		["Themes Used", "HEADING"],
+		["Unreliable Narrator: you could never trust him...", "NORMAL"],
+		["Stuck Together: your soul is now stuck with everyone in the console....", "NORMAL"],
+		["", "NORMAL"],
 		["About This Game", "HEADING"],
 		["This was our very first game\n created in just 10 days for the Gamedeon Game Jam.\nWith almost no prior experience in game development\n we dove headfirst into learning, creating, and debugging.\nEvery challenge became a lesson, and every late night was worth it.", "NORMAL"],
 		["", "NORMAL"],
@@ -78,7 +82,7 @@ func _add_credits_text():
 		["Both developers contributed equally to shaping the world", "NORMAL"],
 		["", "NORMAL"],
 		["Shaders", "SUBHEADING"],
-		["a6h1 — bringing atmosphere and visual effects to life", "NORMAL"],
+		["a6h1 — enhancing graphics with atmospheric visual effects", "NORMAL"],
 		["", "NORMAL"],
 		["Scene Transitions", "SUBHEADING"],
 		["Main Scene Transitions: masuwuked", "NORMAL"],
@@ -90,8 +94,8 @@ func _add_credits_text():
 		["Gameplay Systems", "SUBHEADING"],
 		["Item Pickup and achievements System: masuwuked", "NORMAL"],
 		["Collision Handling: a6h1", "NORMAL"],
-		["Dialogue System: a6h1", "NORMAL"],
 		["Platformer Scene: masuwuked", "NORMAL"],
+		["Dialogue System: a6h1", "NORMAL"],
 		["", "NORMAL"],
 		["User Interface", "SUBHEADING"],
 		["masuwuked — designing menus and interactive elements", "NORMAL"],
@@ -162,4 +166,4 @@ func _fade_out():
 	t.tween_callback(_end_credits)
 
 func _end_credits():
-	get_tree().change_scene_to_file(end_scene_path)
+	get_tree().quit()

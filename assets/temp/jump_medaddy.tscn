@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvq6vn6yi3eok"]
+
+[ext_resource type="Texture2D" uid="uid://5xy7atd04e76" path="res://scenes/tachyon/assets/EyeBoss-Sheet (3).png" id="1_uyqof"]
+[ext_resource type="AudioStream" uid="uid://1jwav0ry2dym" path="res://assets/sfx/jump_me_daddy.mp3" id="2_p3tyg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cxniv"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Panel2" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cxniv")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.5
+offset_top = -126.5
+offset_right = 126.5
+offset_bottom = 126.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_uyqof")
+region_rect = Rect2(137, 0, 45, 46)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_p3tyg")

@@ -18,9 +18,8 @@ Corruption detected in 72% of memory blocks
 
 
 join narrator center
-Narrator: "Backwards is where the others are. You don’t want to meet them."
+Narrator: Backwards is where the others are. You don’t want to meet them.
 leave narrator
 join Player left
-Player: "…Others?"
+Player: …Others?
 do global.enable_player_movement()
-

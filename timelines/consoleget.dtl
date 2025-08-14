@@ -1,24 +1,19 @@
 ........
 join Player left
 Player: Let’s see what we’ve got…
+leave Player
 join consolechar right
 Player: Oh… this is…
 Player: It’s the old console I used to play with my cousin.
 leave consolechar
 Player: Didn’t think I’d ever see this again.
-Player: …Huh, the buttons feel a bit… weird.
-Player: Oh… my cousin also left a note here. But it’s… strange. The handwriting twists halfway through, and some words don’t make sense —
-leave Player
-note: wait.\
-\
-no… no, that’s—##$$%—wrong.\
-\
-(static) did you hear that?
-note: me, me, me, me—\
-\
-they told me not to talk to you.\
-\
-but i like your voice.
+Player: …Huh, there's a note inside?   
+note: wa_it.  
+note: no… no, th—that’s—##//%—wrong.  
+note: (static) c@n y0u hear m_e?  
+note: me...me...ME...ME—  
+note: they said n0t to talk to you.  
+note: but i l̷͖͘ì̸̜k̶̢͘e̸̟̓ your voice.
 join Player left
 Pfft… classic. This has to be one of his stupid pranks… right? Yeah… right…
 Player: As I have spare time till noon , guess I'll hook this thing up.

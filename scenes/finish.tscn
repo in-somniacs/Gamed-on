@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5u04da0uywb6"]
+
+[ext_resource type="Script" uid="uid://dsab8hrep14hm" path="res://scenes/minigame/minigane1/finish.gd" id="1_5nbog"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h2sw"]
+size = Vector2(27, 47)
+
+[node name="finish" type="Area2D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_5nbog")
+player = NodePath("")
+next_scene = "res://mini-games/pacman/pacman.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, -10.5)
+shape = SubResource("RectangleShape2D_2h2sw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

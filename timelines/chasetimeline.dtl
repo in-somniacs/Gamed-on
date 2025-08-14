@@ -1,7 +1,10 @@
 do global.disable_player_movement()
 join Player left
-Player: what do i have to do here now?
+Player: Ughh why its so dark in here.
+Player: What now?  
 leave Player
 join narrator center
-narrator: just run.......
+narrator: Run. Don’t look back.  
+narrator: I know the way out. 
 do global.enable_player_movement()
+

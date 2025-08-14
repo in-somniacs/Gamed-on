@@ -39,3 +39,16 @@ func _on_play_button_pressed() -> void:
 
 	
 	
+
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
+
+
+func _on_button_pressed() -> void:
+	var transition = preload("res://scenes/transition_manager.tscn").instantiate()
+	get_tree().root.add_child(transition)
+	transition.start_transition("res://scenes/Credits.tscn")
+	particles.explosiveness = 19
+	particles.emitting = false
+	anim.play("fade_music")

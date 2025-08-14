@@ -5,11 +5,17 @@ extends CharacterBody2D
 @export var attack_range: float = 20.0  # Distance before enemy attacks
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@export var jumpscare_audio: AudioStreamPlayer
+@export var jumpscare: Panel
+@export var ani:AnimationPlayer
 
 var last_dir: Vector2 = Vector2.DOWN
 var attacking: bool = false
 
 func _ready() -> void:
+	jumpscare_audio.stream = preload("res://assets/sfx/jumpscare_audio.mp3")
+	jumpscare.visible = false
+	global.enable_player_movement()
 	agent.path_desired_distance = 4.0
 	agent.target_desired_distance = 10.0
 	agent.max_speed = speed
@@ -27,6 +33,16 @@ func _physics_process(delta: float) -> void:
 	# Check if close enough to attack
 	if distance_to_player <= attack_range:
 		start_attack()
+	if attacking == true:
+		global.disable_player_movement()
+		sprite.pause()
+		jumpscare.visible = true
+		jumpscare_audio.play()
+		await get_tree().create_timer(2).timeout
+		ani.play("fade_out")
+		await get_tree().create_timer(1).timeout
+		get_tree().reload_current_scene()
+		
 
 
 	# Pathfinding movement
@@ -63,7 +79,6 @@ func start_attack():
 	attacking = true
 	velocity = Vector2.ZERO
 	move_and_slide()
-	print("adasd")
 
 	# Choose attack animation based on last movement direction
 	if abs(last_dir.x) > abs(last_dir.y):

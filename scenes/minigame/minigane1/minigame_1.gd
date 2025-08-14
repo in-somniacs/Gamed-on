@@ -12,7 +12,7 @@ func do_first_time_intro():
 
 	global.disable_player_movement()
 
-
+	await get_tree().create_timer(2.5).timeout
 	Dialogic.start(dialogue)
 	global.enable_player_movement()
 	

@@ -36,8 +36,8 @@ narrator: And now… you’re listening too.
 
 leave narrator
 join Player left
-Player: “…Where is he?”
+Player: …Where is he?
 leave Player
 join narrator center
-narrator: "Closer than you want. Farther than you can go."
+narrator: Closer than you want. Farther than you can go.
 Player: (If that’s really him… then I’m already too far in.)
