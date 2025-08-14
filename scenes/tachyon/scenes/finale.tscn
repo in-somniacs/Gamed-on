@@ -1,9 +1,10 @@
-[gd_scene load_steps=40 format=4 uid="uid://calb87xhmdek8"]
+[gd_scene load_steps=41 format=4 uid="uid://calb87xhmdek8"]
 
 [ext_resource type="Script" uid="uid://b67gdoxm4r0yv" path="res://scenes/tachyon/scenes/finale.gd" id="1_qt3kr"]
 [ext_resource type="Texture2D" uid="uid://cquankf81hvkj" path="res://assets/walls.png" id="1_u22fx"]
 [ext_resource type="Texture2D" uid="uid://c5o2gkipl0eyi" path="res://assets/craftpix-net-654184-main-characters-home-free-top-down-pixel-art-asset/Tiled_files/walls_test.png" id="2_cxniv"]
 [ext_resource type="PackedScene" uid="uid://cpryjj6ky7t31" path="res://scenes/tachyon/scenes/character_body_2d.tscn" id="2_qt3kr"]
+[ext_resource type="PackedScene" uid="uid://dio73o1w6ca3s" path="res://clock.tscn" id="4_egbwf"]
 [ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="5_6p173"]
 [ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="6_c0lfi"]
 [ext_resource type="AudioStream" uid="uid://bc1mc1boo7pbg" path="res://assets/sfx/glitch-sound-333220fnaf.mp3" id="7_b81uh"]
@@ -667,6 +668,63 @@ tile_set = SubResource("TileSet_ssbn2")
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD8/wYAAgAKAAYAAAD9/wYAAgAKAAYAAAD+/wYAAgAKAAYAAAD//wYAAgAKAAYAAAAFAAYAAgAKAAYAAAAGAAYAAgAKAAYAAAAHAAYAAgAKAAYAAAAIAAYAAgAKAAYAAAAJAAYAAgAKAAYAAAAKAAYAAgAKAAYAAAAKAAUAAgAKAAYAAAAKAAQAAgAKAAYAAAAKAAMAAgAKAAYAAAAKAAIAAgAKAAYAAAAKAAEAAgAKAAYAAAAKAAAAAgAKAAYAAAAKAP//AgAKAAYAAAAKAP7/AgAKAAYAAAAKAP3/AgAKAAYAAAAKAPz/AgAKAAYAAAAKAPv/AgAKAAYAAAAKAPr/AgAKAAYAAAAJAPr/AgAKAAYAAAAIAPr/AgAKAAYAAAAHAPr/AgAKAAYAAAAGAPr/AgAKAAYAAAAFAPr/AgAKAAYAAAAEAPr/AgAKAAYAAAADAPr/AgAKAAYAAAACAPr/AgAKAAYAAAABAPr/AgAKAAYAAAAAAPr/AgAKAAYAAAD///r/AgAKAAYAAAD+//r/AgAKAAYAAAD9//r/AgAKAAYAAAD8//r/AgAKAAYAAAD7//r/AgAKAAYAAAD6//r/AgAKAAYAAAD5//r/AgAKAAYAAAD5//v/AgAKAAYAAAD7/wYAAgAKAAYAAAD6/wYAAgAKAAYAAAD5/wYAAgAKAAYAAAD5/wUAAgAKAAYAAAD5/wQAAgAKAAYAAAD5/wMAAgAKAAYAAAD5/wIAAgAKAAYAAAD5//z/AgAKAAYAAAD5//3/AgAKAAYAAAD5//7/AgAKAAYAAAD5////AgAKAAYAAAD5/wAAAgAKAAYAAAD5/wEAAgAKAAYAAAD//wcAAgAKAAYAAAD//wgAAgAKAAYAAAD//wkAAgAKAAYAAAD//woAAgAKAAYAAAAFAAcAAgAKAAYAAAAFAAgAAgAKAAYAAAAFAAkAAgAKAAYAAAAFAAoAAgAKAAYAAAA=")
 tile_set = SubResource("TileSet_juftw")
+
+[node name="clock" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(-89, -130)
+
+[node name="clock2" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(-65, -147)
+
+[node name="clock3" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(-98, -160)
+
+[node name="clock4" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(-79, -100)
+
+[node name="clock5" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(-55, -113)
+
+[node name="clock6" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(-36, -94)
+
+[node name="clock7" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(-35, -153)
+
+[node name="clock8" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(92, -160)
+
+[node name="clock9" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(102, -99)
+
+[node name="clock10" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(103, -133)
+
+[node name="clock11" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(-3, -156)
+
+[node name="clock12" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(59, -157)
+
+[node name="clock13" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(131, -157)
+
+[node name="clock14" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(130, -128)
+
+[node name="clock15" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(127, -97)
+
+[node name="clock16" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(161, -151)
+
+[node name="clock17" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(159, -118)
+
+[node name="clock18" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(78, -120)
+
+[node name="clock19" parent="TileMap" instance=ExtResource("4_egbwf")]
+position = Vector2(-23, -123)
 
 [node name="Player" parent="." instance=ExtResource("2_qt3kr")]
 position = Vector2(30, 108)
