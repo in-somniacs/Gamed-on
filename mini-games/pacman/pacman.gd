@@ -4,9 +4,17 @@ extends Node2D
 @export var dialogue: String
 @export var chatbox: CollisionShape2D  # this should be the CollisionShape2D under your Area2D
 
+
+@export var achieve: RichTextLabel
+@export var anim: AnimationPlayer
+@export var panel: Panel
+@export var audio: AudioStreamPlayer2D
+@export var name_ach: String
+var loaded = false
 var player_in_area := false
 
 func _ready() -> void:
+	preload_achievement()
 	#debug
 	print("[PACMAN] first_time_pacman =", global.first_time_pacman)
 
@@ -55,6 +63,22 @@ func _start_dialogue_once() -> void:
 
 func _on_dialogue_end() -> void:
 	print("[PACMAN] Dialogue ended -> enabling enemy")
+	achiement_sound()
 	if enemy:
 		enemy.visible = true
 		enemy.set_physics_process(true)
+		
+func achiement_sound():
+	loaded = true
+	achieve.visible = true
+	panel.visible = true
+	audio.stream = preload("res://assets/sfx/achievement.wav")
+	anim.play("fade_pin")
+	audio.play()
+	await get_tree().create_timer(2.5).timeout
+	anim.play("fade_put")
+	
+func preload_achievement():
+	achieve.visible = false
+	panel.visible = false
+	achieve.text = name_ach

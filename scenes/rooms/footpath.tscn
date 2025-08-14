@@ -11899,7 +11899,7 @@ position = Vector2(30, -54)
 
 [node name="AudioStreamPlayer2D" parent="Player" index="2"]
 stream = ExtResource("11_qgxof")
-volume_db = -2.108
+volume_db = -5.621
 autoplay = true
 bus = &"Music"
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bxu0ff21ycuhy" path="res://scenes/minigame/minigane1/enemy.png" id="1_1pu1e"]
 [ext_resource type="Script" uid="uid://b5bcyqip7eg4t" path="res://scenes/minigame/minigane1/scripts/enemy.gd" id="1_ln1g0"]
-[ext_resource type="Script" path="res://scenes/minigame/minigane1/scripts/killzone.gd" id="2_ln1g0"]
+[ext_resource type="Script" uid="uid://db6aa1i3ona0f" path="res://scenes/minigame/minigane1/scripts/killzone.gd" id="2_ln1g0"]
 [ext_resource type="Script" uid="uid://thlx6nullvs3" path="res://scenes/minigame/minigane1/scenes/static_body_2d.gd" id="4_s7cb0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7cb0"]
