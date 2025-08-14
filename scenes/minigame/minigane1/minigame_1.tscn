@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=4 uid="uid://ls6tnajdbhr1"]
 
 [ext_resource type="PackedScene" uid="uid://ca2bt84hkois5" path="res://scenes/minigame/minigane1/scenes/player_minigame1.tscn" id="1_7dm80"]
-[ext_resource type="Script" path="res://scenes/minigame/minigane1/minigame_1.gd" id="1_ymo8x"]
+[ext_resource type="Script" uid="uid://cljwtjg6tx5uc" path="res://scenes/minigame/minigane1/minigame_1.gd" id="1_ymo8x"]
 [ext_resource type="Texture2D" uid="uid://qwx05nl3p8w1" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_p6lyb"]
 [ext_resource type="Texture2D" uid="uid://dpej8a371fym8" path="res://assets/Top-Down_Retro_Interior/walls.png" id="2_roxow"]
 [ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="3_fsknh"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://crfgkv6qnr0mj" path="res://assets/pop.png" id="4_gctig"]
 [ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="4_mdrvl"]
 [ext_resource type="PackedScene" uid="uid://4yqnhw2c57hl" path="res://scenes/minigame/minigane1/scenes/enemy.tscn" id="4_spq0h"]
-[ext_resource type="PackedScene" uid="uid://c5u04da0uywb6" path="res://scenes/finish.tscn" id="4_ymo8x"]
+[ext_resource type="PackedScene" path="res://scenes/finish.tscn" id="4_ymo8x"]
 [ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="5_spq0h"]
 [ext_resource type="AudioStream" uid="uid://cjeygrssn6mt3" path="res://assets/music/wario.mp3" id="7_2h2sw"]
 
