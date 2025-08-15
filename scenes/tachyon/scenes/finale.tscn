@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://calb87xhmdek8"]
+[gd_scene load_steps=46 format=4 uid="uid://calb87xhmdek8"]
 
 [ext_resource type="Script" uid="uid://b67gdoxm4r0yv" path="res://scenes/tachyon/scenes/finale.gd" id="1_qt3kr"]
 [ext_resource type="Texture2D" uid="uid://cquankf81hvkj" path="res://assets/walls.png" id="1_u22fx"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c3h02v0g8ocyf" path="res://assets/BelokGlaza.png" id="9_c0lfi"]
 [ext_resource type="Shader" uid="uid://dh4dybs6fs6c3" path="res://scenes/tachyon/scenes/jump.gdshader" id="10_8om5u"]
 [ext_resource type="AudioStream" uid="uid://dngcwy5wpieu5" path="res://assets/sfx/digital-glitch-361820 (1).mp3" id="10_mllja"]
+[ext_resource type="AudioStream" uid="uid://c0te63d1u0n8k" path="res://assets/finaljump.mp3" id="11_ssbn2"]
 [ext_resource type="PackedScene" uid="uid://ces6y2p5bi11o" path="res://scenes/menu/pause_menu.tscn" id="11_wd7ju"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="12_cxniv"]
 [ext_resource type="PackedScene" uid="uid://dvq6vn6yi3eok" path="res://assets/temp/jump_medaddy.tscn" id="12_egbwf"]
@@ -767,6 +768,10 @@ mesh = SubResource("QuadMesh_wd7ju")
 
 [node name="NinePatchRect" parent="CanvasLayer2/Panel2" index="0"]
 material = SubResource("ShaderMaterial_ihw3f")
+
+[node name="AudioStreamPlayer2D" parent="CanvasLayer2/Panel2" index="1"]
+stream = ExtResource("11_ssbn2")
+volume_db = 6.324
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

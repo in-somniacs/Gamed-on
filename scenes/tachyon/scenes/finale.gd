@@ -13,7 +13,7 @@ func _ready() -> void:
 	global.new_scene_placement ="res://scenes/Credits.tscn"
 	jump.visible = false
 	
-	aldi.stream = preload("res://assets/sfx/jump_me_daddy.mp3")
+	aldi.stream = preload("res://assets/finaljump.mp3")
 	# Make sure glitch is off at start (optional — remove if Dialogic handles it fully)
 	global.glitch_enabled = false
 	var glitch_node = $CanvasLayer2/"crt and glitch"
