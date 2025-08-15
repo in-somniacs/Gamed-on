@@ -5,6 +5,8 @@ extends Node2D
 @export var jump: Panel
 @export var aldi: AudioStreamPlayer2D
 @export var ani: AnimatedSprite2D
+@onready var anim: AnimationPlayer = $CanvasLayer2/Panel2/AnimationPlayer
+
 
 var player_in_area = false
 
@@ -50,6 +52,7 @@ func _on_dialogue_end():
 	global.disable_glitch()
 	get_tree().root.add_child(transition)
 	transition.start_transition(global.new_scene_placement)
+	anim.play("jump_fade_out")
 	global.is_switching = true
 	
 	
