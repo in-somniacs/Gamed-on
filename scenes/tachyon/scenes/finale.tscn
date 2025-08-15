@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://calb87xhmdek8"]
+[gd_scene load_steps=45 format=4 uid="uid://calb87xhmdek8"]
 
 [ext_resource type="Script" uid="uid://b67gdoxm4r0yv" path="res://scenes/tachyon/scenes/finale.gd" id="1_qt3kr"]
 [ext_resource type="Texture2D" uid="uid://cquankf81hvkj" path="res://assets/walls.png" id="1_u22fx"]
@@ -10,6 +10,7 @@
 [ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="7_tlhy0"]
 [ext_resource type="Texture2D" uid="uid://c1suse7d3k3x1" path="res://assets/EyeBoss-Sheet.png" id="8_6p173"]
 [ext_resource type="Texture2D" uid="uid://c3h02v0g8ocyf" path="res://assets/BelokGlaza.png" id="9_c0lfi"]
+[ext_resource type="Shader" uid="uid://dh4dybs6fs6c3" path="res://scenes/tachyon/scenes/jump.gdshader" id="10_8om5u"]
 [ext_resource type="AudioStream" uid="uid://dngcwy5wpieu5" path="res://assets/sfx/digital-glitch-361820 (1).mp3" id="10_mllja"]
 [ext_resource type="PackedScene" uid="uid://ces6y2p5bi11o" path="res://scenes/menu/pause_menu.tscn" id="11_wd7ju"]
 [ext_resource type="PackedScene" uid="uid://b3jg88ib2471w" path="res://scenes/ui/invenory.tscn" id="12_cxniv"]
@@ -578,6 +579,13 @@ shader_parameter/shake_color_rate = 0.01
 size = Vector2(1280, 720)
 center_offset = Vector3(640, 360, 0)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ihw3f"]
+shader = ExtResource("10_8om5u")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_egbwf"]
 shader = ExtResource("5_6p173")
 shader_parameter/shake_power = 0.03
@@ -757,6 +765,9 @@ mesh = SubResource("QuadMesh_wd7ju")
 
 [node name="Panel2" parent="CanvasLayer2" instance=ExtResource("12_egbwf")]
 
+[node name="NinePatchRect" parent="CanvasLayer2/Panel2" index="0"]
+material = SubResource("ShaderMaterial_ihw3f")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer"]
@@ -792,7 +803,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ud4oe")
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

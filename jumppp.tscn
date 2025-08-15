@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://ddp0ytqas0vsa"]
+
+[ext_resource type="Shader" uid="uid://c1ghpqykwhk4u" path="res://screen_effect/screenshader.gdshader" id="1_yhrlb"]
+[ext_resource type="Shader" uid="uid://wukh06eyqesf" path="res://scenes/rooms/crtshader.gdshader" id="2_8is0l"]
+[ext_resource type="Shader" uid="uid://cg5760yd8h34x" path="res://scenes/rooms/testingshader.gdshader" id="3_00lwo"]
+[ext_resource type="Texture2D" uid="uid://5xy7atd04e76" path="res://scenes/tachyon/assets/EyeBoss-Sheet (3).png" id="4_4tmab"]
+[ext_resource type="AudioStream" uid="uid://1jwav0ry2dym" path="res://assets/sfx/jump_me_daddy.mp3" id="5_7iclc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cxniv"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5m13i"]
+shader = ExtResource("1_yhrlb")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_wm7qn"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pbfkx"]
+shader = ExtResource("2_8is0l")
+
+[sub_resource type="QuadMesh" id="QuadMesh_o34m7"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mdte8"]
+shader = ExtResource("3_00lwo")
+shader_parameter/glitch_enabled = false
+shader_parameter/crt_enabled = true
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.2
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 30.5
+shader_parameter/shake_color_rate = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_oumx5"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[node name="Panel2" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cxniv")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="gltiche shader" type="MeshInstance2D" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_5m13i")
+mesh = SubResource("QuadMesh_wm7qn")
+
+[node name="crt shader" type="MeshInstance2D" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_pbfkx")
+mesh = SubResource("QuadMesh_o34m7")
+
+[node name="crt and glitch" type="MeshInstance2D" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_mdte8")
+mesh = SubResource("QuadMesh_oumx5")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer2/crt and glitch"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 513.5
+offset_top = 233.5
+offset_right = 766.5
+offset_bottom = 486.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_4tmab")
+region_rect = Rect2(137, 0, 45, 46)
+
+[node name="GlitchSFX" type="AudioStreamPlayer2D" parent="CanvasLayer2"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7iclc")
