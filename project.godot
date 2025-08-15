@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="REDACTED"
+config/name="[REDACTED]"
 run/main_scene="uid://c6inow2hlvjoc"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)

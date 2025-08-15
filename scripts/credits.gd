@@ -83,6 +83,8 @@ func _add_credits_text():
 		["", "NORMAL"],
 		["Shaders", "SUBHEADING"],
 		["a6h1 — enhancing graphics with atmospheric visual effects", "NORMAL"],
+		["CRT effect code — immersive retro screen distortion", "NORMAL"],
+		["Glitch effect code — dynamic visual interference & noise", "NORMAL"],
 		["", "NORMAL"],
 		["Scene Transitions", "SUBHEADING"],
 		["Main Scene Transitions: masuwuked", "NORMAL"],
