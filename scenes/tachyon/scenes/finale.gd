@@ -55,8 +55,6 @@ func _on_dialogue_end():
 	anim.play("jump_fade_out")
 	global.is_switching = true
 	
-	
-
 func _on_static_body_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and not player_in_area:
 		player_in_area = true
